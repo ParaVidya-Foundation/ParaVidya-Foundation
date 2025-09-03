@@ -22,13 +22,13 @@ const DonationSection: React.FC = () => {
     <section className="donation-section">
       <div className="heading">
         <h1>
-          Mountains Tours <br /> & Glamping
+          Donating <br /> & Supporting
         </h1>
         <aside>
           <p>
-            Our tours immerse you in the beauty of the mountains. Enjoy guided day hikes with nature.
+            Our donations help us provide free education and meals to children in need.
           </p>
-          <p>Since 2021</p>
+          <p>Since 2025</p>
         </aside>
       </div>
 

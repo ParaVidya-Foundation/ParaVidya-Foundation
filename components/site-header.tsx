@@ -197,16 +197,16 @@ const Header: React.FC = () => {
           </div>
 
           {/* Right Links */}
-          <Link href="https://blogs.astropathshala.com/" onClick={closeMenu}>
-            Yoga
+          <Link href="/dharma" onClick={closeMenu}>
+            Dharma
           </Link>
-          <Link href="/gemstones" onClick={closeMenu}>
+          <Link href="/gallery" onClick={closeMenu}>
             Gallery
           </Link>
           <Link href="/about-us" onClick={closeMenu}>
             About Us
           </Link>
-          <Link href="/books" onClick={closeMenu}>
+          <Link href="/donation" onClick={closeMenu}>
             Donation
           </Link>
         </nav>
