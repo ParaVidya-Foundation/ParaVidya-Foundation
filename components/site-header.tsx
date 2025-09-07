@@ -123,25 +123,25 @@ const Header: React.FC = () => {
                   Wellness
                 </Link>
                 <Link href="/yoga/Stress" onClick={closeMenu}>
-                  Stress Management
+                  Stress 
                 </Link>
                 <Link href="/yoga/Anger" onClick={closeMenu}>
-                  Anger Management
+                  Anger 
                 </Link>
                 <Link href="/yoga/Depression" onClick={closeMenu}>
-                  Depression Relief
+                  Depression 
                 </Link>
                 <Link href="/yoga/Sleep" onClick={closeMenu}>
-                  Sleep Therapy
+                  Sleep 
                 </Link>
                 <Link href="/yoga/Fatigue" onClick={closeMenu}>
-                  Fatigue Relief
+                  Fatigue 
                 </Link>
                 <Link href="/yoga/Immunity" onClick={closeMenu}>
                   Immunity Boost
                 </Link>
                 <Link href="/yoga/OverWeight" onClick={closeMenu}>
-                  Weight Management
+                  Weight
                 </Link>
               </div>
             )}
@@ -180,19 +180,19 @@ const Header: React.FC = () => {
                   All Workshops
                 </Link>
                 <Link href="/workshop/spiritual-workshops" onClick={closeMenu}>
-                  Spiritual Workshops
+                  Spiritual
                 </Link>
                 <Link href="/workshop/meditation-sessions" onClick={closeMenu}>
-                  Meditation Sessions
+                  Meditation
                 </Link>
                 <Link href="/workshop/yoga-workshops" onClick={closeMenu}>
-                  Yoga Workshops
+                  Yoga 
                 </Link>
                 <Link href="/workshop/ayurveda-workshops" onClick={closeMenu}>
-                  Ayurveda Workshops
+                  Ayurveda 
                 </Link>
                 <Link href="/workshop/mantra-workshops" onClick={closeMenu}>
-                  Mantra Workshops
+                  Mantra 
                 </Link>
               </div>
             )}
