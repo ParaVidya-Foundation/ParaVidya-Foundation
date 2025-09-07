@@ -45,21 +45,27 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
       );
 
       inners.forEach((inner, i) => {
-        // Duplicate children for seamless loop
+        // Clone enough children to ensure continuous flow
         const children = Array.from(inner.children);
         children.forEach((child) => {
           inner.appendChild(child.cloneNode(true));
         });
 
-        // Get full scroll height after duplication
         const totalHeight = inner.scrollHeight / 2;
         const direction = i % 2 === 0 ? -1 : 1;
 
         gsap.to(inner, {
-          y: direction * -totalHeight, // move by real half-height
-          duration: 30,
-          ease: "linear",
+          y: direction * -totalHeight,
+          duration: 20,
+          ease: "none",
           repeat: -1,
+          modifiers: {
+            y: (y) => {
+              // Wrap the y translation so it loops seamlessly
+              const mod = totalHeight;
+              return `${(parseFloat(y) % mod) - mod}px`;
+            },
+          },
         });
       });
     }, rootRef);
@@ -115,18 +121,37 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
           z-index: 2;
         }
 
-        .vil-title {
-          font-size: clamp(2rem, 6vw, 4rem);
-          font-weight: 800;
-          text-align: center;
-          letter-spacing: -0.02em;
-          background: linear-gradient(90deg, #111, #555);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          text-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-          position: relative;
-          z-index: 3;
-        }
+       .vil-title {
+  font-family: "Poppins", "Inter", sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  /* Gradient Mask */
+  background: linear-gradient(90deg, #111, #555, #111);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animation */
+  animation: shine 4s linear infinite;
+
+  /* Subtle depth */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 
         .vil-gallery {
           position: absolute;
