@@ -117,16 +117,31 @@ const Header: React.FC = () => {
             {dropdownOpen.yogas && (
               <div className="dropdown-menu">
                 <Link href="/yoga" onClick={closeMenu}>
-                  All yogas
+                  All Yoga
                 </Link>
-                <Link href="/yoga/Deep-Meditation" onClick={closeMenu}>
-                  Deep Meditation
+                <Link href="/yoga/wellness" onClick={closeMenu}>
+                  Wellness
                 </Link>
-                <Link href="/yoga/Kirtan" onClick={closeMenu}>
-                  Kirtan
+                <Link href="/yoga/Stress" onClick={closeMenu}>
+                  Stress Management
                 </Link>
                 <Link href="/yoga/Anger" onClick={closeMenu}>
-                  Anger
+                  Anger Management
+                </Link>
+                <Link href="/yoga/Depression" onClick={closeMenu}>
+                  Depression Relief
+                </Link>
+                <Link href="/yoga/Sleep" onClick={closeMenu}>
+                  Sleep Therapy
+                </Link>
+                <Link href="/yoga/Fatigue" onClick={closeMenu}>
+                  Fatigue Relief
+                </Link>
+                <Link href="/yoga/Immunity" onClick={closeMenu}>
+                  Immunity Boost
+                </Link>
+                <Link href="/yoga/OverWeight" onClick={closeMenu}>
+                  Weight Management
                 </Link>
               </div>
             )}
@@ -161,20 +176,23 @@ const Header: React.FC = () => {
 
             {dropdownOpen.workshop && (
               <div className="dropdown-menu">
-                <Link href="/workshop/gita-gyaan" onClick={closeMenu}>
-                  Gita Gyaan
+                <Link href="/workshop" onClick={closeMenu}>
+                  All Workshops
                 </Link>
-                <Link href="/workshop/yoga" onClick={closeMenu}>
-                  Yoga
+                <Link href="/workshop/spiritual-workshops" onClick={closeMenu}>
+                  Spiritual Workshops
                 </Link>
-                <Link href="/workshop/ayurveda" onClick={closeMenu}>
-                  Ayurveda
+                <Link href="/workshop/meditation-sessions" onClick={closeMenu}>
+                  Meditation Sessions
                 </Link>
-                <Link href="/workshop/sadhna" onClick={closeMenu}>
-                  Sadhna
+                <Link href="/workshop/yoga-workshops" onClick={closeMenu}>
+                  Yoga Workshops
                 </Link>
-                <Link href="/workshop/mantra-sidhi" onClick={closeMenu}>
-                  Mantra Sidhi
+                <Link href="/workshop/ayurveda-workshops" onClick={closeMenu}>
+                  Ayurveda Workshops
+                </Link>
+                <Link href="/workshop/mantra-workshops" onClick={closeMenu}>
+                  Mantra Workshops
                 </Link>
               </div>
             )}
