@@ -65,7 +65,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section
       aria-labelledby="yoga-hero-heading"
-      className={`relative overflow-hidden min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center ${styles.heroBackground} py-10 sm:py-14 px-4 sm:px-6 lg:px-8 ${poppins.variable} ${lora.variable} font-sans ${className}`}
+      className={`relative overflow-hidden min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center py-10 sm:py-14 px-4 sm:px-6 lg:px-8 ${poppins.variable} ${lora.variable} font-sans ${className}`}
     >
       <div aria-hidden="true" className={styles.texture} />
       {/* Decorative blurred accents */}
@@ -100,13 +100,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             }
           }}
         >
-          <motion.span
-            className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/60 px-3 py-1 text-xs sm:text-sm text-indigo-700 shadow-sm backdrop-blur"
-            variants={textVariants}
-          >
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-indigo-500" />
-            Transform with ParaVidya Yoga
-          </motion.span>
+
           <motion.h1
             id="yoga-hero-heading"
             className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-3 sm:mb-4 font-[var(--font-poppins)] leading-tight"

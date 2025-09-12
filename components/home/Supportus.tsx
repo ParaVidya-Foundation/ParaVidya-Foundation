@@ -3,183 +3,136 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Cormorant_Garamond, Inter } from "next/font/google";
-
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger); // [5]
+gsap.registerPlugin(ScrollTrigger);
 
-const cormorant = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600", "700"] });
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const SupportUs = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const stageRef = useRef<HTMLDivElement | null>(null);
   const leftRef = useRef<HTMLDivElement | null>(null);
   const rightRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const section = sectionRef.current!;
-    const stage = stageRef.current!;
-    const left = leftRef.current!;
-    const right = rightRef.current!;
+    if (!leftRef.current || !rightRef.current || !sectionRef.current) return;
 
-    // Keep your anchoring and values, but ensure true corners visually (no container padding).
-    gsap.set(left, {
-      position: "absolute",
-      left: -200,        // your existing value preserved
-      top: "50%",
-      yPercent: -50,
-      x: 0,
-      willChange: "transform",
-      pointerEvents: "none",
+    const left = leftRef.current;
+    const right = rightRef.current;
+
+    // Floating animation
+    gsap.to(left, {
+      y: -20,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
     });
-    gsap.set(right, {
-      position: "absolute",
-      right: -200,       // your existing value preserved
-      top: "50%",
-      yPercent: -50,
-      x: 0,
-      willChange: "transform",
-      pointerEvents: "none",
+    gsap.to(right, {
+      y: -24,
+      duration: 3.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
     });
 
-    // Geometry helpers (your current values preserved)
-    const half = () => stage.clientWidth / 11; // your value
-    const meetAt = () => Math.max(0, half() - stage.clientWidth * 0.012); // your value
-    const clampLeft = (v: number) => gsap.utils.clamp(0, meetAt(), v);
-    const clampRight = (v: number) => gsap.utils.clamp(-meetAt(), 0, v);
-
-    // Smooth micro-updates (your timings preserved)
-    const toLeft = gsap.quickTo(left, "x", { duration: 1, ease: "power2.out" });
-    const toRight = gsap.quickTo(right, "x", { duration: 1, ease: "power2.out" });
-
-    // NEW: Floating animations (independent of ScrollTrigger)
-    // Slightly different amplitudes/durations for each hand so they don’t mirror perfectly. [7][10]
-    const floatTL = gsap.timeline({ defaults: { ease: "sine.inOut" } });
-    floatTL
-      .to(left, { y: "-=16", duration: 2.4, repeat: -1, yoyo: true }, 0)   // left gentle float [7][10]
-      .to(right, { y: "-=20", duration: 2.8, repeat: -1, yoyo: true }, 0); // right gentle float [7][10]
-
-    // ScrollTrigger phases (unchanged semantics)
-    const st = ScrollTrigger.create({
-      trigger: section,
-      start: "top 80%",
-      end: "bottom 20%",
-      scrub: 0.9,
-      // pin: true,
-      // markers: true,
-      onUpdate(self) {
-        const p = self.progress;
-        const meet = meetAt();
-
-        let leftTarget: number;
-        let rightTarget: number;
-
-        if (p <= 0.5) {
-          // Approach to meet (strictly capped)
-          const t = p / 0.5;
-          leftTarget = clampLeft(gsap.utils.interpolate(0, meet, t));
-          rightTarget = clampRight(gsap.utils.interpolate(0, -meet, t));
-        } else {
-          // Separate from meet outward (not beyond outward limit)
-          const t = (p - 0.5) / 0.5;
-          const outLeft = half() * 0.1;
-          const outRight = -half() * 0.1;
-          leftTarget = clampLeft(gsap.utils.interpolate(meet, outLeft, t));
-          rightTarget = clampRight(gsap.utils.interpolate(-meet, outRight, t));
-        }
-
-        // Apply clamped base positions
-        gsap.set(left, { x: leftTarget });
-        gsap.set(right, { x: rightTarget });
-
-        // Direction-aware micro-bias, clamped
-        const dir = self.direction; // 1 = down, -1 = up
-        const nudge = Math.max(4, stage.clientWidth * 0.008);
-
-        if (p <= 0.5) {
-          // Only inward during approach
-          if (dir === 1) {
-            toLeft(clampLeft(leftTarget + nudge));
-            toRight(clampRight(rightTarget - nudge));
-          } else {
-            toLeft(leftTarget);
-            toRight(rightTarget);
-          }
-        } else {
-          // Only outward during separation
-          if (dir === -1) {
-            toLeft(clampLeft(leftTarget - nudge));
-            toRight(clampRight(rightTarget + nudge));
-          } else {
-            toLeft(leftTarget);
-            toRight(rightTarget);
-          }
-        }
-      },
-      onRefresh() {
-        // Re-clamp to current window
-        const lc = clampLeft((gsap.getProperty(left, "x") as number) || 0);
-        const rc = clampRight((gsap.getProperty(right, "x") as number) || 0);
-        gsap.set(left, { x: lc });
-        gsap.set(right, { x: rc });
+    // Hands move closer on scroll
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        end: "bottom top",
+        scrub: true,
       },
     });
 
-    return () => {
-      st.kill();
-      floatTL.kill();
-      ScrollTrigger.getAll().forEach((x) => x.kill());
-    };
+    tl.to(left, { x: 150, ease: "power3.out" }, 0).to(
+      right,
+      { x: -150, ease: "power3.out" },
+      0
+    );
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center justify-start min-h-[140vh] overflow-hidden text-black px-0"
+      className="relative flex flex-col items-center justify-center h-[80vh] overflow-hidden text-black"
     >
-      <h1 className={`mt-6 text-6xl md:text-8xl font-bold z-10 tracking-tight leading-tight ${cormorant.className}`}>
+      {/* Heading */}
+      <h1
+        className={`text-5xl md:text-7xl lg:text-8xl font-extrabold z-10 tracking-tight leading-tight text-center ${cormorant.className}`}
+      >
         Support Us
       </h1>
 
-      {/* Stage */}
-      <div ref={stageRef} className="relative w-full h-[60vh] md:h-[68vh] overflow-visible">
-        {/* Left Hand */}
-        <div ref={leftRef} className="w-[55%] md:w-[35%]">
-          <Image
-            src="/left.png"
-            alt="Left Hand"
-            width={1600}
-            height={1600}
-            className="w-full object-contain drop-shadow-2xl"
-            priority
-          />
-        </div>
-
-        {/* Right Hand */}
-        <div ref={rightRef} className="w-[55%] md:w-[35%]">
-          <Image
-            src="/right.png"
-            alt="Right Hand"
-            width={1600}
-            height={1600}
-            className="w-full object-contain drop-shadow-2xl"
-            priority
-          />
-        </div>
+      {/* Hands */}
+      <div
+        ref={leftRef}
+        className="absolute top-1/2 -left-[15%] -translate-y-1/2 w-[55%] md:w-[45%] lg:w-[40%] pointer-events-none"
+      >
+        <Image
+          src="/left.png"
+          alt="Left Hand"
+          width={1200}
+          height={1200}
+          className="w-full h-auto object-contain"
+          priority
+        />
+      </div>
+      <div
+        ref={rightRef}
+        className="absolute top-1/2 -right-[15%] -translate-y-1/2 w-[55%] md:w-[45%] lg:w-[40%] pointer-events-none"
+      >
+        <Image
+          src="/right.png"
+          alt="Right Hand"
+          width={1200}
+          height={1200}
+          className="w-full h-auto object-contain"
+          priority
+        />
       </div>
 
       {/* Content */}
-      <div className="mt-24 md:mt-40 grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl z-10 px-6">
-        <div className="text-center md:text-right">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-3 tracking-wide ${cormorant.className}`}>Donate Us</h2>
-          <p className={`text-xl md:text-2xl text-gray-700 font-medium ${inter.className}`}>Donate as you wish</p>
-        </div>
-        <div className="text-center md:text-left">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-3 tracking-wide ${cormorant.className}`}>Spread The Word</h2>
-          <p className={`text-xl md:text-2xl text-gray-700 font-medium ${inter.className}`}>Promote our teachings and channel</p>
-        </div>
+      <div className="absolute bottom-12 w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 px-6 z-20">
+        {/* Donate Us */}
+        <a
+          href="/donate"
+          className="block text-center md:text-right group transition-transform duration-300 hover:scale-105"
+        >
+          <h2
+            className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-3 tracking-wide group-hover:text-red-600 transition-colors ${cormorant.className}`}
+          >
+            Donate Us
+          </h2>
+          <p
+            className={`text-lg md:text-xl lg:text-2xl text-gray-700 font-medium ${inter.className}`}
+          >
+            Contribute as you wish
+          </p>
+        </a>
+
+        {/* Spread The Word */}
+        <a
+          href="/donate"
+          className="block text-center md:text-left group transition-transform duration-300 hover:scale-105"
+        >
+          <h2
+            className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-3 tracking-wide group-hover:text-blue-600 transition-colors ${cormorant.className}`}
+          >
+            Spread The Word
+          </h2>
+          <p
+            className={`text-lg md:text-xl lg:text-2xl text-gray-700 font-medium ${inter.className}`}
+          >
+            Promote our teachings and mission
+          </p>
+        </a>
       </div>
     </section>
   );

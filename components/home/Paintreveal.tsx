@@ -25,7 +25,7 @@ const PaintReveal: React.FC<PaintRevealProps> = ({ imageSrc, title, subtitle }) 
   return (
     <section
       ref={ref}
-      className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 overflow-hidden"
+      className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-12 lg:px-16 xl:px-20 overflow-hidden py-8 md:py-12"
     >
       {/* ✅ Text Content */}
       <motion.div
@@ -35,11 +35,11 @@ const PaintReveal: React.FC<PaintRevealProps> = ({ imageSrc, title, subtitle }) 
         className="w-full md:w-1/2 text-center md:text-left"
       >
         <h1
-          className={`text-4xl md:text-6xl font-bold text-gray-900 leading-tight ${playfair.className}`}
+          className={`text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight ${playfair.className}`}
         >
           {title}
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-gray-700 leading-relaxed max-w-lg">
+        <p className="mt-4 md:mt-6 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-lg">
           {subtitle}
         </p>
       </motion.div>

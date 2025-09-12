@@ -10,8 +10,8 @@
 }
 
 .donation-section {
-  padding: min(20vh, 2rem) 0;
-  width: min(70rem, 90%);
+  padding: min(15vh, 3rem) 0;
+  width: min(75rem, 92%);
   margin: 0 auto;
   color: var(--clr-black);
   font-family: "Moderustic", sans-serif;
@@ -62,6 +62,7 @@
   display: grid;
   gap: 1.5rem;
   margin-top: 2rem;
+  align-items: stretch;
 }
 
 @media (min-width: 40rem) {
@@ -69,6 +70,7 @@
     grid-template-columns: repeat(3, 1fr);
     margin-top: 3.5rem;
     gap: 2rem;
+    align-items: stretch;
   }
 }
 
