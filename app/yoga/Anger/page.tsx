@@ -8,8 +8,36 @@ import YogaHelp from "@/components/yoga/yogahelp"
 import Cause from "@/components/yoga/cause"
 
 export const metadata: Metadata = {
-  title: "Anger Management Yoga – Para Vidya",
-  description: "Transform reactivity into resilience with breath-led practices, grounding postures, and mindful awareness.",
+  title: "Anger Management Yoga Course – Transform Reactivity into Resilience",
+  description: "Master anger management through expert yoga practices, breathwork, and mindful awareness. Learn to channel intense energy into centered calm with our comprehensive course.",
+  keywords: [
+    "anger management yoga",
+    "yoga for anger control",
+    "breathwork for anger",
+    "mindful anger management",
+    "emotional regulation yoga",
+    "stress relief yoga",
+    "anger therapy yoga"
+  ],
+  openGraph: {
+    title: "Anger Management Yoga Course | ParaVidya Foundation",
+    description: "Transform reactivity into resilience with breath-led practices, grounding postures, and mindful awareness.",
+    type: "article",
+    images: [
+      {
+        url: "/og-anger-yoga.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Anger Management Yoga Course - Transform Reactivity into Resilience",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Anger Management Yoga Course | ParaVidya Foundation",
+    description: "Transform reactivity into resilience with breath-led practices and mindful awareness.",
+    images: ["/og-anger-yoga.jpg"],
+  },
 }
 
 
@@ -20,7 +48,7 @@ export default function AngerManagementYogaPage() {
       <HeroSection
         title="Anger Management Yoga"
         subtitle="Channel intense energy into centered calm through breathwork, grounding asanas, and meditative focus. Learn to pause, reset, and respond with clarity."
-        imageSrc="https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg"
+        imageSrc="/placeholder.jpg"
         imageAlt="Grounded yoga posture promoting calm and control"
       />
 <Definition title="What is Anger ?" description="Anger is a natural emotion that we all experience. It is a response to a situation that we perceive as unfair, unjust, or threatening. Anger can be triggered by a variety of factors, including:

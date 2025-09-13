@@ -17,10 +17,25 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Para Vidya Foundation – Spiritual NGO",
-  description:
-    "Royal, minimal, modern spiritual NGO inspired by Hindu traditions. Workshops, Sadhna, Karamkand, Yoga, and Seva.",
-  generator: 'v0.app'
+  title: "ParaVidya Foundation - Spiritual Wellness & Yoga",
+  description: "Transform your life through ancient wisdom and modern wellness practices. Expert yoga courses, meditation guidance, and holistic healing for spiritual seekers.",
+  keywords: [
+    "yoga courses online",
+    "spiritual wellness",
+    "anger management yoga",
+    "meditation practices",
+    "holistic healing",
+    "stress management yoga",
+    "sleep therapy yoga",
+    "wellness programs"
+  ],
+  authors: [{ name: "ParaVidya Foundation" }],
+  creator: "ParaVidya Foundation",
+  publisher: "ParaVidya Foundation",
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
