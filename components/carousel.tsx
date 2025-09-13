@@ -20,7 +20,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
     startAutoSlide()
     return () => stopAutoSlide() // cleanup on unmount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []) // run once, not on every activeIndex change
+  }, []) // run once
 
   const startAutoSlide = () => {
     stopAutoSlide()

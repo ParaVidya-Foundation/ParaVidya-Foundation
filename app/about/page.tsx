@@ -3,11 +3,11 @@ import SupportBlock from "@/components/support-block"
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-      <h1 className="font-serif text-3xl" style={{ fontFamily: "var(--font-serif)" }}>
+      <h1 className="font-serif text-3xl">
         About Us
       </h1>
       <section id="mission" className="mt-6 space-y-3">
-        <h2 className="font-serif text-2xl" style={{ fontFamily: "var(--font-serif)" }}>
+        <h2 className="font-serif text-2xl">
           Our Mission
         </h2>
         <p className="text-gray-700">
@@ -15,7 +15,7 @@ export default function AboutPage() {
         </p>
       </section>
       <section id="vision" className="mt-10 space-y-3">
-        <h2 className="font-serif text-2xl" style={{ fontFamily: "var(--font-serif)" }}>
+        <h2 className="font-serif text-2xl">
           Our Vision
         </h2>
         <p className="text-gray-700">
@@ -23,7 +23,7 @@ export default function AboutPage() {
         </p>
       </section>
       <section id="team" className="mt-10 space-y-3">
-        <h2 className="font-serif text-2xl" style={{ fontFamily: "var(--font-serif)" }}>
+        <h2 className="font-serif text-2xl">
           Our Team
         </h2>
         <p className="text-gray-700">

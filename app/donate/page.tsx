@@ -10,7 +10,7 @@ export default function DonatePage() {
     <main>
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12">
-          <h1 className="font-serif text-3xl" style={{ fontFamily: "var(--font-serif)" }}>
+          <h1 className="font-serif text-3xl">
             Your Support Changes Lives
           </h1>
           <p className="mt-2 text-gray-700">

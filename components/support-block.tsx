@@ -3,7 +3,7 @@
 export default function SupportBlock() {
   return (
     <section className="rounded-xl border bg-gray-50 p-8 text-center">
-      <h3 className="font-serif text-2xl" style={{ fontFamily: "var(--font-serif)" }}>
+      <h3 className="font-serif text-2xl">
         Support Our Mission
       </h3>
       <p className="mt-2 text-gray-700">
