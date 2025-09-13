@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from "react"
+import Image from "next/image"
 
 interface CustomCarouselProps {
   images: string[]
@@ -66,10 +67,13 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
       >
         {images.map((image, index) => (
           <div key={index} className="carousel-slide">
-            <img
+            <Image
               src={image}
               alt={`Slide ${index + 1}`}
+              fill
               className="carousel-image"
+              sizes="100vw"
+              priority={index === 0}
             />
           </div>
         ))}
