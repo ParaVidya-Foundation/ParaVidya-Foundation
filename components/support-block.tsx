@@ -1,3 +1,5 @@
+"use client";
+
 export default function SupportBlock() {
   return (
     <section className="rounded-xl border bg-gray-50 p-8 text-center">

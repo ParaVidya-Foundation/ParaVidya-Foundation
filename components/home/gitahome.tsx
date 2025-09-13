@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -48,10 +49,13 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides }) => {
             transition={{ duration: 1.5, ease: "easeInOut" }}
           >
             {/* Background Image */}
-            <img
+            <Image
               src={slides[current].image}
               alt="carousel-slide"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              className="object-cover"
+              priority={current === 0}
+              sizes="100vw"
             />
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/40" />
