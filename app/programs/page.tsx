@@ -6,14 +6,14 @@ export default function ProgramsPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12 space-y-12">
       <header>
-        <h1 className="font-serif text-3xl" style={{ fontFamily: "var(--font-serif)" }}>
+        <h1 className="font-serif text-3xl">
           Programs
         </h1>
         <p className="mt-2 text-gray-700">Explore our classes, camps, and free food distribution initiatives.</p>
       </header>
 
       <section id="classes">
-        <h2 className="font-serif text-2xl" style={{ fontFamily: "var(--font-serif)" }}>
+        <h2 className="font-serif text-2xl">
           Online Classes
         </h2>
         <p className="mt-2 text-gray-700">
@@ -28,7 +28,7 @@ export default function ProgramsPage() {
       </section>
 
       <section id="camps">
-        <h2 className="font-serif text-2xl" style={{ fontFamily: "var(--font-serif)" }}>
+        <h2 className="font-serif text-2xl">
           Camps
         </h2>
         <p className="mt-2 text-gray-700">
@@ -43,7 +43,7 @@ export default function ProgramsPage() {
       </section>
 
       <section id="food">
-        <h2 className="font-serif text-2xl" style={{ fontFamily: "var(--font-serif)" }}>
+        <h2 className="font-serif text-2xl">
           Free Food Distribution
         </h2>
         <p className="mt-2 text-gray-700">

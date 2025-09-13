@@ -15,13 +15,13 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
   customStyles = {},
 }) => {
   const [activeIndex, setActiveIndex] = useState(0)
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
     startAutoSlide()
-    return () => stopAutoSlide() // Cleanup on unmount
+    return () => stopAutoSlide() // cleanup on unmount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex])
+  }, []) // run once
 
   const startAutoSlide = () => {
     stopAutoSlide()
@@ -86,7 +86,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
         aria-label="Previous slide"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
         </svg>
       </button>
 
@@ -97,7 +97,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
         aria-label="Next slide"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+          <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
         </svg>
       </button>
 
