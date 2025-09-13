@@ -2,7 +2,6 @@
 
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 
 
 
@@ -62,30 +61,6 @@ const Icon = styled.div`
   }
 `;
 
-const RightSection = styled.div`
-  button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-
-  img {
-    height: 3rem;
-    width: 3rem;
-    object-fit: contain;
-    transition: opacity 0.3s ease;
-
-    &:hover {
-      opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-      height: 2.5rem;
-      width: 2.5rem;
-    }
-  }
-`;
 
 const Navbar: React.FC = () => {
   const handleCall = () => {

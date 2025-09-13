@@ -39,6 +39,14 @@ const Header: React.FC = () => {
     }));
   };
 
+  const handleDropdownClick = (menu: keyof DropdownState) => {
+    // On mobile, toggle dropdown on click
+    // On desktop, this is handled by hover
+    if (window.innerWidth <= 768) {
+      toggleDropdown(menu);
+    }
+  };
+
   // ✅ Close on outside click
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -56,6 +64,11 @@ const Header: React.FC = () => {
     return () => document.removeEventListener("click", handleOutsideClick);
   }, [closeMenu]);
 
+  // Close menu on route change
+  useEffect(() => {
+    closeMenu();
+  }, [pathname, closeMenu]);
+
   return (
     <header className="page-header">
       {/* Mobile Header */}
@@ -64,13 +77,13 @@ const Header: React.FC = () => {
           <Link href="/" onClick={closeMenu}>
             <Image
               src={Logo}
-              alt="AstroPathshala Mobile Logo"
+              alt="Para Vidya Foundation Mobile Logo"
               className="mobile-logo-img"
               priority
             />
           </Link>
         </div>
-        <button className="menu-toggle" onClick={toggleMenu}>
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
           {menuOpen ? "✕" : "☰"}
         </button>
       </div>
@@ -87,32 +100,29 @@ const Header: React.FC = () => {
             Home
           </Link>
 
-          {/* yogas Dropdown */}
+          {/* Yoga Dropdown */}
           <div
             className="dropdown"
             onMouseEnter={() => toggleDropdown("yogas")}
             onMouseLeave={() => toggleDropdown("yogas")}
           >
-            <Link href="/yoga" onClick={closeMenu}>
-              Yoga <img
+            <div className="dropdown-link">
+              <Link href="/yoga" onClick={closeMenu}>
+                Yoga
+              </Link>
+              <button
+                className="dropdown-trigger"
+                onClick={() => handleDropdownClick("yogas")}
+                aria-label="Toggle Yoga menu"
+              >
+                <img
                   src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
+                  alt="Expand Yoga Dropdown"
+                  className="dropdown-arrow"
+                  loading="lazy"
                 />
-            </Link>
-
-            <button
-              className="dropdown-trigger"
-              onClick={() => toggleDropdown("yogas")}
-            >
-              Yogas <img
-                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
-                />
-            </button>
+              </button>
+            </div>
 
             {dropdownOpen.yogas && (
               <div className="dropdown-menu">
@@ -153,26 +163,23 @@ const Header: React.FC = () => {
             onMouseEnter={() => toggleDropdown("workshop")}
             onMouseLeave={() => toggleDropdown("workshop")}
           >
-            <Link href="/workshop" onClick={closeMenu}>
-              Workshop <img
+            <div className="dropdown-link">
+              <Link href="/workshop" onClick={closeMenu}>
+                Workshop
+              </Link>
+              <button
+                className="dropdown-trigger"
+                onClick={() => handleDropdownClick("workshop")}
+                aria-label="Toggle Workshop menu"
+              >
+                <img
                   src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
+                  alt="Expand Workshop Dropdown"
+                  className="dropdown-arrow"
+                  loading="lazy"
                 />
-            </Link>
-
-            <button
-              className="dropdown-trigger"
-              onClick={() => toggleDropdown("workshop")}
-            >
-              Workshop <img
-                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
-                />
-            </button>
+              </button>
+            </div>
 
             {dropdownOpen.workshop && (
               <div className="dropdown-menu">
@@ -207,7 +214,7 @@ const Header: React.FC = () => {
             <Link href="/" onClick={closeMenu}>
               <Image
                 src={Logo}
-                alt="AstroPathshala Logo"
+                alt="Para Vidya Foundation Logo"
                 className="logo-img"
                 priority
               />
