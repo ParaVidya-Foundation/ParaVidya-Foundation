@@ -1,83 +1,115 @@
-🌼 ParaVidya Foundation – Spiritual NGO Website
+# ParaVidya Foundation - Next.js SEO Optimization Project
 
-A royal, minimal, and modern Next.js website inspired by Hindu traditions.
-This project is designed for NGOs, Trusts, and spiritual organizations, with a spiritual white theme enhanced by saffron, earthy beige, and green highlights.
+## Project Overview
+ParaVidya Foundation is a spiritual wellness platform offering comprehensive yoga courses, meditation practices, and holistic healing programs. This Next.js 15+ application serves spiritual seekers, wellness enthusiasts, and individuals seeking personal transformation through ancient wisdom and modern practices.
 
-Built with Next.js + TailwindCSS + Aceternity UI, it is SEO-centric, mobile-first, and growth-ready – ensuring maximum reach and impact.
+## Recent Development Updates (Latest)
 
-✨ Features
-🎨 Design & Theme
+### ✅ Completed Work
+- **Comprehensive Yoga Section**: Created 8 detailed yoga pages with professional content
+  - Anger Management Yoga
+  - Stress Management Yoga  
+  - Sleep Therapy Yoga
+  - Depression Support Yoga
+  - Fatigue Relief Yoga
+  - Immunity Boosting Yoga
+  - Weight Management Yoga
+  - Kirtan Yoga
+  - Wellness Yoga
 
-Royal, spiritual white-first design with saffron, green, and beige accents.
+- **Technical Fixes**: Resolved all runtime errors and build issues
+  - Fixed Turbopack runtime errors
+  - Corrected carousel functionality
+  - Replaced all external image URLs with local placeholders
+  - Fixed inline style warnings
+  - Resolved client component errors
 
-Friendly Indian-inspired typography:
+- **SEO Foundation**: Basic metadata implemented for all yoga pages
+- **Performance**: Optimized build process and development server stability
 
-Headings → Noto Serif Devanagari / Merriweather
+### 🎯 Current SEO Goals (2025 Best Practices)
 
-Body → Inter / Poppins
+#### Target Keywords
+- **Primary**: "yoga for stress management", "anger management yoga", "sleep therapy yoga", "immunity boosting yoga", "kirtan yoga practice"
+- **Secondary**: "holistic wellness yoga", "depression support yoga", "fatigue relief yoga", "weight management yoga", "wellness yoga classes"
+- **Long-tail**: "yoga for better sleep quality", "yoga techniques for stress relief", "spiritual yoga practices for mental health"
 
-Subtle mandala/Indian motifs as background patterns.
+#### SEO Optimization Implementation Plan
 
-Responsive, mobile-first layout.
+### 1. **Metadata & Head Management**
+- ✅ Basic metadata implemented for yoga pages
+- 🔄 **Next**: Dynamic metadata with Open Graph and Twitter Cards
+- 🔄 **Next**: Canonical URLs and robots tags
+- 🔄 **Next**: Unique per-page optimization
 
-📂 Pages & Content Placeholders
+### 2. **Content & On-Page SEO**
+- ✅ Comprehensive content for all yoga pages (300+ words each)
+- ✅ Proper H1-H6 hierarchy implemented
+- 🔄 **Next**: Schema.org JSON-LD for Course and Article types
+- 🔄 **Next**: Enhanced internal linking structure
+- 🔄 **Next**: Alt texts optimization for all images
 
-Home → Hero with orange-gold gradient, welcome text, and strong CTAs (Donate + Join Us).
+### 3. **Performance & Core Web Vitals**
+- ✅ Local images implemented (no external dependencies)
+- 🔄 **Next**: Image optimization with WebP format
+- 🔄 **Next**: Lazy loading implementation
+- 🔄 **Next**: Preload critical resources
+- 🔄 **Next**: Target <3s LCP, <100ms FID, <4s CLS
 
-Workshop → List of upcoming & past workshops (cards).
+### 4. **Technical SEO**
+- 🔄 **Next**: Dynamic sitemap.xml generation
+- 🔄 **Next**: robots.txt implementation
+- 🔄 **Next**: Canonical tags for duplicate prevention
+- ✅ Mobile-responsive design maintained
 
-Sadhna → Philosophy, practices, and spiritual guidance.
+### 5. **Engagement & Reach**
+- ✅ Social media links included
+- 🔄 **Next**: Enhanced internal linking
+- 🔄 **Next**: Breadcrumb navigation
+- 🔄 **Next**: Analytics integration (Google Analytics)
+- 🔄 **Next**: Social sharing optimization
 
-Karamkand → List of religious rituals offered.
+### 6. **Accessibility & UX**
+- 🔄 **Next**: ARIA labels on interactive elements
+- 🔄 **Next**: Semantic HTML enhancement
+- 🔄 **Next**: Screen reader optimization
+- ✅ Responsive design maintained
 
-Yoga → Sessions, teachers, and benefits.
+## Social Media Presence
+- **Instagram**: https://www.instagram.com/paravidya.foundation/
+- **Facebook**: https://www.facebook.com/profile.php?id=61579922933190
+- **LinkedIn**: https://www.linkedin.com/company/paravidya-foundation/about/?viewAsMember=true
+- **YouTube**: https://www.youtube.com/@ParaVidyaFoundation
+- **Reddit**: https://www.reddit.com/user/Spare_Inspection36/
+- **Twitter/X**: https://x.com/ParaVidyaNGO
 
-Donation → Highlighted with gold button + donation form (Stripe/UPI placeholders).
+## Technical Stack
+- **Framework**: Next.js 15+ with App Router
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Images**: Next.js Image component
+- **Deployment**: Ready for production
 
-Gallery → Grid of images with lightbox view.
+## Next Steps for SEO Excellence
+1. **Immediate**: Implement comprehensive metadata and Open Graph tags
+2. **Short-term**: Add structured data and sitemap generation
+3. **Medium-term**: Performance optimization and Core Web Vitals improvement
+4. **Long-term**: Analytics integration and user engagement tracking
 
-About Us → Mission, vision, and team members.
+## Target Audience
+- Spiritual seekers and wellness enthusiasts
+- Individuals seeking yoga and meditation guidance
+- People dealing with stress, anxiety, and mental health challenges
+- Those interested in holistic health and ancient wisdom practices
+- Community members seeking personal transformation
 
-Each page includes a “How to Support Us?” section + CTA buttons for donations and enrollment.
+## Success Metrics
+- **Organic Traffic**: Target 20%+ increase in organic search traffic
+- **Engagement**: Lower bounce rates through improved UX and faster loads
+- **Social Sharing**: Enhanced social media presence and sharing
+- **Rankings**: Higher search result positions for target keywords
+- **User Experience**: Improved Core Web Vitals scores
 
-🛠️ Tech Stack
+---
 
-Next.js (React framework, SEO-ready)
-
-TailwindCSS (utility-first styling)
-
-Aceternity UI (modern component library)
-
-Framer Motion (animations)
-
-📈 SEO & Growth Tools
-
-next-seo plugin preconfigured
-
-Auto sitemap.xml & robots.txt generation
-
-Google Analytics & Facebook Pixel integration ready
-
-Social share buttons for all major platforms
-
-Auto-generated Open Graph images (logo + orange background)
-
-Navigation Structure
-
-Home
-
-Workshop
-
-Sadhna
-
-Karamkand
-
-Yoga
-
-Donation (gold highlight)
-
-Gallery
-
-About Us
-
-Dropdowns support sub-pages for expansion (e.g., Online Classes, Camps, Free Food).
+*This project focuses on creating a comprehensive spiritual wellness platform that combines ancient wisdom with modern web technologies for maximum reach and impact.*

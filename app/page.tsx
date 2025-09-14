@@ -9,9 +9,37 @@ import KaramkandHome from "@/components/home/Karamkandhome"
 import GitaHome from "@/components/home/gitahome"
 
 export const metadata: Metadata = {
-  title: "Home – Para Vidya Foundation",
-  description:
-    "Welcome to Para Vidya Foundation. Join our spiritual journey through Sadhna, Yoga, Workshops, and Seva.",
+  title: "Spiritual Wellness & Yoga Courses | ParaVidya Foundation",
+  description: "Transform your life through ancient wisdom and modern wellness practices. Expert yoga courses, meditation guidance, anger management, and holistic healing for spiritual seekers.",
+  keywords: [
+    "yoga courses online",
+    "spiritual wellness",
+    "anger management yoga",
+    "meditation practices",
+    "holistic healing",
+    "stress management yoga",
+    "sleep therapy yoga",
+    "wellness programs"
+  ],
+  openGraph: {
+    title: "Spiritual Wellness & Yoga Courses | ParaVidya Foundation",
+    description: "Transform your life through ancient wisdom and modern wellness practices. Expert yoga courses, meditation guidance, and holistic healing.",
+    type: "website",
+    images: [
+      {
+        url: "/og-home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ParaVidya Foundation - Spiritual Wellness & Yoga",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spiritual Wellness & Yoga Courses | ParaVidya Foundation",
+    description: "Transform your life through ancient wisdom and modern wellness practices.",
+    images: ["/og-home.jpg"],
+  },
 }
 
 const slides = [
@@ -41,25 +69,24 @@ const slides = [
 export default function HomePage() {
   return (
     <>
-
       <CustomCarousel
         images={[
-          "/carousel/Your-One-Stop-for-Sacred-Rituals.jpg",
-          "/carousel/About-us.jpg",
-          "/carousel/Navgrah-Shanti.jpg",
-          "/carousel/Online-Hawan.jpg",
+          "/Carousel/Your-One-Stop-for-Sacred-Rituals.jpg",
+          "/Carousel/About-us.jpg",
+          "/Carousel/Navgrah-Shanti.jpg",
+          "/Carousel/Online-Hawan.jpg",
         ]}     
       />
       <Marquee />
-<NGOSocietyImpact />
+      <NGOSocietyImpact />
       <KaramkandHome />
       <DonationSection />
       <GitaHome slides={slides} />
       <PaintReveal
-  imageSrc="/Logo.png"
-  title="Dharmo Rakshati Rakshitah"
-  subtitle="They say dharma protects its protector. Experience firsthand how the most ancient Vedic traditions nurture your soul."
-/>
+        imageSrc="/Logo.png"
+        title="Dharmo Rakshati Rakshitah"
+        subtitle="They say dharma protects its protector. Experience firsthand how the most ancient Vedic traditions nurture your soul."
+      />
 
       <SupportUs />
     </>
