@@ -3,6 +3,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import Hyperplexed from "../ui/hackglow";
+import Image from "next/image";
 
 type VerticalImageLoopProps = {
   title?: string;
@@ -99,7 +100,14 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
             <div className="vil-inner">
               {col.map((src, si) => (
                 <div className="vil-item" key={`${ci}-${si}`}>
-                  <img src={src} alt={`gallery-${ci}-${si}`} loading="lazy" />
+                  <Image 
+                    src={src} 
+                    alt={`gallery-${ci}-${si}`} 
+                    width={300}
+                    height={400}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>

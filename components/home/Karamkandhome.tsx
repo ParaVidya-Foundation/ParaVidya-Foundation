@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function KaramkandHome() {
   return (
@@ -22,11 +23,14 @@ export default function KaramkandHome() {
       </div>
 
       {/* Right Image Section (stuck to extreme right) */}
-      <div className=" h-[95vh] ml-auto">
-        <img
+      <div className="relative h-[95vh] ml-auto w-full">
+        <Image
           src="/Havan.png"
           alt="Karamkand"
-          className="w-full h-full object-contain"
+          fill
+          className="object-contain"
+          priority
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     </div>
