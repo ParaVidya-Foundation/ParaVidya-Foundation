@@ -1,64 +1,61 @@
 import { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Mission from "@/components/workshop/ayurveda/missionayur"
+import FeaturedVideos from "@/components/ui/FeaturedVideos"
+import WorkshopSpiritual from "@/components/workshop/spiritual/workshopspiritual"
+import CourseBanner from "@/components/yoga/Coursebanner"
 
 export const metadata: Metadata = {
   title: "Spiritual Workshops – Para Vidya",
   description: "Deep spiritual workshops and discourses for inner transformation.",
 }
 
-const spiritualWorkshops = [
-  {
-    title: "Bhagavad Gita Discourse Series",
-    date: "Every Sunday",
-    time: "10:00 AM - 12:00 PM",
-    location: "Main Hall",
-    desc: "In-depth study of the Bhagavad Gita with practical applications for modern life.",
-    instructor: "Swami Paramarthananda",
-  },
-  {
-    title: "Vedanta Philosophy Workshop",
-    date: "Monthly",
-    time: "2:00 PM - 5:00 PM",
-    location: "Library",
-    desc: "Understanding the fundamental principles of Vedanta and their relevance today.",
-    instructor: "Dr. Ramanuja",
-  },
-  {
-    title: "Upanishads Study Circle",
-    date: "Bi-weekly",
-    time: "6:00 PM - 8:00 PM",
-    location: "Meditation Room",
-    desc: "Exploring the profound wisdom of the Upanishads through guided discussions.",
-    instructor: "Acharya Shankara",
-  },
-]
-
 export default function SpiritualWorkshopsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 md:px-6 py-12">
-      <h1 className="heading-serif text-3xl mb-6">Spiritual Workshops</h1>
-      <p className="text-lg text-gray-700 mb-8">
-        Deepen your spiritual understanding through our comprehensive workshops and discourses.
-      </p>
+    <div className="">
+         <div className="top-img-about">
+          <img
+            src={"/Carousel/Online-Hawan.jpg"}
+            alt="Spiritual Workshops at Para Vidya"
+            className="w-full h-auto object-cover"
+            loading="lazy" 
+          />
+        </div>
+     <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Deep spiritual workshops and discourses for inner transformation. Explore the profound wisdom of ancient scriptures and spiritual practices." />
+<WorkshopSpiritual />
+     <FeaturedVideos
+  headline="Featured Videos"
+  description="Explore timeless wisdom on health, wellness, yoga, and more — all in one place."
+  exploreLink="https://www.youtube.com/@ParaVidyaFoundation"
+  videos={[
+    {
+      id: "VIDEO_ID_1",
+      title: "ParaVidya: Bhagavad Gita Discourse Series",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_2",
+      title: "ParaVidya: Vedanta Philosophy Workshop",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_3",
+      title: "ParaVidya Foundation: Upanishads Study Circle",
+ 
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+    },
+  ]}
+/>
+<br></br><br></br>
+<CourseBanner
+        title="Spiritual Workshops"
+        subtitle="Deep spiritual workshops and discourses for inner transformation."
+        imageSrc="/Workshop/spiritual.png"
+        buttonText="Join Now"
+      />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {spiritualWorkshops.map((workshop) => (
-          <Card key={workshop.title} className="bg-white shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-xl">{workshop.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="text-sm text-gray-700">
-              <div className="space-y-2">
-                <p><strong>Schedule:</strong> {workshop.date}</p>
-                <p><strong>Time:</strong> {workshop.time}</p>
-                <p><strong>Location:</strong> {workshop.location}</p>
-                <p><strong>Instructor:</strong> {workshop.instructor}</p>
-                <p className="mt-3">{workshop.desc}</p>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
     </div>
   )
 }

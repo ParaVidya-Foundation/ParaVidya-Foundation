@@ -1,72 +1,61 @@
 import { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Mission from "@/components/workshop/ayurveda/missionayur"
+import FeaturedVideos from "@/components/ui/FeaturedVideos"
+import WorkshopYoga from "@/components/workshop/yoga/workshopyoga"
+import CourseBanner from "@/components/yoga/Coursebanner"
 
 export const metadata: Metadata = {
   title: "Yoga Workshops – Para Vidya",
   description: "Comprehensive yoga workshops for physical and spiritual wellness.",
 }
 
-const yogaWorkshops = [
-  {
-    title: "Hatha Yoga Intensive",
-    date: "Weekend",
-    time: "8:00 AM - 12:00 PM",
-    location: "Yoga Studio",
-    desc: "Deep dive into classical Hatha Yoga postures and breathing techniques.",
-    level: "All Levels",
-  },
-  {
-    title: "Pranayama Masterclass",
-    date: "Monthly",
-    time: "4:00 PM - 6:00 PM",
-    location: "Breathing Room",
-    desc: "Master the art of breath control for enhanced vitality and mental clarity.",
-    level: "Intermediate",
-  },
-  {
-    title: "Yoga for Stress Relief",
-    date: "Weekly",
-    time: "6:00 PM - 7:30 PM",
-    location: "Relaxation Studio",
-    desc: "Gentle yoga practices specifically designed to reduce stress and anxiety.",
-    level: "Beginner",
-  },
-  {
-    title: "Advanced Asana Workshop",
-    date: "Bi-monthly",
-    time: "9:00 AM - 3:00 PM",
-    location: "Advanced Studio",
-    desc: "Explore challenging postures with proper alignment and safety techniques.",
-    level: "Advanced",
-  },
-]
-
 export default function YogaWorkshopsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 md:px-6 py-12">
-      <h1 className="heading-serif text-3xl mb-6">Yoga Workshops</h1>
-      <p className="text-lg text-gray-700 mb-8">
-        Enhance your yoga practice with our specialized workshops and intensive sessions.
-      </p>
+    <div className="">
+         <div className="top-img-about">
+          <img
+            src={"/Carousel/Online-Hawan.jpg"}
+            alt="Yoga Workshops at Para Vidya"
+            className="w-full h-auto object-cover"
+            loading="lazy" 
+          />
+        </div>
+     <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Comprehensive yoga workshops for physical and spiritual wellness. Enhance your practice with specialized sessions and intensive training." />
+<WorkshopYoga />
+     <FeaturedVideos
+  headline="Featured Videos"
+  description="Explore timeless wisdom on health, wellness, yoga, and more — all in one place."
+  exploreLink="https://www.youtube.com/@ParaVidyaFoundation"
+  videos={[
+    {
+      id: "VIDEO_ID_1",
+      title: "ParaVidya: Hatha Yoga Intensive Workshop",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_2",
+      title: "ParaVidya: Pranayama Masterclass",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_3",
+      title: "ParaVidya Foundation: Yoga for Stress Relief",
+ 
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+    },
+  ]}
+/>
+<br></br><br></br>
+<CourseBanner
+        title="Yoga Workshops"
+        subtitle="Comprehensive yoga workshops for physical and spiritual wellness."
+        imageSrc="/Workshop/yoga.png"
+        buttonText="Join Now"
+      />
 
-      <div className="grid md:grid-cols-2 gap-6">
-        {yogaWorkshops.map((workshop) => (
-          <Card key={workshop.title} className="bg-white shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-xl">{workshop.title}</CardTitle>
-              <div className="text-sm text-green-600 font-medium">{workshop.level}</div>
-            </CardHeader>
-            <CardContent className="text-sm text-gray-700">
-              <div className="space-y-2">
-                <p><strong>Schedule:</strong> {workshop.date}</p>
-                <p><strong>Time:</strong> {workshop.time}</p>
-                <p><strong>Location:</strong> {workshop.location}</p>
-                <p className="mt-3">{workshop.desc}</p>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
     </div>
   )
 }

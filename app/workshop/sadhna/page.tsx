@@ -1,6 +1,9 @@
-import type React from "react"
 import { Metadata } from "next"
-import { Icons } from "@/components/icons"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Mission from "@/components/workshop/ayurveda/missionayur"
+import FeaturedVideos from "@/components/ui/FeaturedVideos"
+import WorkshopSadhna from "@/components/workshop/sadhna/workshopsadhna"
+import CourseBanner from "@/components/yoga/Coursebanner"
 
 export const metadata: Metadata = {
   title: "Sadhna – Para Vidya",
@@ -9,41 +12,50 @@ export const metadata: Metadata = {
 
 export default function SadhnaPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 md:px-6 py-12">
-      <h1 className="heading-serif text-3xl mb-4">Sadhna</h1>
-      <p className="text-gray-700 max-w-2xl">
-        Cultivate inner discipline and devotion. Our sadhna guidance blends mantra, meditation, and seva.
-      </p>
+    <div className="">
+         <div className="top-img-about">
+          <img
+            src={"/Carousel/Online-Hawan.jpg"}
+            alt="Sadhna at Para Vidya"
+            className="w-full h-auto object-cover"
+            loading="lazy" 
+          />
+        </div>
+     <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Cultivate inner discipline and devotion through daily spiritual practices. Our sadhna guidance blends mantra, meditation, and seva for spiritual growth." />
+<WorkshopSadhna />
+     <FeaturedVideos
+  headline="Featured Videos"
+  description="Explore timeless wisdom on health, wellness, yoga, and more — all in one place."
+  exploreLink="https://www.youtube.com/@ParaVidyaFoundation"
+  videos={[
+    {
+      id: "VIDEO_ID_1",
+      title: "ParaVidya: Daily Sadhna Practices",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_2",
+      title: "ParaVidya: Mantra and Meditation Sadhna",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_3",
+      title: "ParaVidya Foundation: Seva and Spiritual Service",
+ 
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+    },
+  ]}
+/>
+<br></br><br></br>
+<CourseBanner
+        title="Sadhna"
+        subtitle="Cultivate inner discipline and devotion through daily spiritual practices."
+        imageSrc="/Workshop/sadhna.png"
+        buttonText="Join Now"
+      />
 
-      <div className="mt-8 grid gap-6 md:grid-cols-3">
-        <Feature
-          icon={<Icons.om className="h-6 w-6 text-[var(--color-primary)]" />}
-          title="Mantra"
-          desc="Daily chanting for clarity and focus."
-        />
-        <Feature
-          icon={<Icons.lotus className="h-6 w-6 text-[var(--color-primary)]" />}
-          title="Meditation"
-          desc="Breath and awareness practices."
-        />
-        <Feature
-          icon={<Icons.diya className="h-6 w-6 text-[var(--color-primary)]" />}
-          title="Seva"
-          desc="Compassion in action."
-        />
-      </div>
-    </div>
-  )
-}
-
-function Feature({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
-  return (
-    <div className="rounded-lg border p-5">
-      <div className="flex items-center gap-3">
-        {icon}
-        <h3 className="heading-serif text-xl">{title}</h3>
-      </div>
-      <p className="text-gray-700 mt-2 text-sm">{desc}</p>
     </div>
   )
 }

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function WorkshopAyur() {
+export default function WorkshopYoga() {
   return (
     <section className="w-[90%] mx-auto py-20 px-6 md:px-12 flex flex-col md:flex-row items-end justify-between gap-12">
       {/* Text Section */}
@@ -16,7 +16,7 @@ export default function WorkshopAyur() {
     alignContent: "center",
 }}>
         <h1 className="text-5xl md:text-7xl font-extrabold text-brown-900 tracking-tight leading-tight mb-6">
-          Workshop Ayur
+          Workshop Yoga
         </h1>
         <Image
           src="/underline.png"
@@ -27,12 +27,10 @@ export default function WorkshopAyur() {
         />
         </div>
         <p className="text-2xl md:text-xl text-brown-700 leading-relaxed max-w-2xl">
-          Ayurveda is a holistic system of medicine that originated in India. It
-          is based on the belief that health and disease are caused by an
-          imbalance of the three doshas:{" "}
-          <strong>Vata, Pitta, and Kapha</strong>. Ayurveda focuses on restoring
-          balance to the body and mind through diet, lifestyle, and herbal
-          remedies.
+          Our yoga workshops offer comprehensive training in various styles and techniques. 
+          From{" "}
+          <strong>Hatha Yoga, Pranayama, and advanced asanas</strong> to specialized sessions for stress relief, 
+          we provide expert guidance for practitioners of all levels.
         </p>
       </div>
 
@@ -49,8 +47,8 @@ export default function WorkshopAyur() {
   }}
 >
         <Image
-          src="/Workshop/ayurveda.png"
-          alt="Workshop Ayur"
+          src="/Workshop/yoga.png"
+          alt="Workshop Yoga"
           width={600}
           height={600}
           className="object-contain"
