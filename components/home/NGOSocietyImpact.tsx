@@ -13,19 +13,19 @@ type VerticalImageLoopProps = {
 
 const DEFAULT_COLS: string[][] = [
   [
-    "https://images.pexels.com/photos/10324713/pexels-photo-10324713.jpeg",
-    "https://images.pexels.com/photos/10533885/pexels-photo-10533885.jpeg",
-    "https://images.pexels.com/photos/10253213/pexels-photo-10253213.jpeg",
+    "/Carousel/About-us.jpg",
+    "/Carousel/Navgrah-Shanti.jpg",
+    "/Carousel/Online-Hawan.jpg",
   ],
   [
-    "https://images.pexels.com/photos/10050979/pexels-photo-10050979.jpeg",
-    "https://images.pexels.com/photos/1128660/pexels-photo-1128660.jpeg",
-    "https://images.pexels.com/photos/9699293/pexels-photo-9699293.jpeg",
+    "/Carousel/Your-One-Stop-for-Sacred-Rituals.jpg",
+    "/Logo.png",
+    "/Havan.png",
   ],
   [
-    "https://images.pexels.com/photos/6405575/pexels-photo-6405575.jpeg",
-    "https://images.pexels.com/photos/10162526/pexels-photo-10162526.jpeg",
-    "https://images.pexels.com/photos/4394807/pexels-photo-4394807.jpeg",
+    "/SmallCarousel/gita.png",
+    "/SmallCarousel/gita1.png",
+    "/SmallCarousel/gita2.png",
   ],
 ];
 

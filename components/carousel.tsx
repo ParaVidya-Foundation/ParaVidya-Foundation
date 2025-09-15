@@ -118,6 +118,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
         .carousel-container {
           position: relative;
           width: 100%;
+          height: 80vh;
           overflow: hidden;
         }
 
@@ -192,7 +193,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
 
         @media (max-width: 768px) {
           .carousel-container {
-            height: 25vh !important;
+            height: 40vh !important;
           }
 
           .carousel-button {

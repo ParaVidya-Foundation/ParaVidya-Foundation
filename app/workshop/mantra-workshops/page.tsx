@@ -52,7 +52,7 @@ export default function MantraWorkshopsPage() {
 <CourseBanner
         title="Mantra Workshops"
         subtitle="Learn the power of sacred mantras for spiritual transformation."
-        imageSrc="/Workshop/mantra.png"
+        imageSrc="/Workshop/ayurveda.png"
         buttonText="Join Now"
       />
 

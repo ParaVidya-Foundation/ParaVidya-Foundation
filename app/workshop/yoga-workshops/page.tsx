@@ -52,7 +52,7 @@ export default function YogaWorkshopsPage() {
 <CourseBanner
         title="Yoga Workshops"
         subtitle="Comprehensive yoga workshops for physical and spiritual wellness."
-        imageSrc="/Workshop/yoga.png"
+        imageSrc="/Workshop/ayurveda.png"
         buttonText="Join Now"
       />
 

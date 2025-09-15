@@ -38,8 +38,8 @@ const DonationSection: React.FC = () => {
             <div className="box">
               <div className="imgBox">
                 <Image
-                  src="https://images.unsplash.com/photo-1598601065215-751bf8798a2c?q=80&w=1883&auto=format&fit=crop"
-                  alt="Mountain landscape with awesome views"
+                  src="/Carousel/Online-Hawan.jpg"
+                  alt="Sacred rituals and ceremonies"
                   fill
                   className="object-cover rounded-lg"
                   priority
@@ -49,10 +49,10 @@ const DonationSection: React.FC = () => {
               <div className="more">
                 <ul>
                   {[
-                    "https://plus.unsplash.com/premium_photo-1672115680958-54438df0ab82?q=80&w=1784&auto=format&fit=crop",
-                    "https://images.unsplash.com/photo-1600298882283-40b4dcb8b211?q=80&w=2070&auto=format&fit=crop",
-                    "https://plus.unsplash.com/premium_photo-1667987781458-c45c1ad5dfe1?q=80&w=2051&auto=format&fit=crop",
-                    "https://images.unsplash.com/photo-1600298882698-312a4137fd33?q=80&w=1887&auto=format&fit=crop",
+                    "/Carousel/About-us.jpg",
+                    "/Carousel/Navgrah-Shanti.jpg",
+                    "/Carousel/Your-One-Stop-for-Sacred-Rituals.jpg",
+                    "/Logo.png",
                   ].map((url, idx) => (
                     <li key={idx}>
                       <Image

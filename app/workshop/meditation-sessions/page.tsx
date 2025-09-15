@@ -52,7 +52,7 @@ export default function MeditationSessionsPage() {
 <CourseBanner
         title="Meditation Sessions"
         subtitle="Guided meditation sessions for inner peace and mindfulness."
-        imageSrc="/Workshop/meditation.png"
+        imageSrc="/Workshop/ayurveda.png"
         buttonText="Join Now"
       />
 

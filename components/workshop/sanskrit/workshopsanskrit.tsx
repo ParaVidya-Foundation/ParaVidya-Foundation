@@ -47,7 +47,7 @@ export default function WorkshopSanskrit() {
   }}
 >
         <Image
-          src="/Workshop/sanskrit.png"
+          src="/Workshop/ayurveda.png"
           alt="Workshop Sanskrit"
           width={600}
           height={600}

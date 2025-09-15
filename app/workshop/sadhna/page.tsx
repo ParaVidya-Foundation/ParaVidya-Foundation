@@ -52,7 +52,7 @@ export default function SadhnaPage() {
 <CourseBanner
         title="Sadhna"
         subtitle="Cultivate inner discipline and devotion through daily spiritual practices."
-        imageSrc="/Workshop/sadhna.png"
+        imageSrc="/Workshop/ayurveda.png"
         buttonText="Join Now"
       />
 

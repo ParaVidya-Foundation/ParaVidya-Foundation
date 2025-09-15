@@ -52,7 +52,7 @@ export default function SanskritWorkshopsPage() {
 <CourseBanner
         title="Sanskrit Workshops"
         subtitle="Learn the ancient language of Sanskrit for spiritual and intellectual growth."
-        imageSrc="/Workshop/sanskrit.png"
+        imageSrc="/Workshop/ayurveda.png"
         buttonText="Join Now"
       />
 

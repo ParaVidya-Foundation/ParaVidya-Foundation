@@ -47,7 +47,7 @@ export default function WorkshopSadhna() {
   }}
 >
         <Image
-          src="/Workshop/sadhna.png"
+          src="/Workshop/ayurveda.png"
           alt="Workshop Sadhna"
           width={600}
           height={600}

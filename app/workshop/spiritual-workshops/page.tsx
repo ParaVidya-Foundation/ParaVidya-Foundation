@@ -52,7 +52,7 @@ export default function SpiritualWorkshopsPage() {
 <CourseBanner
         title="Spiritual Workshops"
         subtitle="Deep spiritual workshops and discourses for inner transformation."
-        imageSrc="/Workshop/spiritual.png"
+        imageSrc="/Workshop/ayurveda.png"
         buttonText="Join Now"
       />
 

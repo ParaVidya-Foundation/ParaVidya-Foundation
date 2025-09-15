@@ -47,7 +47,7 @@ export default function WorkshopMantra() {
   }}
 >
         <Image
-          src="/Workshop/mantra.png"
+          src="/Workshop/ayurveda.png"
           alt="Workshop Mantra"
           width={600}
           height={600}
