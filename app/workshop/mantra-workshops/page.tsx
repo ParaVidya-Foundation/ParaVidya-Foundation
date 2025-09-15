@@ -32,19 +32,19 @@ export default function MantraWorkshopsPage() {
       id: "VIDEO_ID_1",
       title: "ParaVidya: Gayatri Mantra Workshop",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+      thumbnail: "/Carousel/About-us.jpg",
     },
     {
       id: "VIDEO_ID_2",
       title: "ParaVidya: Maha Mrityunjaya Mantra",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+      thumbnail: "/Carousel/Navgrah-Shanti.jpg",
     },
     {
       id: "VIDEO_ID_3",
       title: "ParaVidya Foundation: Vedic Mantra Intensive",
  
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+      thumbnail: "/Carousel/Online-Hawan.jpg",
     },
   ]}
 />

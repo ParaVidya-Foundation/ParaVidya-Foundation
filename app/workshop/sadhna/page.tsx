@@ -32,19 +32,19 @@ export default function SadhnaPage() {
       id: "VIDEO_ID_1",
       title: "ParaVidya: Daily Sadhna Practices",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+      thumbnail: "/Carousel/About-us.jpg",
     },
     {
       id: "VIDEO_ID_2",
       title: "ParaVidya: Mantra and Meditation Sadhna",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+      thumbnail: "/Carousel/Navgrah-Shanti.jpg",
     },
     {
       id: "VIDEO_ID_3",
       title: "ParaVidya Foundation: Seva and Spiritual Service",
  
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+      thumbnail: "/Carousel/Online-Hawan.jpg",
     },
   ]}
 />

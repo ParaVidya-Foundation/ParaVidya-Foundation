@@ -112,7 +112,7 @@ const DonationSection: React.FC = () => {
             <div className="box">
               <div className="imgBox">
                 <Image
-                  src="https://images.unsplash.com/photo-1501554728187-ce583db33af7?q=80&w=1887&auto=format&fit=crop"
+                  src="/Carousel/About-us.jpg"
                   alt="Hiking adventure"
                   fill
                   className="object-cover rounded-lg"
