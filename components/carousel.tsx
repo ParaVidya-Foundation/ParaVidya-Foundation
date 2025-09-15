@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect, useRef } from "react"
-import Image from "next/image"
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 
 interface CustomCarouselProps {
-  images: string[]
-  interval?: number
-  customStyles?: React.CSSProperties
+  images: string[];
+  interval?: number;
+  customStyles?: React.CSSProperties;
 }
 
 const CustomCarousel: React.FC<CustomCarouselProps> = ({
@@ -14,41 +14,42 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
   interval = 5000,
   customStyles = {},
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // ✅ Safe start/stop auto-slide with useCallback
+  const startAutoSlide = useCallback(() => {
+    if (images.length <= 1) return; // prevent sliding with 0/1 images
+    stopAutoSlide();
+    intervalRef.current = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, interval);
+  }, [images.length, interval]);
+
+  const stopAutoSlide = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
 
   useEffect(() => {
-    startAutoSlide()
-    return () => stopAutoSlide() // cleanup on unmount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []) // run once
-
-  const startAutoSlide = () => {
-    stopAutoSlide()
-    intervalRef.current = setInterval(() => {
-      handleNext()
-    }, interval)
-  }
-
-  const stopAutoSlide = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current)
-      intervalRef.current = null
-    }
-  }
+    startAutoSlide();
+    return () => stopAutoSlide(); // cleanup on unmount
+  }, [startAutoSlide, stopAutoSlide]);
 
   const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }
+    setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
 
   const handlePrev = () => {
     setActiveIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    )
-  }
+    );
+  };
 
   if (!images.length) {
-    return <p className="text-center text-gray-500">No images to display</p>
+    return <p className="text-center text-gray-500">No images to display</p>;
   }
 
   return (
@@ -66,14 +67,14 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
         }}
       >
         {images.map((image, index) => (
-          <div key={index} className="carousel-slide">
+          <div key={index} className="carousel-slide relative">
             <Image
               src={image}
               alt={`Slide ${index + 1}`}
               fill
-              className="carousel-image"
-              sizes="100vw"
               priority={index === 0}
+              sizes="100vw"
+              className="carousel-image"
             />
           </div>
         ))}
@@ -113,7 +114,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
         ))}
       </div>
 
-      {/* CSS Styles */}
+      {/* Scoped CSS */}
       <style jsx>{`
         .carousel-container {
           position: relative;
@@ -124,21 +125,17 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
 
         .carousel-slides {
           display: flex;
-          transition: transform 1s ease-in-out;
+          transition: transform 0.8s ease-in-out;
+          height: 100%;
         }
 
         .carousel-slide {
           width: 100%;
           height: 100%;
           flex-shrink: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
         }
 
         .carousel-image {
-          max-width: 100%;
-          max-height: 100%;
           object-fit: contain;
         }
 
@@ -188,7 +185,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
         }
 
         .carousel-dot.active {
-          background-color: blue;
+          background-color: #facc15; /* Tailwind yellow-400 */
         }
 
         @media (max-width: 768px) {
@@ -215,7 +212,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default CustomCarousel
+export default CustomCarousel;

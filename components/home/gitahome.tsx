@@ -1,4 +1,3 @@
-// components/GitaHome.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -19,9 +18,9 @@ type Slide = {
   buttonLink?: string;
 };
 
-type GitaHomeProps = {
+interface GitaHomeProps {
   slides: Slide[];
-};
+}
 
 const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -30,23 +29,28 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
   // Auto change every 8 seconds
   useEffect(() => {
     if (slides.length <= 1) return;
-    
+
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 8000);
+
     return () => clearInterval(interval);
   }, [slides.length]);
 
   const handleImageLoad = (index: number) => {
-    setLoadedImages(prev => new Set(prev).add(index));
+    setLoadedImages((prev) => new Set(prev).add(index));
   };
 
   const handleImageError = (index: number) => {
-    console.warn(`Failed to load image: ${slides[index].image}`);
+    console.warn(`Failed to load image: ${slides[index]?.image}`);
   };
 
   if (!slides.length) {
-    return <div className="w-full h-32 flex items-center justify-center text-gray-500">No slides to display</div>;
+    return (
+      <div className="w-full h-32 flex items-center justify-center text-gray-500">
+        No slides to display
+      </div>
+    );
   }
 
   return (
@@ -66,7 +70,7 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
             {/* Background Image */}
             <Image
               src={slides[current].image}
-              alt={`Gita slide ${current + 1}`}
+              alt={`Slide ${current + 1}`}
               fill
               className="object-cover"
               priority={current === 0}
@@ -75,12 +79,13 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
               onLoad={() => handleImageLoad(current)}
               onError={() => handleImageError(current)}
             />
+
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-30" />
-            
+            <div className="absolute inset-0 bg-black/30" />
+
             {/* Loading indicator */}
             {!loadedImages.has(current) && (
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                 <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
               </div>
             )}
@@ -90,7 +95,7 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
         {/* Text + Button */}
         <div className="relative z-10 px-8 md:px-14 lg:px-20 max-w-[520px] md:max-w-[640px]">
           {slides[current].subtitle && (
-            <motion.p 
+            <motion.p
               key={`subtitle-${current}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -100,6 +105,7 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
               {slides[current].subtitle}
             </motion.p>
           )}
+
           {slides[current].buttonText && slides[current].buttonLink && (
             <motion.div
               key={`button-${current}`}
@@ -107,8 +113,11 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              <Link href={slides[current].buttonLink}>
-                <button className="mt-6 px-7 py-3 rounded-full bg-white text-black font-semibold text-base md:text-lg shadow-md hover:bg-gray-100 transition-all duration-300">
+              <Link href={slides[current].buttonLink} passHref>
+                <button
+                  className="mt-6 px-7 py-3 rounded-full bg-white text-black font-semibold text-base md:text-lg shadow-md hover:bg-gray-100 transition-all duration-300"
+                  aria-label={slides[current].buttonText}
+                >
                   {slides[current].buttonText}
                 </button>
               </Link>
@@ -118,13 +127,13 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
 
         {/* Navigation dots */}
         {slides.length > 1 && (
-          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  current === index ? 'bg-white' : 'bg-white bg-opacity-50'
+                  current === index ? "bg-white" : "bg-white/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
