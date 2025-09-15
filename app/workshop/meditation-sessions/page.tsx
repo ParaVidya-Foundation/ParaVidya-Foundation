@@ -1,72 +1,61 @@
 import { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Mission from "@/components/workshop/ayurveda/missionayur"
+import FeaturedVideos from "@/components/ui/FeaturedVideos"
+import WorkshopMeditation from "@/components/workshop/meditation/workshopmeditation"
+import CourseBanner from "@/components/yoga/Coursebanner"
 
 export const metadata: Metadata = {
   title: "Meditation Sessions – Para Vidya",
   description: "Guided meditation sessions for inner peace and mindfulness.",
 }
 
-const meditationSessions = [
-  {
-    title: "Morning Meditation",
-    date: "Daily",
-    time: "6:00 AM - 7:00 AM",
-    location: "Garden",
-    desc: "Start your day with peaceful meditation in our serene garden setting.",
-    type: "Silent Meditation",
-  },
-  {
-    title: "Guided Visualization",
-    date: "Tuesday & Thursday",
-    time: "7:00 PM - 8:00 PM",
-    location: "Meditation Hall",
-    desc: "Experience deep relaxation through guided visualization techniques.",
-    type: "Guided Meditation",
-  },
-  {
-    title: "Chakra Meditation",
-    date: "Saturday",
-    time: "5:00 PM - 6:30 PM",
-    location: "Energy Room",
-    desc: "Balance your energy centers through specialized chakra meditation practices.",
-    type: "Energy Meditation",
-  },
-  {
-    title: "Mindfulness Workshop",
-    date: "Monthly",
-    time: "10:00 AM - 4:00 PM",
-    location: "Conference Room",
-    desc: "Learn practical mindfulness techniques for daily life application.",
-    type: "Workshop",
-  },
-]
-
 export default function MeditationSessionsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 md:px-6 py-12">
-      <h1 className="heading-serif text-3xl mb-6">Meditation Sessions</h1>
-      <p className="text-lg text-gray-700 mb-8">
-        Find inner peace and mindfulness through our various meditation practices.
-      </p>
+    <div className="">
+         <div className="top-img-about">
+          <img
+            src={"/Carousel/Online-Hawan.jpg"}
+            alt="Meditation Sessions at Para Vidya"
+            className="w-full h-auto object-cover"
+            loading="lazy" 
+          />
+        </div>
+     <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Guided meditation sessions for inner peace and mindfulness. Experience various meditation techniques for spiritual growth and mental clarity." />
+<WorkshopMeditation />
+     <FeaturedVideos
+  headline="Featured Videos"
+  description="Explore timeless wisdom on health, wellness, yoga, and more — all in one place."
+  exploreLink="https://www.youtube.com/@ParaVidyaFoundation"
+  videos={[
+    {
+      id: "VIDEO_ID_1",
+      title: "ParaVidya: Morning Meditation Session",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_2",
+      title: "ParaVidya: Guided Visualization Techniques",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_3",
+      title: "ParaVidya Foundation: Chakra Meditation Workshop",
+ 
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+    },
+  ]}
+/>
+<br></br><br></br>
+<CourseBanner
+        title="Meditation Sessions"
+        subtitle="Guided meditation sessions for inner peace and mindfulness."
+        imageSrc="/Workshop/meditation.png"
+        buttonText="Join Now"
+      />
 
-      <div className="grid md:grid-cols-2 gap-6">
-        {meditationSessions.map((session) => (
-          <Card key={session.title} className="bg-white shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-xl">{session.title}</CardTitle>
-              <div className="text-sm text-blue-600 font-medium">{session.type}</div>
-            </CardHeader>
-            <CardContent className="text-sm text-gray-700">
-              <div className="space-y-2">
-                <p><strong>Schedule:</strong> {session.date}</p>
-                <p><strong>Time:</strong> {session.time}</p>
-                <p><strong>Location:</strong> {session.location}</p>
-                <p className="mt-3">{session.desc}</p>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
     </div>
   )
 }

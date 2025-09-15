@@ -1,6 +1,9 @@
 import { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Mission from "@/components/workshop/ayurveda/missionayur"
+import FeaturedVideos from "@/components/ui/FeaturedVideos"
+import WorkshopAyur from "@/components/workshop/ayurveda/workshopayur"
+import CourseBanner from "@/components/yoga/Coursebanner"
 
 export const metadata: Metadata = {
   title: "Ayurveda Workshops – Para Vidya",
@@ -19,6 +22,40 @@ export default function AyurvedaWorkshopsPage() {
           />
         </div>
      <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Learn the ancient science of Ayurveda for holistic health and wellness.Learn the ancient science of Ayurveda for holistic health and wellness." />
+<WorkshopAyur />
+     <FeaturedVideos
+  headline="Featured Videos"
+  description="Explore timeless wisdom on health, wellness, yoga, and more — all in one place."
+  exploreLink="https://www.youtube.com/@ParaVidyaFoundation"
+  videos={[
+    {
+      id: "VIDEO_ID_1",
+      title: "ParaVidya: Meditation Techniques for Inner Peace",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_2",
+      title: "ParaVidya: Yoga for Beginners — 30 Minute Session",
+  
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+    },
+    {
+      id: "VIDEO_ID_3",
+      title: "ParaVidya Foundation: Healthy Diet & Wellness Tips",
+ 
+      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+    },
+  ]}
+/>
+<br></br><br></br>
+<CourseBanner
+        title="Ayurveda Workshops"
+        subtitle="Learn the ancient science of Ayurveda for holistic health and wellness."
+        imageSrc="/Workshop/ayurveda.png"
+        buttonText="Join Now"
+      />
+
     </div>
   )
 }
