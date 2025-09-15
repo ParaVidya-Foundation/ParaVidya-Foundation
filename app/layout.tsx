@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GA />
         <FacebookPixel />
       </head>
-      <body className="bg-white text-[#111111]">
+      <body className="bg-white text-[#111111]" suppressHydrationWarning={true}>
         <SkipToContent />
         <Navbar />
         <Header />
