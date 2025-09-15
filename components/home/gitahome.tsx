@@ -58,7 +58,7 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides }) => {
               sizes="100vw"
             />
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0" />
           </motion.div>
         </AnimatePresence>
 
