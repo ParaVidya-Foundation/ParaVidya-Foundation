@@ -14,6 +14,7 @@ import Logo from "@/public/Logo.png";
 interface DropdownState {
   yogas: boolean;
   workshop: boolean;
+  partnership: boolean;
 }
 
 const Header: React.FC = () => {
@@ -21,6 +22,7 @@ const Header: React.FC = () => {
   const [dropdownOpen, setDropdownOpen] = useState<DropdownState>({
     yogas: false,
     workshop: false,
+    partnership: false,
   });
 
   const pathname = usePathname();
@@ -29,7 +31,7 @@ const Header: React.FC = () => {
 
   const closeMenu = useCallback(() => {
     setMenuOpen(false);
-    setDropdownOpen({ yogas: false, workshop: false });
+    setDropdownOpen({ yogas: false, workshop: false, partnership: false });
   }, []);
 
   const toggleDropdown = (menu: keyof DropdownState) => {
@@ -143,6 +145,9 @@ const Header: React.FC = () => {
                 <Link href="/yoga/OverWeight" onClick={closeMenu}>
                   Weight
                 </Link>
+                <Link href="/yoga/Kirtan" onClick={closeMenu}>
+                  Kirtan
+                </Link>
               </div>
             )}
           </div>
@@ -194,13 +199,15 @@ const Header: React.FC = () => {
                 <Link href="/workshop/mantra-workshops" onClick={closeMenu}>
                   Mantra 
                 </Link>
+                <Link href="/workshop/sadhna" onClick={closeMenu}>
+                  Sadhna
+                </Link>
               </div>
             )}
           </div>
 
-          <Link href="/karamkand" onClick={closeMenu}>
-            Karamkand
-          </Link>
+          <Link href="/dharma" onClick={closeMenu}>
+Dharma          </Link>
 
           {/* Center Logo */}
           <div className="logo-container">
@@ -214,10 +221,62 @@ const Header: React.FC = () => {
             </Link>
           </div>
 
-          {/* Right Links */}
-          <Link href="/dharma" onClick={closeMenu}>
-            Dharma
-          </Link>
+          {/* Partnership Dropdown */}
+          <div
+            className="dropdown"
+            onMouseEnter={() => toggleDropdown("partnership")}
+            onMouseLeave={() => toggleDropdown("partnership")}
+          >
+            <Link href="/Partnership" onClick={closeMenu}>
+              Partnership <img
+                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
+                  alt="Expand Services Dropdown"
+                  className="dropdown-arrow justify-center align-middle flex-row z-10"
+                  loading="lazy" // Performance optimization
+                />
+            </Link>
+
+            <button
+              className="dropdown-trigger"
+              onClick={() => toggleDropdown("partnership")}
+            >
+              Partnership <img
+                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
+                  alt="Expand Services Dropdown"
+                  className="dropdown-arrow justify-center align-middle flex-row z-10"
+                  loading="lazy" // Performance optimization
+                />
+            </button>
+
+            {dropdownOpen.partnership && (
+              <div className="dropdown-menu">
+                <Link href="/Partnership/AwarenessProgram" onClick={closeMenu}>
+                  Awareness Program
+                </Link>
+                <Link href="/Partnership/Camps" onClick={closeMenu}>
+                  Camps 
+                </Link>
+                <Link href="/Partnership/corporate" onClick={closeMenu}>
+                  Corporate 
+                </Link>
+                <Link href="/Partnership/Donation" onClick={closeMenu}>
+                  Donation 
+                </Link>
+                <Link href="/Partnership/Events" onClick={closeMenu}>
+                  Events 
+                </Link>
+                <Link href="/Partnership/JoinourNGO" onClick={closeMenu}>
+                  Join our NGO 
+                </Link>
+                <Link href="/Partnership/Katha" onClick={closeMenu}>
+                  Katha 
+                </Link>
+                <Link href="/Partnership/TaxExemption" onClick={closeMenu}>
+                  Tax Exemption 
+                </Link>
+              </div>
+            )}
+          </div>
           <Link href="/gallery" onClick={closeMenu}>
             Gallery
           </Link>

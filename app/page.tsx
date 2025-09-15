@@ -87,7 +87,6 @@ export default function HomePage() {
         title="Dharmo Rakshati Rakshitah"
         subtitle="They say dharma protects its protector. Experience firsthand how the most ancient Vedic traditions nurture your soul."
       />
-
       <SupportUs />
     </>
   )

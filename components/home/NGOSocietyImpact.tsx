@@ -2,6 +2,7 @@
 
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import Hyperplexed from "../ui/hackglow";
 import Image from "next/image";
 
 type VerticalImageLoopProps = {
@@ -29,7 +30,7 @@ const DEFAULT_COLS: string[][] = [
 ];
 
 const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
-  title = "Making a Change in Society",
+ 
   cols = DEFAULT_COLS,
   height = "100vh",
 }) => {
@@ -89,7 +90,8 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
         className="vil-section"
         style={{ height: typeof height === "number" ? `${height}px` : height }}
       >
-        <h1 className="vil-title">{title}</h1>
+        <Hyperplexed title="Making a Change in Society" />
+
       </section>
 
       <div className="vil-gallery" ref={galleryRef} aria-hidden>
