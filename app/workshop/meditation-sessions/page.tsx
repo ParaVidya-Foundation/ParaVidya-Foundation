@@ -32,19 +32,19 @@ export default function MeditationSessionsPage() {
       id: "VIDEO_ID_1",
       title: "ParaVidya: Morning Meditation Session",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+      thumbnail: "/Carousel/About-us.jpg",
     },
     {
       id: "VIDEO_ID_2",
       title: "ParaVidya: Guided Visualization Techniques",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+      thumbnail: "/Carousel/Navgrah-Shanti.jpg",
     },
     {
       id: "VIDEO_ID_3",
       title: "ParaVidya Foundation: Chakra Meditation Workshop",
  
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+      thumbnail: "/Carousel/Online-Hawan.jpg",
     },
   ]}
 />
@@ -52,7 +52,7 @@ export default function MeditationSessionsPage() {
 <CourseBanner
         title="Meditation Sessions"
         subtitle="Guided meditation sessions for inner peace and mindfulness."
-        imageSrc="/Workshop/meditation.png"
+        imageSrc="/Workshop/ayurveda.png"
         buttonText="Join Now"
       />
 

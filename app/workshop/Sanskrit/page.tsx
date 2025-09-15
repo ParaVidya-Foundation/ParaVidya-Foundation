@@ -32,19 +32,19 @@ export default function SanskritWorkshopsPage() {
       id: "VIDEO_ID_1",
       title: "ParaVidya: Sanskrit Learning for Beginners",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+      thumbnail: "/Carousel/About-us.jpg",
     },
     {
       id: "VIDEO_ID_2",
       title: "ParaVidya: Sanskrit Grammar and Literature",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+      thumbnail: "/Carousel/Navgrah-Shanti.jpg",
     },
     {
       id: "VIDEO_ID_3",
       title: "ParaVidya Foundation: Sanskrit Mantras and Chanting",
  
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+      thumbnail: "/Carousel/Online-Hawan.jpg",
     },
   ]}
 />
@@ -52,7 +52,7 @@ export default function SanskritWorkshopsPage() {
 <CourseBanner
         title="Sanskrit Workshops"
         subtitle="Learn the ancient language of Sanskrit for spiritual and intellectual growth."
-        imageSrc="/Workshop/sanskrit.png"
+        imageSrc="/Workshop/ayurveda.png"
         buttonText="Join Now"
       />
 

@@ -47,7 +47,7 @@ export default function WorkshopSpiritual() {
   }}
 >
         <Image
-          src="/Workshop/spiritual.png"
+          src="/Workshop/ayurveda.png"
           alt="Workshop Spiritual"
           width={600}
           height={600}

@@ -47,7 +47,7 @@ export default function WorkshopMeditation() {
   }}
 >
         <Image
-          src="/Workshop/meditation.png"
+          src="/Workshop/ayurveda.png"
           alt="Workshop Meditation"
           width={600}
           height={600}

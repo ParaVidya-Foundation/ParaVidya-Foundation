@@ -84,7 +84,7 @@ export default function AngerManagementYogaPage() {
       <CourseBanner
         title="Anger Management Yoga"
         subtitle="Channel intense energy into centered calm through breathwork, grounding asanas, and meditative focus. Learn to pause, reset, and respond with clarity."
-        imageSrc="https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg"
+        imageSrc="/Carousel/Online-Hawan.jpg"
         buttonText="Join Now"
       />
       <br></br><br></br>

@@ -47,7 +47,7 @@ export default function WorkshopYoga() {
   }}
 >
         <Image
-          src="/Workshop/yoga.png"
+          src="/Workshop/ayurveda.png"
           alt="Workshop Yoga"
           width={600}
           height={600}

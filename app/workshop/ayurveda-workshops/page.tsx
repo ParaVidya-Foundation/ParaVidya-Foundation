@@ -32,19 +32,19 @@ export default function AyurvedaWorkshopsPage() {
       id: "VIDEO_ID_1",
       title: "ParaVidya: Meditation Techniques for Inner Peace",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+      thumbnail: "/Carousel/About-us.jpg",
     },
     {
       id: "VIDEO_ID_2",
       title: "ParaVidya: Yoga for Beginners — 30 Minute Session",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+      thumbnail: "/Carousel/Navgrah-Shanti.jpg",
     },
     {
       id: "VIDEO_ID_3",
       title: "ParaVidya Foundation: Healthy Diet & Wellness Tips",
  
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+      thumbnail: "/Carousel/Online-Hawan.jpg",
     },
   ]}
 />

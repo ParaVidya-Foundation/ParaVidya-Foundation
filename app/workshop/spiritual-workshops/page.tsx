@@ -32,19 +32,19 @@ export default function SpiritualWorkshopsPage() {
       id: "VIDEO_ID_1",
       title: "ParaVidya: Bhagavad Gita Discourse Series",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+      thumbnail: "/Carousel/About-us.jpg",
     },
     {
       id: "VIDEO_ID_2",
       title: "ParaVidya: Vedanta Philosophy Workshop",
   
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg",
+      thumbnail: "/Carousel/Navgrah-Shanti.jpg",
     },
     {
       id: "VIDEO_ID_3",
       title: "ParaVidya Foundation: Upanishads Study Circle",
  
-      thumbnail: "https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg",
+      thumbnail: "/Carousel/Online-Hawan.jpg",
     },
   ]}
 />
@@ -52,7 +52,7 @@ export default function SpiritualWorkshopsPage() {
 <CourseBanner
         title="Spiritual Workshops"
         subtitle="Deep spiritual workshops and discourses for inner transformation."
-        imageSrc="/Workshop/spiritual.png"
+        imageSrc="/Workshop/ayurveda.png"
         buttonText="Join Now"
       />
 

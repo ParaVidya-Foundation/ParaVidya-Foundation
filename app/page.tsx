@@ -45,22 +45,22 @@ export const metadata: Metadata = {
 const slides = [
   {
 
-    subtitle: "Innovative solutions for modern problems.",
-    image: "SmallCarousel/gita.png",
+    subtitle: "Discover the ancient wisdom of Bhagavad Gita.",
+    image: "/SmallCarousel/gita.png",
     buttonText: "Learn More",
-    buttonLink: "/about",
+    buttonLink: "/about-us",
   },
   {
   
-    subtitle: "Seamless integration with cutting-edge tech.",
-    image: "SmallCarousel/gita2.png",
+    subtitle: "Join our spiritual workshops and meditation sessions.",
+    image: "/SmallCarousel/gita2.png",
     buttonText: "Get Started",
-    buttonLink: "/services",
+    buttonLink: "/workshop",
   },
   {
   
-    subtitle: "Be part of the innovation revolution.",
-    image: "SmallCarousel/gita1.png",
+    subtitle: "Experience the power of yoga and wellness practices.",
+    image: "/SmallCarousel/gita1.png",
     buttonText: "Contact Us",
     buttonLink: "/contact",
   },
