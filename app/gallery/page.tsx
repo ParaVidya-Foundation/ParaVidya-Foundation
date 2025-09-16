@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useEffect } from "react";
 
 interface ImageData {
   src: string;
@@ -46,20 +47,32 @@ const ITEMS_PER_PAGE = 15;
 
 export default function Gallery() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (selectedImage) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage]);
 
   const totalPages = Math.ceil(images.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedImages = images.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <main className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-8">
+    <main className="relative min-h-screen bg-gray-900 text-white flex flex-col items-center p-8">
       <h1 className="text-4xl font-bold mb-8">Gallery</h1>
 
+      {/* Image Grid */}
       <div className="flex flex-wrap justify-center gap-8">
         {paginatedImages.map((img, index) => (
           <div
             key={index}
-            className="relative w-72 h-96 bg-white rounded-md shadow-lg overflow-hidden group"
+            className="relative w-72 h-96 bg-white rounded-md shadow-lg overflow-hidden group cursor-pointer"
+            onClick={() => setSelectedImage(img)}
           >
             <div className="absolute inset-2 bg-black transition-all duration-500 group-hover:bottom-20">
               <img
@@ -113,6 +126,31 @@ export default function Gallery() {
           Next
         </button>
       </div>
+
+      {/* Fullscreen Modal — z-index increased and click propagation stopped */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[9999]"
+          onClick={() => setSelectedImage(null)} // click outside to close
+        >
+          {/* stop clicks from bubbling to the overlay so clicking the image or controls doesn't close it */}
+          <div className="relative z-[10000]" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.name}
+              className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-xl"
+            />
+            <div className="absolute top-3 left-3">
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="px-4 py-2 bg-green-600 text-white font-bold rounded-lg shadow-lg hover:bg-green-500"
+              >
+                ⬅ Back
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
