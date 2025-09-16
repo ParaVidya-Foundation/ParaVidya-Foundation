@@ -1,47 +1,8 @@
 "use client";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-interface ImageData {
-  src: string;
-  name: string;
-  location: string;
-}
-
-// Sample 30 images (add as many as you want, pages will auto-increase)
-const images: ImageData[] = [
-  { src: "https://images.unsplash.com/photo-1557053908-4793c484d06f?w=400", name: "Rita Brown", location: "London, UK" },
-  { src: "https://images.unsplash.com/photo-1611695434398-4f4b330623e6?w=400", name: "James Nelson", location: "San Francisco, US" },
-  { src: "https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?w=400", name: "Christine McKay", location: "New York, US" },
-  { src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400", name: "Sophia Lee", location: "Toronto, CA" },
-  { src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400", name: "Michael Smith", location: "Sydney, AU" },
-  { src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400", name: "Emily Davis", location: "Berlin, DE" },
-  { src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400", name: "David Johnson", location: "Paris, FR" },
-  { src: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400", name: "Olivia White", location: "Rome, IT" },
-  { src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400", name: "Sophia Martinez", location: "Madrid, ES" },
-  { src: "https://images.unsplash.com/photo-1502767089025-6572583495b0?w=400", name: "Daniel Brown", location: "Chicago, US" },
-  { src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400", name: "Hannah Wilson", location: "Tokyo, JP" },
-  { src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400", name: "Lucas Green", location: "Dubai, UAE" },
-  { src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400", name: "Sarah Taylor", location: "Cape Town, ZA" },
-  { src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400", name: "Ethan Brown", location: "Singapore" },
-  { src: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400", name: "Ava Thompson", location: "Mumbai, IN" },
-  // Duplicate to simulate 30+ images
-  { src: "https://images.unsplash.com/photo-1557053908-4793c484d06f?w=400", name: "Person A", location: "Delhi, IN" },
-  { src: "https://images.unsplash.com/photo-1611695434398-4f4b330623e6?w=400", name: "Person B", location: "NYC, US" },
-  { src: "https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?w=400", name: "Person C", location: "Paris, FR" },
-  { src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400", name: "Person D", location: "Tokyo, JP" },
-  { src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400", name: "Person E", location: "London, UK" },
-  { src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400", name: "Person F", location: "Berlin, DE" },
-  { src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400", name: "Person G", location: "Dubai, UAE" },
-  { src: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400", name: "Person H", location: "Singapore" },
-  { src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400", name: "Person I", location: "Toronto, CA" },
-  { src: "https://images.unsplash.com/photo-1502767089025-6572583495b0?w=400", name: "Person J", location: "Rome, IT" },
-  { src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400", name: "Person K", location: "Madrid, ES" },
-  { src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400", name: "Person L", location: "Sydney, AU" },
-  { src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400", name: "Person M", location: "Cape Town, ZA" },
-  { src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400", name: "Person N", location: "San Francisco, US" },
-  { src: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400", name: "Person O", location: "Chicago, US" },
-];
+import { ImageData } from "./data/images";
+import { images } from "./data/images";
 
 const ITEMS_PER_PAGE = 15;
 
@@ -49,7 +10,6 @@ export default function Gallery() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
 
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (selectedImage) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
@@ -63,7 +23,7 @@ export default function Gallery() {
   const paginatedImages = images.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <main className="relative min-h-screen bg-gray-900 text-white flex flex-col items-center p-8">
+    <main className="relative min-h-screen bg-white-900 text-white flex flex-col items-center p-8">
       <h1 className="text-4xl font-bold mb-8">Gallery</h1>
 
       {/* Image Grid */}
@@ -108,11 +68,10 @@ export default function Gallery() {
           <button
             key={i}
             onClick={() => setCurrentPage(i + 1)}
-            className={`px-4 py-2 rounded-lg ${
-              currentPage === i + 1
+            className={`px-4 py-2 rounded-lg ${currentPage === i + 1
                 ? "bg-green-600"
                 : "bg-gray-700 hover:bg-gray-600"
-            }`}
+              }`}
           >
             {i + 1}
           </button>
@@ -127,27 +86,29 @@ export default function Gallery() {
         </button>
       </div>
 
-      {/* Fullscreen Modal — z-index increased and click propagation stopped */}
+      {/* Fullscreen Modal */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[9999]"
-          onClick={() => setSelectedImage(null)} // click outside to close
+          onClick={() => setSelectedImage(null)} // close on background click
         >
-          {/* stop clicks from bubbling to the overlay so clicking the image or controls doesn't close it */}
-          <div className="relative z-[10000]" onClick={(e) => e.stopPropagation()}>
+          {/* Close (X) Button - fixed to top right of modal */}
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-5 right-5 text-white text-1xl font-bold bg-black/50 rounded-full px-4 py-2 hover:bg-black/70 z-[10001]"
+          >
+            ✕
+          </button>
+
+          <div
+            className="relative z-[10000]"
+            onClick={(e) => e.stopPropagation()} // prevent closing on image click
+          >
             <img
               src={selectedImage.src}
               alt={selectedImage.name}
               className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-xl"
             />
-            <div className="absolute top-3 left-3">
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="px-4 py-2 bg-green-600 text-white font-bold rounded-lg shadow-lg hover:bg-green-500"
-              >
-                ⬅ Back
-              </button>
-            </div>
           </div>
         </div>
       )}
