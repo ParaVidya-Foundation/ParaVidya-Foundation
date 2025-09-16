@@ -12,25 +12,12 @@ type VerticalImageLoopProps = {
 };
 
 const DEFAULT_COLS: string[][] = [
-  [
-    "/Carousel/About-us.jpg",
-    "/Carousel/Navgrah-Shanti.jpg",
-    "/Carousel/Online-Hawan.jpg",
-  ],
-  [
-    "/Carousel/Your-One-Stop-for-Sacred-Rituals.jpg",
-    "/Logo.png",
-    "/Havan.png",
-  ],
-  [
-    "/SmallCarousel/gita.png",
-    "/SmallCarousel/gita1.png",
-    "/SmallCarousel/gita2.png",
-  ],
+  ["/Carousel/About-us.jpg", "/Carousel/Navgrah-Shanti.jpg", "/Carousel/Online-Hawan.jpg"],
+  ["/Carousel/Your-One-Stop-for-Sacred-Rituals.jpg", "/Logo.png", "/Havan.png"],
+  ["/SmallCarousel/gita.png", "/SmallCarousel/gita1.png", "/SmallCarousel/gita2.png"],
 ];
 
 const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
- 
   cols = DEFAULT_COLS,
   height = "100vh",
 }) => {
@@ -42,16 +29,17 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
     if (!gallery) return;
 
     const ctx = gsap.context(() => {
-      const inners: HTMLElement[] = Array.from(
-        gallery.querySelectorAll(".vil-inner")
-      );
+      const inners: HTMLElement[] = Array.from(gallery.querySelectorAll(".vil-inner"));
 
       inners.forEach((inner, i) => {
-        // Clone enough children to ensure continuous flow
         const children = Array.from(inner.children);
-        children.forEach((child) => {
-          inner.appendChild(child.cloneNode(true));
-        });
+
+        if (inner.dataset.cloned !== "true") {
+          children.forEach((child) => {
+            inner.appendChild(child.cloneNode(true));
+          });
+          inner.dataset.cloned = "true";
+        }
 
         const totalHeight = inner.scrollHeight / 2;
         const direction = i % 2 === 0 ? -1 : 1;
@@ -63,7 +51,6 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
           repeat: -1,
           modifiers: {
             y: (y) => {
-              // Wrap the y translation so it loops seamlessly
               const mod = totalHeight;
               return `${(parseFloat(y) % mod) - mod}px`;
             },
@@ -86,27 +73,24 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
         WebkitMaskSize: "100% 100%",
       }}
     >
-      <section
-        className="vil-section"
-        style={{ height: typeof height === "number" ? `${height}px` : height }}
-      >
+      <section className="vil-section">
         <Hyperplexed title="Making a Change in Society" />
-
       </section>
 
-      <div className="vil-gallery" ref={galleryRef} aria-hidden>
+      <div className="vil-gallery" ref={galleryRef} aria-hidden="true" role="presentation">
         {cols.map((col, ci) => (
           <div className="vil-col" key={ci}>
             <div className="vil-inner">
               {col.map((src, si) => (
                 <div className="vil-item" key={`${ci}-${si}`}>
-                  <Image 
-                    src={src} 
-                    alt={`gallery-${ci}-${si}`} 
+                  <Image
+                    src={src}
+                    alt={`gallery-${ci}-${si}`}
                     width={300}
                     height={400}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-xl"
                     loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
                   />
                 </div>
               ))}
@@ -123,50 +107,27 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
           font-family: "Inter", sans-serif;
         }
 
+        /* Responsive height */
         .vil-section {
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
           z-index: 2;
+          height: 100vh;
         }
 
-       .vil-title {
-  font-family: "Poppins", "Inter", sans-serif;
-  font-size: clamp(2rem, 6vw, 4rem);
-  font-weight: 800;
-  text-align: center;
-  letter-spacing: -0.02em;
-
-  /* Gradient Mask */
-  background: linear-gradient(90deg, #111, #555, #111);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* Animation */
-  animation: shine 4s linear infinite;
-
-  /* Subtle depth */
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  position: relative;
-  z-index: 3;
-}
-
-@keyframes shine {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
+        @media (max-width: 768px) {
+          .vil-section {
+            height: 50vh; /* Mobile: only half screen */
+          }
+        }
 
         .vil-gallery {
           position: absolute;
           inset: 0;
           display: flex;
+          flex-wrap: nowrap;
           gap: 1rem;
           justify-content: center;
           align-items: stretch;
@@ -187,10 +148,6 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
           display: flex;
           flex-direction: column;
           gap: 1rem;
-          width: 100%;
-        }
-
-        .vil-item {
           width: 100%;
         }
 
@@ -219,7 +176,7 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
             gap: 0.4rem;
           }
           .vil-col {
-            min-width: 33%;
+            flex: 1 1 33%;
           }
         }
       `}</style>

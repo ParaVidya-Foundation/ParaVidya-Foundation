@@ -18,7 +18,7 @@ export default function KirtanYogaPage() {
       <HeroSection
         title="Kirtan Yoga"
         subtitle="Experience the transformative power of devotional chanting, sacred sound, and heart-opening practices that connect you to your spiritual essence and inner peace."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/kirtan.png"
         imageAlt="Devotional practice with serene ambiance"
       />
       
@@ -40,22 +40,22 @@ Kirtan is not about performance or perfection, but about opening the heart, quie
         <Cause
           title="Mantra Chanting"
           subtitle="Learn traditional Sanskrit mantras and their meanings for spiritual practice and inner peace."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/kirtan.png"
         />
         <Cause
           title="Sacred Sound Circles"
           subtitle="Group chanting sessions that create powerful vibrational healing and spiritual connection."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/kirtan.png"
         />
         <Cause
           title="Bhakti Yoga Flow"
           subtitle="Heart-opening yoga sequences combined with devotional chanting and meditation."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/kirtan.png"
         />
         <Cause
           title="Mantra Meditation"
           subtitle="Silent and vocal mantra repetition for deep spiritual practice and inner transformation."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/kirtan.png"
         />
       </div>
       
@@ -64,7 +64,7 @@ Kirtan is not about performance or perfection, but about opening the heart, quie
       <CourseBanner
         title="Kirtan Yoga"
         subtitle="Open your heart to divine love through sacred chanting, devotional movement, and spiritual practices that connect you to your highest self."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/poster.png"
         buttonText="Join Now"
       />
       

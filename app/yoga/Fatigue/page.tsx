@@ -18,7 +18,7 @@ export default function FatigueReliefYogaPage() {
       <HeroSection
         title="Fatigue Relief Yoga"
         subtitle="Reclaim your natural energy through invigorating flows, energizing breathwork, and revitalizing practices that awaken your body's innate vitality."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/Fatigue.png"
         imageAlt="Invigorating morning yoga session"
       />
       
@@ -46,22 +46,22 @@ Understanding the root causes of fatigue helps in developing targeted strategies
         <Cause
           title="Energizing Flow Classes"
           subtitle="Dynamic yoga sequences that build strength, increase circulation, and boost natural energy."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/Fatigue.png"
         />
         <Cause
           title="Pranayama Power"
           subtitle="Breathing techniques specifically designed to increase vitality and combat fatigue."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/Fatigue.png"
         />
         <Cause
           title="Morning Energizers"
           subtitle="Gentle awakening practices to start your day with renewed energy and clarity."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/Fatigue.png"
         />
         <Cause
           title="Restorative Recharge"
           subtitle="Deep relaxation techniques that help your body recover and restore its natural energy reserves."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/Fatigue.png"
         />
       </div>
       
@@ -70,7 +70,7 @@ Understanding the root causes of fatigue helps in developing targeted strategies
       <CourseBanner
         title="Fatigue Relief Yoga"
         subtitle="Transform exhaustion into vitality through mindful movement, conscious breathing, and energy-restoring practices that honor your body's natural rhythms."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/poster.png"
         buttonText="Join Now"
       />
       
