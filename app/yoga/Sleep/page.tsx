@@ -18,7 +18,7 @@ export default function SleepTherapyYogaPage() {
       <HeroSection
         title="Sleep Therapy Yoga"
         subtitle="Soothe the nervous system with restorative shapes, breath that lengthens the exhale, and practices that invite deep rest and peaceful slumber."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/sleep.png"
         imageAlt="Calming evening yoga promoting sleep"
       />
       
@@ -39,22 +39,22 @@ When sleep is disrupted or insufficient, it can lead to fatigue, irritability, w
         <Cause
           title="Restorative Yoga"
           subtitle="Gentle, supported poses that promote deep relaxation and prepare your body for sleep."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/sleep.png"
         />
         <Cause
           title="Sleep Meditation"
           subtitle="Guided meditations designed to quiet the mind and induce peaceful slumber."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/sleep.png"
         />
         <Cause
           title="Evening Pranayama"
           subtitle="Calming breathing techniques that activate your body's relaxation response."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/sleep.png"
         />
         <Cause
           title="Yoga Nidra"
           subtitle="Conscious sleep practice for deep rest and stress release while remaining aware."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/sleep.png"
         />
       </div>
       
@@ -63,7 +63,7 @@ When sleep is disrupted or insufficient, it can lead to fatigue, irritability, w
       <CourseBanner
         title="Sleep Therapy Yoga"
         subtitle="Create the perfect conditions for restorative sleep through gentle movement, conscious breathing, and mindful relaxation practices."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/poster.png"
         buttonText="Join Now"
       />
       

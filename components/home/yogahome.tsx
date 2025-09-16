@@ -1,14 +1,8 @@
-import { Metadata } from "next"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Link from "next/link"
-import Disclosures, { DisclosureItem } from "@/components/yoga/Disclosures"
+"use client";
 
-export const metadata: Metadata = {
-  title: "Yoga & Wellness – Para Vidya",
-  description: "Comprehensive yoga practices for physical, mental, and spiritual wellness.",
-}
+import Disclosures, { DisclosureItem } from "@/components/yoga/Disclosures";
 
-const items: DisclosureItem[] = [
+const yogaItems: DisclosureItem[] = [
   {
     title: "Anger Management Yoga",
     description: "Channel intense energy into centered calm through breathwork, grounding asanas, and meditative focus. Learn to pause, reset, and respond with clarity.",
@@ -65,19 +59,21 @@ const items: DisclosureItem[] = [
   },
 ];
 
-export default function YogaPage() {
+export default function YogaHome() {
   return (
-<>
-<div className="top-img-about">
-          <img
-            src={"/Carousel/Online-Hawan.jpg"}
-            alt="Yoga Workshops at Para Vidya"
-            className="w-full h-auto object-cover"
-            loading="lazy" 
-          />
+    <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Yoga & Wellness
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover transformative yoga practices designed to heal, energize, and bring balance to your life. 
+            From stress relief to spiritual growth, find your perfect practice.
+          </p>
         </div>
-
-        <Disclosures items={items} />
-</>
-  )
+        <Disclosures items={yogaItems} />
+      </div>
+    </section>
+  );
 }

@@ -18,7 +18,7 @@ export default function StressManagementYogaPage() {
       <HeroSection
         title="Stress Management Yoga"
         subtitle="Unwind with soothing sequences, grounding breathwork, and mindful pauses—practices designed to bring you back to balance and inner peace."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/stressed.png"
         imageAlt="Relaxing yoga for stress relief"
       />
       
@@ -39,22 +39,22 @@ Understanding stress helps you recognize its signs and implement effective manag
         <Cause
           title="Gentle Flow Sessions"
           subtitle="Slow, mindful movements that release tension and promote relaxation."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/stressed.png"
         />
         <Cause
           title="Breathwork Workshops"
           subtitle="Learn powerful breathing techniques to calm your nervous system instantly."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/stressed.png"
         />
         <Cause
           title="Meditation Circles"
           subtitle="Group meditation sessions for shared peace and collective healing."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/stressed.png"
         />
         <Cause
           title="Restorative Yoga"
           subtitle="Deep relaxation practices using props to fully support your body."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/stressed.png"
         />
       </div>
       
@@ -63,7 +63,7 @@ Understanding stress helps you recognize its signs and implement effective manag
       <CourseBanner
         title="Stress Management Yoga"
         subtitle="Transform stress into strength through mindful movement, conscious breathing, and present-moment awareness. Find your calm in the chaos."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/poster.png"
         buttonText="Join Now"
       />
       

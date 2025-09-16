@@ -48,7 +48,7 @@ export default function AngerManagementYogaPage() {
       <HeroSection
         title="Anger Management Yoga"
         subtitle="Channel intense energy into centered calm through breathwork, grounding asanas, and meditative focus. Learn to pause, reset, and respond with clarity."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/anger.png"
         imageAlt="Grounded yoga posture promoting calm and control"
       />
 <Definition title="What is Anger ?" description="Anger is a natural emotion that we all experience. It is a response to a situation that we perceive as unfair, unjust, or threatening. Anger can be triggered by a variety of factors, including:
@@ -62,29 +62,29 @@ export default function AngerManagementYogaPage() {
   <Cause
     title="Anger Management Workshop"
     subtitle="Learn techniques to control and understand your emotions effectively."
-    imageSrc="/images/anger-workshop.jpg"
+          imageSrc="/Yoga/anger.png"
   />
   <Cause
     title="Anger Management Workshop"
     subtitle="Learn techniques to control and understand your emotions effectively."
-    imageSrc="/images/anger-workshop.jpg"
+          imageSrc="/Yoga/anger.png"
   />
   <Cause
     title="Anger Management Workshop"
     subtitle="Learn techniques to control and understand your emotions effectively."
-    imageSrc="/images/anger-workshop.jpg"
+          imageSrc="/Yoga/anger.png"
   />
   <Cause
     title="Anger Management Workshop"
     subtitle="Learn techniques to control and understand your emotions effectively."
-    imageSrc="/images/anger-workshop.jpg"
+          imageSrc="/Yoga/anger.png"
   />
 </div>
 <br></br><br></br>
       <CourseBanner
         title="Anger Management Yoga"
         subtitle="Channel intense energy into centered calm through breathwork, grounding asanas, and meditative focus. Learn to pause, reset, and respond with clarity."
-        imageSrc="/Carousel/Online-Hawan.jpg"
+        imageSrc="/Yoga/poster.png"
         buttonText="Join Now"
       />
       <br></br><br></br>

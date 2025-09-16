@@ -18,7 +18,7 @@ export default function ImmunityBoostingYogaPage() {
       <HeroSection
         title="Immunity Boosting Yoga"
         subtitle="Strengthen your body's natural defenses through targeted poses, cleansing breathwork, and holistic practices that support your immune system's optimal function."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/immunity.png"
         imageAlt="Detoxifying yoga twist aiding immunity"
       />
       
@@ -47,22 +47,22 @@ Yoga practices can significantly support and strengthen your immune system natur
         <Cause
           title="Lymphatic Flow Yoga"
           subtitle="Specialized poses that stimulate lymph circulation and support detoxification processes."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/immunity.png"
         />
         <Cause
           title="Breath of Fire"
           subtitle="Energizing pranayama techniques that boost circulation and immune function."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/immunity.png"
         />
         <Cause
           title="Twist & Detox Sessions"
           subtitle="Cleansing poses that massage internal organs and support natural detoxification."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/immunity.png"
         />
         <Cause
           title="Stress Relief Yoga"
           subtitle="Relaxation practices that reduce cortisol and support immune system balance."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/immunity.png"
         />
       </div>
       
@@ -71,7 +71,7 @@ Yoga practices can significantly support and strengthen your immune system natur
       <CourseBanner
         title="Immunity Boosting Yoga"
         subtitle="Build your body's natural fortress through mindful movement, conscious breathing, and holistic practices that strengthen your immune system from within."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/poster.png"
         buttonText="Join Now"
       />
       

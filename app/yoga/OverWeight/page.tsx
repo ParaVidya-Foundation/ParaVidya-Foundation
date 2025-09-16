@@ -18,7 +18,7 @@ export default function WeightManagementYogaPage() {
       <HeroSection
         title="Weight Management Yoga"
         subtitle="Achieve healthy weight goals through mindful movement, balanced nutrition awareness, and sustainable lifestyle practices that honor your body's natural wisdom."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/weight.png"
         imageAlt="Yoga flow supporting healthy weight"
       />
       
@@ -47,22 +47,22 @@ Healthy weight management focuses on:
         <Cause
           title="Dynamic Flow Classes"
           subtitle="Energetic yoga sequences that build strength, burn calories, and improve metabolism."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/weight.png"
         />
         <Cause
           title="Strength Building"
           subtitle="Poses that build lean muscle mass and increase metabolic rate for healthy weight management."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/weight.png"
         />
         <Cause
           title="Mindful Eating"
           subtitle="Workshops combining yoga philosophy with conscious eating practices for sustainable nutrition habits."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/weight.png"
         />
         <Cause
           title="Stress & Weight"
           subtitle="Practices that address emotional eating and stress-related weight challenges through mindfulness."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/weight.png"
         />
       </div>
       
@@ -71,7 +71,7 @@ Healthy weight management focuses on:
       <CourseBanner
         title="Weight Management Yoga"
         subtitle="Transform your relationship with your body through compassionate movement, mindful awareness, and sustainable practices that support your health goals."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/poster.png"
         buttonText="Join Now"
       />
       

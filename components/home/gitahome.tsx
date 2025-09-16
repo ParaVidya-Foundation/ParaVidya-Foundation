@@ -54,9 +54,12 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
   }
 
   return (
-    <section className="w-full flex justify-center items-center py-6 md:py-10 px-4">
+    <section className="w-full flex justify-center items-center py-4 sm:py-6 md:py-10 px-2 sm:px-4">
       <div
-        className={`relative w-[85%] max-w-7xl h-[65vh] md:h-[75vh] min-h-[360px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl flex items-center ${poppins.className}`}
+        className={`relative w-[95%] sm:w-[90%] lg:w-[85%] max-w-7xl 
+          h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh] 
+          min-h-[280px] rounded-2xl sm:rounded-[2rem] lg:rounded-[3rem] 
+          overflow-hidden shadow-xl flex items-center ${poppins.className}`}
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -75,7 +78,10 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
               className="object-cover"
               priority={current === 0}
               quality={90}
-              sizes="100vw"
+              sizes="(max-width: 640px) 100vw,
+                     (max-width: 1024px) 90vw,
+                     (max-width: 1280px) 80vw,
+                     75vw"
               onLoad={() => handleImageLoad(current)}
               onError={() => handleImageError(current)}
             />
@@ -86,21 +92,22 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
             {/* Loading indicator */}
             {!loadedImages.has(current) && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
               </div>
             )}
           </motion.div>
         </AnimatePresence>
 
         {/* Text + Button */}
-        <div className="relative z-10 px-8 md:px-14 lg:px-20 max-w-[520px] md:max-w-[640px]">
+        <div className="relative z-10 px-4 sm:px-6 md:px-10 lg:px-14 max-w-[90%] sm:max-w-[520px] md:max-w-[640px]">
           {slides[current].subtitle && (
             <motion.p
               key={`subtitle-${current}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-lg md:text-xl lg:text-2xl text-white font-medium leading-relaxed drop-shadow-lg"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 
+                         text-white font-medium leading-relaxed drop-shadow-lg"
             >
               {slides[current].subtitle}
             </motion.p>
@@ -115,7 +122,10 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
             >
               <Link href={slides[current].buttonLink} passHref>
                 <button
-                  className="mt-6 px-7 py-3 rounded-full bg-white text-black font-semibold text-base md:text-lg shadow-md hover:bg-gray-100 transition-all duration-300"
+                  className="mt-4 sm:mt-6 px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 
+                             rounded-full bg-white text-black font-semibold 
+                             text-sm sm:text-base md:text-lg shadow-md 
+                             hover:bg-gray-100 transition-all duration-300"
                   aria-label={slides[current].buttonText}
                 >
                   {slides[current].buttonText}
@@ -127,12 +137,12 @@ const GitaHome: React.FC<GitaHomeProps> = ({ slides }) => {
 
         {/* Navigation dots */}
         {slides.length > 1 && (
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+          <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   current === index ? "bg-white" : "bg-white/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

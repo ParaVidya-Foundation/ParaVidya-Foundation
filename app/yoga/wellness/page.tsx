@@ -18,7 +18,7 @@ export default function WellnessYogaPage() {
       <HeroSection
         title="Wellness Yoga"
         subtitle="A holistic blend of movement, breath, and stillness to nurture vitality, balance, and inner connection—at every age and stage of life's journey."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/wellness.png"
         imageAlt="Gentle yoga practice symbolizing holistic wellness"
       />
       
@@ -40,22 +40,22 @@ Yoga serves as a comprehensive wellness practice that addresses all these dimens
         <Cause
           title="Gentle Flow Classes"
           subtitle="Accessible yoga sequences designed for all levels, promoting strength, flexibility, and relaxation."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/wellness.png"
         />
         <Cause
           title="Mindfulness Integration"
           subtitle="Meditation and breathing practices that enhance mental clarity and emotional well-being."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/wellness.png"
         />
         <Cause
           title="Lifestyle Wellness"
           subtitle="Holistic workshops covering nutrition, sleep, stress management, and sustainable living practices."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/wellness.png"
         />
         <Cause
           title="Community Connection"
           subtitle="Group practices that foster social wellness and shared healing experiences."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/wellness.png"
         />
       </div>
       
@@ -64,7 +64,7 @@ Yoga serves as a comprehensive wellness practice that addresses all these dimens
       <CourseBanner
         title="Wellness Yoga"
         subtitle="Embrace a comprehensive approach to health and happiness through mindful movement, conscious living, and practices that nurture your whole being."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/poster.png"
         buttonText="Join Now"
       />
       

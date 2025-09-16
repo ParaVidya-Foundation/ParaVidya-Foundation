@@ -18,7 +18,7 @@ export default function DepressionSupportYogaPage() {
       <HeroSection
         title="Depression Support Yoga"
         subtitle="Gentle movement, conscious breathing, and mindful awareness practices designed to support emotional healing and cultivate inner light during challenging times."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/depression.png"
         imageAlt="Restorative yoga pose with calm ambiance"
       />
       
@@ -41,22 +41,22 @@ Depression can be caused by biological, psychological, and social factors. It's 
         <Cause
           title="Gentle Movement Therapy"
           subtitle="Soft, nurturing yoga practices that gently energize and uplift your spirit."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/depression.png"
         />
         <Cause
           title="Breath of Life Sessions"
           subtitle="Pranayama techniques that help regulate mood and increase energy naturally."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/depression.png"
         />
         <Cause
           title="Mindfulness Circles"
           subtitle="Group meditation and mindfulness practices for shared healing and support."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/depression.png"
         />
         <Cause
           title="Restorative Healing"
           subtitle="Deeply supportive poses that nurture your nervous system and promote emotional balance."
-          imageSrc="/placeholder.jpg"
+          imageSrc="/Yoga/depression.png"
         />
       </div>
       
@@ -65,7 +65,7 @@ Depression can be caused by biological, psychological, and social factors. It's 
       <CourseBanner
         title="Depression Support Yoga"
         subtitle="Find your inner light through gentle movement, conscious breathing, and compassionate self-care practices designed to support your healing journey."
-        imageSrc="/placeholder.jpg"
+        imageSrc="/Yoga/poster.png"
         buttonText="Join Now"
       />
       

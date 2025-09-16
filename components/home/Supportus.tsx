@@ -89,7 +89,7 @@ const SupportUs = () => {
         className="absolute top-1/2 -right-[15%] -translate-y-1/2 w-[55%] md:w-[45%] lg:w-[40%] pointer-events-none"
       >
         <Image
-          src="/right.png"
+          src="/Right.png"
           alt="Right Hand"
           width={1200}
           height={1200}

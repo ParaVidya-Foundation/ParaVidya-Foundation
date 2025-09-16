@@ -4,9 +4,9 @@ import Marquee from "@/components/home/marquee"
 import NGOSocietyImpact from "@/components/home/NGOSocietyImpact"
 import SupportUs from "@/components/home/Supportus"
 import { Metadata } from "next"
-import PaintReveal from "../components/home/Paintreveal"
 import KaramkandHome from "@/components/home/Karamkandhome"
 import GitaHome from "@/components/home/gitahome"
+import YogaHome from "@/components/home/yogahome"
 
 export const metadata: Metadata = {
   title: "Spiritual Wellness & Yoga Courses | ParaVidya Foundation",
@@ -82,11 +82,6 @@ export default function HomePage() {
       <KaramkandHome />
       <DonationSection />
       <GitaHome slides={slides} />
-      <PaintReveal
-        imageSrc="/Logo.png"
-        title="Dharmo Rakshati Rakshitah"
-        subtitle="They say dharma protects its protector. Experience firsthand how the most ancient Vedic traditions nurture your soul."
-      />
       <SupportUs />
     </>
   )
