@@ -12,9 +12,25 @@ type VerticalImageLoopProps = {
 };
 
 const DEFAULT_COLS: string[][] = [
-  ["/Carousel/About-us.jpg", "/Carousel/Navgrah-Shanti.jpg", "/Carousel/Online-Hawan.jpg"],
-  ["/Carousel/Your-One-Stop-for-Sacred-Rituals.jpg", "/Logo.png", "/Havan.png"],
-  ["/SmallCarousel/gita.png", "/SmallCarousel/gita1.png", "/SmallCarousel/gita2.png"],
+  [
+    "/makingchange/community-outreach-1.jpeg",
+    "/makingchange/education-initiative-1.JPG", 
+    "/makingchange/social-impact-1.jpeg",
+    "/makingchange/volunteer-work-1.JPG",
+
+  ],
+  [
+    "/makingchange/community-service-1.jpeg",
+    "/makingchange/charity-event-1.JPG",
+    "/makingchange/ngo-activities-1.jpeg",
+
+  ],
+  [
+    "/makingchange/social-change-1.jpeg",
+    "/makingchange/community-support-1.jpeg",
+    "/makingchange/foundation-work-1.jpeg",
+
+  ],
 ];
 
 const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
