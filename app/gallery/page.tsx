@@ -63,7 +63,7 @@ export default function Gallery() {
   const paginatedImages = images.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <main className="relative min-h-screen bg-gray-900 text-white flex flex-col items-center p-8">
+    <main className="relative min-h-screen text-black flex flex-col items-center p-8">
       <h1 className="text-4xl font-bold mb-8">Gallery</h1>
 
       {/* Image Grid */}
