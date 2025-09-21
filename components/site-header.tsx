@@ -283,7 +283,7 @@ Dharma          </Link>
           <Link href="/about-us" onClick={closeMenu}>
             About Us
           </Link>
-          <Link href="/donation" onClick={closeMenu}>
+          <Link href="/donate" onClick={closeMenu}>
             Donation
           </Link>
         </nav>

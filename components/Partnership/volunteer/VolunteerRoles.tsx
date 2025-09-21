@@ -1,0 +1,138 @@
+"use client";
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+type Role = {
+  title: string;
+  description: string;
+  details: string;
+  image: string;
+  link: string;
+};
+
+const roles: Role[] = [
+  {
+    title: "Digital Marketing",
+    description: "Promote our mission through campaigns, SEO, and social media outreach.",
+    details: "Work with our media team to design campaigns that reach thousands and inspire communities worldwide.",
+    image: "/roles/digital.jpg",
+    link: "/roles/digital-marketing",
+  },
+  {
+    title: "Karamkaand & Havan",
+    description: "Assist in organizing traditional rituals, puja, and cultural practices.",
+    details: "Preserve ancient wisdom by facilitating rituals and supporting spiritual events.",
+    image: "/roles/havan.jpg",
+    link: "/roles/karamkand-havan",
+  },
+  {
+    title: "Graphic Designing",
+    description: "Create impactful designs for campaigns, books, and digital platforms.",
+    details: "Your creativity will shape our books, social posts, and awareness campaigns.",
+    image: "/roles/design.jpg",
+    link: "/roles/graphic-designing",
+  },
+  {
+    title: "Content Writing",
+    description: "Write articles, blogs, and creative pieces to share our mission.",
+    details: "From blogs to research notes, help us communicate stories that inspire change.",
+    image: "/roles/content.jpg",
+    link: "/roles/content-writing",
+  },
+  {
+    title: "Backend Developer",
+    description: "Build scalable backend services and APIs to power our platforms.",
+    details: "Collaborate on Node.js/Java/Spring services and optimize database structures.",
+    image: "/roles/backend.jpg",
+    link: "/roles/backend-developer",
+  },
+  {
+    title: "Frontend Developer",
+    description: "Design responsive UIs and bring our vision to life with React/Next.js.",
+    details: "Work with modern frameworks to create delightful and accessible interfaces.",
+    image: "/roles/frontend.jpg",
+    link: "/roles/frontend-developer",
+  },
+  {
+    title: "App Developer",
+    description: "Develop mobile apps to make our services accessible everywhere.",
+    details: "Help us launch Android/iOS apps with smooth performance and sleek design.",
+    image: "/roles/app.jpg",
+    link: "/roles/app-developer",
+  },
+  {
+    title: "Book Writing & Research",
+    description: "Contribute to mythological and astrological research publications.",
+    details: "Assist in compiling research, editing, and publishing insightful works.",
+    image: "/roles/book.jpg",
+    link: "/roles/book-writing",
+  },
+  {
+    title: "Ground Marketing",
+    description: "Help us connect with communities, spreading awareness offline.",
+    details: "Be our voice on the ground — organize events and reach local communities.",
+    image: "/roles/ground.jpg",
+    link: "/roles/ground-marketing",
+  },
+];
+
+export default function VolunteerRoles() {
+  return (
+    <section className="w-full px-6 py-16">
+      {/* Title */}
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-3xl md:text-5xl font-extrabold text-center mb-16 font-poppins text-gray-900"
+      >
+        Join Our Mission
+      </motion.h2>
+
+      {/* Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        {roles.map((role, idx) => (
+          <motion.div
+            key={idx}
+            whileHover={{ y: -6 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden border border-gray-200 flex flex-col md:flex-row"
+          >
+            {/* Image */}
+            <div className="relative w-full md:w-1/3 h-52 md:h-auto">
+              <Image
+                src={role.image}
+                alt={role.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-6 flex flex-col justify-between flex-1">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800 font-poppins">
+                  {role.title}
+                </h3>
+                <p className="mt-3 text-gray-700 text-base font-inter">
+                  {role.description}
+                </p>
+                <p className="mt-2 text-gray-500 text-sm font-inter">
+                  {role.details}
+                </p>
+              </div>
+
+              {/* Button */}
+              <a
+                href={role.link}
+                className="mt-6 inline-block px-6 py-2 rounded-lg border border-orange-500 text-orange-600 font-medium text-sm hover:bg-orange-500 hover:text-white transition-all duration-300 text-center self-start"
+              >
+                Apply Now
+              </a>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}

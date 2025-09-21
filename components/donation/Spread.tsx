@@ -1,27 +1,84 @@
-import Image from 'next/image';
+// components/SupportOptions.tsx
 
-const HowToContribute = () => {
-  return (
-    <div className="relative w-full h-[500px] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/card.png')" }}>
-      <div className="text-center p-4">
-        <h1 className="text-4xl font-serif text-brown-800">How can you contribute?</h1>
-        <div className="flex justify-center space-x-6 mt-8">
-          <div className="text-center">
-            <h2 className="text-xl font-serif text-brown-700">Donate</h2>
-            <p className="text-base font-serif text-brown-600">Discover the three levels of donations depending on your level of commitment.</p>
-          </div>
-          <div className="text-center">
-            <h2 className="text-xl font-serif text-brown-700">Spread the word</h2>
-            <p className="text-base font-serif text-brown-600">Buy the super useful, inexpensive and stunning booklet on Sadhana for personal use and gifting.</p>
-          </div>
-          <div className="text-center">
-            <h2 className="text-xl font-serif text-brown-700">Corporate Sponsorship</h2>
-            <p className="text-base font-serif text-brown-600">Explore the very unique opportunity of sponsoring our noble cause and see how it can benefit your organization.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+import Image from "next/image";
+import { Playfair_Display, Inter } from "next/font/google";
+
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400"] });
+
+type Option = {
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
 };
 
-export default HowToContribute;
+const options: Option[] = [
+  {
+    title: "Donate",
+    description:
+      "Discover the three levels of donations depending on your level of commitment. Help us help you.",
+    icon: "/icons/lotus1.svg",
+    link: "/donate",
+  },
+  {
+    title: "Spread the word",
+    description:
+      "Buy the super useful, inexpensive and stunning booklet on Sadhana for personal use and gifting.",
+    icon: "/icons/lotus2.svg",
+    link: "/about-us",
+  },
+  {
+    title: "Corporate Sponsorship",
+    description:
+      "Explore the very unique opportunity of sponsoring our noble cause and see how it can benefit your organization.",
+    icon: "/icons/lotus3.svg",
+    link: "/corporate",
+  },
+];
+
+export default function SupportOptions() {
+  return (
+    <section className="py-16">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+        {options.map((opt, index) => (
+          <a href={opt.link} key={index}
+            
+            className="relative w-full max-w-sm mx-auto overflow-hidden transition-transform hover:scale-105"
+          >
+            {/* Card background image */}
+            <Image
+              src="/Card.png"
+              alt="card background"
+              width={300}
+              height={375}
+              className="w-full h-auto"
+              priority
+            />
+
+            {/* Overlay content on top of image */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 py-8">
+              <Image
+                src={opt.icon}
+                alt={opt.title}
+                width={50}
+                height={50}
+                className="mb-4"
+              />
+              <h3
+                className={`${playfair.className} text-xl sm:text-2xl font-semibold mb-3 text-white drop-shadow`}
+              >
+                {opt.title}
+              </h3>
+              <p
+                className={`${inter.className} text-sm sm:text-base leading-relaxed text-gray-100`}
+              >
+                {opt.description}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
