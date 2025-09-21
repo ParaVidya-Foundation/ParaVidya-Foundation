@@ -7,6 +7,7 @@ import { Metadata } from "next"
 import KaramkandHome from "@/components/home/Karamkandhome"
 import GitaHome from "@/components/home/gitahome"
 import YogaHome from "@/components/home/yogahome"
+import NewsletterSection from "@/components/home/NewsletterSection"
 
 export const metadata: Metadata = {
   title: "Spiritual Wellness & Yoga Courses | ParaVidya Foundation",
@@ -81,8 +82,10 @@ export default function HomePage() {
       <NGOSocietyImpact />
       <KaramkandHome />
       <DonationSection />
+      
       <GitaHome slides={slides} />
       <SupportUs />
+      <NewsletterSection />
     </>
   )
 }
