@@ -6,6 +6,7 @@ import Definition from "@/components/yoga/definition"
 import Prevention from "@/components/yoga/prevention"
 import YogaHelp from "@/components/yoga/yogahelp"
 import Cause from "@/components/yoga/cause"
+import FeaturedVideos from "@/components/ui/FeaturedVideos"
 
 export const metadata: Metadata = {
   title: "Anger Management Yoga Course – Transform Reactivity into Resilience",
@@ -113,6 +114,36 @@ export default function AngerManagementYogaPage() {
 - Building inner strength through regular practice
 - Enhancing emotional resilience
 - Promoting mindfulness and awareness" />
-    </div>
+   
+
+<FeaturedVideos
+headline="Featured Videos"
+description="Explore timeless wisdom on health, wellness, yoga, and more — all in one place."
+exploreLink="https://www.youtube.com/@ParaVidyaFoundation"
+videos={[
+  {
+    id: "VIDEO_ID_1",
+    title: "ParaVidya: Daily Sadhna Practices",
+
+    thumbnail: "/Carousel/About-us.jpg",
+  },
+  {
+    id: "VIDEO_ID_2",
+    title: "ParaVidya: Mantra and Meditation Sadhna",
+
+    thumbnail: "/Carousel/Navgrah-Shanti.jpg",
+  },
+  {
+    id: "VIDEO_ID_3",
+    title: "ParaVidya Foundation: Seva and Spiritual Service",
+
+    thumbnail: "/Carousel/Online-Hawan.jpg",
+  },
+]}
+/>
+<br></br><br></br>
+
+
+ </div>
   )
 }
