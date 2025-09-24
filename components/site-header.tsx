@@ -259,7 +259,7 @@ Dharma          </Link>
                 <Link href="/Partnership/corporate" onClick={closeMenu}>
                   Corporate 
                 </Link>
-                <Link href="/Partnership/Donation" onClick={closeMenu}>
+                <Link href="/Partnership/Donate" onClick={closeMenu}>
                   Donation 
                 </Link>
                 <Link href="/Partnership/Events" onClick={closeMenu}>

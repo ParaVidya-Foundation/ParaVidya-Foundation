@@ -52,34 +52,33 @@ export default function AngerManagementYogaPage() {
         imageSrc="/Yoga/anger.png"
         imageAlt="Grounded yoga posture promoting calm and control"
       />
-<Definition title="What is Anger ?" description="Anger is a natural emotion that we all experience. It is a response to a situation that we perceive as unfair, unjust, or threatening. Anger can be triggered by a variety of factors, including:
-
-- Personal experiences
-- External stimuli
-- Social and cultural factors
-- Biological factors" />
+      <Definition 
+        title="Understanding Anger and Emotional Regulation" 
+        description="Anger is a natural human emotion that arises in response to perceived threats, frustration, injustice, or hurt. While anger serves important functions - alerting us to problems and motivating protective action - chronic or poorly managed anger can damage relationships, impair judgment, and negatively impact physical and mental health. Anger manifests through physiological changes including increased heart rate, muscle tension, elevated stress hormones, and heightened energy. The key to healthy anger management lies not in suppressing this emotion, but in developing awareness, emotional regulation skills, and constructive expression. Yoga for anger management offers powerful tools including breathwork, mindful movement, and meditation that help transform reactive anger into conscious, purposeful responses." 
+      />
 
 <div className="flex flex-row gap-4 justify-center">
-  <Cause
-    title="Anger Management Workshop"
-    subtitle="Learn techniques to control and understand your emotions effectively."
-          imageSrc="/Yoga/anger.png"
-  />
-  <Cause
-    title="Anger Management Workshop"
-    subtitle="Learn techniques to control and understand your emotions effectively."
-          imageSrc="/Yoga/anger.png"
-  />
-  <Cause
-    title="Anger Management Workshop"
-    subtitle="Learn techniques to control and understand your emotions effectively."
-          imageSrc="/Yoga/anger.png"
-  />
-  <Cause
-    title="Anger Management Workshop"
-    subtitle="Learn techniques to control and understand your emotions effectively."
-          imageSrc="/Yoga/anger.png"
-  />
+        <div className="max-w-4xl mx-auto bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-lg p-6 shadow-md">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Common Triggers and Causes of Anger</h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white p-4 rounded-lg border border-red-100">
+              <h4 className="font-semibold text-red-800 mb-2">1. Frustration and Blocked Goals</h4>
+              <p className="text-gray-700 text-sm">When our expectations aren't met, plans are disrupted, or we encounter obstacles to our goals, frustration can quickly escalate into anger. This is especially common when we feel powerless to change the situation.</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg border border-red-100">
+              <h4 className="font-semibold text-red-800 mb-2">2. Stress, Overwhelm, and Fatigue</h4>
+              <p className="text-gray-700 text-sm">High stress levels, chronic overwhelm, sleep deprivation, and physical or emotional exhaustion lower our tolerance for challenges and make us more reactive to triggers. When our resources are depleted, anger becomes a more likely response.</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg border border-red-100">
+              <h4 className="font-semibold text-red-800 mb-2">3. Perceived Injustice and Disrespect</h4>
+              <p className="text-gray-700 text-sm">Feeling mistreated, disrespected, misunderstood, or unfairly judged often triggers anger as a protective response. This includes experiences of discrimination, criticism, or feeling that our boundaries have been violated.</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg border border-red-100">
+              <h4 className="font-semibold text-red-800 mb-2">4. Unresolved Past Experiences</h4>
+              <p className="text-gray-700 text-sm">Unhealed trauma, unresolved conflicts, suppressed emotions, or negative past experiences can create emotional sensitivity that makes current situations trigger disproportionate anger responses. Past hurts can amplify present frustrations.</p>
+            </div>
+          </div>
+        </div>
 </div>
 <br></br><br></br>
       <CourseBanner
@@ -89,31 +88,64 @@ export default function AngerManagementYogaPage() {
         buttonText="Join Now"
       />
       <br></br><br></br>
-      <Prevention title="Prevention" points={[
-    {
-      title: "Self-Awareness",
-      description: "Recognize early signs of anger, such as increased heart rate or tension, and take a moment to breathe deeply to regain control, helping you respond rather than react.",
-    },
-    {
-      title: "Effective Communication",
-      description: "Express your feelings calmly and assertively instead of bottling them up, reducing misunderstandings that can escalate into anger.",
-    },
-    {
-      title: "Stress Management",
-      description: "Engage in regular activities like meditation or exercise to relieve stress, preventing it from building up and triggering anger outbursts.",
-    },
-    {
-      title: "Perspective Shift",
-      description: "Practice reframing situations by considering others' viewpoints or the bigger picture, which can diffuse irritation and promote patience.",
-    },
-  ]} 
-  />
+          <Prevention 
+        title="Anger Prevention and Management Strategies" 
+        points={[
+          {
+            title: "1. Practice Mindful Breathing and Pause Techniques",
+            description: "When anger begins to rise, immediately engage in deep, slow breathing - try the 4-7-8 technique (inhale for 4, hold for 7, exhale for 8). This activates the parasympathetic nervous system, reduces stress hormones, and creates space between trigger and response, allowing for more thoughtful reactions rather than impulsive outbursts."
+          },
+          {
+            title: "2. Develop Trigger Awareness and Early Recognition",
+            description: "Build self-awareness by identifying your personal anger triggers - specific people, situations, words, or circumstances that tend to upset you. Notice early warning signs like muscle tension, increased heart rate, or irritability. Early recognition allows you to implement coping strategies before anger escalates beyond control."
+          },
+          {
+            title: "3. Establish Regular Stress-Relief and Relaxation Practices",
+            description: "Incorporate daily stress-management activities like yoga, meditation, progressive muscle relaxation, or nature walks. These practices reduce baseline stress levels, increase emotional resilience, and provide healthy outlets for releasing accumulated tension before it transforms into anger."
+          },
+          {
+            title: "4. Develop Healthy Communication and Conflict Resolution Skills",
+            description: "Learn to express feelings assertively but respectfully using 'I' statements, active listening, and empathetic communication. Practice staying calm during discussions, taking breaks when needed, and focusing on solutions rather than blame. Good communication can transform potential conflicts into productive conversations."
+          }
+        ]} 
+      />
 
-<YogaHelp title="How Yoga is Helpful for Anger Management ?" description="Yoga helps manage anger by:
+      <YogaHelp 
+        title="How Yoga Transforms Anger into Emotional Balance" 
+        description="Yoga offers a comprehensive, scientifically-backed approach to anger management that addresses the physical, mental, and emotional aspects of this powerful emotion:
 
-- Building inner strength through regular practice
-- Enhancing emotional resilience
-- Promoting mindfulness and awareness" />
+**Physiological Anger Management:**
+- **Nervous System Regulation**: Yoga activates the parasympathetic nervous system, countering the fight-or-flight response that fuels anger. Regular practice trains your body to return to calm more quickly after activation
+- **Stress Hormone Balance**: Pranayama and asanas reduce cortisol and adrenaline levels, preventing the hormonal cascade that intensifies angry reactions
+- **Physical Tension Release**: Anger creates physical tension in jaw, shoulders, and core. Yoga poses systematically release this stored tension, reducing the physical component of anger
+- **Heart Rate Variability**: Breathing practices improve heart rate variability, enhancing emotional regulation and resilience to stress
+
+**Mental and Emotional Transformation:**
+- **Mindful Awareness**: Yoga develops the ability to observe anger as it arises without immediately reacting, creating space for conscious choice rather than impulsive response
+- **Trigger Recognition**: Regular practice enhances self-awareness, helping you identify anger triggers earlier when they're easier to manage
+- **Emotional Regulation**: Meditation and mindfulness practices strengthen the prefrontal cortex, improving your ability to regulate emotions and make thoughtful decisions
+- **Perspective Shifting**: Yoga philosophy teaches non-attachment and acceptance, helping you respond to challenging situations with greater equanimity
+
+**Practical Anger Management Tools:**
+- **Immediate Response Techniques**: Breath-based practices provide instant tools for managing anger in the moment - techniques you can use anywhere, anytime
+- **Daily Stress Prevention**: Regular practice reduces baseline stress levels, making you less likely to reach anger thresholds
+- **Energy Transformation**: Dynamic yoga sequences provide healthy outlets for intense energy, channeling anger's power into constructive movement
+- **Compassion Cultivation**: Heart-opening poses and loving-kindness meditation develop empathy and compassion, naturally reducing anger and resentment
+
+**Long-term Benefits:**
+- **Increased Patience**: Regular practice develops greater tolerance for frustration and delays in gratification
+- **Improved Relationships**: Better emotional regulation leads to healthier communication and stronger relationships
+- **Enhanced Resilience**: Yoga builds mental and emotional resilience, helping you bounce back from challenges without carrying anger
+- **Inner Peace**: Over time, practice cultivates a deep sense of inner calm that becomes your default state rather than reactivity
+
+**Specific Yoga Practices for Anger:**
+- **Cooling Pranayama**: Techniques like Sheetali and Sheetkari literally cool the body and calm fiery emotions
+- **Grounding Poses**: Standing poses and forward folds help channel intense energy downward and create stability
+- **Hip Openers**: These poses release stored emotions and trauma that may fuel anger patterns
+- **Meditation**: Regular meditation practice strengthens emotional regulation and develops equanimity
+
+By addressing anger through body, breath, and mind, yoga provides a complete toolkit for transforming this challenging emotion into emotional wisdom and balanced responses." 
+      />
    
 
 <FeaturedVideos
@@ -141,9 +173,6 @@ videos={[
   },
 ]}
 />
-<br></br><br></br>
-
-
- </div>
+    </div>
   )
 }

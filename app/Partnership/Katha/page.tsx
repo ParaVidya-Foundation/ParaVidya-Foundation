@@ -1,8 +1,16 @@
 export default function Katha() {
   return (
-    <main>
-      <h1>Hello, Next.js! 🚀</h1>
-      <p>This is a basic Next.js page.</p>
-    </main>
+   <>
+   <div className="top-img-about">
+        <img
+          src={"/Carousel/Online-Hawan.jpg"}
+          alt="Mantra Workshops at Para Vidya"
+          className="w-full h-auto object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      
+   </>
   );
 }

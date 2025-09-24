@@ -48,7 +48,7 @@ export default function SupportOptions() {
           >
             {/* Card background image */}
             <Image
-              src="/Card.png"
+              src="/card.png"
               alt="card background"
               width={300}
               height={375}
