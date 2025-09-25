@@ -7,6 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    domains: ['img.youtube.com', 'i.ytimg.com'],
     remotePatterns: [
       {
         protocol: 'https',

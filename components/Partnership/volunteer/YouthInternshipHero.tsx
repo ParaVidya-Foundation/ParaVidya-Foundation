@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function YouthInternshipHero() {
   return (
@@ -30,7 +31,7 @@ export default function YouthInternshipHero() {
         </span>
       </motion.p>
 
-      {/* Button */}
+      <Link href="/Partnership/JoinourNGO/Internship">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -41,6 +42,7 @@ export default function YouthInternshipHero() {
           Get Started
         </button>
       </motion.div>
+      </Link>
     </section>
   );
 }

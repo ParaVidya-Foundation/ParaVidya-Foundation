@@ -8,8 +8,9 @@ import YogaHelp from "@/components/yoga/yogahelp"
 import Cause from "@/components/yoga/cause"
 
 export const metadata: Metadata = {
-  title: "Stress Management Yoga – Para Vidya",
-  description: "Release tension with calming breath, gentle flows, and mindfulness to restore inner ease and emotional balance.",
+  title: "Stress Management Yoga for Anxiety Relief – Yoga for Stress | Para Vidya",
+  description: "Reduce stress naturally with stress management yoga. Learn calming yoga poses, anxiety-relieving breathwork, and mindfulness techniques for emotional balance and inner peace. Perfect for beginners!",
+  keywords: "stress management yoga, yoga for stress relief, yoga for anxiety, stress relief techniques, pranayama for stress, meditation for stress, yoga for beginners, relaxation yoga, mindfulness for stress, yoga therapy",
 }
 
 export default function StressManagementYogaPage() {
@@ -23,39 +24,32 @@ export default function StressManagementYogaPage() {
       />
       
       <Definition 
-        title="What is Stress?" 
-        description="Stress is your body's natural response to challenges and demands. While some stress can be motivating, chronic stress can negatively impact your physical and mental well-being. Common sources include:
-
-- Work pressure and deadlines
-- Personal relationships and family dynamics
-- Financial concerns and life transitions
-- Health issues and uncertainty
-- Technology overload and information overwhelm
-
-Understanding stress helps you recognize its signs and implement effective management strategies." 
+        title="Understanding Stress and Its Impact on Well-being" 
+        description="Stress is your body's natural response to challenges, pressures, or perceived threats, triggering the release of hormones like cortisol and adrenaline to prepare you for action. While short-term stress can be motivating and protective, chronic stress becomes harmful to both physical and mental health. Prolonged stress can lead to fatigue, irritability, sleep disturbances, anxiety, digestive issues, weakened immunity, and increased risk of serious health conditions like heart disease and depression. Common stress sources include work pressure, financial concerns, relationship conflicts, health issues, major life changes, and daily overwhelm. Effective stress management requires a holistic approach that calms both mind and body. Yoga for stress relief offers powerful tools including gentle movement, conscious breathing, meditation, and mindfulness practices that naturally reduce stress hormones, activate the relaxation response, and build long-term resilience to life's challenges." 
       />
 
       <div className="flex flex-row gap-4 justify-center">
-        <Cause
-          title="Gentle Flow Sessions"
-          subtitle="Slow, mindful movements that release tension and promote relaxation."
-          imageSrc="/Yoga/stressed.png"
-        />
-        <Cause
-          title="Breathwork Workshops"
-          subtitle="Learn powerful breathing techniques to calm your nervous system instantly."
-          imageSrc="/Yoga/stressed.png"
-        />
-        <Cause
-          title="Meditation Circles"
-          subtitle="Group meditation sessions for shared peace and collective healing."
-          imageSrc="/Yoga/stressed.png"
-        />
-        <Cause
-          title="Restorative Yoga"
-          subtitle="Deep relaxation practices using props to fully support your body."
-          imageSrc="/Yoga/stressed.png"
-        />
+        <div className="max-w-4xl mx-auto bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 rounded-lg p-6 shadow-md">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Common Sources of Chronic Stress</h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white p-4 rounded-lg border border-indigo-100">
+              <h4 className="font-semibold text-indigo-800 mb-2">1. Work and Career Pressures</h4>
+              <p className="text-gray-700 text-sm">Demanding deadlines, heavy workloads, job insecurity, workplace conflicts, long hours, lack of work-life balance, and career uncertainty create sustained mental and physical strain that can lead to burnout and chronic stress-related health issues.</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg border border-indigo-100">
+              <h4 className="font-semibold text-indigo-800 mb-2">2. Financial Concerns and Economic Stress</h4>
+              <p className="text-gray-700 text-sm">Money worries including debt, insufficient income, unexpected expenses, job loss, retirement planning, and economic instability create persistent anxiety and can significantly impact sleep, relationships, and overall quality of life.</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg border border-indigo-100">
+              <h4 className="font-semibold text-indigo-800 mb-2">3. Relationship and Social Challenges</h4>
+              <p className="text-gray-700 text-sm">Interpersonal conflicts with family, friends, or romantic partners; social isolation; caregiving responsibilities; divorce or separation; and communication difficulties create emotional stress that affects mental health and physical well-being.</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg border border-indigo-100">
+              <h4 className="font-semibold text-indigo-800 mb-2">4. Health and Life Transition Stressors</h4>
+              <p className="text-gray-700 text-sm">Chronic illness, injury, aging concerns, major life changes (moving, marriage, parenthood), loss and grief, and worry about loved ones' health represent significant sources of psychological stress that require adaptive coping strategies.</p>
+            </div>
+          </div>
+        </div>
       </div>
       
       <br></br><br></br>
@@ -70,36 +64,30 @@ Understanding stress helps you recognize its signs and implement effective manag
       <br></br><br></br>
       
       <Prevention 
-        title="Stress Prevention Techniques" 
+        title="Comprehensive Stress Prevention and Management" 
         points={[
           {
-            title: "Daily Mindfulness Practice",
-            description: "Start each day with 10 minutes of meditation or mindful breathing to build resilience and maintain emotional balance throughout challenging situations.",
+            title: "Master Stress-Relief Breathing Techniques (Pranayama)",
+            description: "Develop a daily pranayama practice using techniques like Anulom Vilom (Alternate Nostril Breathing), Bhramari (Humming Bee Breath), and extended exhale breathing (4:8 ratio). These practices immediately activate the parasympathetic nervous system, reduce cortisol levels, and create a physiological state of calm that you can access anytime, anywhere."
           },
           {
-            title: "Healthy Boundaries",
-            description: "Learn to say no to excessive commitments and create clear boundaries between work and personal time, protecting your mental and emotional space.",
+            title: "Build Physical and Mental Resilience with Yoga",
+            description: "Practice gentle yoga sequences including Surya Namaskar (Sun Salutations), grounding poses like Tadasana (Mountain Pose), and restorative poses like Balasana (Child's Pose). Combined with proper nutrition and adequate sleep, this builds physical strength, mental clarity, and emotional resilience to handle daily stressors more effectively."
           },
           {
-            title: "Regular Movement",
-            description: "Engage in daily gentle exercise, yoga, or walking to release tension, boost endorphins, and maintain physical and mental well-being.",
+            title: "Cultivate Mindful Organization and Time Management",
+            description: "Apply yogic principles of mindfulness to daily planning and task management. Practice single-tasking with full presence, set realistic priorities, take regular mindful breaks, and use meditation to clear mental clutter. This approach reduces overwhelm and increases productivity while maintaining inner calm."
           },
           {
-            title: "Quality Sleep Routine",
-            description: "Establish consistent sleep patterns and create a calming bedtime ritual to ensure restorative rest, which is essential for stress recovery.",
-          },
+            title: "Create Regular Relaxation and Recovery Rituals",
+            description: "Establish daily practices like Yoga Nidra (20-30 minutes), Shavasana after physical activity, walking meditation in nature, or guided relaxation. These practices help discharge accumulated stress, restore nervous system balance, and cultivate deep inner peace that becomes your baseline state rather than stress."
+          }
         ]} 
       />
 
       <YogaHelp 
-        title="How Yoga Helps with Stress Management?" 
-        description="Yoga provides a comprehensive approach to stress relief through:
-
-- **Physical Release**: Asanas help release muscle tension and improve circulation
-- **Breath Awareness**: Pranayama techniques activate the parasympathetic nervous system
-- **Mindful Presence**: Meditation cultivates present-moment awareness and mental clarity
-- **Emotional Balance**: Regular practice builds resilience and emotional stability
-- **Self-Care Ritual**: Creates dedicated time for self-nurturing and reflection" 
+        title="How Yoga Provides Comprehensive Stress Management" 
+        description="Life can feel rushed, and stress often seems to follow us everywhere. When there’s so much to do, it’s hard to slow down. Yoga can help you find peace, balance, and clarity. Through simple poses, mindful breathing, and meditation, yoga lowers stress hormones like cortisol, soothes the nervous system, and eases tension in tired muscles. These benefits support emotional balance and mindfulness, and they can also help you sleep better. With regular practice, yoga makes it easier to handle life’s challenges calmly and with resilience, building inner strength and well-being." 
       />
     </div>
   )

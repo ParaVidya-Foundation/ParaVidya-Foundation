@@ -8,8 +8,9 @@ import YogaHelp from "@/components/yoga/yogahelp"
 import Cause from "@/components/yoga/cause"
 
 export const metadata: Metadata = {
-  title: "Wellness Yoga – Para Vidya",
-  description: "Holistic wellness through gentle yoga practices for overall health, vitality, and balanced living at every stage of life.",
+  title: "Wellness Yoga for Holistic Health – Yoga for Overall Wellness | Para Vidya",
+  description: "Achieve holistic wellness with comprehensive yoga practices for mind, body, and spirit. Learn wellness yoga poses, meditation techniques, and healthy lifestyle practices for balanced living at every age.",
+  keywords: "wellness yoga, holistic health yoga, yoga for overall wellness, yoga for beginners, healthy lifestyle yoga, mind body spirit yoga, yoga for vitality, preventive yoga, yoga for longevity, balanced living",
 }
 
 export default function WellnessYogaPage() {
@@ -23,41 +24,9 @@ export default function WellnessYogaPage() {
       />
       
       <Definition 
-        title="What is Holistic Wellness?" 
-        description="Holistic wellness is an integrated approach to health that considers the whole person—body, mind, and spirit. It's about creating balance and harmony in all aspects of your life for optimal well-being.
-
-Dimensions of wellness:
-- **Physical Wellness**: Strength, flexibility, energy, and bodily health
-- **Mental Wellness**: Clarity, focus, emotional balance, and cognitive health
-- **Spiritual Wellness**: Connection to purpose, values, and inner peace
-- **Social Wellness**: Healthy relationships and community connections
-- **Environmental Wellness**: Harmony with your surroundings and nature
-
-Yoga serves as a comprehensive wellness practice that addresses all these dimensions through mindful movement, conscious breathing, and present-moment awareness." 
+        title="Understanding Holistic Wellness and Integrated Health" 
+        description="Holistic wellness is a comprehensive approach to health that recognizes the interconnection between all aspects of your being - physical, mental, emotional, spiritual, social, and environmental. Unlike traditional health models that focus primarily on treating illness, holistic wellness emphasizes prevention, balance, and optimization of your entire life experience. This approach includes: **Physical Wellness** - maintaining a strong, flexible, and energetic body through movement, nutrition, and rest; **Mental Wellness** - cultivating mental clarity, focus, emotional stability, and cognitive resilience; **Spiritual Wellness** - connecting with your deeper purpose, values, and inner wisdom; **Social Wellness** - building meaningful relationships and contributing to community; **Environmental Wellness** - living in harmony with your surroundings and caring for the natural world. Yoga serves as an ideal practice for holistic wellness because it integrates mindful movement, conscious breathing, meditation, and present-moment awareness, creating a unified approach that supports every dimension of your well-being and helps you thrive at every stage of life." 
       />
-
-      <div className="flex flex-row gap-4 justify-center">
-        <Cause
-          title="Gentle Flow Classes"
-          subtitle="Accessible yoga sequences designed for all levels, promoting strength, flexibility, and relaxation."
-          imageSrc="/Yoga/wellness.png"
-        />
-        <Cause
-          title="Mindfulness Integration"
-          subtitle="Meditation and breathing practices that enhance mental clarity and emotional well-being."
-          imageSrc="/Yoga/wellness.png"
-        />
-        <Cause
-          title="Lifestyle Wellness"
-          subtitle="Holistic workshops covering nutrition, sleep, stress management, and sustainable living practices."
-          imageSrc="/Yoga/wellness.png"
-        />
-        <Cause
-          title="Community Connection"
-          subtitle="Group practices that foster social wellness and shared healing experiences."
-          imageSrc="/Yoga/wellness.png"
-        />
-      </div>
       
       <br></br><br></br>
       
@@ -71,38 +40,30 @@ Yoga serves as a comprehensive wellness practice that addresses all these dimens
       <br></br><br></br>
       
       <Prevention 
-        title="Holistic Wellness Practices" 
+        title="Comprehensive Wellness Strategies" 
         points={[
           {
-            title: "Daily Movement",
-            description: "Engage in regular, gentle physical activity like yoga that builds strength, flexibility, and energy while respecting your body's needs and limitations.",
+            title: "1. Meditation and Mindfulness Integration",
+            description: "Develop a consistent daily meditation practice using techniques like guided meditation, body scans, breath awareness, or mindful walking. These practices calm the nervous system, reduce stress hormones, improve emotional regulation, and enhance mental clarity. Even 10-15 minutes daily can significantly impact overall wellness and life satisfaction."
           },
           {
-            title: "Mindful Living",
-            description: "Practice present-moment awareness, meditation, and conscious decision-making to create balance and harmony in all aspects of life.",
+            title: "2. Balanced Physical Activity and Movement",
+            description: "Combine yoga with other forms of exercise like walking, swimming, strength training, or dancing to create a well-rounded fitness routine. This approach supports cardiovascular health, builds strength and flexibility, improves bone density, boosts mood through endorphin release, and maintains healthy weight and energy levels."
           },
           {
-            title: "Nourishing Choices",
-            description: "Make conscious choices about nutrition, sleep, relationships, and lifestyle that support your overall well-being and long-term health.",
+            title: "3. Nutritious Eating and Mindful Consumption",
+            description: "Focus on whole foods rich in vitamins, minerals, antioxidants, lean proteins, healthy fats, and complex carbohydrates. Practice mindful eating by paying attention to hunger cues, eating slowly, and choosing foods that nourish your body. Stay adequately hydrated and limit processed foods, excess sugar, and harmful substances."
           },
           {
-            title: "Self-Compassion",
-            description: "Cultivate kindness toward yourself, accept your limitations, and honor your body's wisdom in creating sustainable wellness practices.",
-          },
+            title: "4. Quality Sleep and Recovery Practices",
+            description: "Prioritize 7-9 hours of quality sleep nightly by maintaining consistent sleep schedules and creating a calming bedtime routine. Incorporate restorative practices like gentle yoga, deep breathing exercises, progressive muscle relaxation, or calming music to support nervous system recovery and hormonal balance."
+          }
         ]} 
       />
 
       <YogaHelp 
-        title="How Yoga Promotes Holistic Wellness?" 
-        description="Yoga offers comprehensive support for all dimensions of wellness through:
-
-- **Physical Health**: Asanas improve strength, flexibility, balance, and circulation for optimal bodily function
-- **Mental Clarity**: Meditation and breathing practices enhance focus, reduce stress, and promote emotional balance
-- **Spiritual Connection**: Yoga philosophy and practices deepen self-awareness and connection to purpose
-- **Stress Management**: Regular practice reduces cortisol, promotes relaxation, and builds resilience
-- **Better Sleep**: Yoga improves sleep quality, essential for physical and mental recovery
-- **Community Building**: Group classes create supportive relationships and shared wellness experiences
-- **Lifestyle Integration**: Yoga principles guide conscious living choices for sustainable health and happiness" 
+        title="How Yoga Creates Comprehensive Holistic Wellness" 
+        description="Yoga promotes holistic wellness by integrating the body, mind, and spirit into a balanced and harmonious system. Through physical postures (asanas), it strengthens muscles, improves flexibility, boosts circulation, and supports overall physical health. Breathing exercises (pranayama) and meditation calm the mind, reduce stress, enhance focus, and promote emotional stability. At a deeper level, yoga cultivates self-awareness, mindfulness, and spiritual growth, enabling individuals to connect with themselves and the world around them. Additionally, by encouraging healthy routines, mindful living, and preventive practices, yoga supports long-term well-being, resilience, and a vibrant, balanced lifestyle." 
       />
     </div>
   )

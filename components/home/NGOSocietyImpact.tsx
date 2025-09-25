@@ -1,8 +1,8 @@
+
 "use client";
 
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import Hyperplexed from "../ui/hackglow";
 import Image from "next/image";
 
 type VerticalImageLoopProps = {
@@ -14,22 +14,19 @@ type VerticalImageLoopProps = {
 const DEFAULT_COLS: string[][] = [
   [
     "/makingchange/community-outreach-1.jpeg",
-    "/makingchange/education-initiative-1.JPG", 
+    "/makingchange/education-initiative-1.JPG",
     "/makingchange/social-impact-1.jpeg",
     "/makingchange/volunteer-work-1.JPG",
-
   ],
   [
     "/makingchange/community-service-1.jpeg",
     "/makingchange/charity-event-1.JPG",
     "/makingchange/ngo-activities-1.jpeg",
-
   ],
   [
     "/makingchange/social-change-1.jpeg",
     "/makingchange/community-support-1.jpeg",
     "/makingchange/foundation-work-1.jpeg",
-
   ],
 ];
 
@@ -57,7 +54,8 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
           inner.dataset.cloned = "true";
         }
 
-        const totalHeight = inner.scrollHeight / 2;
+        // Use the maximum possible height based on the longest column
+        const totalHeight = Math.max(...inners.map((i) => i.scrollHeight)) / 2;
         const direction = i % 2 === 0 ? -1 : 1;
 
         gsap.to(inner, {
@@ -90,7 +88,15 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
       }}
     >
       <section className="vil-section">
-        <Hyperplexed title="Making a Change in Society" />
+        <h1
+          className="text-5xl md:text-7xl font-bold text-transparent text-center px-4 py-2 text-white bg-clip-text"
+          style={{
+            textShadow: "0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00",
+            fontFamily: '"Poppins", "Inter", sans-serif',
+          }}
+        >
+          Making a Change in Society
+        </h1>
       </section>
 
       <div className="vil-gallery" ref={galleryRef} aria-hidden="true" role="presentation">
@@ -104,9 +110,9 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
                     alt={`gallery-${ci}-${si}`}
                     width={300}
                     height={400}
-                    className="w-full h-full object-cover rounded-xl"
+                    className="w-full h-full object-cover rounded-xl shadow-md"
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   />
                 </div>
               ))}
@@ -120,10 +126,9 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
           position: relative;
           width: 100%;
           overflow: hidden;
-          font-family: "Inter", sans-serif;
+          font-family: "Poppins", "Inter", sans-serif;
         }
 
-        /* Responsive height */
         .vil-section {
           display: flex;
           align-items: center;
@@ -135,7 +140,13 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
 
         @media (max-width: 768px) {
           .vil-section {
-            height: 50vh; /* Mobile: only half screen */
+            height: 60vh;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .vil-section {
+            height: 40vh;
           }
         }
 
@@ -167,17 +178,21 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
           width: 100%;
         }
 
+        .vil-item {
+          min-height: 200px; /* Ensure consistent height for scrolling */
+        }
+
         .vil-item img {
           width: 100%;
           border-radius: 14px;
           object-fit: cover;
-          filter: grayscale(1);
-          transition: filter 0.4s ease, transform 0.4s ease;
+          filter: grayscale(0.8);
+          transition: filter 0.4s ease, transform 0.4s ease, brightness 0.4s ease;
           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
         .vil-item img:hover {
-          filter: grayscale(0) saturate(1.2);
+          filter: grayscale(0) saturate(1.2) brightness(1.1);
           transform: scale(1.04);
         }
 
@@ -192,7 +207,8 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
             gap: 0.4rem;
           }
           .vil-col {
-            flex: 1 1 33%;
+            flex: 1 1 100%;
+            max-width: 33%;
           }
         }
       `}</style>
