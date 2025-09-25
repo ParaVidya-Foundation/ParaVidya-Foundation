@@ -87,34 +87,7 @@ export default function SleepTherapyYogaPage() {
 
       <YogaHelp 
         title="How Yoga Naturally Improves Sleep Quality" 
-        description="Modern research consistently validates yoga as one of the most effective natural approaches for improving sleep quality and treating insomnia. Yoga addresses sleep issues through multiple interconnected pathways:
-
-**Nervous System Regulation:**
-- **Parasympathetic Activation**: Gentle yoga poses and pranayama activate the 'rest and digest' nervous system, naturally preparing your body for sleep
-- **Cortisol Reduction**: Regular practice significantly lowers stress hormones that interfere with sleep, helping establish healthy sleep-wake cycles
-- **Melatonin Support**: Evening yoga practice supports natural melatonin production, your body's primary sleep hormone
-
-**Physical Preparation for Sleep:**
-- **Muscle Tension Release**: Restorative poses systematically release physical tension accumulated throughout the day, allowing the body to fully relax
-- **Spinal Alignment**: Gentle backbends and twists release tension in the spine and nervous system, promoting physical comfort for sleep
-- **Temperature Regulation**: Cooling pranayama techniques help lower core body temperature, a natural signal for sleep onset
-
-**Mental and Emotional Calming:**
-- **Mind Quieting**: Meditation and mindfulness practices reduce the mental chatter and worry that often prevent sleep
-- **Anxiety Reduction**: Regular yoga practice builds resilience to stress and anxiety, common culprits of insomnia
-- **Present-Moment Awareness**: Yoga teaches you to let go of the day's concerns and future worries, allowing peaceful transition to sleep
-
-**Sleep Architecture Improvement:**
-- **Deeper Sleep Stages**: Yoga practitioners experience longer periods of deep, restorative sleep phases
-- **Reduced Night Wakings**: Better nervous system regulation leads to more continuous, uninterrupted sleep
-- **Enhanced Sleep Efficiency**: The ratio of time asleep to time in bed improves significantly with regular practice
-
-**Long-term Benefits:**
-- **Natural Sleep Rhythm**: Consistent practice helps establish and maintain healthy circadian rhythms without dependence on sleep aids
-- **Improved Sleep Quality**: Not just longer sleep, but more refreshing, restorative sleep that leaves you energized upon waking
-- **Holistic Wellness**: Better sleep supports immune function, emotional regulation, cognitive performance, and overall quality of life
-
-With regular practice, yoga becomes a powerful, natural sleep medicine that addresses both the symptoms and root causes of sleep disturbances, helping you achieve the deep, restorative rest your body and mind need to thrive." 
+        description="Modern research supports yoga as a natural aid for alleviating insomnia and promoting restful nights. Gentle stretches and pranayama calm the nervous system, lower anxiety, and align the body’s natural sleep rhythm. With regular practice, yoga helps reduce overthinking, ease tension, and foster inner calm. Over time, sleep becomes deeper, more restorative, and more refreshing, helping you wake with renewed clarity and energy." 
       />
     </div>
   )

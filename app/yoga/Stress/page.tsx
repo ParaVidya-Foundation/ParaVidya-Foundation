@@ -67,19 +67,19 @@ export default function StressManagementYogaPage() {
         title="Comprehensive Stress Prevention and Management" 
         points={[
           {
-            title: "1. Master Stress-Relief Breathing Techniques (Pranayama)",
+            title: "Master Stress-Relief Breathing Techniques (Pranayama)",
             description: "Develop a daily pranayama practice using techniques like Anulom Vilom (Alternate Nostril Breathing), Bhramari (Humming Bee Breath), and extended exhale breathing (4:8 ratio). These practices immediately activate the parasympathetic nervous system, reduce cortisol levels, and create a physiological state of calm that you can access anytime, anywhere."
           },
           {
-            title: "2. Build Physical and Mental Resilience with Yoga",
+            title: "Build Physical and Mental Resilience with Yoga",
             description: "Practice gentle yoga sequences including Surya Namaskar (Sun Salutations), grounding poses like Tadasana (Mountain Pose), and restorative poses like Balasana (Child's Pose). Combined with proper nutrition and adequate sleep, this builds physical strength, mental clarity, and emotional resilience to handle daily stressors more effectively."
           },
           {
-            title: "3. Cultivate Mindful Organization and Time Management",
+            title: "Cultivate Mindful Organization and Time Management",
             description: "Apply yogic principles of mindfulness to daily planning and task management. Practice single-tasking with full presence, set realistic priorities, take regular mindful breaks, and use meditation to clear mental clutter. This approach reduces overwhelm and increases productivity while maintaining inner calm."
           },
           {
-            title: "4. Create Regular Relaxation and Recovery Rituals",
+            title: "Create Regular Relaxation and Recovery Rituals",
             description: "Establish daily practices like Yoga Nidra (20-30 minutes), Shavasana after physical activity, walking meditation in nature, or guided relaxation. These practices help discharge accumulated stress, restore nervous system balance, and cultivate deep inner peace that becomes your baseline state rather than stress."
           }
         ]} 
@@ -87,51 +87,7 @@ export default function StressManagementYogaPage() {
 
       <YogaHelp 
         title="How Yoga Provides Comprehensive Stress Management" 
-        description="In our fast-paced world, chronic stress has become a widespread health epidemic affecting millions. Yoga offers a scientifically-proven, holistic approach to stress management that addresses both the symptoms and root causes of stress:
-
-**Immediate Stress Relief:**
-- **Nervous System Reset**: Yoga immediately activates the parasympathetic nervous system, shifting you from 'fight-or-flight' to 'rest-and-digest' mode within minutes of practice
-- **Cortisol Reduction**: Even a single yoga session significantly reduces cortisol (stress hormone) levels, providing immediate relief from stress symptoms
-- **Physical Tension Release**: Gentle movements and stretches release muscle tension that accumulates from chronic stress, particularly in shoulders, neck, and back
-- **Breathing Reset**: Pranayama techniques provide instant tools for managing acute stress and anxiety that you can use anywhere
-
-**Long-term Stress Resilience:**
-- **Stress Response Retraining**: Regular practice literally rewires your nervous system, making you less reactive to stressors and quicker to return to baseline calm
-- **Improved Stress Tolerance**: Yoga builds mental and emotional resilience, increasing your capacity to handle challenges without becoming overwhelmed
-- **Enhanced Recovery**: Better sleep quality, improved digestion, and stronger immune function help your body recover from stress more effectively
-- **Emotional Regulation**: Mindfulness practices develop emotional intelligence and the ability to respond thoughtfully rather than react impulsively
-
-**Physical Stress Management:**
-- **Muscle Tension Relief**: Targeted poses release chronic tension patterns that develop from stress, preventing pain and dysfunction
-- **Improved Circulation**: Movement and breathing practices enhance blood flow, helping remove stress-related toxins and deliver nutrients to stressed tissues
-- **Better Sleep**: Yoga significantly improves sleep quality, allowing for proper stress recovery and hormone regulation
-- **Digestive Health**: Stress often disrupts digestion; yoga poses and breathing exercises support healthy gut function
-
-**Mental and Emotional Balance:**
-- **Mind Quieting**: Meditation and mindfulness practices reduce mental chatter, worry, and rumination that perpetuate stress
-- **Present-Moment Awareness**: Yoga teaches you to stay grounded in the present rather than anxiously anticipating future problems
-- **Perspective Shifting**: Regular practice develops equanimity and the ability to see challenges as temporary and manageable
-- **Self-Compassion**: Yoga cultivates kindness toward yourself, reducing self-criticism that adds to stress burden
-
-**Lifestyle Stress Management:**
-- **Healthy Boundaries**: Yoga philosophy teaches the importance of balance and saying no to excessive demands
-- **Mindful Living**: Practice extends beyond the mat, encouraging conscious choices about work, relationships, and lifestyle
-- **Community Support**: Yoga communities provide social connection and support, reducing isolation that compounds stress
-- **Sustainable Practices**: Unlike quick fixes, yoga provides lasting tools for managing stress throughout your life
-
-**Specific Stress-Relief Techniques:**
-- **Restorative Yoga**: Deeply relaxing poses that allow complete nervous system restoration
-- **Pranayama**: Breathing techniques that immediately calm anxiety and reduce stress hormones
-- **Meditation**: Mental training that builds resilience and emotional stability
-- **Gentle Movement**: Physical practices that release tension without adding stress to the body
-
-**Preventive Stress Management:**
-- **Daily Stress Discharge**: Regular practice prevents stress accumulation by providing daily release and reset
-- **Increased Self-Awareness**: Early recognition of stress signals allows for proactive management before overwhelm occurs
-- **Healthy Coping Strategies**: Yoga provides constructive alternatives to stress-induced habits like overeating, substance use, or social withdrawal
-- **Life Balance**: Practice helps you prioritize what truly matters and let go of unnecessary stressors
-
-By addressing stress through body, mind, and spirit, yoga offers a complete stress management system that not only relieves current stress but builds lasting resilience for handling future challenges with greater ease and grace." 
+        description="Life can feel rushed, and stress often seems to follow us everywhere. When there’s so much to do, it’s hard to slow down. Yoga can help you find peace, balance, and clarity. Through simple poses, mindful breathing, and meditation, yoga lowers stress hormones like cortisol, soothes the nervous system, and eases tension in tired muscles. These benefits support emotional balance and mindfulness, and they can also help you sleep better. With regular practice, yoga makes it easier to handle life’s challenges calmly and with resilience, building inner strength and well-being." 
       />
     </div>
   )

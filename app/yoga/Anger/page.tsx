@@ -7,6 +7,7 @@ import Prevention from "@/components/yoga/prevention"
 import YogaHelp from "@/components/yoga/yogahelp"
 import Cause from "@/components/yoga/cause"
 import FeaturedVideos from "@/components/ui/FeaturedVideos"
+import TestimonialsComponent from "@/components/yoga/TestimonialsComponent"
 
 export const metadata: Metadata = {
   title: "Anger Management Yoga Course – Transform Reactivity into Resilience",
@@ -44,6 +45,46 @@ export const metadata: Metadata = {
 
 
 export default function AngerManagementYogaPage() {
+
+  const testimonials = [
+    {
+      id: "1",
+      name: "Priya Sharma",
+      title: "Yoga Instructor",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    },
+    {
+      id: "2",
+      name: "Amit Patel",
+      title: "Meditation Enthusiast",
+      videoUrl: "https://www.youtube.com/embed/xyz789",
+    },
+    {
+      id: "3",
+      name: "Sneha Gupta",
+      title: "Wellness Coach",
+      videoUrl: "https://www.youtube.com/embed/abc123",
+    },
+    {
+      id: "1",
+      name: "Priya Sharma",
+      title: "Yoga Instructor",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    },
+    {
+      id: "2",
+      name: "Amit Patel",
+      title: "Meditation Enthusiast",
+      videoUrl: "https://www.youtube.com/embed/xyz789",
+    },
+    {
+      id: "3",
+      name: "Sneha Gupta",
+      title: "Wellness Coach",
+      videoUrl: "https://www.youtube.com/embed/abc123",
+    },
+  ];
+
   return (
     <div>
       <HeroSection
@@ -112,39 +153,8 @@ export default function AngerManagementYogaPage() {
 
       <YogaHelp 
         title="How Yoga Transforms Anger into Emotional Balance" 
-        description="Yoga offers a comprehensive, scientifically-backed approach to anger management that addresses the physical, mental, and emotional aspects of this powerful emotion:
-
-**Physiological Anger Management:**
-- **Nervous System Regulation**: Yoga activates the parasympathetic nervous system, countering the fight-or-flight response that fuels anger. Regular practice trains your body to return to calm more quickly after activation
-- **Stress Hormone Balance**: Pranayama and asanas reduce cortisol and adrenaline levels, preventing the hormonal cascade that intensifies angry reactions
-- **Physical Tension Release**: Anger creates physical tension in jaw, shoulders, and core. Yoga poses systematically release this stored tension, reducing the physical component of anger
-- **Heart Rate Variability**: Breathing practices improve heart rate variability, enhancing emotional regulation and resilience to stress
-
-**Mental and Emotional Transformation:**
-- **Mindful Awareness**: Yoga develops the ability to observe anger as it arises without immediately reacting, creating space for conscious choice rather than impulsive response
-- **Trigger Recognition**: Regular practice enhances self-awareness, helping you identify anger triggers earlier when they're easier to manage
-- **Emotional Regulation**: Meditation and mindfulness practices strengthen the prefrontal cortex, improving your ability to regulate emotions and make thoughtful decisions
-- **Perspective Shifting**: Yoga philosophy teaches non-attachment and acceptance, helping you respond to challenging situations with greater equanimity
-
-**Practical Anger Management Tools:**
-- **Immediate Response Techniques**: Breath-based practices provide instant tools for managing anger in the moment - techniques you can use anywhere, anytime
-- **Daily Stress Prevention**: Regular practice reduces baseline stress levels, making you less likely to reach anger thresholds
-- **Energy Transformation**: Dynamic yoga sequences provide healthy outlets for intense energy, channeling anger's power into constructive movement
-- **Compassion Cultivation**: Heart-opening poses and loving-kindness meditation develop empathy and compassion, naturally reducing anger and resentment
-
-**Long-term Benefits:**
-- **Increased Patience**: Regular practice develops greater tolerance for frustration and delays in gratification
-- **Improved Relationships**: Better emotional regulation leads to healthier communication and stronger relationships
-- **Enhanced Resilience**: Yoga builds mental and emotional resilience, helping you bounce back from challenges without carrying anger
-- **Inner Peace**: Over time, practice cultivates a deep sense of inner calm that becomes your default state rather than reactivity
-
-**Specific Yoga Practices for Anger:**
-- **Cooling Pranayama**: Techniques like Sheetali and Sheetkari literally cool the body and calm fiery emotions
-- **Grounding Poses**: Standing poses and forward folds help channel intense energy downward and create stability
-- **Hip Openers**: These poses release stored emotions and trauma that may fuel anger patterns
-- **Meditation**: Regular meditation practice strengthens emotional regulation and develops equanimity
-
-By addressing anger through body, breath, and mind, yoga provides a complete toolkit for transforming this challenging emotion into emotional wisdom and balanced responses." 
+        description="Anger is an emotion, but when left unchecked, it can impact your health, bonds, and overall well-being. Yoga gives you a holistic approach to managing anger by calming the mind, releasing tension from the body, and promoting emotional balance.
+Practising mindful breathing in yoga helps calm your nervous system, lower stress hormones, and create a sense of peace that makes it easier to avoid impulsive reactions. Yoga postures help release tension in your muscles and reduce your body’s stress response, which leads to greater relaxation. Meditation and mindfulness can enhance your self-awareness, allowing you to recognize anger triggers more quickly and choose a more effective response. Over time, regular yoga can help you become more patient, resilient, and positive, making it easier to stay calm in tough situations." 
       />
    
 
@@ -173,6 +183,7 @@ videos={[
   },
 ]}
 />
+<TestimonialsComponent reels={testimonials} title="Our Yoga Testimonials" />
     </div>
   )
 }

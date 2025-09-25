@@ -24,16 +24,7 @@ export default function KirtanYogaPage() {
       
       <Definition 
         title="What is Kirtan?" 
-        description="Kirtan is a form of devotional chanting and singing that originated in ancient India. It's a heart-centered practice that combines music, meditation, and spiritual connection to create a profound inner experience.
-
-Key aspects of Kirtan:
-- **Call and Response**: Simple mantras or sacred phrases repeated in a group setting
-- **Sacred Sound**: The vibrational quality of Sanskrit mantras and devotional music
-- **Community Connection**: Shared spiritual experience that creates unity and harmony
-- **Heart Opening**: Practices that cultivate love, compassion, and spiritual awareness
-- **Meditation in Motion**: Active meditation through chanting, movement, and breath
-
-Kirtan is not about performance or perfection, but about opening the heart, quieting the mind, and connecting with the divine essence within and around us." 
+        description="Kirtan is a devotional practice in which sacred mantras, names of deities, or spiritual verses are sung or chanted, often in a call-and-response style. Rooted in the Bhakti tradition of India, kirtan combines music, rhythm, and repetition to create a meditative and uplifting experience. It is not just singing but a form of spiritual expression that opens the heart, calms the mind, and connects individuals with the divine. Kirtan is usually performed with instruments like the harmonium, tabla, or kartal, and its collective nature makes it a powerful practice for unity, joy, and inner peace." 
       />
 
       <div className="flex flex-row gap-4 justify-center">

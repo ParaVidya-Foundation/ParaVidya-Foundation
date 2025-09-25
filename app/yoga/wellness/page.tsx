@@ -63,50 +63,7 @@ export default function WellnessYogaPage() {
 
       <YogaHelp 
         title="How Yoga Creates Comprehensive Holistic Wellness" 
-        description="Yoga serves as a complete wellness system that uniquely addresses every dimension of health through integrated practices that work synergistically to optimize your entire being:
-
-**Physical Wellness Foundation:**
-- **Strength and Flexibility**: Asanas build functional strength, improve flexibility, and enhance posture, creating a resilient physical foundation
-- **Cardiovascular Health**: Dynamic sequences and breathing practices improve heart health, circulation, and endurance
-- **Immune System Support**: Regular practice boosts immune function through stress reduction, improved circulation, and lymphatic drainage
-- **Pain Prevention**: Yoga addresses common issues like back pain, joint stiffness, and muscle tension before they become chronic problems
-
-**Mental and Emotional Balance:**
-- **Stress Management**: Pranayama and meditation activate the relaxation response, reducing cortisol and promoting mental calm
-- **Cognitive Enhancement**: Practice improves focus, memory, decision-making, and mental clarity through increased brain blood flow and neuroplasticity
-- **Emotional Regulation**: Mindfulness techniques develop emotional intelligence and resilience, helping you respond rather than react to life's challenges
-- **Anxiety and Depression Support**: Regular practice naturally elevates mood through neurotransmitter balance and stress reduction
-
-**Spiritual and Purposeful Living:**
-- **Self-Awareness**: Yoga cultivates deep self-knowledge, helping you understand your values, motivations, and life purpose
-- **Inner Peace**: Meditation and philosophical study develop equanimity and contentment that isn't dependent on external circumstances
-- **Connection and Unity**: Practice fosters a sense of interconnectedness with others and the natural world
-- **Meaning and Purpose**: Yoga philosophy provides frameworks for living with intention and contributing meaningfully to the world
-
-**Social and Community Wellness:**
-- **Compassion Development**: Heart-opening practices and ethical teachings naturally increase empathy and kindness
-- **Healthy Relationships**: Improved emotional regulation and self-awareness enhance all relationships
-- **Community Connection**: Group classes and yoga communities provide social support and shared values
-- **Service Orientation**: Yoga philosophy encourages selfless service (seva) and contribution to others' well-being
-
-**Environmental and Lifestyle Integration:**
-- **Mindful Living**: Yoga promotes conscious choices about consumption, environment, and lifestyle that support both personal and planetary health
-- **Natural Rhythms**: Practice helps align with natural cycles of rest and activity, seasonal changes, and circadian rhythms
-- **Sustainable Practices**: Yoga philosophy emphasizes non-harm (ahimsa) and sustainable living practices
-- **Preventive Approach**: Regular practice prevents many lifestyle-related diseases and promotes longevity
-
-**Integrated Wellness Benefits:**
-- **Energy Optimization**: Yoga balances and increases vital energy (prana), leading to sustained vitality throughout the day
-- **Resilience Building**: Practice develops physical, mental, and emotional resilience to handle life's inevitable challenges
-- **Quality of Life**: Improved sleep, reduced pain, better mood, and increased vitality significantly enhance daily life experience
-- **Aging Gracefully**: Yoga supports healthy aging through maintained flexibility, cognitive function, and emotional well-being
-
-**Personalized and Adaptive:**
-- **Scalable Practice**: Yoga can be adapted for any age, fitness level, or health condition, making it accessible to everyone
-- **Lifelong Journey**: Practice evolves with your changing needs, providing continuous growth and development opportunities
-- **Holistic Integration**: Unlike isolated health interventions, yoga creates lasting lifestyle changes that support all aspects of wellness
-
-By addressing wellness through this comprehensive, integrated approach, yoga doesn't just treat symptoms or focus on single aspects of health - it creates a foundation for thriving in all areas of life, supporting you in becoming the healthiest, most balanced version of yourself." 
+        description="Yoga promotes holistic wellness by integrating the body, mind, and spirit into a balanced and harmonious system. Through physical postures (asanas), it strengthens muscles, improves flexibility, boosts circulation, and supports overall physical health. Breathing exercises (pranayama) and meditation calm the mind, reduce stress, enhance focus, and promote emotional stability. At a deeper level, yoga cultivates self-awareness, mindfulness, and spiritual growth, enabling individuals to connect with themselves and the world around them. Additionally, by encouraging healthy routines, mindful living, and preventive practices, yoga supports long-term well-being, resilience, and a vibrant, balanced lifestyle." 
       />
     </div>
   )

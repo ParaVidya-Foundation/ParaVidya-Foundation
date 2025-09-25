@@ -87,43 +87,7 @@ export default function DepressionSupportYogaPage() {
 
       <YogaHelp 
         title="How Yoga Supports Mental Health and Depression Recovery" 
-        description="*Important Note: Yoga is a complementary practice that supports mental wellness but should not replace professional mental health treatment. Always consult with healthcare providers for depression management.*
-
-Yoga offers valuable support for mental health through a comprehensive, evidence-based approach that addresses depression on multiple levels:
-
-**Neurochemical and Physiological Benefits:**
-- **Neurotransmitter Balance**: Regular yoga practice increases levels of GABA, serotonin, and dopamine - key neurotransmitters for mood regulation and emotional well-being
-- **Stress Hormone Reduction**: Yoga significantly lowers cortisol levels, reducing chronic stress that contributes to depression
-- **Inflammation Reduction**: Practice decreases inflammatory markers linked to depression, supporting overall brain health
-- **HPA Axis Regulation**: Yoga helps regulate the hypothalamic-pituitary-adrenal axis, improving stress response and emotional resilience
-
-**Physical and Energetic Support:**
-- **Gentle Movement**: Asanas like Surya Namaskar, heart-opening poses, and gentle flows combat lethargy and physical stagnation common in depression
-- **Nervous System Balance**: Restorative poses activate the parasympathetic nervous system, promoting calm and reducing anxiety
-- **Energy Circulation**: Yoga improves prana (life energy) flow, addressing the energetic depletion often experienced in depression
-- **Body Awareness**: Mindful movement reconnects you with your body, countering the disconnection common in depression
-
-**Mental and Emotional Benefits:**
-- **Mindfulness Training**: Yoga teaches present-moment awareness, reducing rumination and negative thought loops characteristic of depression
-- **Self-Compassion**: Practice cultivates kindness toward yourself, countering self-criticism and shame
-- **Emotional Regulation**: Breathing techniques and meditation provide tools for managing difficult emotions and mood swings
-- **Cognitive Flexibility**: Regular practice improves mental clarity and ability to shift perspectives
-
-**Social and Spiritual Support:**
-- **Community Connection**: Group classes provide social support and reduce isolation, crucial factors in depression recovery
-- **Sense of Purpose**: Yoga philosophy and practice can help reconnect with meaning and purpose in life
-- **Hope and Empowerment**: Learning self-care tools through yoga builds confidence and hope for recovery
-
-**Specific Therapeutic Applications:**
-- **Trauma-Informed Yoga**: Specialized approaches help process trauma that may underlie depression
-- **Restorative Practices**: Gentle, supported poses provide deep nervous system healing
-- **Breathwork**: Pranayama techniques offer immediate tools for managing anxiety and mood symptoms
-- **Meditation**: Mindfulness practices develop emotional resilience and mental stability
-
-**Integration with Professional Care:**
-Yoga works best as part of a comprehensive treatment approach that may include therapy, medication, and other interventions. Many mental health professionals now recognize yoga's value as an adjunctive treatment that enhances traditional therapies and provides practical tools for daily mood management.
-
-By addressing depression through body, mind, breath, and spirit, yoga offers a holistic pathway toward healing that empowers individuals with practical tools for managing their mental health and building long-term emotional resilience." 
+        description="Yoga is highly beneficial in managing depression because it addresses the body, mind, and breath simultaneously, creating a holistic approach to mental health. Gentle yoga asanas, such as Surya Namaskar, Tadasana, and Balasana, improve blood circulation, release muscle tension, and stimulate the nervous system, which can help lift one's mood and reduce the lethargy often associated with depression. Breathing exercises such as Anulom Vilom, Bhramari, and Sheetali Pranayama calm the mind, regulate stress hormones, and reduce anxiety. Mindfulness practices, such as Yoga Nidra, guided meditation, or breath awareness, cultivate self-awareness, reduce negative thought patterns, and promote emotional balance. Additionally, participating in group yoga classes or partner yoga sessions offers social support, which can be particularly beneficial in combating feelings of isolation. By integrating physical movement, breath control, meditation, and social connection, regular yoga practice can improve mood, enhance resilience, and support overall mental well-being for those experiencing depression." 
       />
     </div>
   )

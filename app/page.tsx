@@ -6,7 +6,7 @@ import SupportUs from "@/components/home/Supportus"
 import { Metadata } from "next"
 import KaramkandHome from "@/components/home/Karamkandhome"
 import GitaHome from "@/components/home/gitahome"
-import YogaHome from "@/components/home/yogahome"
+import VideoSeries from "@/components/home/VideoSeries"
 import NewsletterSection from "@/components/home/NewsletterSection"
 
 export const metadata: Metadata = {
@@ -84,6 +84,7 @@ export default function HomePage() {
       <DonationSection />
       
       <GitaHome slides={slides} />
+      <VideoSeries />
       <SupportUs />
       <NewsletterSection />
     </>

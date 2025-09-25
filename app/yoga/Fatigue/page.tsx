@@ -87,30 +87,7 @@ export default function FatigueReliefYogaPage() {
 
       <YogaHelp 
         title="How Yoga Naturally Combats Fatigue and Restores Energy" 
-        description="Yoga offers a comprehensive, natural approach to overcoming fatigue by addressing its root causes and systematically restoring energy on multiple levels:
-
-**Physical Energy Restoration:**
-- **Enhanced Circulation**: Dynamic poses like Surya Namaskar and gentle backbends improve blood flow, delivering oxygen and nutrients to tired muscles and organs
-- **Nervous System Activation**: Energizing sequences stimulate the sympathetic nervous system when needed while balancing it with parasympathetic recovery
-- **Muscle Tension Release**: Gentle stretching and restorative poses release chronic tension that drains energy, allowing for better energy flow throughout the body
-- **Improved Sleep Quality**: Regular yoga practice regulates circadian rhythms and promotes deeper, more restorative sleep
-
-**Mental and Emotional Energy Boost:**
-- **Stress Hormone Regulation**: Pranayama and meditation reduce cortisol levels, preventing stress-induced fatigue and adrenal exhaustion
-- **Mental Clarity Enhancement**: Breathing exercises increase oxygen to the brain, combating mental fog and improving focus and concentration
-- **Mood Elevation**: Yoga stimulates the release of endorphins and serotonin, naturally lifting mood and motivation levels
-
-**Energetic and Spiritual Vitality:**
-- **Prana (Life Force) Cultivation**: Pranayama practices directly work with life energy, increasing vitality and reducing feelings of depletion
-- **Chakra Balancing**: Specific poses help balance energy centers, ensuring smooth energy flow throughout the body
-- **Mindful Awareness**: Present-moment awareness prevents energy drain from worry about the future or regret about the past
-
-**Sustainable Energy Management:**
-- **Gradual Building**: Unlike stimulants that create energy spikes and crashes, yoga builds sustainable energy reserves over time
-- **Personalized Practice**: Yoga can be adapted to your energy levels - gentle when tired, more dynamic when energized
-- **Holistic Lifestyle**: Yoga philosophy encourages energy-supporting habits including proper nutrition, adequate rest, and stress management
-
-By combining physical movement, conscious breathing, meditation, and mindful living, yoga creates a natural, sustainable solution to fatigue that addresses both symptoms and underlying causes." 
+        description="Yoga is highly effective in managing and preventing fatigue because it works on both the body and mind to restore energy and vitality. Gentle yoga asanas, such as Surya Namaskar, Balasana, Viparita Karani, and Tadasana, improve blood circulation, release muscle tension, and strengthen the body, thereby helping to reduce physical exhaustion. Breathing exercises such as Anulom Vilom, Kapalabhati, and Bhramari enhance oxygen flow, calm the nervous system, and refresh mental energy, combating the mental sluggishness that often accompanies fatigue. Practices like Yoga Nidra and meditation promote deep relaxation, rejuvenate the mind, and restore balance, making it easier to recover from tiredness. Even light stretching and mindful movement throughout the day improve flexibility, circulation, and overall stamina. By combining asanas, pranayama, meditation, and gentle movement, yoga helps replenish energy, reduce stress, and maintain sustained physical and mental vitality." 
       />
     </div>
   )

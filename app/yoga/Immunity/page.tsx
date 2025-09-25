@@ -87,24 +87,7 @@ export default function ImmunityBoostingYogaPage() {
 
       <YogaHelp 
         title="How Yoga Naturally Strengthens Your Immunity" 
-        description="Yoga provides comprehensive immune system support through a multi-dimensional approach that addresses physical, mental, and energetic aspects of health:
-
-**Physical Immune Enhancement:**
-- **Improved Circulation**: Asanas like inversions and twists boost blood flow and lymphatic drainage, helping remove toxins and distribute immune cells throughout the body
-- **Respiratory Strengthening**: Pranayama techniques increase lung capacity, improve oxygenation, and strengthen respiratory immunity against infections
-- **Glandular Stimulation**: Specific poses stimulate the thymus gland, lymph nodes, and other immune-supporting organs
-
-**Stress Reduction and Hormonal Balance:**
-- **Cortisol Regulation**: Regular yoga practice significantly reduces cortisol levels, preventing stress-induced immune suppression
-- **Nervous System Balance**: Meditation and pranayama activate the parasympathetic nervous system, promoting rest, repair, and immune function
-- **Better Sleep Quality**: Improved sleep through yoga practice enhances immune cell production and antibody formation
-
-**Holistic Wellness Support:**
-- **Digestive Health**: Twisting poses and breathing exercises improve gut health, where 70% of immune cells are located
-- **Mental Clarity**: Reduced anxiety and improved mood support overall health and immune resilience
-- **Lifestyle Integration**: Yoga philosophy encourages healthy habits including proper nutrition, adequate rest, and mindful living
-
-By combining gentle movement, conscious breathing, and mindful relaxation, yoga creates an optimal internal environment for immune system function, helping your body naturally resist infections, recover faster from illness, and maintain vibrant long-term health." 
+        description="Yoga plays a significant role in boosting immunity by strengthening the body, calming the mind, and enhancing overall resilience. Regular practice of asanas like Tadasana, Bhujangasana (Cobra Pose), and Balasana (Child’s Pose) improves blood circulation, stimulates the lymphatic system, and supports the human body's natural defense mechanisms. Pranayama exercises, such as Anulom Vilom (Alternate Nostril Breathing) and Bhramari (Humming Bee Breath), increase oxygen intake, reduce stress, and regulate the nervous system—all of which are important for optimal immune function. Additionally, practices like Yoga Nidra and meditation lower stress hormones, enhance mental clarity, and promote hormonal balance, all of which contribute to a stronger immune system. By combining gentle movement, controlled breathing, and mindful relaxation, yoga helps the body resist infections, recover faster, and maintain long-term health and vitality." 
       />
     </div>
   )
