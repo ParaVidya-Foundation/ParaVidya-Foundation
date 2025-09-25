@@ -1,20 +1,14 @@
 
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  weight: ["700"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 type VerticalImageLoopProps = {
+  title?: string;
   cols?: string[][];
-  height?: string;
+  height?: string | number;
 };
 
 const DEFAULT_COLS: string[][] = [
@@ -43,31 +37,36 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
   const rootRef = useRef<HTMLDivElement | null>(null);
   const galleryRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const gallery = galleryRef.current;
     if (!gallery) return;
 
     const ctx = gsap.context(() => {
       const inners: HTMLElement[] = Array.from(gallery.querySelectorAll(".vil-inner"));
-      const maxHeight = Math.max(...inners.map((inner) => inner.scrollHeight));
 
       inners.forEach((inner, i) => {
-        if (!inner.dataset.cloned) {
-          const children = Array.from(inner.children);
-          children.forEach((child) => inner.appendChild(child.cloneNode(true)));
+        const children = Array.from(inner.children);
+
+        if (inner.dataset.cloned !== "true") {
+          children.forEach((child) => {
+            inner.appendChild(child.cloneNode(true));
+          });
           inner.dataset.cloned = "true";
         }
 
-        const direction = i === 1 ? 1 : -1; // Middle column scrolls up
+        // Use the maximum possible height based on the longest column
+        const totalHeight = Math.max(...inners.map((i) => i.scrollHeight)) / 2;
+        const direction = i % 2 === 0 ? -1 : 1;
+
         gsap.to(inner, {
-          y: direction * -maxHeight,
-          duration: 30,
+          y: direction * -totalHeight,
+          duration: 20,
           ease: "none",
           repeat: -1,
           modifiers: {
             y: (y) => {
-              const mod = maxHeight;
-              return `${(parseFloat(y) % mod) + (direction * mod)}px`;
+              const mod = totalHeight;
+              return `${(parseFloat(y) % mod) - mod}px`;
             },
           },
         });
@@ -79,30 +78,41 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
 
   return (
     <div
+      className="vil-root"
       ref={rootRef}
-      className="vil-root relative w-full"
       style={{
-        height,
-        WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, rgba(0,0,0,0))",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, rgba(0,0,0,0))",
         WebkitMaskRepeat: "no-repeat",
         WebkitMaskSize: "100% 100%",
       }}
     >
-      {/* Background Gallery */}
-      <div className="vil-gallery absolute inset-0 flex justify-center gap-2" ref={galleryRef} role="img" aria-label="Rotating gallery of community impact images">
+      <section className="vil-section">
+        <h1
+          className="text-5xl md:text-7xl font-bold text-transparent text-center px-4 py-2 text-white bg-clip-text"
+          style={{
+            textShadow: "0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00",
+            fontFamily: '"Poppins", "Inter", sans-serif',
+          }}
+        >
+          Making a Change in Society
+        </h1>
+      </section>
+
+      <div className="vil-gallery" ref={galleryRef} aria-hidden="true" role="presentation">
         {cols.map((col, ci) => (
-          <div className="vil-col flex-1" key={ci}>
-            <div className="vil-inner flex flex-col gap-2">
+          <div className="vil-col" key={ci}>
+            <div className="vil-inner">
               {col.map((src, si) => (
                 <div className="vil-item" key={`${ci}-${si}`}>
                   <Image
                     src={src}
-                    alt={`Gallery image ${ci}-${si} - Community impact`}
-                    width={250}
-                    height={333}
-                    className="w-full h-full object-cover rounded-lg transition-all duration-300 hover:scale-110 shadow-md"
+                    alt={`gallery-${ci}-${si}`}
+                    width={300}
+                    height={400}
+                    className="w-full h-full object-cover rounded-xl shadow-md"
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   />
                 </div>
               ))}
@@ -111,35 +121,79 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
         ))}
       </div>
 
-      {/* Center Text */}
-      <div className={`absolute inset-0 flex items-center justify-center text-center ${poppins.className}`}>
-        <h1 className="vil-title px-8 text-white" style={{ textShadow: "0 0 10px rgba(0, 128, 128, 0.9), 0 0 20px rgba(0, 128, 128, 0.7)" }}>
-          Making a Change in Society
-        </h1>
-      </div>
-
       <style jsx>{`
         .vil-root {
+          position: relative;
+          width: 100%;
           overflow: hidden;
+          font-family: "Poppins", "Inter", sans-serif;
+        }
+
+        .vil-section {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          z-index: 2;
+          height: 100vh;
+        }
+
+        @media (max-width: 768px) {
+          .vil-section {
+            height: 60vh;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .vil-section {
+            height: 40vh;
+          }
         }
 
         .vil-gallery {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-wrap: nowrap;
+          gap: 1rem;
+          justify-content: center;
+          align-items: stretch;
+          overflow: hidden;
+          z-index: 1;
           pointer-events: none;
         }
 
         .vil-col {
+          flex: 1;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
           min-width: 0;
         }
 
-        .vil-item img {
-          border-radius: 10px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .vil-inner {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          width: 100%;
         }
 
-        .vil-title {
-          font-size: clamp(2rem, 6vw, 5rem);
-          font-weight: 700;
-          line-height: 1.2;
+        .vil-item {
+          min-height: 200px; /* Ensure consistent height for scrolling */
+        }
+
+        .vil-item img {
+          width: 100%;
+          border-radius: 14px;
+          object-fit: cover;
+          filter: grayscale(0.8);
+          transition: filter 0.4s ease, transform 0.4s ease, brightness 0.4s ease;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .vil-item img:hover {
+          filter: grayscale(0) saturate(1.2) brightness(1.1);
+          transform: scale(1.04);
         }
 
         @media (max-width: 900px) {
@@ -153,10 +207,8 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
             gap: 0.4rem;
           }
           .vil-col {
-            flex: 1 1 33%;
-          }
-          .vil-title {
-            font-size: 1.8rem;
+            flex: 1 1 100%;
+            max-width: 33%;
           }
         }
       `}</style>
