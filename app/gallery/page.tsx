@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-
-import { ImageData } from "./data/images";
-import { images } from "./data/images";
+import Image from "next/image";
+import { images, ImageData } from "./data/images";
 
 const ITEMS_PER_PAGE = 15;
 
@@ -23,32 +22,32 @@ export default function Gallery() {
   const paginatedImages = images.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-
-    <main className="relative min-h-screen text-black flex flex-col items-center p-8">
-
-      <h1 className="text-4xl font-bold mb-8">Gallery</h1>
+    <main className="relative min-h-screen flex flex-col items-center p-8 bg-[#fffbea4d] text-gray-900 font-inter">
+      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600">
+        Gallery
+      </h1>
 
       {/* Image Grid */}
       <div className="flex flex-wrap justify-center gap-8">
         {paginatedImages.map((img, index) => (
           <div
             key={index}
-            className="relative w-72 h-96 bg-white rounded-md shadow-lg overflow-hidden group cursor-pointer"
+            className="relative w-72 h-96 bg-white rounded-xl shadow-lg overflow-hidden group cursor-pointer"
             onClick={() => setSelectedImage(img)}
           >
-            <div className="absolute inset-2 bg-black transition-all duration-500 group-hover:bottom-20">
-              <img
-                src={img.src}
-                alt={img.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute left-2 right-2 bottom-2 text-center">
-              <h2 className="text-xl font-bold text-gray-900">
+            <Image
+              src={img.src}
+              alt={img.name}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              priority={index === 0}
+            />
+            <div className="absolute bottom-2 left-2 right-2 text-center bg-white/80 backdrop-blur-md rounded-md py-2 shadow">
+              <h2 className="text-lg font-bold text-gray-900">
                 {img.name}
                 <br />
-                <span className="text-green-600 font-medium text-sm">
-                  {img.location}
+                <span className="text-yellow-600 font-medium text-sm">
+                  {img.Date}
                 </span>
               </h2>
             </div>
@@ -61,7 +60,7 @@ export default function Gallery() {
         <button
           onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
           disabled={currentPage === 1}
-          className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 disabled:opacity-50"
+          className="px-4 py-2 rounded-lg bg-yellow-600 text-white hover:bg-yellow-700 disabled:opacity-50"
         >
           Prev
         </button>
@@ -70,10 +69,11 @@ export default function Gallery() {
           <button
             key={i}
             onClick={() => setCurrentPage(i + 1)}
-            className={`px-4 py-2 rounded-lg ${currentPage === i + 1
-                ? "bg-green-600"
-                : "bg-gray-700 hover:bg-gray-600"
-              }`}
+            className={`px-4 py-2 rounded-lg ${
+              currentPage === i + 1
+                ? "bg-yellow-600 text-white"
+                : "bg-gray-200 hover:bg-gray-300"
+            }`}
           >
             {i + 1}
           </button>
@@ -82,7 +82,7 @@ export default function Gallery() {
         <button
           onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
           disabled={currentPage === totalPages}
-          className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 disabled:opacity-50"
+          className="px-4 py-2 rounded-lg bg-yellow-600 text-white hover:bg-yellow-700 disabled:opacity-50"
         >
           Next
         </button>
@@ -92,24 +92,26 @@ export default function Gallery() {
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[9999]"
-          onClick={() => setSelectedImage(null)} // close on background click
+          onClick={() => setSelectedImage(null)}
         >
-          {/* Close (X) Button - fixed to top right of modal */}
+          {/* Close (X) Button */}
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-5 right-5 text-white text-1xl font-bold bg-black/50 rounded-full px-4 py-2 hover:bg-black/70 z-[10001]"
+            className="absolute top-5 right-5 text-white text-xl font-bold bg-black/50 rounded-full px-4 py-2 hover:bg-black/70 z-[10001]"
           >
             ✕
           </button>
 
           <div
             className="relative z-[10000]"
-            onClick={(e) => e.stopPropagation()} // prevent closing on image click
+            onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={selectedImage.src}
               alt={selectedImage.name}
-              className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-xl"
+              width={1200}
+              height={800}
+              className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-xl object-contain"
             />
           </div>
         </div>

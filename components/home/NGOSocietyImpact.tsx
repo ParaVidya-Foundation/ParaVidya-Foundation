@@ -49,14 +49,15 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
 
         if (inner.dataset.cloned !== "true") {
           children.forEach((child) => {
-            inner.appendChild(child.cloneNode(true));
+            const clonedChild = child.cloneNode(true) as HTMLElement;
+            inner.appendChild(clonedChild);
           });
           inner.dataset.cloned = "true";
         }
 
         // Use the maximum possible height based on the longest column
         const totalHeight = Math.max(...inners.map((i) => i.scrollHeight)) / 2;
-        const direction = i % 2 === 0 ? -1 : 1;
+        const direction = -1; // All rows move downward
 
         gsap.to(inner, {
           y: direction * -totalHeight,

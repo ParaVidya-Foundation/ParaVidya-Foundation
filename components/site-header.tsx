@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -69,6 +70,7 @@ const Header: React.FC = () => {
               alt="AstroPathshala Mobile Logo"
               className="mobile-logo-img"
               priority
+              sizes="(max-width: 480px) 50vw, (max-width: 768px) 30vw, 20vw"
             />
           </Link>
         </div>
@@ -95,24 +97,26 @@ const Header: React.FC = () => {
             onMouseEnter={() => toggleDropdown("yogas")}
             onMouseLeave={() => toggleDropdown("yogas")}
           >
-            <Link href="/yoga" onClick={closeMenu}>
+            <Link href="/yoga" onClick={closeMenu} className="desktop-link">
               Yoga <img
                   src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
                   alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
+                  className="dropdown-arrow"
+                  loading="lazy"
+                  sizes="20px"
                 />
             </Link>
 
             <button
-              className="dropdown-trigger"
+              className="dropdown-trigger mobile-trigger"
               onClick={() => toggleDropdown("yogas")}
             >
               Yogas <img
                   src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
                   alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
+                  className="dropdown-arrow"
+                  loading="lazy"
+                  sizes="20px"
                 />
             </button>
 
@@ -125,19 +129,19 @@ const Header: React.FC = () => {
                   Wellness
                 </Link>
                 <Link href="/yoga/Stress" onClick={closeMenu}>
-                  Stress 
+                  Stress
                 </Link>
                 <Link href="/yoga/Anger" onClick={closeMenu}>
-                  Anger 
+                  Anger
                 </Link>
                 <Link href="/yoga/Depression" onClick={closeMenu}>
-                  Depression 
+                  Depression
                 </Link>
                 <Link href="/yoga/Sleep" onClick={closeMenu}>
-                  Sleep 
+                  Sleep
                 </Link>
                 <Link href="/yoga/Fatigue" onClick={closeMenu}>
-                  Fatigue 
+                  Fatigue
                 </Link>
                 <Link href="/yoga/Immunity" onClick={closeMenu}>
                   Immunity Boost
@@ -158,24 +162,26 @@ const Header: React.FC = () => {
             onMouseEnter={() => toggleDropdown("workshop")}
             onMouseLeave={() => toggleDropdown("workshop")}
           >
-            <Link href="/workshop" onClick={closeMenu}>
+            <Link href="/workshop" onClick={closeMenu} className="desktop-link">
               Workshop <img
                   src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
                   alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
+                  className="dropdown-arrow"
+                  loading="lazy"
+                  sizes="20px"
                 />
             </Link>
 
             <button
-              className="dropdown-trigger"
+              className="dropdown-trigger mobile-trigger"
               onClick={() => toggleDropdown("workshop")}
             >
               Workshop <img
                   src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
                   alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
+                  className="dropdown-arrow"
+                  loading="lazy"
+                  sizes="20px"
                 />
             </button>
 
@@ -191,13 +197,13 @@ const Header: React.FC = () => {
                   Meditation
                 </Link>
                 <Link href="/workshop/yoga-workshops" onClick={closeMenu}>
-                  Yoga 
+                  Yoga
                 </Link>
                 <Link href="/workshop/ayurveda-workshops" onClick={closeMenu}>
-                  Ayurveda 
+                  Ayurveda
                 </Link>
                 <Link href="/workshop/mantra-workshops" onClick={closeMenu}>
-                  Mantra 
+                  Mantra
                 </Link>
                 <Link href="/workshop/sadhna" onClick={closeMenu}>
                   Sadhna
@@ -207,7 +213,8 @@ const Header: React.FC = () => {
           </div>
 
           <Link href="/dharma" onClick={closeMenu}>
-Dharma          </Link>
+            Dharma
+          </Link>
 
           {/* Center Logo */}
           <div className="logo-container">
@@ -217,6 +224,7 @@ Dharma          </Link>
                 alt="AstroPathshala Logo"
                 className="logo-img"
                 priority
+                sizes="(max-width: 480px) 50vw, (max-width: 768px) 30vw, 20vw"
               />
             </Link>
           </div>
@@ -227,24 +235,26 @@ Dharma          </Link>
             onMouseEnter={() => toggleDropdown("partnership")}
             onMouseLeave={() => toggleDropdown("partnership")}
           >
-            <Link href="/Partnership" onClick={closeMenu}>
+            <Link href="/Partnership" onClick={closeMenu} className="desktop-link">
               Partnership <img
                   src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
                   alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
+                  className="dropdown-arrow"
+                  loading="lazy"
+                  sizes="20px"
                 />
             </Link>
 
             <button
-              className="dropdown-trigger"
+              className="dropdown-trigger mobile-trigger"
               onClick={() => toggleDropdown("partnership")}
             >
               Partnership <img
                   src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
                   alt="Expand Services Dropdown"
-                  className="dropdown-arrow justify-center align-middle flex-row z-10"
-                  loading="lazy" // Performance optimization
+                  className="dropdown-arrow"
+                  loading="lazy"
+                  sizes="20px"
                 />
             </button>
 
@@ -254,25 +264,25 @@ Dharma          </Link>
                   Awareness Program
                 </Link>
                 <Link href="/Partnership/Camps" onClick={closeMenu}>
-                  Camps 
+                  Camps
                 </Link>
                 <Link href="/Partnership/corporate" onClick={closeMenu}>
-                  Corporate 
+                  Corporate
                 </Link>
                 <Link href="/Partnership/Donate" onClick={closeMenu}>
-                  Donation 
+                  Donation
                 </Link>
                 <Link href="/Partnership/Events" onClick={closeMenu}>
-                  Events 
+                  Events
                 </Link>
                 <Link href="/Partnership/JoinourNGO" onClick={closeMenu}>
-                  Join our NGO 
+                  Join our NGO
                 </Link>
                 <Link href="/Partnership/Katha" onClick={closeMenu}>
-                  Katha 
+                  Katha
                 </Link>
                 <Link href="/Partnership/TaxExemption" onClick={closeMenu}>
-                  Tax Exemption 
+                  Tax Exemption
                 </Link>
               </div>
             )}
