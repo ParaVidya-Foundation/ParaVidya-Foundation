@@ -66,7 +66,7 @@ export default function VideoSeries() {
   const [paused, setPaused] = useState(false);
 
   return (
-    <section className="w-full bg-[#fff6f221] py-16">
+    <section className="w-full bg-[#ffd84b5a] py-16">
       {/* Top Section */}
       <div className="max-w-6xl mx-auto px-6 text-center md:text-left">
         <motion.h2
