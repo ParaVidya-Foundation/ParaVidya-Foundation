@@ -278,6 +278,9 @@ const Header: React.FC = () => {
                 <Link href="/Partnership/JoinourNGO" onClick={closeMenu}>
                   Join our NGO
                 </Link>
+                <Link href="/Partnership/JoinourNGO/Internship" onClick={closeMenu}>
+                  Youth Internship Programme
+                </Link>
                 <Link href="/Partnership/Katha" onClick={closeMenu}>
                   Katha
                 </Link>

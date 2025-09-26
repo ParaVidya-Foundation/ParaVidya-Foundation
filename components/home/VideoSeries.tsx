@@ -7,54 +7,59 @@ import Link from "next/link";
 
 const seriesData = [
   {
-    title: "Vivekachudamani",
-    src: "/images/vivekachudamani.jpg",
-    url: "https://www.youtube.com/playlist?list=PL12345",
+    title: "आरती और मंत्र",
+    src: "/VideoSeries/aarti.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Aarti",
   },
   {
-    title: "Niralamba Upanishad",
-    src: "/images/niralamba.jpg",
-    url: "https://www.youtube.com/playlist?list=PL67890",
+    title: "ज्योतिष विज्ञान",
+    src: "/VideoSeries/astrology.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Astrology",
   },
   {
-    title: "कठ उपनिषद",
-    src: "/images/kath.jpg",
-    url: "https://www.youtube.com/playlist?list=PL11111",
+    title: "आयुर्वेद और स्वास्थ्य",
+    src: "/VideoSeries/ayurveda.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Ayurveda",
   },
   {
-    title: "गीता माधुर्य",
-    src: "/images/gita.jpg",
-    url: "https://www.youtube.com/playlist?list=PL22222",
+    title: "गुरु दीक्षा",
+    src: "/VideoSeries/Gurudiksha.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_GuruDiksha",
   },
   {
-    title: "व्यावहारिक वेदांत",
-    src: "/images/vedanta.jpg",
-    url: "https://www.youtube.com/playlist?list=PL33333",
+    title: "हवन विधि",
+    src: "/VideoSeries/Havanvidhi.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_HavanVidhi",
   },
   {
-    title: "Vivekachudamani",
-    src: "/images/vivekachudamani.jpg",
-    url: "https://www.youtube.com/playlist?list=PL12345",
+    title: "कर्मकांड",
+    src: "/VideoSeries/Karamkaand.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Karmakand",
   },
   {
-    title: "Niralamba Upanishad",
-    src: "/images/niralamba.jpg",
-    url: "https://www.youtube.com/playlist?list=PL67890",
+    title: "महाकाव्य और पुराण",
+    src: "/VideoSeries/maha.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Mahakavya",
   },
   {
-    title: "कठ उपनिषद",
-    src: "/images/kath.jpg",
-    url: "https://www.youtube.com/playlist?list=PL11111",
+    title: "मंत्र जाप",
+    src: "/VideoSeries/mantrajaap.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_MantraJaap",
   },
   {
-    title: "गीता माधुर्य",
-    src: "/images/gita.jpg",
-    url: "https://www.youtube.com/playlist?list=PL22222",
+    title: "संस्कृत शिक्षा",
+    src: "/VideoSeries/sanskrit.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Sanskrit",
   },
   {
-    title: "व्यावहारिक वेदांत",
-    src: "/images/vedanta.jpg",
-    url: "https://www.youtube.com/playlist?list=PL33333",
+    title: "वेद और पुराण",
+    src: "/VideoSeries/veda_purana.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_VedaPurana",
+  },
+  {
+    title: "योग साधना",
+    src: "/VideoSeries/yoga.webp",
+    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Yoga",
   },
 ];
 
@@ -114,12 +119,11 @@ export default function VideoSeries() {
         onMouseLeave={() => setPaused(false)}
         onFocus={() => setPaused(true)}
         onBlur={() => setPaused(false)}
-        aria-hidden={false}
+        aria-hidden="false"
       >
         {/* track: duplicated items => translateX(-50%) loops seamlessly */}
         <div
           className={`marquee-track ${paused ? "paused" : ""}`}
-          role="list"
           aria-label="Video series carousel"
         >
           {items.map((item, idx) => (
@@ -132,7 +136,6 @@ export default function VideoSeries() {
               className="no-underline"
             >
               <motion.div
-                role="listitem"
                 whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.18 } }}
                 whileTap={{ scale: 0.98 }}
                 className="series-card"
@@ -143,7 +146,7 @@ export default function VideoSeries() {
                     alt={item.title}
                     width={400}
                     height={260}
-                    className="object-cover"
+                    className="object-cover rounded-2xl"
                     priority={false}
                   />
                 </div>
@@ -208,9 +211,7 @@ export default function VideoSeries() {
           padding: 0.6rem 0.75rem;
           text-align: center;
           font-weight: 600;
-          color: #1f2937; /* gray-800 */
-          font-size: 0.95rem;
-          background: white;
+          font-size: 1rem;
         }
 
         /* responsive card sizes */
