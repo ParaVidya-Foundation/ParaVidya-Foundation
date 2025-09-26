@@ -17,9 +17,9 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // ✅ Safe start/stop auto-slide with useCallback
+  // ✅ Auto slide
   const startAutoSlide = useCallback(() => {
-    if (images.length <= 1) return; // prevent sliding with 0/1 images
+    if (images.length <= 1) return;
     stopAutoSlide();
     intervalRef.current = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -35,7 +35,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
 
   useEffect(() => {
     startAutoSlide();
-    return () => stopAutoSlide(); // cleanup on unmount
+    return () => stopAutoSlide();
   }, [startAutoSlide, stopAutoSlide]);
 
   const handleNext = () => {
@@ -59,12 +59,10 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
       onMouseEnter={stopAutoSlide}
       onMouseLeave={startAutoSlide}
     >
-      {/* Image container */}
+      {/* Slides */}
       <div
         className="carousel-slides"
-        style={{
-          transform: `translateX(-${activeIndex * 100}%)`,
-        }}
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {images.map((image, index) => (
           <div key={index} className="carousel-slide relative">
@@ -80,41 +78,42 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
         ))}
       </div>
 
-      {/* Left Arrow */}
+      {/* Navigation arrows */}
       <button
         onClick={handlePrev}
         className="carousel-button carousel-button-left"
         aria-label="Previous slide"
       >
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
         </svg>
       </button>
 
-      {/* Right Arrow */}
       <button
         onClick={handleNext}
         className="carousel-button carousel-button-right"
         aria-label="Next slide"
       >
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
         </svg>
       </button>
 
-      {/* Dots for navigation */}
+      {/* Dots */}
       <div className="carousel-dots">
         {images.map((_, index) => (
           <button
             key={index}
-            className={`carousel-dot ${activeIndex === index ? "active" : ""}`}
+            className={`carousel-dot ${
+              activeIndex === index ? "active" : ""
+            }`}
             onClick={() => setActiveIndex(index)}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Scoped CSS */}
+      {/* Styles */}
       <style jsx>{`
         .carousel-container {
           position: relative;
@@ -125,25 +124,26 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
 
         .carousel-slides {
           display: flex;
-          transition: transform 0.8s ease-in-out;
           height: 100%;
+          transition: transform 0.8s ease-in-out;
         }
 
         .carousel-slide {
           width: 100%;
           height: 100%;
           flex-shrink: 0;
+          position: relative;
         }
 
         .carousel-image {
-          object-fit: contain;
+          object-fit: contain; /* ✅ Always keep full image visible */
         }
 
         .carousel-button {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background-color: rgba(96, 96, 96, 0.5);
+          background-color: rgba(0, 0, 0, 0.4);
           border: none;
           padding: 10px;
           border-radius: 50%;
@@ -154,7 +154,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
         }
 
         .carousel-button:hover {
-          background-color: rgba(96, 96, 96, 0.7);
+          background-color: rgba(0, 0, 0, 0.6);
         }
 
         .carousel-button-left {
@@ -167,7 +167,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
 
         .carousel-dots {
           position: absolute;
-          bottom: 20px;
+          bottom: 16px;
           left: 50%;
           transform: translateX(-50%);
           display: flex;
@@ -178,36 +178,39 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
           width: 10px;
           height: 10px;
           border-radius: 50%;
-          background-color: gray;
+          background-color: #d1d5db; /* gray-300 */
           cursor: pointer;
           border: none;
           transition: background-color 0.3s ease;
         }
 
         .carousel-dot.active {
-          background-color: #facc15; /* Tailwind yellow-400 */
+          background-color: #facc15; /* yellow-400 */
+        }
+
+        /* ✅ Responsive */
+        @media (max-width: 1024px) {
+          .carousel-container {
+            height: 60vh;
+          }
         }
 
         @media (max-width: 768px) {
           .carousel-container {
-            height: 40vh !important;
+            height: 30vh; /* smaller height so no stretching */
+          }
+
+          .carousel-image {
+            object-fit: contain; /* ✅ prevent stretch/crop */
           }
 
           .carousel-button {
             padding: 6px;
           }
 
-          .carousel-dots {
-            gap: 4px;
-          }
-
           .carousel-dot {
             width: 6px;
             height: 6px;
-          }
-
-          .carousel-image {
-            object-fit: cover;
           }
         }
       `}</style>

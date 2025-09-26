@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import styled from "styled-components";
 import { FaInstagram, FaYoutube, FaFacebook, FaTwitter } from "react-icons/fa";
 
@@ -13,11 +13,22 @@ const NavbarContainer = styled.header`
   padding: 12px 20px;
   border-bottom: 1px solid #ffb400;
   font-family: "Poppins", sans-serif;
+  min-height: 60px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
+    padding: 8px 10px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    padding: 10px 15px;
     flex-direction: column;
     gap: 10px;
-    padding: 10px 15px;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    padding: 12px 18px;
   }
 `;
 
@@ -26,7 +37,13 @@ const LeftSection = styled.div`
   align-items: center;
   gap: 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
@@ -45,14 +62,23 @@ const ContactButton = styled.button`
   border: none;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
+  padding: 4px 8px;
+  min-width: 0;
 
   &:hover {
     color: #ffb400;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    gap: 0.3rem;
+    padding: 2px 6px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
     font-size: 0.9rem;
     gap: 0.3rem;
+    padding: 3px 7px;
   }
 `;
 
@@ -60,7 +86,11 @@ const Icon = styled.div`
   font-size: 1.5rem;
   color: #ffb400;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
     font-size: 1.25rem;
   }
 `;
@@ -74,29 +104,54 @@ const RightSection = styled.div`
     color: white;
     font-size: 1.5rem;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 4px;
 
     &:hover {
       color: #ffb400;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+      padding: 2px;
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
       font-size: 1.3rem;
+      padding: 3px;
     }
   }
 `;
 
 const Navbar: React.FC = () => {
-  const handleCall = () => {
-    window.location.href = "tel:+919871130487";
-  };
+  const navbarRef = useRef<HTMLElement | null>(null);
 
-  const handleEmail = () => {
-    window.location.href = "mailto:astropathshala@gmail.com";
-  };
+  const handleCall = useCallback(() => {
+    window.location.href = "tel:+919871130487";
+  }, []);
+
+  const handleEmail = useCallback(() => {
+    window.location.href = "mailto:paravidyafoundation@gmail.com";
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (navbarRef.current) {
+        const width = window.innerWidth;
+        navbarRef.current.style.setProperty(
+          "--nav-gap",
+          width <= 480 ? "0.8rem" : width <= 768 ? "1rem" : "2rem"
+        );
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <NavbarContainer>
-      {/* Left Section: Contact Info */}
+    <NavbarContainer ref={navbarRef} role="navigation" aria-label="Main navigation">
       <LeftSection>
         <ContactButton onClick={handleCall} aria-label="Call us">
           <Icon>
@@ -125,13 +180,13 @@ const Navbar: React.FC = () => {
         </ContactButton>
       </LeftSection>
 
-      {/* Right Section: Social Media */}
       <RightSection>
         <a
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
+          tabIndex={0}
         >
           <FaInstagram />
         </a>
@@ -140,6 +195,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="YouTube"
+          tabIndex={0}
         >
           <FaYoutube />
         </a>
@@ -148,6 +204,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
+          tabIndex={0}
         >
           <FaFacebook />
         </a>
@@ -156,6 +213,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
+          tabIndex={0}
         >
           <FaTwitter />
         </a>
@@ -164,4 +222,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);
