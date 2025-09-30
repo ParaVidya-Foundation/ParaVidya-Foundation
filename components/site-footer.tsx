@@ -1,90 +1,220 @@
 "use client"
 
 import Link from "next/link"
-import { NewsletterForm } from "@/components/site-newsletter"
-import { Icons } from "@/components/icons"
+import Image from "next/image"
+import { MapPin, Mail, Phone } from "lucide-react"
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaYoutube,
+  FaTwitter,
+  FaRedditAlien,
+} from "react-icons/fa"
+
+const socialLinks = [
+  { name: "Instagram", url: "https://www.instagram.com/paravidya.foundation/", icon: FaInstagram },
+  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61579922933190", icon: FaFacebookF },
+  { name: "LinkedIn", url: "https://www.linkedin.com/company/paravidya-foundation/about/?viewAsMember=true", icon: FaLinkedinIn },
+  { name: "YouTube", url: "https://www.youtube.com/@ParaVidyaFoundation", icon: FaYoutube },
+  { name: "Twitter/X", url: "https://x.com/ParaVidyaNGO", icon: FaTwitter },
+  { name: "Reddit", url: "https://www.reddit.com/user/Spare_Inspection36/", icon: FaRedditAlien },
+]
+
+const navigationLinks = [
+  ["Home", "/"],
+  ["About Us", "/about-us"],
+  ["Yoga Programs", "/yoga"],
+  ["Workshops", "/workshop"],
+  ["Partnership", "/Partnership"],
+  ["Gallery", "/gallery"],
+  ["Contact", "/contact"],
+  ["Donate", "/donate"],
+]
+
+const programLinks = [
+  ["Stress Management", "/yoga/Stress"],
+  ["Anger Management", "/yoga/Anger"],
+  ["Sleep Therapy", "/yoga/Sleep"],
+  ["Depression Support", "/yoga/Depression"],
+  ["Immunity Boost", "/yoga/Immunity"],
+  ["Weight Management", "/yoga/OverWeight"],
+  ["Wellness", "/yoga/wellness"],
+  ["Kirtan", "/yoga/Kirtan"],
+]
+
+const workshopLinks = [
+  ["Spiritual Workshops", "/workshop/spiritual-workshops"],
+  ["Meditation Sessions", "/workshop/meditation-sessions"],
+  ["Yoga Workshops", "/workshop/yoga-workshops"],
+  ["Ayurveda Workshops", "/workshop/ayurveda-workshops"],
+  ["Mantra Workshops", "/workshop/mantra-workshops"],
+  ["Sanskrit Learning", "/workshop/Sanskrit"],
+  ["Sadhna Practice", "/workshop/sadhna"],
+]
 
 export function SiteFooter() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="mt-16 border-t border-gold bg-[var(--color-primary)] text-white">
-      <div className="mx-auto max-w-6xl px-4 md:px-6 py-12 grid gap-10 md:grid-cols-4">
-        <div>
-          <h3 className="heading-serif text-xl mb-3">Para Vidya Foundation</h3>
-          <p className="text-white/90 text-sm">
-            A spiritual NGO promoting Sadhna, Yoga, and Seva through workshops, rituals, and community service.
-          </p>
-        </div>
+<div className="w-full">
+  {/* Top Banner Image */}
+  <div className="relative w-full -mb-1">
+    <Image
+      src="/Footer.png"
+      alt="Footer Top Banner"
+      width={1920} // use your image's natural width
+      height={890} // use your image's natural height
+      priority
+      className="w-full h-auto object-contain object-center"
+      sizes="100vw"
+    />
+  </div>
 
-        <div>
-          <h4 className="heading-serif text-lg mb-3">Quick Links</h4>
-          <ul className="space-y-2">
-            {[
-              ["Home", "/"],
-              ["About Us", "/about"],
-              ["Programs", "/programs"],
-              ["Consultation", "/consultation"],
-              ["Volunteer", "/volunteer"],
-              ["Donate", "/donate"],
-              ["Contact", "/contact"],
-            ].map(([label, href]) => (
-              <li key={href}>
-                <Link href={href as string} className="hover:underline">
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
 
-        <div>
-          <h4 className="heading-serif text-lg mb-3">Contact</h4>
-          <ul className="text-sm space-y-2">
-            <li>Email: info@paravidya.org</li>
-            <li>Phone: +91 98765 43210</li>
-            <li>Address: Delhi, India</li>
-          </ul>
-          <div className="mt-4 flex items-center gap-3">
-            <button
-              onClick={() => window.open("https://facebook.com", "_blank", "noopener,noreferrer")}
-              aria-label="Facebook"
-              className="hover:opacity-80 bg-transparent border-none cursor-pointer p-0"
-            >
-              <Icons.facebook className="h-5 w-5" />
-            </button>
-            <button
-              onClick={() => window.open("https://twitter.com", "_blank", "noopener,noreferrer")}
-              aria-label="Twitter/X"
-              className="hover:opacity-80 bg-transparent border-none cursor-pointer p-0"
-            >
-              <Icons.twitter className="h-5 w-5" />
-            </button>
-            <button
-              onClick={() => window.open("https://instagram.com", "_blank", "noopener,noreferrer")}
-              aria-label="Instagram"
-              className="hover:opacity-80 bg-transparent border-none cursor-pointer p-0"
-            >
-              <Icons.instagram className="h-5 w-5" />
-            </button>
-            <button
-              onClick={() => window.open("https://youtube.com", "_blank", "noopener,noreferrer")}
-              aria-label="YouTube"
-              className="hover:opacity-80 bg-transparent border-none cursor-pointer p-0"
-            >
-              <Icons.youtube className="h-5 w-5" />
-            </button>
+
+      {/* Footer */}
+      <footer className="bg-[#f97f12] text-white relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {/* Brand */}
+          <div className="flex flex-col sm:flex-row items-center justify-center mb-12 gap-6">
+            <Image
+              src="/Logo.png"
+              alt="Para Vidya Foundation Logo"
+              width={80}
+              height={80}
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]"
+            />
+            <div className="text-center sm:text-left">
+              <h3 className="font-playfair text-3xl sm:text-4xl font-bold drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]">
+                Para Vidya Foundation
+              </h3>
+              <p className="font-manrope text-sm sm:text-base text-white/90 mt-1">
+                Transforming lives through ancient wisdom and modern wellness practices
+              </p>
+            </div>
+          </div>
+
+          {/* Links */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 text-center sm:text-left">
+            {/* Navigation */}
+            <div>
+              <h4 className="font-playfair text-lg font-semibold mb-4">Navigation</h4>
+              <ul className="space-y-2">
+                {navigationLinks.map(([label, href]) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="font-manrope text-sm text-white/80 hover:text-white transition"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Yoga Programs */}
+            <div>
+              <h4 className="font-playfair text-lg font-semibold mb-4">Yoga Programs</h4>
+              <ul className="space-y-2">
+                {programLinks.map(([label, href]) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="font-manrope text-sm text-white/80 hover:text-white transition"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Workshops */}
+            <div>
+              <h4 className="font-playfair text-lg font-semibold mb-4">Workshops</h4>
+              <ul className="space-y-2">
+                {workshopLinks.map(([label, href]) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="font-manrope text-sm text-white/80 hover:text-white transition"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact + Social */}
+            <div>
+              <h4 className="font-playfair text-lg font-semibold mb-4">Connect With Us</h4>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center justify-center sm:justify-start gap-3">
+                  <Mail className="w-4 h-4 text-white/80" />
+                  <a
+                    href="mailto:info@paravidya.org"
+                    className="text-sm text-white/80 hover:text-white transition"
+                  >
+                    info@paravidya.org
+                  </a>
+                </div>
+                <div className="flex items-center justify-center sm:justify-start gap-3">
+                  <Phone className="w-4 h-4 text-white/80" />
+                  <a
+                    href="tel:+919876543210"
+                    className="text-sm text-white/80 hover:text-white transition"
+                  >
+                    +91 98765 43210
+                  </a>
+                </div>
+                <div className="flex items-center justify-center sm:justify-start gap-3">
+                  <MapPin className="w-4 h-4 text-white/80" />
+                  <span className="text-sm text-white/80">Delhi, India</span>
+                </div>
+              </div>
+
+              {/* Social */}
+              <h5 className="font-playfair text-base font-medium mb-3">Follow Us</h5>
+              <div className="flex justify-center sm:justify-start flex-wrap gap-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="w-8 h-8 bg-white/20 hover:bg-white text-white hover:text-[#f97f12] rounded-full flex items-center justify-center transition transform hover:scale-110"
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div>
-          <h4 className="heading-serif text-lg mb-3">Newsletter</h4>
-          <NewsletterForm />
-          <p className="text-xs text-white/80 mt-3">We respect your privacy. Unsubscribe anytime.</p>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/20 bg-black/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p className="text-sm text-white/80">
+              © {currentYear} Para Vidya Foundation. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy" className="text-xs text-white/70 hover:text-white transition">
+                Privacy Policy
+              </Link>
+              <span className="text-white/30">|</span>
+              <Link href="/terms" className="text-xs text-white/70 hover:text-white transition">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="border-t border-gold/60 py-4 text-center text-sm text-white/90">
-        © {new Date().getFullYear()} Para Vidya Foundation. All rights reserved.
-      </div>
-    </footer>
+      </footer>
+    </div>
   )
 }
 

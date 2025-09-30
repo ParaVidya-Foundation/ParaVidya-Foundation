@@ -65,7 +65,7 @@ const SupportUs = () => {
     >
       {/* Heading */}
       <h1
-        className={`text-5xl md:text-7xl lg:text-8xl font-extrabold z-10 tracking-tight leading-tight text-center ${cormorant.className}`}
+        className="text-5xl md:text-7xl lg:text-8xl font-extrabold z-10 tracking-tight leading-tight text-center font-playfair"
       >
         Support Us
       </h1>
@@ -106,12 +106,12 @@ const SupportUs = () => {
           className="block text-center md:text-right group transition-transform duration-300 hover:scale-105"
         >
           <h2
-            className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-3 tracking-wide group-hover:text-red-600 transition-colors ${cormorant.className}`}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 tracking-wide group-hover:text-red-600 transition-colors font-playfair"
           >
             Donate Us
           </h2>
           <p
-            className={`text-lg md:text-xl lg:text-2xl text-gray-700 font-medium ${inter.className}`}
+            className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium font-manrope"
           >
             Contribute as you wish
           </p>
@@ -123,12 +123,12 @@ const SupportUs = () => {
           className="block text-center md:text-left group transition-transform duration-300 hover:scale-105"
         >
           <h2
-            className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-3 tracking-wide group-hover:text-blue-600 transition-colors ${cormorant.className}`}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 tracking-wide group-hover:text-blue-600 transition-colors font-playfair"
           >
             Spread The Word
           </h2>
           <p
-            className={`text-lg md:text-xl lg:text-2xl text-gray-700 font-medium ${inter.className}`}
+            className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium font-manrope"
           >
             Promote our teachings and mission
           </p>
