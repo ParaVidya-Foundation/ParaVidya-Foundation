@@ -29,13 +29,12 @@ export default function JoinourNGO() {
       <VolunteerPrograms programs={programs} />
 
       <Image
-        src="/border-banner.png"
+        src="/poor-people-border.png"
         alt="Join our NGO"
         width={1920} // ✅ fixed fullWidth issue
         height={400}
         className="w-full h-auto object-cover"
       />
-
       <YouthInternshipHero />
       <VolunteerRoles />
     </>

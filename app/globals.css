@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -176,12 +177,21 @@ body{
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   }
   h1,
   h2,
   h3,
-  .heading-serif {
-    font-family: var(--font-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  h4,
+  h5,
+  h6,
+  .heading-serif,
+  .font-title {
+    font-family: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+  p,
+  .font-paragraph {
+    font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   }
 }
 

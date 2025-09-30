@@ -78,7 +78,7 @@ export default function VideoSeries() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-extrabold text-gray-900"
+          className="text-3xl md:text-4xl font-extrabold text-gray-900 font-playfair"
         >
           Acharya Prashant&apos;s Video Series
         </motion.h2>
@@ -87,20 +87,20 @@ export default function VideoSeries() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.15, duration: 0.6 }}
-          className="mt-4 text-lg text-gray-700 max-w-3xl"
+          className="mt-4 text-lg text-gray-700 max-w-3xl font-manrope"
         >
           To a roaring spirit yearning for freedom and joy, Acharya
           Prashant&apos;s discourses come as a solace.
         </motion.p>
 
-        <p className="mt-2 text-gray-600 max-w-3xl">
+        <p className="mt-2 text-gray-600 max-w-3xl font-manrope">
           Thousands of hours of sessions on various scriptures and life topics
           (in the light of Vedanta) have been compiled and structured in the
           form of <span className="font-bold text-orange-600">486 video
           series.</span>
         </p>
 
-        <p className="mt-2 text-gray-600 max-w-3xl">
+        <p className="mt-2 text-gray-600 max-w-3xl font-manrope">
           These video series are aimed at liberating the troubled mind from the
           shackles of ignorance and suffering.
         </p>

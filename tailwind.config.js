@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         // Custom colors from your globals.css
         primary: '#ff9933', // saffron
+        'footer-orange': '#f97f12', // footer orange
         gold: '#c6a15b',
         'accent-green': '#138808', // Indian green
         'accent-blue': '#4a90e2', // soft blue
@@ -19,8 +20,10 @@ module.exports = {
       },
       fontFamily: {
         serif: ['var(--font-playfair)', 'ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
-        sans: ['var(--font-geist-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
+        manrope: ['var(--font-manrope)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        playfair: ['var(--font-playfair)', 'ui-serif', 'Georgia', 'serif'],
       },
       borderRadius: {
         'lg': '0.625rem',

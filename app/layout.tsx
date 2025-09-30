@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display } from "next/font/google"
+import { Playfair_Display, Manrope } from "next/font/google"
 import Header from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { SkipToContent } from "@/components/skip-to-content"
@@ -14,6 +14,12 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-playfair",
+})
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-manrope",
 })
 
 export const metadata: Metadata = {
@@ -40,7 +46,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} font-sans antialiased`}>
+    <html lang="en" className={`${playfair.variable} ${manrope.variable} font-sans antialiased`}>
       <head>
         <GA />
         <FacebookPixel />

@@ -26,9 +26,7 @@ const DonationSection: React.FC = () => {
         </h1>
         <aside>
           <p>
-            Our donations help us provide free education and meals to children in need.
-          </p>
-          <p>Since 2025</p>
+          Help us spread wellness and compassion by supporting our free yoga classes, workshops, and food donation programs for those in need.</p>
         </aside>
       </div>
 
@@ -38,7 +36,7 @@ const DonationSection: React.FC = () => {
             <div className="box">
               <div className="imgBox">
                 <Image
-                  src="/Carousel/Online-Hawan.jpg"
+                  src="/Gallery/gaushala-6sep25-2.webp"
                   alt="Sacred rituals and ceremonies"
                   fill
                   className="object-cover rounded-lg"
@@ -68,7 +66,7 @@ const DonationSection: React.FC = () => {
                 </ul>
               </div>
               <div className="tag">
-                <a href="#">#AwesomeViews</a>
+                <a href="#">#Gauseva</a>
               </div>
             </div>
           </div>
@@ -88,7 +86,7 @@ const DonationSection: React.FC = () => {
                   ref={iframeRef}
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/5D8TBicNIb8?controls=0"
+                  src="https://www.youtube.com/embed/zjHbdTii0bI?controls=0"
                   title="Travel promo video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -100,19 +98,19 @@ const DonationSection: React.FC = () => {
             </div>
           </div>
            <div className="tag">
-                <a href="#">#PetFriendly</a>
+                <a href="#">#Food Donation</a>
               </div>
         </div>
 
         <div className="card">
           <p>
-            <a href="#">More about tours</a>
+            <a href="#">More about Donation</a>
           </p>
           <div className="card-inner">
             <div className="box">
               <div className="imgBox">
                 <Image
-                  src="/Carousel/About-us.jpg"
+                  src="/Gallery/Water_distribution_2.webp"
                   alt="Hiking adventure"
                   fill
                   className="object-cover rounded-lg"
@@ -138,7 +136,7 @@ const DonationSection: React.FC = () => {
                 </a>
               </div>
               <div className="tag">
-                <a href="#">#Hiking</a>
+                <a href="#">#Food Donation</a>
               </div>
             </div>
           </div>

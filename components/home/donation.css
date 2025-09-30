@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Moderustic&family=SUSE:wght@600&display=swap");
+/* Fonts now imported globally in globals.css */
 
 :root {
   --clr-white: #fff;
@@ -14,7 +14,7 @@
   width: min(75rem, 92%);
   margin: 0 auto;
   color: var(--clr-black);
-  font-family: "Moderustic", sans-serif;
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
 .heading {
@@ -34,7 +34,7 @@
 .heading h1 {
   font-size: clamp(2.5rem, 1.6351rem + 4.3243vw, 6.5rem);
   line-height: 1;
-  font-family: "SUSE", sans-serif;
+  font-family: var(--font-playfair), ui-serif, Georgia, serif;
   font-weight: 600;
   letter-spacing: 0.025em;
 }

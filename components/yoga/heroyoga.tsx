@@ -3,11 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import styles from './heroyoga.module.css';
-import { Poppins, Lora } from 'next/font/google';
-
-// Modern, professional fonts
-const poppins = Poppins({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-poppins' });
-const lora = Lora({ subsets: ['latin'], weight: '400', variable: '--font-lora' });
+// Fonts now imported globally
 
 interface HeroSectionProps {
   title: string;
@@ -65,7 +61,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section
       aria-labelledby="yoga-hero-heading"
-      className={`relative overflow-hidden min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center py-10 sm:py-14 px-4 sm:px-6 lg:px-8 ${poppins.variable} ${lora.variable} font-sans ${className}`}
+      className={`relative overflow-hidden min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-manrope ${className}`}
     >
       <div aria-hidden="true" className={styles.texture} />
       {/* Decorative blurred accents */}
@@ -103,7 +99,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           <motion.h1
             id="yoga-hero-heading"
-            className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-3 sm:mb-4 font-[var(--font-poppins)] leading-tight"
+            className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-3 sm:mb-4 font-playfair leading-tight"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: {
@@ -119,7 +115,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {title}
           </motion.h1>
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-700/90 font-[var(--font-lora)] mb-6 sm:mb-8 max-w-xl leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-700/90 font-manrope mb-6 sm:mb-8 max-w-xl leading-relaxed"
             variants={textVariants}
             transition={{ delay: 0.1 }}
           >
@@ -128,7 +124,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <motion.a
               href="#join"
-              className="inline-flex items-center justify-center rounded-full bg-indigo-600 text-white px-6 py-3 shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors duration-300 font-[var(--font-poppins)] text-sm sm:text-base"
+              className="inline-flex items-center justify-center rounded-full bg-indigo-600 text-white px-6 py-3 shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors duration-300 font-manrope text-sm sm:text-base"
               aria-label="Join yoga program"
               variants={{
                 hidden: { opacity: 0, y: 16 },
@@ -144,7 +140,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
             <motion.a
               href="/yoga"
-              className="inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white/70 text-indigo-700 px-6 py-3 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors duration-300 font-[var(--font-poppins)] text-sm sm:text-base"
+              className="inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white/70 text-indigo-700 px-6 py-3 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors duration-300 font-manrope text-sm sm:text-base"
               aria-label="Explore yoga programs"
               variants={{
                 hidden: { opacity: 0, y: 16 },
