@@ -22,10 +22,11 @@ export default function Gallery() {
   const paginatedImages = images.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center p-8 bg-[#fffbea4d] text-gray-900 font-inter">
-      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600">
+    <main className="relative min-h-screen flex flex-col items-center p-8 bg-[#fffbea4d] text-gray-900">
+      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600 font-playfair">
         Gallery
       </h1>
+      <h2 className="text-xl md:text-3xl font-bold mb-8 text-yellow-600 font-manrope">Be the Hands That Heal. Be the Heart That Serves.</h2>
 
       {/* Image Grid */}
       <div className="flex flex-wrap justify-center gap-8">

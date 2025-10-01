@@ -25,9 +25,9 @@ export default function YouthInternshipHero() {
         transition={{ duration: 1, delay: 0.2 }}
         className="relative mt-4 text-lg md:text-2xl text-gray-700 max-w-2xl font-inter"
       >
-        Empowering Youth through{" "}
+        Be the Youth Who{" "}
         <span className="text-[#4A0404] font-semibold">
-          Spiritual and Practical Training
+         Inspires a Generation.
         </span>
       </motion.p>
 
