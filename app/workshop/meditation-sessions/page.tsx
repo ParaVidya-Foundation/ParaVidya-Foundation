@@ -1,9 +1,11 @@
 import { Metadata } from "next"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
 import Mission from "@/components/workshop/ayurveda/missionayur"
 import FeaturedVideos from "@/components/ui/FeaturedVideos"
 import WorkshopMeditation from "@/components/workshop/meditation/workshopmeditation"
 import CourseBanner from "@/components/yoga/Coursebanner"
+import BookingForm from "@/components/workshop/meditation/BookingForm"
+import InfoWithImage from "@/components/workshop/meditation/InfoWithImage"
 
 export const metadata: Metadata = {
   title: "Meditation Sessions – Para Vidya",
@@ -22,6 +24,16 @@ export default function MeditationSessionsPage() {
           />
         </div>
      <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Guided meditation sessions for inner peace and mindfulness. Experience various meditation techniques for spiritual growth and mental clarity." />
+
+     <div className="flex flex-col lg:flex-row w-full h-[70vh]">
+      <div className="w-full lg:w-1/2 h-full">
+        <BookingForm />
+      </div>
+      <div className="w-full lg:w-1/2 h-full">
+        <InfoWithImage />
+      </div>
+    </div>
+
 <WorkshopMeditation />
      <FeaturedVideos
   headline="Featured Videos"
