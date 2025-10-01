@@ -1,36 +1,39 @@
-import Image from "next/image"
+import Image from "next/image";
+import { JSX } from "react";
 
-export default function InfoWithImage() {
+export default function InfoWithImage(): JSX.Element {
+  const quote = `Our mission is to create a sacred space where individuals can embark on a transformative journey of self-discovery and holistic well-being. Through meditation, we empower our community, fostering inner peace, balance, and a profound connection with oneself.`;
+
   return (
-    <div className="flex flex-col lg:flex-row w-full h-[70vh]">
-      {/* Text Section with Image */}
-      <div className="w-full lg:w-1/2 relative flex items-center text-white px-8 py-12 h-[70vh]">
-        {/* Background Image */}
-        <Image
-          src="/card.png"
-          alt="Yoga Session"
-          fill
-          className="object-cover"
-          priority
-        />
+    <div className="h-full w-full">
+      {/* Desktop: image as background with overlay text
+          Mobile: stacked image then text block (no overlay) */}
+      <div className="hidden lg:block relative h-full w-full overflow-hidden">
+        <Image src="/card.png" alt="Meditation" fill className="object-cover" priority />
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-lg mx-auto px-8">
+            <p className="text-white italic text-lg leading-relaxed mb-6 font-manrope">{quote}</p>
+            <div>
+              <h4 className="text-white font-playfair text-xl font-semibold">Paityn Carder</h4>
+              <p className="text-white/80 text-sm font-manrope">Founder</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        {/* Overlay Content */}
-        <div className="relative z-10 max-w-xl mx-auto p-6 rounded-lg">
-          <p className="italic text-lg sm:text-xl font-manrope leading-relaxed mb-6">
-            “Our mission is to create a sacred space where individuals can
-            embark on a transformative journey of self-discovery and holistic
-            well-being. Through yoga, we strive to empower our community,
-            fostering inner peace, balance, and a profound connection with
-            oneself.”
-          </p>
+      {/* Mobile / small screens: image first (not cropped too small), then text below */}
+      <div className="block lg:hidden">
+        <div className="relative w-full h-56 overflow-hidden">
+          <Image src="/card.png" alt="Meditation" fill className="object-cover" priority />
+        </div>
+        <div className="bg-black text-white px-6 py-8">
+          <p className="italic text-base leading-relaxed mb-4 font-manrope">{quote}</p>
           <div>
-            <h4 className="text-xl font-semibold font-playfair">
-              Paityn Carder
-            </h4>
-            <p className="text-sm text-gray-300 font-manrope">Founder</p>
+            <h4 className="text-white font-playfair text-lg font-semibold">Paityn Carder</h4>
+            <p className="text-white/80 text-sm font-manrope">Founder</p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import { IconPlayerPlay } from "@tabler/icons-react";
 
@@ -17,14 +17,14 @@ interface Props {
   loopDuration?: number; // seconds for full loop
 }
 
-const extractYouTubeId = (url: string) => {
+/* ------------------ UTILITIES ------------------ */
+const extractYouTubeId = (url: string): string => {
   try {
     const u = new URL(url);
     if (u.hostname.includes("youtu.be")) return u.pathname.slice(1);
     if (u.searchParams.has("v")) return u.searchParams.get("v") || "";
-    const embedParts = u.pathname.split("/embed/");
-    if (embedParts[1]) return embedParts[1];
-    return u.pathname.split("/").pop() || "";
+    const embed = u.pathname.split("/embed/")[1];
+    return embed || u.pathname.split("/").pop() || "";
   } catch {
     const m = url.match(/[?&]v=([^&]+)/);
     return m ? m[1] : "";
@@ -33,29 +33,34 @@ const extractYouTubeId = (url: string) => {
 
 const getThumbnail = (videoUrl: string) => {
   const id = extractYouTubeId(videoUrl);
-  return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : "/images/video-placeholder.jpg";
+  return id
+    ? `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+    : "/images/video-placeholder.jpg";
 };
 
 const buildPlayerUrl = (videoUrl: string) => {
   const id = extractYouTubeId(videoUrl);
-  return id ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1` : "";
+  return id
+    ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`
+    : "";
 };
 
+/* ------------------ COMPONENT ------------------ */
 export default function VideoReelsCarousel({
-  reels = DEFAULT_REELS,
+  reels = [],
   title = "Featured Yoga Reels",
   loopDuration = 60,
 }: Props) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
 
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [isPaused, setIsPaused] = useState(false);
 
-  const items = [...reels, ...reels]; // duplicate for infinite scroll
+  const items = React.useMemo(() => [...reels, ...reels], [reels]);
 
-  const setupTimeline = () => {
+  /* Timeline Setup */
+  const setupTimeline = useCallback(() => {
     const track = trackRef.current;
     if (!track) return;
 
@@ -70,50 +75,62 @@ export default function VideoReelsCarousel({
     gsap.set(track, { x: 0 });
     const duration = Math.max(12, loopDuration);
 
-    const tl = gsap.timeline({ repeat: -1 });
-    tl.to(track, { x: -singleWidth, duration, ease: "none" });
-    tlRef.current = tl;
+    tlRef.current = gsap.timeline({ repeat: -1 }).to(track, {
+      x: -singleWidth,
+      duration,
+      ease: "none",
+    });
 
-    if (isPaused) tl.pause();
-  };
+    if (isPaused) tlRef.current.pause();
+  }, [loopDuration, isPaused]);
 
   useEffect(() => {
     setupTimeline();
-
-    const handleResize = () => setupTimeline();
-    window.addEventListener("resize", handleResize);
+    const resize = () => setupTimeline();
+    window.addEventListener("resize", resize);
 
     return () => {
-      if (tlRef.current) tlRef.current.kill();
-      window.removeEventListener("resize", handleResize);
+      tlRef.current?.kill();
+      window.removeEventListener("resize", resize);
     };
-  }, [reels, loopDuration]);
+  }, [setupTimeline]);
 
-  // Pause/play
-  const pause = () => { if (tlRef.current && !isPaused) { tlRef.current.pause(); setIsPaused(true); } };
-  const play = () => { if (tlRef.current && isPaused) { tlRef.current.play(); setIsPaused(false); } };
-
-  useEffect(() => { selectedVideo ? pause() : play(); }, [selectedVideo]);
-
-  // Disable scroll when modal open
+  /* Pause when modal open */
   useEffect(() => {
-    if (selectedVideo) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
+    if (selectedVideo) {
+      tlRef.current?.pause();
+      document.body.style.overflow = "hidden";
+    } else {
+      tlRef.current?.play();
+      document.body.style.overflow = "";
+    }
   }, [selectedVideo]);
 
   return (
     <section className="w-full py-12">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <header className="mb-6 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{title}</h2>
-          <p className="mt-2 text-gray-600 max-w-xl mx-auto md:mx-0">
-            Short yoga reels from our community — tap to watch or hover to pause.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {title}
+          </h2>
         </header>
 
         {/* Carousel */}
-        <div ref={containerRef} className="relative w-full overflow-hidden py-4">
-          <div ref={trackRef} className="flex gap-6 px-4 will-change-transform">
+        <div className="relative w-full overflow-hidden py-4">
+          <div
+            ref={trackRef}
+            className="flex gap-6 px-4 will-change-transform"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+              maskImage:
+                "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+              WebkitMaskSize: "100% 100%",
+              maskSize: "100% 100%",
+            }}
+          >
             {items.map((r, idx) => (
               <div
                 key={`${r.id}-${idx}`}
@@ -121,14 +138,23 @@ export default function VideoReelsCarousel({
                 className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]"
               >
                 <div className="relative h-[200px] bg-gray-100">
-                  <img src={getThumbnail(r.videoUrl)} alt={r.name} className="w-full h-full object-cover" loading="lazy" />
+                  <img
+                    src={getThumbnail(r.videoUrl)}
+                    alt={r.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
                     <IconPlayerPlay className="text-white w-8 h-8" />
                   </div>
                 </div>
                 <div className="p-3 text-center">
-                  <h3 className="text-sm md:text-base font-semibold text-gray-900">{r.name}</h3>
-                  <p className="text-xs md:text-sm text-gray-500">{r.title}</p>
+                  <h3 className="text-sm md:text-base font-semibold text-gray-900">
+                    {r.name}
+                  </h3>
+                  <p className="text-xs md:text-sm text-gray-500">
+                    {r.title}
+                  </p>
                 </div>
               </div>
             ))}

@@ -192,9 +192,9 @@ export default function AngerManagementYogaPage() {
       <section className="max-w-6xl w-full px-6 py-10">
         <TestimonialsComponent
           reels={testimonials}
-          title="Our Yoga Testimonials"
+         title="Our Yoga Testimonials"
         />
-      </section>
+      </section> 
     </main>
     </div>
   );

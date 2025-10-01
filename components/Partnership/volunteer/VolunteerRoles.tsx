@@ -15,13 +15,13 @@ const roles: Role[] = [
     title: "Digital Marketing",
     description: "Promote our mission through campaigns, SEO, and social media outreach.",
     details: "Work with our media team to design campaigns that reach thousands and inspire communities worldwide.",
-    image: "/roles/digital.jpg",
+    image: "/vol.png",
     link: "/roles/digital-marketing",
   },
   {
     title: "Karamkaand & Havan",
     description: "Assist in organizing traditional rituals, puja, and cultural practices.",
-    details: "Preserve ancient wisdom by facilitating rituals and supporting spiritual events.",
+    details: "Preserve ancient wisdom by facilitating rituals and supportiang spiritual events.",
     image: "/roles/havan.jpg",
     link: "/roles/karamkand-havan",
   },
@@ -54,13 +54,6 @@ const roles: Role[] = [
     link: "/roles/frontend-developer",
   },
   {
-    title: "App Developer",
-    description: "Develop mobile apps to make our services accessible everywhere.",
-    details: "Help us launch Android/iOS apps with smooth performance and sleek design.",
-    image: "/roles/app.jpg",
-    link: "/roles/app-developer",
-  },
-  {
     title: "Book Writing & Research",
     description: "Contribute to mythological and astrological research publications.",
     details: "Assist in compiling research, editing, and publishing insightful works.",
@@ -73,6 +66,13 @@ const roles: Role[] = [
     details: "Be our voice on the ground — organize events and reach local communities.",
     image: "/roles/ground.jpg",
     link: "/roles/ground-marketing",
+  },
+  {
+    title: "Content Creation",
+    description: "Create content for our social media platforms and website.",
+    details: "Create content for our social media platforms and website.",
+    image: "/roles/content.jpg",
+    link: "/roles/content-creation",
   },
 ];
 
@@ -90,28 +90,30 @@ export default function VolunteerRoles() {
       </motion.h2>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {roles.map((role, idx) => (
           <motion.div
             key={idx}
             whileHover={{ y: -6 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden border border-gray-200 flex flex-col md:flex-row"
+            className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden border border-gray-200 flex flex-col"
           >
-            {/* Image */}
-            <div className="relative w-full md:w-1/3 h-52 md:h-auto">
+            {/* Image always on top */}
+            <div className="relative w-full aspect-[16/9] max-h-[220px] md:max-h-[260px]">
               <Image
                 src={role.image}
                 alt={role.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
+                priority={idx < 2}
               />
             </div>
 
             {/* Content */}
             <div className="p-6 flex flex-col justify-between flex-1">
               <div>
-                <h3 className="text-2xl font-bold text-gray-800 font-poppins">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-800 font-poppins">
                   {role.title}
                 </h3>
                 <p className="mt-3 text-gray-700 text-base font-inter">
@@ -125,7 +127,7 @@ export default function VolunteerRoles() {
               {/* Button */}
               <a
                 href={role.link}
-                className="mt-6 inline-block px-6 py-2 rounded-lg border border-orange-500 text-orange-600 font-medium text-sm hover:bg-orange-500 hover:text-white transition-all duration-300 text-center self-start"
+                className="mt-6 inline-block px-6 py-2 rounded-lg border border-orange-500 text-orange-600 font-medium text-sm hover:bg-orange-500 hover:text-white transition-all duration-300 text-center"
               >
                 Apply Now
               </a>

@@ -193,6 +193,9 @@ const Header: React.FC = () => {
                 <Link href="/workshop/spiritual-workshops" onClick={closeMenu}>
                   Spiritual
                 </Link>
+                <Link href="/workshop/Sanskrit-workshops" onClick={closeMenu}>
+                  Sanskrit
+                </Link>
                 <Link href="/workshop/meditation-sessions" onClick={closeMenu}>
                   Meditation
                 </Link>
