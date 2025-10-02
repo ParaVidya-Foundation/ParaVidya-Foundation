@@ -1,8 +1,13 @@
-  export default function AwarenessProgram() {
+import Awarenesscards from "@/components/Partnership/Awareness/Awarenesscards";
+import AwarenessHero from "@/components/Partnership/Awareness/AwarenessHero";
+import JoinNGOSection from "@/components/Partnership/Awareness/JoinNGOSection";
+
+export default function AwarenessProgram() {
   return (
     <main>
-      <h1>Hello, Next.js! 🚀</h1>
-      <p>This is a basic Next.js page.</p>
+      <AwarenessHero />
+    <Awarenesscards />
+    <JoinNGOSection />
     </main>
   );
 }

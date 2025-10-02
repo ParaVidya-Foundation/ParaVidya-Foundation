@@ -18,21 +18,21 @@ const options: Option[] = [
     title: "Donate",
     description:
       "Discover the three levels of donations depending on your level of commitment. Help us help you.",
-    icon: "/icons/lotus1.svg",
+    icon: "/donateicon.png",
     link: "/donate",
   },
   {
     title: "Spread the word",
     description:
       "Buy the super useful, inexpensive and stunning booklet on Sadhana for personal use and gifting.",
-    icon: "/icons/lotus2.svg",
+      icon: "/spreadicon.png",
     link: "/about-us",
   },
   {
     title: "Corporate Sponsorship",
     description:
       "Explore the very unique opportunity of sponsoring our noble cause and see how it can benefit your organization.",
-    icon: "/icons/lotus3.svg",
+    icon: "/corporateicon.png",
     link: "/corporate",
   },
 ];
@@ -61,8 +61,8 @@ export default function SupportOptions() {
               <Image
                 src={opt.icon}
                 alt={opt.title}
-                width={50}
-                height={50}
+                width={70}
+                height={70}
                 className="mb-4"
               />
               <h3
