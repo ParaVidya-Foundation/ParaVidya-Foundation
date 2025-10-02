@@ -16,9 +16,10 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   static getDerivedStateFromError(error: Error): Partial<ErrorBoundaryState> {
     return { hasError: true, error };
   }
-
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
-    this.setState({ componentStack: errorInfo.componentStack });
+    // componentStack is typed as string | null in state, but errorInfo.componentStack could be undefined
+    // so we need to handle that case
+    this.setState({ componentStack: errorInfo.componentStack || null });
     console.error("Error caught by ErrorBoundary:", error, errorInfo);
   }
 

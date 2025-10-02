@@ -38,6 +38,32 @@ export const metadata: Metadata = {
   authors: [{ name: "ParaVidya Foundation" }],
   creator: "ParaVidya Foundation",
   publisher: "ParaVidya Foundation",
+  icons: {
+    icon: [
+      {
+        url: "/Paravidyalogosvg.svg",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/Logo.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/Logo.png",
+        type: "image/png",
+        sizes: "16x16",
+      }
+    ],
+    shortcut: "/Paravidyalogosvg.svg",
+    apple: [
+      {
+        url: "/Logo.png",
+        sizes: "180x180",
+      }
+    ],
+  },
+  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,
