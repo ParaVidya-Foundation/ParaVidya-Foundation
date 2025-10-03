@@ -14,7 +14,7 @@ const inter = Inter({
 
 export function YogaCarousel() {
   const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
+    <Card key={card.src} card={{...card, slug: card.id}} index={index} />
   ));
 
   return (

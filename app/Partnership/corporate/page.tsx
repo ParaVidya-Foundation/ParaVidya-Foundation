@@ -22,7 +22,7 @@ export default function Corporate() {
         {/* Left Side Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
           <img
-            src={"/TEST.png"}
+            src={"/corporate.jpg"}
             alt="Corporate at Para Vidya"
             className="w-full max-w-md h-auto object-cover rounded-lg shadow-md"
             loading="lazy"

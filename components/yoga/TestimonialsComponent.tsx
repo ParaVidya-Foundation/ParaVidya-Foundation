@@ -116,11 +116,7 @@ export default function VideoReelsCarousel({
         </header>
 
         {/* Carousel */}
-        <div className="relative w-full overflow-hidden py-4">
-          <div
-            ref={trackRef}
-            className="flex gap-6 px-4 will-change-transform"
-            style={{
+        <div className="relative w-full overflow-hidden py-4" style={{
               WebkitMaskImage:
                 "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
               maskImage:
@@ -129,7 +125,11 @@ export default function VideoReelsCarousel({
               maskRepeat: "no-repeat",
               WebkitMaskSize: "100% 100%",
               maskSize: "100% 100%",
-            }}
+            }}>
+          <div
+            ref={trackRef}
+            className="flex gap-6 px-4 will-change-transform"
+            
           >
             {items.map((r, idx) => (
               <div

@@ -1,8 +1,13 @@
+import DharmaHero from "@/components/Dharma/DharmaHero";
+import GitaQuoteSection from "@/components/Dharma/GitaQuoteSection";
+import AllStackedCards from "@/components/Dharma/AllStackedCards";
+
 export default function Dharma() {
   return (
     <main>
-      <h1>Hello, Next.js! 🚀</h1>
-      <p>This is a basic Next.js page.</p>
+     <DharmaHero />
+     <GitaQuoteSection />
+     <AllStackedCards />
     </main>
   );
 }

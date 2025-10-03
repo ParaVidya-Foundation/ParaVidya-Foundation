@@ -266,18 +266,18 @@ const Header: React.FC = () => {
                 <Link href="/Partnership/AwarenessProgram" onClick={closeMenu}>
                   Awareness Program
                 </Link>
-                <Link href="/Partnership/Camps" onClick={closeMenu}>
+                {/* <Link href="/Partnership/Camps" onClick={closeMenu}>
                   Camps
-                </Link>
+                </Link> */}
                 <Link href="/Partnership/corporate" onClick={closeMenu}>
                   Corporate
                 </Link>
                 <Link href="/Partnership/Donate" onClick={closeMenu}>
                   Donation
                 </Link>
-                <Link href="/Partnership/Events" onClick={closeMenu}>
+                {/* <Link href="/Partnership/Events" onClick={closeMenu}>
                   Events
-                </Link>
+                </Link> */}
                 <Link href="/Partnership/JoinourNGO" onClick={closeMenu}>
                   Join our NGO
                 </Link>
