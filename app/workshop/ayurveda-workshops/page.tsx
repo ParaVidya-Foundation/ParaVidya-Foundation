@@ -15,7 +15,7 @@ export default function AyurvedaWorkshopsPage() {
     <div className="">
          <div className="top-img-about">
           <img
-            src={"/Carousel/Online-Hawan.jpg"}
+            src={"/Carousel/Ayurveda.jpg"}
             alt="Ayurveda Workshops at Para Vidya"
             className="w-full h-auto object-cover"
             loading="lazy" 

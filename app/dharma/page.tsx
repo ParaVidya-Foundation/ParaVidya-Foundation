@@ -2,14 +2,14 @@
 
 import DharmaHero from "@/components/Dharma/DharmaHero";
 import GitaQuoteSection from "@/components/Dharma/GitaQuoteSection";
-import AllStackedCards from "@/components/Dharma/AllStackedCards";
+import StackedCards from "@/components/Dharma/StackedCards/StackedCards";
 
 export default function Dharma() {
   return (
     <main>
      <DharmaHero />
      <GitaQuoteSection />
-     <AllStackedCards />
+<StackedCards/>
     </main>
   );
 }

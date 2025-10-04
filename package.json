@@ -69,6 +69,7 @@
     "react-resizable-panels": "^2.1.7",
     "react-slick": "^0.31.0",
     "recharts": "2.15.4",
+    "sass": "^1.93.2",
     "slick-carousel": "^1.8.1",
     "sonner": "^1.7.4",
     "styled-components": "^6.1.19",

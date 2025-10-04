@@ -5,12 +5,12 @@ import YouthInternshipHero from "@/components/Partnership/volunteer/YouthInterns
 import VolunteerRoles from "@/components/Partnership/volunteer/VolunteerRoles";
 
 const programs = [
-  { title: "Day-to-Day Activities", image: "/programs/day.jpg", link: "/programs/day" },
-  { title: "Teacher", image: "/programs/teacher.jpg", link: "/programs/teacher" },
-  { title: "Annam Brahma", image: "/programs/annam.jpg", link: "/programs/annam" },
-  { title: "Course Coordinator", image: "/programs/course.jpg", link: "/programs/course" },
-  { title: "Kitchen Work", image: "/programs/kitchen.jpg", link: "/programs/kitchen" },
-  { title: "Expertise Based", image: "/programs/expertise.jpg", link: "/programs/expertise" },
+  { title: "Day-to-Day Activities", image: "/Join/day.webp", link: "/programs/day" },
+  { title: "Teacher", image: "/Join/teacher.webp", link: "/programs/teacher" },
+  { title: "Annam Brahma", image: "/Join/annam.webp", link: "/programs/annam" },
+  { title: "Course Coordinator", image: "/Join/course.webp", link: "/programs/course" },
+  { title: "Kitchen Work", image: "/Join/kitchen.webp", link: "/programs/kitchen" },
+  { title: "Expertise Based", image: "/Join/expertise.webp", link: "/programs/expertise" },
 ];
 
 export default function JoinourNGO() {
@@ -18,7 +18,7 @@ export default function JoinourNGO() {
     <>
       <div className="top-img-about">
         <img
-          src={"/Carousel/Online-Hawan.jpg"}
+          src={"/Carousel/Online-Hawan.webp"}
           alt="Mantra Workshops at Para Vidya"
           className="w-full h-auto object-cover"
           loading="lazy"
