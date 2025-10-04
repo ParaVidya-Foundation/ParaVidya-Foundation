@@ -37,7 +37,7 @@ export default function AwarenessHero() {
         <div className="flex justify-center md:justify-end">
           <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl aspect-square">
             <Image
-              src="/hero-gif.gif" // replace with your GIF
+              src="/Awareness.png" // replace with your GIF
               alt="NGO Awareness Campaign"
               fill
               priority

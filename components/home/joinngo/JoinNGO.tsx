@@ -19,7 +19,7 @@ export default function JoinNGO() {
 
       {/* Subtext */}
       <p className="text-lg md:text-xl text-gray-700 mt-6 max-w-2xl text-center font-medium font-manrope">
-        The world's largest social fundraising platform, optimized for your NGO
+        The world&apos;s largest social fundraising platform, optimized for your NGO
         in a bold and minimal way.
       </p>
 

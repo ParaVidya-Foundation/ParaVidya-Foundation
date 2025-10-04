@@ -14,13 +14,13 @@ type VerticalImageLoopProps = {
 const DEFAULT_COLS: string[][] = [
   [
     "/makingchange/community-outreach-1.jpeg",
-    "/makingchange/education-initiative-1.JPG",
+    "/makingchange/education-initiative-1.jpg",
     "/makingchange/social-impact-1.jpeg",
-    "/makingchange/volunteer-work-1.JPG",
+    "/makingchange/volunteer-work-1.jpg",
   ],
   [
     "/makingchange/community-service-1.jpeg",
-    "/makingchange/charity-event-1.JPG",
+    "/makingchange/charity-event-1.jpg",
     "/makingchange/ngo-activities-1.jpeg",
   ],
   [

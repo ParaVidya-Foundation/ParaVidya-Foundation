@@ -1,48 +1,42 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 
 type Props = { className?: string };
 
-export default function GitaCardAtman({ className = "" }: Props) {
+export default function GitaCardBhakti({ className = "" }: Props) {
   return (
     <article
       className={`h-full w-full bg-white flex flex-col md:flex-row items-center ${className}`}
       role="article"
-      aria-labelledby="gita-atman-title"
+      aria-labelledby="gita-bhakti-title"
     >
-      <div className="relative w-full md:w-1/3 h-56 md:h-full flex-shrink-0">
-        <Image
-          src="/Dharma.png"
-          alt="Atman - Eternal Soul"
-          fill
-          className="object-cover object-center"
-          sizes="(max-width: 768px) 100vw, 33vw"
-        />
-      </div>
-
-      <div className="p-6 md:p-10 flex-1 flex flex-col justify-center gap-4">
-        <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-4 rounded-2xl">
-          <h3 id="gita-atman-title" className="font-playfair text-2xl md:text-3xl font-semibold text-gray-900">
-            न जायते म्रियते वा — The soul is unborn, eternal, ever-existing
+      <div className="w-full md:w-1/2 p-6 md:p-10 order-1 md:order-2 flex flex-col justify-center h-full">
+        <div className="inline-block bg-gradient-to-r from-amber-100 to-orange-100 p-4 rounded-2xl">
+          <h3 id="gita-bhakti-title" className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight mb-2">
+            भक्त्या मामभिजानाति — Through devotion, one truly knows Me
           </h3>
-          <p className="text-amber-800 italic font-semibold mt-2">– Bhagavad Gita (2.20)</p>
+          <p className="text-amber-800 italic font-semibold mt-2">– Bhagavad Gita (18.55)</p>
         </div>
 
-        <p className="text-gray-700 font-manrope text-lg md:text-xl leading-snug">
-          Understanding the Atman (true Self) relieves fear and fosters a deeper purpose. This teaching forms the heart of equanimity practices we share.
+        <p className="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
+          Bhakti — the path of devotion and surrender — opens the heart and establishes deep connection and purpose.
         </p>
 
-        <p className="text-gray-600 font-manrope leading-relaxed">
-          Our sessions translate this wisdom into meditations and reflective exercises that help participants tap inner steadiness beyond everyday stress.
+        <p className="mt-4 text-sm md:text-base text-gray-600 leading-relaxed">
+          Devotional practice builds compassion and belonging; we translate these ideas into approachable group practices.
         </p>
+      </div>
 
-        <Link
-          href="/gita/atman"
-          className="mt-3 inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#f97f12] text-white font-semibold shadow hover:brightness-95 transition"
-          aria-label="Explore Atman"
-        >
-          Explore Atman
-        </Link>
+      <div className="relative w-full md:w-1/2 h-56 md:h-full order-2 md:order-1 rounded-2xl overflow-hidden">
+        <Image
+          src="/Dharma.png"
+          alt="Bhakti illustration"
+          fill
+          className="object-cover object-center"
+          priority={false}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </div>
     </article>
   );

@@ -23,6 +23,7 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://paravidyafoundation.com'),
   title: "ParaVidya Foundation - Spiritual Wellness & Yoga",
   description: "Transform your life through ancient wisdom and modern wellness practices. Expert yoga courses, meditation guidance, and holistic healing for spiritual seekers.",
   keywords: [

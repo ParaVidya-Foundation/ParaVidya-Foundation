@@ -52,7 +52,7 @@ export default function BookingForm(): JSX.Element {
           Book your session
         </h3>
         <p className="text-sm text-gray-600 mb-6">
-          Quick booking — enter your details and we'll get back to schedule your meditation session.
+          Quick booking — enter your details and we&apos;ll get back to schedule your meditation session.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4" noValidate>
