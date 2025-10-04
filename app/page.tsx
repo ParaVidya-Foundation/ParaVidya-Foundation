@@ -7,7 +7,7 @@ import { Metadata } from "next"
 import KaramkandHome from "@/components/home/Karamkandhome"
 import GitaHome from "@/components/home/Workshop"
 import VideoSeries from "@/components/home/VideoSeries"
-import NewsletterSection from "@/components/home/NewsletterSection"
+import NewsletterSection from "@/components/home/Newletter/NewsletterSection"
 import JoinNGO from "@/components/home/joinngo/JoinNGO"
 
 export const metadata: Metadata = {
@@ -61,7 +61,7 @@ const slides = [
   {
   
     subtitle: "Harness the power of sound to transform thoughts and destiny. Practice with our guidance and clear your doubts.",
-    image: "/SmallCarousel/gita2.png",
+    image: "/SmallCarousel/gita1.png",
     buttonText: "Get Started",
     buttonLink: "/workshop",
   },
@@ -102,21 +102,21 @@ const slides = [
   },
   {
     subtitle: "Explore how stars and planets can affect your life, and how to read charts. Join our classes and get your questions answered.",
-    image: "/SmallCarousel/gita.png",
+    image: "/SmallCarousel/astrology.webp",
     buttonText: "Learn More",
     buttonLink: "/about-us",
   },
   {
   
     subtitle: "Learn sacred Vedic ceremonies and their meanings with expert guidance. We teach step by step and answer all your questions.",
-    image: "/SmallCarousel/gita2.png",
+    image: "/SmallCarousel/gita1.png",
     buttonText: "Get Started",
     buttonLink: "/workshop",
   },
   {
   
     subtitle: "Learn from our experts, unlock deep  knowledge, and get all your doubts answered freely.",
-    image: "/SmallCarousel/Sanskrit.webp",
+    image: "/SmallCarousel/sanskrit.webp",
     buttonText: "Contact Us",
     buttonLink: "/contact",
   },

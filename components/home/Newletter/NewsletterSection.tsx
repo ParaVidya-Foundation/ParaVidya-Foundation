@@ -17,7 +17,7 @@ export default function NewsletterSection() {
         <div className="flex flex-col justify-center items-center lg:items-start gap-4 max-w-lg">
           <p className="text-gray-700 leading-relaxed text-base md:text-lg font-manrope">
             <span className="font-semibold text-orange-600">Yoga Sattva</span>{" "}
-            is The Yoga Institute's free official newsletter aimed at spreading
+            is The Yoga Institute&apos;s free official newsletter aimed at spreading
             yoga philosophy to mankind. It features scholarly articles by{" "}
             <strong>Dr. Jayadeva</strong> and <strong>Smt. Hansaji</strong>.
           </p>

@@ -14,7 +14,7 @@ export default function KaramkandHome() {
 
   <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed font-manrope">
     At Para Vidya Foundation, we help you learn basic to advanced Vedic
-    knowledge and practice genuine Vedic rituals and Karam Kaand — whether it's
+    knowledge and practice genuine Vedic rituals and Karam Kaand — whether it&apos;s
     for daily puja or important life ceremonies — while also solving all your
     doubts. Our mission is to provide the right knowledge of Vedic practices,
     guiding you toward peace, prosperity, and divine blessings.

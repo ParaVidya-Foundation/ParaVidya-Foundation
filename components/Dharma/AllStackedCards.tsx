@@ -1,143 +1,117 @@
-// components/StackedGitaQuotes.tsx
 "use client";
 
-import { JSX, useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { JSX, useRef, useEffect, useState } from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
 import GitaCardDharma from "./GitaCardDharma";
 import GitaCardKarma from "./GitaCardKarma";
 import GitaCardAtman from "./GitaCardAtman";
 import GitaCardBhakti from "./GitaCardBhakti";
 
-gsap.registerPlugin(ScrollTrigger);
+const CARDS = [
+  { id: "dharma", Component: GitaCardDharma },
+  { id: "karma", Component: GitaCardKarma },
+  { id: "atman", Component: GitaCardAtman },
+  { id: "bhakti", Component: GitaCardBhakti },
+] as const;
 
 export default function StackedGitaQuotes(): JSX.Element {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  useLayoutEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+  // progress 0..1 - we'll set this inside RAF driven by Lenis
+  const progress = useMotionValue(0);
 
-    // Basic configuration you can tweak
-    const baseCardHeightVh = 90; // the visible height of each card
-    const overlapVhDesktop = 70; // how much they overlap on desktop
-    const overlapVhMobile = 50; // on mobile
-    const staggerGap = 0.14; // how animations are staggered along the timeline
+  // client-only sizes/state
+  const [viewportH, setViewportH] = useState<number>(typeof window !== "undefined" ? window.innerHeight : 800);
+  const [isClient, setIsClient] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(typeof window !== "undefined" ? window.innerWidth < 768 : false);
 
-    // Use gsap.context to scope selectors & cleanup properly
-    const ctx = gsap.context(() => {
-      // select card wrapper elements inside this container (order top-to-bottom)
-      const cards = gsap.utils.toArray<HTMLElement>("[data-gita-card]");
+  // tuning
+  const overlapVhDesktop = 70; // how much cards overlap on desktop (vh)
+  const overlapVhMobile = 50; // how much cards overlap on mobile (vh)
+  const baseCardHeightVh = 90; // visible card height in vh
 
-      if (!cards || cards.length === 0) {
-        return;
-      }
-
-      // function to compute overlap & set container height
-      const computeAndSetHeights = () => {
-        const isMobile = window.innerWidth < 768;
-        const overlap = isMobile ? overlapVhMobile : overlapVhDesktop;
-        const totalScrollVh = (cards.length - 1) * overlap;
-        const containerHeightVh = baseCardHeightVh + totalScrollVh;
-        // set explicit height (vh) so ScrollTrigger pin and absolute children behave
-        container.style.height = `${containerHeightVh}vh`;
-        return { overlap, totalScrollVh, containerHeightVh };
-      };
-
-      // initial calc
-      const { overlap, totalScrollVh } = computeAndSetHeights();
-
-      // set initial stacked transforms (so users see stacked cards before scrolling)
-      cards.forEach((card, i) => {
-        const idx = cards.length - i - 1; // reverse so last DOM element is bottom-most
-        const offset = idx * overlap;
-        const isMobile = window.innerWidth < 768;
-        gsap.set(card, {
-          y: `${offset}vh`,
-          scale: 1 - idx * (isMobile ? 0.005 : 0.01),
-          rotation: idx * (isMobile ? -0.25 : -0.5),
-          opacity: 0.92 - idx * 0.03,
-          transformOrigin: "top center",
-        });
-      });
-
-      // timeline + ScrollTrigger
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: `+=${totalScrollVh}vh`,
-          scrub: 0.7,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      cards.forEach((card, i) => {
-        tl.to(
-          card,
-          {
-            y: "0vh",
-            scale: 1,
-            rotation: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power1.out",
-          },
-          i * staggerGap
-        );
-      });
-
-      // When ScrollTrigger refreshes (e.g. on resize) recompute heights & reset initial transform
-      ScrollTrigger.addEventListener("refreshInit", () => {
-        // recompute container height for current viewport
-        computeAndSetHeights();
-      });
-
-      // Debounced resize handler to recalc heights and refresh ScrollTrigger
-      let resizeId: number | undefined;
-      const onResize = () => {
-        window.clearTimeout(resizeId);
-        resizeId = window.setTimeout(() => {
-          computeAndSetHeights();
-          ScrollTrigger.refresh();
-        }, 120) as unknown as number;
-      };
-      window.addEventListener("resize", onResize);
-
-      // cleanup for this context is handled below by ctx.revert()
-      // but remove our custom listener reference too (we'll remove on cleanup)
-      (tl as any)._resizeHandler = onResize;
-    }, container); // scope to container so selector '[data-gita-card]' is scoped
-
-    // cleanup function
-    return () => {
-      // revert gsap context (kills tweens created within and restores any inline styles added by ctx)
-      ctx.revert();
-
-      // kill any remaining ScrollTriggers (defensive)
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-      // restore container's inline height removal (optional)
-      if (containerRef.current) {
-        containerRef.current.style.height = "";
-      }
-
-      // remove any leftover window listeners (defensive)
-      try {
-        // we don't have the exact handler reference (scoped), but remove common 'resize'
-        // NOTE: ctx.revert above removed handlers created in ctx — this is an extra safe step
-        // (no-op if handler is already removed)
-        window.removeEventListener("resize", () => {});
-      } catch (e) {
-        /* noop */
-      }
+  // update viewport state on mount / resize
+  useEffect(() => {
+    setIsClient(true);
+    const update = () => {
+      setViewportH(window.innerHeight || 800);
+      setIsMobile(window.innerWidth < 768);
     };
+    update();
+    window.addEventListener("resize", update, { passive: true });
+    return () => window.removeEventListener("resize", update);
   }, []);
 
-  // Render stacked cards — use data attribute for selection
-  // Make sure cards are wrapped (we use the wrapper for transforms).
-  // The top-most card should appear *first* in the DOM so it gets the highest z-index visually.
+  // Set up Lenis + RAF to compute progress (0..1) relative to container scroll
+  useEffect(() => {
+    if (!isClient) return;
+    const lenis = new Lenis({ duration: 1.1, easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    let rafId = 0;
+
+    const frame = (time: number) => {
+      lenis.raf(time);
+
+      const container = containerRef.current;
+      if (container) {
+        const rect = container.getBoundingClientRect();
+        const denom = rect.height - (window.innerHeight || 1);
+        const raw = denom > 0 ? -rect.top / denom : rect.top < 0 ? 1 : 0;
+        const clamped = Math.max(0, Math.min(1, raw));
+        progress.set(clamped);
+      }
+
+      rafId = requestAnimationFrame(frame);
+    };
+
+    rafId = requestAnimationFrame(frame);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isClient]); // run once after client mount
+
+  // compute container height using vh units (so pin effect works)
+  const overlapVh = isMobile ? overlapVhMobile : overlapVhDesktop;
+  const totalScrollVh = (CARDS.length - 1) * overlapVh;
+  const containerHeightVh = baseCardHeightVh + totalScrollVh;
+
+  // precompute transforms for each card in a stable order (hooksp must be called in same order each render)
+  const transforms = CARDS.map((_, i) => {
+    const segment = 1 / CARDS.length;
+    const entranceStagger = 0.04;
+    const start = Math.max(0, i * segment - entranceStagger);
+    const end = Math.min(1, (i + 1) * segment + 0.0001);
+
+    // initial offset in px (vh -> px)
+    const initialOffsetPx = (i * overlapVh * viewportH) / 100;
+
+    const y = useTransform(progress, [start, end], [initialOffsetPx, 0]);
+    const scale = useTransform(progress, [start, end], [Math.max(0.86, 1 - i * 0.02), 1]);
+    const rotate = useTransform(progress, [start, end], [-2 * i, 0]); // degrees numeric
+    const opacity = useTransform(progress, [start, end], [Math.max(0.55, 0.75 - i * 0.06), 1]);
+
+    return { y, scale, rotate, opacity, zIndex: CARDS.length - i };
+  });
+
+  // if not client yet, render placeholder to avoid hydration mismatch
+  if (!isClient) {
+    return (
+      <section className="w-full py-12" aria-labelledby="gita-quotes-title" role="region">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 id="gita-quotes-title" className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800">
+            Timeless Wisdom from Bhagavad Gita
+          </h2>
+          <div className="relative w-full mx-auto min-h-[70vh]">
+            <p className="text-center text-gray-500">Loading…</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="w-full py-12" aria-labelledby="gita-quotes-title" role="region">
       <div className="max-w-7xl mx-auto px-4">
@@ -145,23 +119,32 @@ export default function StackedGitaQuotes(): JSX.Element {
           Timeless Wisdom from Bhagavad Gita
         </h2>
 
-        {/* container: we set height dynamically (vh) — provide a sensible fallback min-height */}
-        <div ref={containerRef} className="relative w-full min-h-[90vh] mx-auto">
-          {/* Top-most in DOM = visually top (higher z) */}
-          <div data-gita-card className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[90vh] z-40 rounded-3xl overflow-hidden shadow-2xl">
-            <GitaCardDharma />
-          </div>
-
-          <div data-gita-card className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[90vh] z-30 rounded-3xl overflow-hidden shadow-2xl">
-            <GitaCardKarma />
-          </div>
-
-          <div data-gita-card className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[90vh] z-20 rounded-3xl overflow-hidden shadow-2xl">
-            <GitaCardAtman />
-          </div>
-
-          <div data-gita-card className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[90vh] z-10 rounded-3xl overflow-hidden shadow-2xl">
-            <GitaCardBhakti />
+        {/* outer container sets overall scroll length (vh units) */}
+        <div ref={containerRef} className="relative w-full mx-auto" style={{ height: `${containerHeightVh}vh` }}>
+          {/* sticky area (pinned while container scrolls) */}
+          <div className="sticky top-0 h-screen flex items-center justify-center pointer-events-none">
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* render cards — DOM order: top-most card first (i=0) */}
+              {CARDS.map(({ id, Component }, i) => {
+                const t = transforms[i];
+                return (
+                  <motion.div
+                    key={id}
+                    style={{
+                      y: t.y,
+                      scale: t.scale,
+                      rotate: t.rotate,
+                      opacity: t.opacity,
+                      zIndex: t.zIndex,
+                      pointerEvents: "auto",
+                    }}
+                    className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[90vh] rounded-3xl overflow-hidden shadow-2xl bg-white"
+                  >
+                    <Component />
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
