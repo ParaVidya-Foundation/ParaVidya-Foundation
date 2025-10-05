@@ -47,7 +47,7 @@ export default function Card({
         }}
       >
         {/* Left Image */}
-        <div className={`w-full md:w-1/2 relative overflow-hidden ${isReverse ? 'order-2 md:order-1' : 'order-1 md:order-1'}`}>
+        <div className={`w-full md:w-1/2 relative overflow-hidden rounded-lg ${isReverse ? 'order-2 md:order-1' : 'order-1 md:order-1'}`}>
           <motion.div
             className="relative w-full h-full"
             style={{ scale: imageScale, y: imageY }}
