@@ -41,7 +41,7 @@ export default function SleepTherapyYogaPage() {
       <HeroSection
         title="Sleep Therapy Yoga"
         subtitle="Soothe the nervous system with restorative shapes, breath that lengthens the exhale, and practices that invite deep rest and peaceful slumber."
-        imageSrc="/Yoga/sleep.png"
+        imageSrc="/Yoga/sleep-main.webp"
         imageAlt="Calming evening yoga promoting sleep"
       />
       
@@ -88,7 +88,7 @@ export default function SleepTherapyYogaPage() {
           <CourseBanner
             title="Sleep Therapy Yoga"
             subtitle="Create the perfect conditions for restorative sleep through gentle movement, conscious breathing, and mindful relaxation practices."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>

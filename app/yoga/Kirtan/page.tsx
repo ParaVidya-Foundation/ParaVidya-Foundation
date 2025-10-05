@@ -40,7 +40,7 @@ export default function KirtanYogaPage() {
       <HeroSection
         title="Kirtan Yoga"
         subtitle="Experience the transformative power of devotional chanting, sacred sound, and heart-opening practices that connect you to your spiritual essence and inner peace."
-        imageSrc="/Yoga/kirtan.png"
+        imageSrc="/Yoga/kirtan-main.webp"
         imageAlt="Devotional practice with serene ambiance"
       />
       
@@ -87,7 +87,7 @@ export default function KirtanYogaPage() {
           <CourseBanner
             title="Kirtan Yoga"
             subtitle="Open your heart to divine love through sacred chanting, devotional movement, and spiritual practices that connect you to your highest self."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>

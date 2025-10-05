@@ -41,7 +41,7 @@ export default function WellnessYogaPage() {
       <HeroSection
         title="Wellness Yoga"
         subtitle="A holistic blend of movement, breath, and stillness to nurture vitality, balance, and inner connection—at every age and stage of life's journey."
-        imageSrc="/Yoga/wellness.png"
+        imageSrc="/Yoga/wellness-main.webp"
         imageAlt="Gentle yoga practice symbolizing holistic wellness"
       />
       
@@ -88,7 +88,7 @@ export default function WellnessYogaPage() {
           <CourseBanner
             title="Wellness Yoga"
             subtitle="Embrace a comprehensive approach to health and happiness through mindful movement, conscious living, and practices that nurture your whole being."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>

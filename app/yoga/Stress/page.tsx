@@ -41,7 +41,7 @@ export default function StressManagementYogaPage() {
       <HeroSection
         title="Stress Management Yoga"
         subtitle="Unwind with soothing sequences, grounding breathwork, and mindful pauses—practices designed to bring you back to balance and inner peace."
-        imageSrc="/Yoga/stressed.png"
+        imageSrc="/Yoga/stress-main.webp"
         imageAlt="Relaxing yoga for stress relief"
       />
       
@@ -88,7 +88,7 @@ export default function StressManagementYogaPage() {
           <CourseBanner
             title="Stress Management Yoga"
             subtitle="Transform stress into strength through mindful movement, conscious breathing, and present-moment awareness. Find your calm in the chaos."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>

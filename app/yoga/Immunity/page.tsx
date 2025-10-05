@@ -41,7 +41,7 @@ export default function ImmunityBoostingYogaPage() {
       <HeroSection
         title="Immunity Boosting Yoga"
         subtitle="Strengthen your body's natural defenses through targeted poses, cleansing breathwork, and holistic practices that support your immune system's optimal function."
-        imageSrc="/Yoga/immunity.png"
+        imageSrc="/Yoga/immunity-main.webp"
         imageAlt="Detoxifying yoga twist aiding immunity"
       />
       
@@ -88,7 +88,7 @@ export default function ImmunityBoostingYogaPage() {
           <CourseBanner
             title="Immunity Boosting Yoga"
             subtitle="Build your body's natural fortress through mindful movement, conscious breathing, and holistic practices that strengthen your immune system from within."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>

@@ -14,58 +14,58 @@ interface GridItem {
 const gridItems: GridItem[] = [
   { 
     id: 1, 
-    title: 'Better Now Closer - Building stronger connections', 
+    title: 'Tantra', 
     link: '/page1', 
-    imageUrl: '/Dharma.png',
+    imageUrl: '/workshop-bento/tantra.webp',
     aspectRatio: '4:3' // 1200x900px recommended
   },
   { 
     id: 2, 
-    title: 'Collaboration - Working together seamlessly', 
+    title: 'Meditation', 
     link: '/page2', 
-    imageUrl: '/Dharma.png',
+    imageUrl: '/workshop-bento/meditation.webp',
     aspectRatio: '3:4' // 900x1200px recommended
   },
   { 
     id: 3, 
-    title: 'Team Adaptation - Evolving with your team', 
+    title: 'Bhagavad Gita', 
     link: '/page3', 
-    imageUrl: '/Dharma.png',
+    imageUrl: '/workshop-bento/gita.webp',
     aspectRatio: '16:9' // 1600x900px recommended
   },
   { 
     id: 4, 
-    title: 'Sync - Stay in perfect harmony', 
+    title: 'Yoga', 
     link: '/page4', 
-    imageUrl: '/Dharma.png',
+    imageUrl: '/workshop-bento/yoga.webp',
     aspectRatio: '16:9' // 1600x900px recommended
   },
   { 
     id: 5, 
-    title: 'Bring People Together - Unite your community', 
+    title: 'Ayurveda', 
     link: '/page5', 
-    imageUrl: '/Dharma.png',
+    imageUrl: '/workshop-bento/ayurveda.webp',
     aspectRatio: '21:9' // 2100x900px recommended (ultra-wide)
   },
   { 
     id: 6, 
-    title: 'Communication - Connect instantly', 
+    title: 'Astrology', 
     link: '/page6', 
-    imageUrl: '/Dharma.png',
+    imageUrl: '/workshop-bento/astrology.webp',
     aspectRatio: '16:9' // 1600x900px recommended
   },
   { 
     id: 7, 
-    title: 'Engagement - Interactive experiences', 
+    title: 'Sadhna', 
     link: '/page7', 
-    imageUrl: '/Dharma.png',
+    imageUrl: '/workshop-bento/sadhna.webp',
     aspectRatio: '16:9' // 1600x900px recommended
   },
   { 
     id: 8, 
-    title: 'Innovation - Pushing boundaries', 
+    title: 'Sanskrit', 
     link: '/page8', 
-    imageUrl: '/Dharma.png',
+    imageUrl: '/workshop-bento/sanskrit.webp',
     aspectRatio: '21:9' // 2100x900px recommended (ultra-wide)
   },
 ];

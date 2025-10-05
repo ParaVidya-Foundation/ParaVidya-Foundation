@@ -72,7 +72,7 @@ export default function AngerManagementYogaPage() {
     <HeroSection
     title="Anger Management Yoga"
     subtitle="Channel intense energy into centered calm through breathwork, grounding asanas, and meditative focus. Learn to pause, reset, and respond with clarity."
-    imageSrc="/Yoga/anger.png"
+    imageSrc="/Yoga/anger-main.webp"
     imageAlt="Grounded yoga posture promoting calm and control"
   />
     <main className="flex flex-col items-center justify-center w-full overflow-x-hidden">
@@ -120,7 +120,7 @@ export default function AngerManagementYogaPage() {
         <CourseBanner
           title="Anger Management Yoga"
           subtitle="Channel intense energy into centered calm through breathwork, grounding asanas, and meditative focus. Learn to pause, reset, and respond with clarity."
-          imageSrc="/Yoga/poster.png"
+           imageSrc="/Yoga/Yoga.jpg"
           buttonText="Join Now"
         />
       </section>

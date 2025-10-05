@@ -41,7 +41,7 @@ export default function FatigueReliefYogaPage() {
       <HeroSection
         title="Fatigue Relief Yoga"
         subtitle="Reclaim your natural energy through invigorating flows, energizing breathwork, and revitalizing practices that awaken your body's innate vitality."
-        imageSrc="/Yoga/Fatigue.png"
+        imageSrc="/Yoga/fatigue-main.webp"
         imageAlt="Invigorating morning yoga session"
       />
       
@@ -88,7 +88,7 @@ export default function FatigueReliefYogaPage() {
           <CourseBanner
             title="Fatigue Relief Yoga"
             subtitle="Transform exhaustion into vitality through mindful movement, conscious breathing, and energy-restoring practices that honor your body's natural rhythms."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>

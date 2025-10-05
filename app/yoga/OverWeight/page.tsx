@@ -41,7 +41,7 @@ export default function WeightManagementYogaPage() {
       <HeroSection
         title="Weight Management Yoga"
         subtitle="Achieve healthy weight goals through mindful movement, balanced nutrition awareness, and sustainable lifestyle practices that honor your body's natural wisdom."
-        imageSrc="/Yoga/weight.png"
+        imageSrc="/Yoga/weight-main.webp"
         imageAlt="Yoga flow supporting healthy weight"
       />
       
@@ -88,7 +88,7 @@ export default function WeightManagementYogaPage() {
           <CourseBanner
             title="Weight Management Yoga"
             subtitle="Transform your relationship with your body through compassionate movement, mindful awareness, and sustainable practices that support your health goals."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>

@@ -41,7 +41,7 @@ export default function DepressionSupportYogaPage() {
       <HeroSection
         title="Depression Support Yoga"
         subtitle="Gentle movement, conscious breathing, and mindful awareness practices designed to support emotional healing and cultivate inner light during challenging times."
-        imageSrc="/Yoga/depression.png"
+        imageSrc="/Yoga/depression-main.webp"
         imageAlt="Restorative yoga pose with calm ambiance"
       />
       
@@ -88,7 +88,7 @@ export default function DepressionSupportYogaPage() {
           <CourseBanner
             title="Depression Support Yoga"
             subtitle="Find your inner light through gentle movement, conscious breathing, and compassionate self-care practices designed to support your healing journey."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>
