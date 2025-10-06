@@ -10,7 +10,7 @@ export default function YogaWorkshopSection() {
         {/* Left: Image */}
         <div className="relative w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg">
           <Image
-            src="/test2.png"
+            src="/Corporate-yoga.webp"
             alt="Corporate Yoga & Workshops"
             fill
             className="object-cover object-center"

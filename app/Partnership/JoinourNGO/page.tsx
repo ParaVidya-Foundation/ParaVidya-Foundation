@@ -18,7 +18,7 @@ export default function JoinourNGO() {
     <>
       <div className="top-img-about">
         <img
-          src={"/Carousel/Online-Hawan.webp"}
+          src={"/Carousel/Join.jpg"}
           alt="Mantra Workshops at Para Vidya"
           className="w-full h-auto object-cover"
           loading="lazy"

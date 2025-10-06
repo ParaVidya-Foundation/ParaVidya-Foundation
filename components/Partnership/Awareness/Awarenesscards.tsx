@@ -8,35 +8,35 @@ const topics = [
     title: "Ayurveda",
     description:
       "Discover the timeless science of Ayurveda – balancing body, mind, and spirit through natural healing, diet, and lifestyle practices.",
-    image: "/awareness/ayurveda.jpg",
+    image: "/awareness/Ayurveda.webp",
     link: "/awareness/ayurveda",
   },
   {
     title: "Bhagavad Gita",
     description:
       "Learn the essence of the Bhagavad Gita – a spiritual guide to living with wisdom, clarity, and purpose in modern times.",
-    image: "/awareness/gita.jpg",
+    image: "/awareness/Gita.webp",
     link: "/awareness/gita",
   },
   {
     title: "Tantra",
     description:
       "Understand Tantra beyond misconceptions – a path of transformation, sacred energy, and spiritual awakening.",
-    image: "/awareness/tantra.jpg",
+    image: "/awareness/Tantra.webp",
     link: "/awareness/tantra",
   },
   {
     title: "Mantra",
     description:
       "Experience the power of sound and vibration through Mantras – tools for meditation, healing, and inner strength.",
-    image: "/awareness/mantra.jpg",
+    image: "/awareness/Mantra.webp",
     link: "/awareness/mantra",
   },
   {
     title: "Right Path to Dharma",
     description:
       "Explore Dharma as the foundation of righteous living – aligning actions with truth, duty, and cosmic order.",
-    image: "/awareness/dharma.jpg",
+    image: "/awareness/Dharma.webp",
     link: "/awareness/dharma",
   },
 ]
