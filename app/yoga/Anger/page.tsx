@@ -72,7 +72,7 @@ export default function AngerManagementYogaPage() {
     <HeroSection
     title="Anger Management Yoga"
     subtitle="Channel intense energy into centered calm through breathwork, grounding asanas, and meditative focus. Learn to pause, reset, and respond with clarity."
-    imageSrc="/Yoga/anger.png"
+    imageSrc="/Yoga/anger-main.webp"
     imageAlt="Grounded yoga posture promoting calm and control"
   />
     <main className="flex flex-col items-center justify-center w-full overflow-x-hidden">
@@ -95,22 +95,22 @@ export default function AngerManagementYogaPage() {
           <Cause
             title="Frustration and Blocked Goals"
             subtitle="When our expectations aren't met or goals are blocked, frustration can escalate into anger — especially when we feel powerless."
-            imageSrc="/Yoga/anger.png"
+            imageSrc="/Yoga/causes/A1.webp"
           />
           <Cause
             title="Stress, Overwhelm, and Fatigue"
             subtitle="High stress, chronic overwhelm, or exhaustion lowers tolerance for challenges, making us more reactive to triggers."
-            imageSrc="/Yoga/anger.png"
+            imageSrc="/Yoga/causes/A2.webp"
           />
           <Cause
             title="Perceived Injustice and Disrespect"
             subtitle="Mistreatment, criticism, or boundary violations often trigger anger as a protective response."
-            imageSrc="/Yoga/anger.png"
+            imageSrc="/Yoga/causes/A3.webp"
           />
           <Cause
             title="Unresolved Past Experiences"
             subtitle="Unhealed trauma and unresolved conflicts create sensitivity that amplifies present frustrations."
-            imageSrc="/Yoga/anger.png"
+            imageSrc="/Yoga/causes/A4.webp"
           />
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function AngerManagementYogaPage() {
         <CourseBanner
           title="Anger Management Yoga"
           subtitle="Channel intense energy into centered calm through breathwork, grounding asanas, and meditative focus. Learn to pause, reset, and respond with clarity."
-          imageSrc="/Yoga/poster.png"
+           imageSrc="/Yoga/Yoga.jpg"
           buttonText="Join Now"
         />
       </section>

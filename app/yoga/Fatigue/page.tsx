@@ -41,7 +41,7 @@ export default function FatigueReliefYogaPage() {
       <HeroSection
         title="Fatigue Relief Yoga"
         subtitle="Reclaim your natural energy through invigorating flows, energizing breathwork, and revitalizing practices that awaken your body's innate vitality."
-        imageSrc="/Yoga/Fatigue.png"
+        imageSrc="/Yoga/fatigue-main.webp"
         imageAlt="Invigorating morning yoga session"
       />
       
@@ -63,22 +63,22 @@ export default function FatigueReliefYogaPage() {
             <Cause
               title="Sleep Disorders and Poor Sleep Quality"
               subtitle="Insufficient sleep, poor sleep quality, sleep apnea, or irregular sleep patterns disrupt the body's natural recovery and energy restoration processes."
-              imageSrc="/Yoga/Fatigue.png"
+              imageSrc="/Yoga/causes/F1.webp"
             />
             <Cause
               title="Nutritional Deficiencies and Poor Diet"
               subtitle="Skipping meals, dehydration, excessive sugar intake, or lacking essential nutrients can severely impact energy production at the cellular level."
-              imageSrc="/Yoga/Fatigue.png"
+              imageSrc="/Yoga/causes/F2.webp"
             />
             <Cause
               title="Chronic Stress and Mental Overload"
               subtitle="Prolonged worry, anxiety, emotional stress, or mental overwork depletes both physical and mental energy reserves."
-              imageSrc="/Yoga/Fatigue.png"
+              imageSrc="/Yoga/causes/F3.webp"
             />
             <Cause
               title="Underlying Medical Conditions"
               subtitle="Health issues such as anemia, thyroid disorders, diabetes, or chronic fatigue syndrome can cause persistent fatigue that doesn't improve with rest alone."
-              imageSrc="/Yoga/Fatigue.png"
+              imageSrc="/Yoga/causes/F4.webp"
             />
           </div>
         </section>
@@ -88,7 +88,7 @@ export default function FatigueReliefYogaPage() {
           <CourseBanner
             title="Fatigue Relief Yoga"
             subtitle="Transform exhaustion into vitality through mindful movement, conscious breathing, and energy-restoring practices that honor your body's natural rhythms."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>

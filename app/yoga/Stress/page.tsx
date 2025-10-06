@@ -41,7 +41,7 @@ export default function StressManagementYogaPage() {
       <HeroSection
         title="Stress Management Yoga"
         subtitle="Unwind with soothing sequences, grounding breathwork, and mindful pauses—practices designed to bring you back to balance and inner peace."
-        imageSrc="/Yoga/stressed.png"
+        imageSrc="/Yoga/stress-main.webp"
         imageAlt="Relaxing yoga for stress relief"
       />
       
@@ -63,22 +63,22 @@ export default function StressManagementYogaPage() {
             <Cause
               title="Work and Career Pressures"
               subtitle="Demanding deadlines, heavy workloads, job insecurity, workplace conflicts, and lack of work-life balance create sustained mental and physical strain."
-              imageSrc="/Yoga/stressed.png"
+              imageSrc="/Yoga/causes/A2.webp"
             />
             <Cause
               title="Financial Concerns and Economic Stress"
               subtitle="Money worries including debt, insufficient income, unexpected expenses, and economic instability create persistent anxiety."
-              imageSrc="/Yoga/stressed.png"
+              imageSrc="/Yoga/causes/R5.webp"
             />
             <Cause
               title="Relationship and Social Challenges"
               subtitle="Interpersonal conflicts, social isolation, caregiving responsibilities, and communication difficulties create emotional stress."
-              imageSrc="/Yoga/stressed.png"
+              imageSrc="/Yoga/causes/R6.webp"
             />
             <Cause
               title="Health and Life Transition Stressors"
               subtitle="Chronic illness, major life changes, loss and grief, and worry about loved ones' health represent significant sources of psychological stress."
-              imageSrc="/Yoga/stressed.png"
+              imageSrc="/Yoga/causes/F4.webp"
             />
           </div>
         </section>
@@ -88,7 +88,7 @@ export default function StressManagementYogaPage() {
           <CourseBanner
             title="Stress Management Yoga"
             subtitle="Transform stress into strength through mindful movement, conscious breathing, and present-moment awareness. Find your calm in the chaos."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>

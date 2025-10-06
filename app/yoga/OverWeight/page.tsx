@@ -41,7 +41,7 @@ export default function WeightManagementYogaPage() {
       <HeroSection
         title="Weight Management Yoga"
         subtitle="Achieve healthy weight goals through mindful movement, balanced nutrition awareness, and sustainable lifestyle practices that honor your body's natural wisdom."
-        imageSrc="/Yoga/weight.png"
+        imageSrc="/Yoga/weight-main.webp"
         imageAlt="Yoga flow supporting healthy weight"
       />
       
@@ -63,22 +63,22 @@ export default function WeightManagementYogaPage() {
             <Cause
               title="Unhealthy Diet Patterns"
               subtitle="Consuming calorie-dense foods high in sugar, unhealthy fats, and refined carbohydrates leads to excess fat storage. Poor portion control also contributes to weight gain."
-              imageSrc="/Yoga/weight.png"
+              imageSrc="/Yoga/causes/D4.webp"
             />
             <Cause
               title="Sedentary Lifestyle"
               subtitle="Lack of regular physical activity slows down metabolism and reduces the body's ability to burn calories effectively."
-              imageSrc="/Yoga/weight.png"
+              imageSrc="/Yoga/causes/R1.webp"
             />
             <Cause
               title="Stress and Emotional Eating"
               subtitle="High stress levels trigger cortisol release, which can lead to increased appetite and cravings for comfort foods."
-              imageSrc="/Yoga/weight.png"
+              imageSrc="/Yoga/causes/R3.webp"
             />
             <Cause
               title="Hormonal and Medical Factors"
               subtitle="Conditions like thyroid disorders, PCOS, insulin resistance, or certain medications can disrupt metabolism and hormone balance."
-              imageSrc="/Yoga/weight.png"
+              imageSrc="/Yoga/causes/F2.webp"
             />
           </div>
         </section>
@@ -88,7 +88,7 @@ export default function WeightManagementYogaPage() {
           <CourseBanner
             title="Weight Management Yoga"
             subtitle="Transform your relationship with your body through compassionate movement, mindful awareness, and sustainable practices that support your health goals."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>
@@ -122,22 +122,7 @@ export default function WeightManagementYogaPage() {
         <section className="max-w-6xl w-full px-6 py-10">
           <YogaHelp 
             title="How Yoga Supports Healthy Weight Management" 
-            description="Yoga provides comprehensive support for sustainable weight management through multiple interconnected benefits:
-
-**Physical Benefits:**
-- **Metabolic Enhancement**: Dynamic yoga sequences like Surya Namaskar (Sun Salutations) and Vinyasa flows increase heart rate, burn calories, and build lean muscle mass
-- **Improved Flexibility and Strength**: Regular asana practice tones muscles, improves posture, and increases overall physical fitness
-- **Better Digestion**: Twisting poses, forward folds, and breathing exercises massage internal organs, supporting healthy digestion and elimination
-
-**Mental and Emotional Benefits:**
-- **Stress Reduction**: Pranayama and meditation lower cortisol levels, reducing stress-induced weight gain and emotional eating patterns
-- **Mindful Awareness**: Yoga cultivates present-moment awareness, helping develop conscious eating habits and better relationship with food
-- **Improved Sleep Quality**: Regular practice regulates sleep patterns, which balances hunger hormones like leptin and ghrelin
-
-**Holistic Lifestyle Support:**
-- **Body Positivity**: Yoga philosophy promotes self-acceptance and appreciation for your body's capabilities rather than focusing solely on appearance
-- **Sustainable Habits**: Gentle, consistent practice creates lasting lifestyle changes that support long-term weight management without extreme measures
-- **Community Support**: Group yoga classes provide motivation, accountability, and social connection on your wellness journey" 
+            description="Yoga is a powerful and holistic approach to sustainable weight management, offering benefits that go far beyond physical exercise. Through dynamic practices like Surya Namaskar (Sun Salutations) and Vinyasa flows, yoga enhances metabolism, burns calories, tones muscles, and builds lean strength for overall fitness. It also improves flexibility, posture, and balance, helping the body move efficiently and gracefully. Twisting poses, forward folds, and deep breathing techniques stimulate internal organs, improving digestion and detoxification. On a mental and emotional level, yoga reduces stress by lowering cortisol levels, which helps prevent emotional eating and weight gain. Through mindfulness and meditation, practitioners develop awareness of their hunger cues and build a healthier relationship with food. Regular yoga practice also improves sleep quality, balancing essential hormones like leptin and ghrelin that control appetite. Beyond physical and mental benefits, yoga encourages body positivity and self-acceptance, shifting focus from appearance to well-being. Its gentle, consistent practice promotes sustainable lifestyle habits rather than quick fixes, while group classes create motivation, accountability, and community support. By integrating movement, mindfulness, and self-compassion, yoga provides a complete, balanced path to achieving and maintaining a healthy weight naturally." 
           />
         </section>
 

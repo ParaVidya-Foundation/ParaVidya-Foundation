@@ -1,9 +1,7 @@
 "use client";
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { motion, useReducedMotion } from 'framer-motion';
-import styles from './heroyoga.module.css';
-// Fonts now imported globally
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion, Variants, useReducedMotion } from "framer-motion";
 
 interface HeroSectionProps {
   title: string;
@@ -17,166 +15,105 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
   imageSrc,
-  imageAlt = 'Hero Image',
-  className = '',
+  imageAlt = "Hero Image",
+  className = "",
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const prefersReducedMotion = useReducedMotion();
-
   const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-  useEffect(() => {
-    setIsLoaded(true); // Trigger animation on mount
-  }, []);
+  useEffect(() => setIsLoaded(true), []);
 
-  // Animation variants (respect reduced motion)
-  const textVariants = prefersReducedMotion
+  // ✅ Animation variants with proper typing
+  const textVariants: Variants = prefersReducedMotion
     ? { hidden: { opacity: 0 }, visible: { opacity: 1 } }
     : {
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.7, ease: EASE },
+        },
       };
 
-  const imageVariants = prefersReducedMotion
-    ? { hidden: { opacity: 0 }, visible: { opacity: 1 }, hover: { scale: 1 } }
+  const imageVariants: Variants = prefersReducedMotion
+    ? { hidden: { opacity: 0 }, visible: { opacity: 1 } }
     : {
-        hidden: { opacity: 0, scale: 0.96 },
+        hidden: { opacity: 0, scale: 0.97 },
         visible: {
           opacity: 1,
           scale: 1,
-          transition: { duration: 0.9, ease: EASE, delay: 0.15 },
+          transition: { duration: 0.9, ease: EASE, delay: 0.1 },
         },
-        hover: { scale: 1.02, transition: { duration: 0.25, ease: EASE } },
-      };
-
-  const floatVariants = prefersReducedMotion
-    ? {}
-    : {
-        animate: {
-          y: [0, -8, 0],
-          transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' },
-        },
+        hover: { scale: 1.02, transition: { duration: 0.3, ease: EASE } },
       };
 
   return (
-    <section
-      aria-labelledby="yoga-hero-heading"
-      className={`relative overflow-hidden min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-manrope ${className}`}
+    <header
+      className={`relative flex items-center justify-center min-h-[60vh] sm:min-h-[70vh] px-4 sm:px-6 lg:px-8 py-12 sm:py-16 ${className}`}
     >
-      <div aria-hidden="true" className={styles.texture} />
-      {/* Decorative blurred accents */}
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-indigo-300/30 blur-3xl"
-        {...floatVariants}
-        animate={prefersReducedMotion ? undefined : 'animate'}
-      />
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-fuchsia-300/30 blur-3xl"
-        {...floatVariants}
-        animate={prefersReducedMotion ? undefined : 'animate'}
-      />
-
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
-        {/* Text on the left */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-full">
+        {/* ✅ Left content */}
         <motion.div
-          className="text-left px-2 sm:px-0"
           initial="hidden"
-          animate={isLoaded ? 'visible' : 'hidden'}
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { 
-              opacity: 1, 
-              y: 0, 
-              transition: { 
-                duration: 0.7,
-                ease: EASE
-              }
-            }
-          }}
+          animate={isLoaded ? "visible" : "hidden"}
+          variants={textVariants}
+          className="text-left"
         >
-
-          <motion.h1
-            id="yoga-hero-heading"
-            className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-3 sm:mb-4 font-playfair leading-tight"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.75,
-                  ease: EASE 
-                }
-              }
-            }}
+          <h1
+            id="hero-heading"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-4 font-playfair"
           >
             {title}
-          </motion.h1>
-          <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-700/90 font-manrope mb-6 sm:mb-8 max-w-xl leading-relaxed"
-            variants={textVariants}
-            transition={{ delay: 0.1 }}
-          >
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 max-w-xl leading-relaxed">
             {subtitle}
-          </motion.p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+          </p>
+
+          {/* ✅ Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <motion.a
               href="#join"
-              className="inline-flex items-center justify-center rounded-full bg-indigo-600 text-white px-6 py-3 shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors duration-300 font-manrope text-sm sm:text-base"
-              aria-label="Join yoga program"
-              variants={{
-                hidden: { opacity: 0, y: 16 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.6, ease: EASE, delay: 0.05 },
-                },
-              }}
+              aria-label="Join Program"
+              variants={textVariants}
+              className="inline-flex items-center justify-center rounded-full bg-[#ff6b00] text-white px-6 py-3 font-medium text-sm sm:text-base transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/60"
             >
               Join Now
             </motion.a>
 
             <motion.a
-              href="/yoga"
-              className="inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white/70 text-indigo-700 px-6 py-3 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors duration-300 font-manrope text-sm sm:text-base"
-              aria-label="Explore yoga programs"
-              variants={{
-                hidden: { opacity: 0, y: 16 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.6, ease: EASE, delay: 0.1 },
-                },
-              }}
+              href="/programs"
+              aria-label="Explore Programs"
+              variants={textVariants}
+              className="inline-flex items-center justify-center rounded-full border border-[#ff6b00] text-[#ff6b00] bg-transparent px-6 py-3 font-medium text-sm sm:text-base transition-colors duration-300 hover:bg-[#ff6b00]/10 focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/40"
             >
               Explore Programs
             </motion.a>
           </div>
         </motion.div>
 
-        {/* Image on the right */}
+        {/* ✅ Right image — full resolution, responsive */}
         <motion.div
-          className="relative h-56 sm:h-72 md:h-80 lg:h-[500px] w-full max-w-full md:max-w-md lg:max-w-lg mx-auto"
           initial="hidden"
-          animate={isLoaded ? 'visible' : 'hidden'}
+          animate={isLoaded ? "visible" : "hidden"}
           variants={imageVariants}
           whileHover="hover"
+          className="relative w-full flex justify-center"
         >
-          <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-tr from-indigo-200 via-white to-purple-200" />
-          <div className="absolute -inset-1 -z-20 rounded-3xl bg-gradient-to-r from-indigo-500/20 via-fuchsia-400/10 to-purple-500/20 blur-xl" />
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            className="object-cover rounded-2xl shadow-2xl ring-1 ring-black/5"
-            priority
-            sizes="(max-width: 768px) 92vw, (max-width: 1200px) 44vw, 32vw"
-          />
+          <div className="w-full max-w-lg">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={1000}
+              height={1000}
+              priority
+              className="w-full h-auto rounded-2xl object-contain"
+              sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 40vw"
+            />
+          </div>
         </motion.div>
       </div>
-    </section>
+    </header>
   );
 };
 

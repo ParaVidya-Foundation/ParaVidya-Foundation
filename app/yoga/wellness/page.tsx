@@ -41,7 +41,7 @@ export default function WellnessYogaPage() {
       <HeroSection
         title="Wellness Yoga"
         subtitle="A holistic blend of movement, breath, and stillness to nurture vitality, balance, and inner connection—at every age and stage of life's journey."
-        imageSrc="/Yoga/wellness.png"
+        imageSrc="/Yoga/wellness-main.webp"
         imageAlt="Gentle yoga practice symbolizing holistic wellness"
       />
       
@@ -50,7 +50,7 @@ export default function WellnessYogaPage() {
         <section className="max-w-6xl w-full px-6 py-12">
           <Definition 
             title="Understanding Holistic Wellness and Integrated Health" 
-            description="Holistic wellness is a comprehensive approach to health that recognizes the interconnection between all aspects of your being - physical, mental, emotional, spiritual, social, and environmental. Unlike traditional health models that focus primarily on treating illness, holistic wellness emphasizes prevention, balance, and optimization of your entire life experience. This approach includes: **Physical Wellness** - maintaining a strong, flexible, and energetic body through movement, nutrition, and rest; **Mental Wellness** - cultivating mental clarity, focus, emotional stability, and cognitive resilience; **Spiritual Wellness** - connecting with your deeper purpose, values, and inner wisdom; **Social Wellness** - building meaningful relationships and contributing to community; **Environmental Wellness** - living in harmony with your surroundings and caring for the natural world. Yoga serves as an ideal practice for holistic wellness because it integrates mindful movement, conscious breathing, meditation, and present-moment awareness, creating a unified approach that supports every dimension of your well-being and helps you thrive at every stage of life." 
+            description="Holistic wellness is a comprehensive approach to health that recognizes the deep interconnection between the physical, mental, emotional, spiritual, social, and environmental aspects of your life. Unlike conventional healthcare, which focuses mainly on treating disease, holistic wellness emphasizes prevention, balance, and the optimization of your overall well-being. It promotes physical wellness through movement, nutrition, and rest to maintain strength, flexibility, and vitality. Mental wellness focuses on cultivating clarity, focus, emotional balance, and resilience, while spiritual wellness encourages connection with your higher purpose, inner wisdom, and core values. Social wellness strengthens your sense of belonging through meaningful relationships and community involvement, and environmental wellness inspires living in harmony with nature and caring for the planet. Yoga perfectly embodies holistic wellness, combining mindful movement, conscious breathing, meditation, and awareness to create balance across every dimension of life. This integrated approach helps you achieve harmony, vitality, and inner peace at every stage of your personal and spiritual journey." 
           />
         </section>
 
@@ -63,22 +63,22 @@ export default function WellnessYogaPage() {
             <Cause
               title="Physical Wellness"
               subtitle="Maintaining a strong, flexible, and energetic body through movement, nutrition, and rest for optimal physical health."
-              imageSrc="/Yoga/wellness.png"
+              imageSrc="/Yoga/causes/R1.webp"
             />
             <Cause
               title="Mental Wellness"
               subtitle="Cultivating mental clarity, focus, emotional stability, and cognitive resilience for psychological well-being."
-              imageSrc="/Yoga/wellness.png"
+              imageSrc="/Yoga/causes/D1.webp"
             />
             <Cause
               title="Spiritual Wellness"
               subtitle="Connecting with your deeper purpose, values, and inner wisdom for meaningful life direction."
-              imageSrc="/Yoga/wellness.png"
+              imageSrc="/Yoga/causes/R2.webp"
             />
             <Cause
               title="Social & Environmental Wellness"
               subtitle="Building meaningful relationships and living in harmony with your surroundings and community."
-              imageSrc="/Yoga/wellness.png"
+              imageSrc="/Yoga/causes/R4.webp"
             />
           </div>
         </section>
@@ -88,7 +88,7 @@ export default function WellnessYogaPage() {
           <CourseBanner
             title="Wellness Yoga"
             subtitle="Embrace a comprehensive approach to health and happiness through mindful movement, conscious living, and practices that nurture your whole being."
-            imageSrc="/Yoga/poster.png"
+             imageSrc="/Yoga/Yoga.jpg"
             buttonText="Join Now"
           />
         </section>
