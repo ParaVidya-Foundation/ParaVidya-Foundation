@@ -63,22 +63,22 @@ export default function ImmunityBoostingYogaPage() {
             <Cause
               title="Poor Nutrition and Deficiencies"
               subtitle="Lack of essential vitamins, minerals, and antioxidants weakens the body's ability to fight infections. Processed foods and sugar can further suppress immune function."
-              imageSrc="/Yoga/immunity.png"
+              imageSrc="/Yoga/causes/F2.webp"
             />
             <Cause
               title="Chronic Stress and Mental Fatigue"
               subtitle="Prolonged stress elevates cortisol levels, which suppresses immune cell activity and increases vulnerability to illnesses."
-              imageSrc="/Yoga/immunity.png"
+              imageSrc="/Yoga/causes/A2.webp"
             />
             <Cause
               title="Inadequate Sleep and Rest"
               subtitle="Insufficient sleep impairs the production of infection-fighting cells, antibodies, and cytokines. Poor sleep quality disrupts natural healing processes."
-              imageSrc="/Yoga/immunity.png"
+              imageSrc="/Yoga/causes/F1.webp"
             />
             <Cause
               title="Sedentary Lifestyle and Unhealthy Habits"
               subtitle="Lack of regular exercise reduces circulation and lymphatic drainage. Smoking, excessive alcohol, and environmental toxins burden the immune system."
-              imageSrc="/Yoga/immunity.png"
+              imageSrc="/Yoga/causes/R3.webp"
             />
           </div>
         </section>

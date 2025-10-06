@@ -63,22 +63,22 @@ export default function SleepTherapyYogaPage() {
             <Cause
               title="Stress, Anxiety, and Racing Mind"
               subtitle="Overthinking, worry, and mental tension keep the nervous system activated, making it difficult to transition into the relaxed state necessary for sleep."
-              imageSrc="/Yoga/sleep.png"
+              imageSrc="/Yoga/causes/A1.webp"
             />
             <Cause
               title="Poor Sleep Hygiene and Lifestyle Habits"
               subtitle="Screen time before bed, irregular sleep schedules, caffeine consumption late in the day, and lack of a calming bedtime routine interfere with natural sleep preparation."
-              imageSrc="/Yoga/sleep.png"
+              imageSrc="/Yoga/causes/R3.webp"
             />
             <Cause
               title="Physical Health Issues and Pain"
               subtitle="Chronic pain, breathing difficulties, thyroid disorders, hormonal imbalances, and sleep apnea can significantly disrupt sleep quality and duration."
-              imageSrc="/Yoga/sleep.png"
+              imageSrc="/Yoga/causes/F2.webp"
             />
             <Cause
               title="Mental Health and Emotional Challenges"
               subtitle="Depression, anxiety disorders, PTSD, and other mental health conditions often include sleep disturbances as symptoms."
-              imageSrc="/Yoga/sleep.png"
+              imageSrc="/Yoga/causes/D2.webp"
             />
           </div>
         </section>

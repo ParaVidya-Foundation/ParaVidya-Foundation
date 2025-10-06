@@ -63,22 +63,22 @@ export default function DepressionSupportYogaPage() {
             <Cause
               title="Biological and Genetic Predisposition"
               subtitle="Family history of depression, genetic variations affecting neurotransmitter function, and brain chemistry imbalances can increase susceptibility to depression."
-              imageSrc="/Yoga/depression.png"
+              imageSrc="/Yoga/causes/D1.webp"
             />
             <Cause
               title="Psychological and Cognitive Factors"
               subtitle="Negative thought patterns, low self-esteem, perfectionism, history of trauma or abuse, and chronic stress can contribute to depression."
-              imageSrc="/Yoga/depression.png"
+              imageSrc="/Yoga/causes/D2.webp"
             />
             <Cause
               title="Environmental and Social Influences"
               subtitle="Social isolation, financial stress, work pressures, discrimination, and major life changes can trigger or worsen depression."
-              imageSrc="/Yoga/depression.png"
+              imageSrc="/Yoga/causes/D3.webp"
             />
             <Cause
               title="Physical Health and Lifestyle Factors"
               subtitle="Chronic medical conditions, certain medications, substance use, poor sleep patterns, and nutritional deficiencies can contribute to depressive symptoms."
-              imageSrc="/Yoga/depression.png"
+              imageSrc="/Yoga/causes/D4.webp"
             />
           </div>
         </section>

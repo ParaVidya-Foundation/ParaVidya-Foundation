@@ -62,22 +62,22 @@ export default function KirtanYogaPage() {
             <Cause
               title="Mantra Chanting"
               subtitle="Learn traditional Sanskrit mantras and their meanings for spiritual practice and inner peace."
-              imageSrc="/Yoga/kirtan.png"
+              imageSrc="/Yoga/causes/K2.webp"
             />
             <Cause
               title="Sacred Sound Circles"
               subtitle="Group chanting sessions that create powerful vibrational healing and spiritual connection."
-              imageSrc="/Yoga/kirtan.png"
+              imageSrc="/Yoga/causes/K1.webp"
             />
             <Cause
               title="Bhakti Yoga Flow"
               subtitle="Heart-opening yoga sequences combined with devotional chanting and meditation."
-              imageSrc="/Yoga/kirtan.png"
+              imageSrc="/Yoga/causes/K4.webp"
             />
             <Cause
               title="Mantra Meditation"
               subtitle="Silent and vocal mantra repetition for deep spiritual practice and inner transformation."
-              imageSrc="/Yoga/kirtan.png"
+              imageSrc="/Yoga/causes/K3.webp"
             />
           </div>
         </section>
@@ -121,15 +121,7 @@ export default function KirtanYogaPage() {
         <section className="max-w-6xl w-full px-6 py-10">
           <YogaHelp 
             title="How Kirtan Transforms Your Practice?" 
-            description="Kirtan offers profound benefits for spiritual and emotional well-being through:
-
-- **Heart Opening**: Chanting and devotional practices open the heart chakra, increasing love and compassion
-- **Stress Relief**: Sacred sound vibrations calm the nervous system and reduce anxiety and tension
-- **Emotional Healing**: Mantra repetition helps process emotions and cultivate inner peace and joy
-- **Spiritual Connection**: Devotional practices deepen your connection to your spiritual essence and higher purpose
-- **Community Bonding**: Group chanting creates powerful bonds and shared spiritual experiences
-- **Mental Clarity**: Regular mantra practice quiets the mind and enhances focus and concentration
-- **Vibrational Healing**: Sacred sounds create beneficial vibrations that promote physical and emotional healing" 
+            description="Kirtan is a powerful form of devotional chanting that deeply transforms both your spiritual and emotional well-being. Through rhythmic mantras and sacred sound vibrations, Kirtan helps open the heart chakra, allowing love, compassion, and peace to flow freely. The repetitive chanting calms the nervous system, offering instant stress relief and reducing anxiety. It supports emotional healing by helping you release negative emotions and cultivate inner joy. Spiritually, Kirtan strengthens your connection to your higher self and divine purpose, creating a sense of oneness and devotion. Practicing in groups enhances community bonding, as collective chanting generates uplifting energy and shared spiritual experiences. Over time, Kirtan also improves mental clarity and focus, quieting the mind and enhancing concentration. The vibrational energy of sacred sounds further promotes physical and emotional healing, making Kirtan a holistic tool for transformation, mindfulness, and inner balance."
           />
         </section>
 
