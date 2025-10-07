@@ -46,7 +46,7 @@ body::-webkit-scrollbar-thumb {
 
 body{
   /* cspell:disable-next-line */
-  background-image: url('/bgmain.png');
+  background-image: url('/bgmain.webp');
   background-size: cover; /* Ensures the image covers the entire page */
   background-repeat: no-repeat; /* Prevents image repetition */
   background-position: center; /* Keeps the image centered */

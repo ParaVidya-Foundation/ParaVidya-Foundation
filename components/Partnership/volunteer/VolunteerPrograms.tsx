@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 type Program = {
@@ -49,12 +48,14 @@ export default function VolunteerPrograms({ programs }: Props) {
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
                 {program.title}
               </h3>
-              <Link
+              <a
                 href={program.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-5 py-2 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-black transition duration-300"
               >
                 Explore
-              </Link>
+              </a>
             </div>
           </motion.div>
         ))}

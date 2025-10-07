@@ -10,7 +10,7 @@ export default function Dharma() {
   return (
     <main>
      <DharmaHero />
-     <GitaQuoteSection />
+     {/* <GitaQuoteSection /> */}
 <StackedCards/>
 <YogaCarousel/>
 <BentoGrid/>
