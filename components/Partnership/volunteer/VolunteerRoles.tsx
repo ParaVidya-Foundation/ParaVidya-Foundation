@@ -13,66 +13,84 @@ type Role = {
 const roles: Role[] = [
   {
     title: "Digital Marketing",
-    description: "Promote our mission through campaigns, SEO, and social media outreach.",
-    details: "Work with our media team to design campaigns that reach thousands and inspire communities worldwide.",
+    description:
+      "Promote our mission through campaigns, SEO, and social media outreach.",
+    details:
+      "Work with our media team to design campaigns that reach thousands and inspire communities worldwide.",
     image: "/vol.png",
-    link: "/roles/digital-marketing",
+    link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
     title: "Karamkaand & Havan",
-    description: "Assist in organizing traditional rituals, puja, and cultural practices.",
-    details: "Preserve ancient wisdom by facilitating rituals and supportiang spiritual events.",
+    description:
+      "Assist in organizing traditional rituals, puja, and cultural practices.",
+    details:
+      "Preserve ancient wisdom by facilitating rituals and supporting spiritual events.",
     image: "/roles/havan.jpg",
-    link: "/roles/karamkand-havan",
+    link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
     title: "Graphic Designing",
-    description: "Create impactful designs for campaigns, books, and digital platforms.",
-    details: "Your creativity will shape our books, social posts, and awareness campaigns.",
+    description:
+      "Create impactful designs for campaigns, books, and digital platforms.",
+    details:
+      "Your creativity will shape our books, social posts, and awareness campaigns.",
     image: "/roles/design.jpg",
-    link: "/roles/graphic-designing",
+    link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
     title: "Content Writing",
-    description: "Write articles, blogs, and creative pieces to share our mission.",
-    details: "From blogs to research notes, help us communicate stories that inspire change.",
+    description:
+      "Write articles, blogs, and creative pieces to share our mission.",
+    details:
+      "From blogs to research notes, help us communicate stories that inspire change.",
     image: "/roles/content.jpg",
-    link: "/roles/content-writing",
+    link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
     title: "Backend Developer",
-    description: "Build scalable backend services and APIs to power our platforms.",
-    details: "Collaborate on Node.js/Java/Spring services and optimize database structures.",
+    description:
+      "Build scalable backend services and APIs to power our platforms.",
+    details:
+      "Collaborate on Node.js/Java/Spring services and optimize database structures.",
     image: "/roles/backend.jpg",
-    link: "/roles/backend-developer",
+    link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
     title: "Frontend Developer",
-    description: "Design responsive UIs and bring our vision to life with React/Next.js.",
-    details: "Work with modern frameworks to create delightful and accessible interfaces.",
+    description:
+      "Design responsive UIs and bring our vision to life with React/Next.js.",
+    details:
+      "Work with modern frameworks to create delightful and accessible interfaces.",
     image: "/roles/frontend.jpg",
-    link: "/roles/frontend-developer",
+    link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
     title: "Book Writing & Research",
-    description: "Contribute to mythological and astrological research publications.",
-    details: "Assist in compiling research, editing, and publishing insightful works.",
+    description:
+      "Contribute to mythological and astrological research publications.",
+    details:
+      "Assist in compiling research, editing, and publishing insightful works.",
     image: "/roles/book.jpg",
-    link: "/roles/book-writing",
+    link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
     title: "Ground Marketing",
-    description: "Help us connect with communities, spreading awareness offline.",
-    details: "Be our voice on the ground — organize events and reach local communities.",
+    description:
+      "Help us connect with communities, spreading awareness offline.",
+    details:
+      "Be our voice on the ground — organize events and reach local communities.",
     image: "/roles/ground.jpg",
-    link: "/roles/ground-marketing",
+    link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
     title: "Content Creation",
-    description: "Create content for our social media platforms and website.",
-    details: "Create content for our social media platforms and website.",
+    description:
+      "Create content for our social media platforms and website.",
+    details:
+      "Create engaging and creative content for our social media platforms and website.",
     image: "/roles/content.jpg",
-    link: "/roles/content-creation",
+    link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
 ];
 
@@ -98,7 +116,7 @@ export default function VolunteerRoles() {
             transition={{ type: "spring", stiffness: 200 }}
             className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden border border-gray-200 flex flex-col"
           >
-            {/* Image always on top */}
+            {/* Image */}
             <div className="relative w-full aspect-[16/9] max-h-[220px] md:max-h-[260px]">
               <Image
                 src={role.image}
@@ -127,6 +145,8 @@ export default function VolunteerRoles() {
               {/* Button */}
               <a
                 href={role.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-6 inline-block px-6 py-2 rounded-lg border border-orange-500 text-orange-600 font-medium text-sm hover:bg-orange-500 hover:text-white transition-all duration-300 text-center"
               >
                 Apply Now
