@@ -62,7 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         >
           <h1
             id="hero-heading"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-4 font-playfair"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mileast text-gray-900 mb-4"
           >
             {title}
           </h1>

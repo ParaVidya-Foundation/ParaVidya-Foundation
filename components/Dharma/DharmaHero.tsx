@@ -31,7 +31,7 @@ export default function HeroSection() {
         />
 
         {/* Title */}
-        <h1 className="text-4xl text-shadow-lg md:text-6xl font-extrabold leading-tight text-white">
+        <h1 className="text-4xl text-shadow-lg md:text-6xl font-mileast text-white">
           Embrace the <span className="text-yellow-400">Power of Dharma</span>
         </h1>
 

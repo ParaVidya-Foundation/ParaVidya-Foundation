@@ -48,7 +48,7 @@ export default function BookingForm(): JSX.Element {
   return (
     <div className="h-full w-full bg-[#fffaf7b4] flex items-center justify-center p-6">
       <div className="w-full max-w-md rounded-2xl shadow-lg p-6 sm:p-8">
-        <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+        <h3 className="font-manrope text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
           Book your session
         </h3>
         <p className="text-sm text-gray-600 mb-6">

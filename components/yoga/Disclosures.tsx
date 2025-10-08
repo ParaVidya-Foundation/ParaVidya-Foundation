@@ -110,11 +110,13 @@ export default function Disclosures({ items }: DisclosuresProps) {
         }
 
         .title {
+          font-family: var(--font-mileast), ui-serif, Georgia, serif;
+          font-weight: 400;
           font-size: clamp(1.45rem, 3.2vw, 2.25rem);
-          font-weight: 700;
           margin: 0 0 8px 0;
           color: #071034;
           letter-spacing: -0.01em;
+          line-height: 1.1;
         }
 
         .subtitle {

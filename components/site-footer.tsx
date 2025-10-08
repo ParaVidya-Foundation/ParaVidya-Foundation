@@ -86,7 +86,7 @@ export function SiteFooter() {
               className="w-16 h-16 sm:w-20 sm:h-20 object-contain drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]"
             />
             <div className="text-center sm:text-left">
-              <h3 className="font-playfair text-3xl sm:text-4xl font-bold drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]">
+              <h3 className="font-mileast text-3xl sm:text-4xl drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]">
                 Para Vidya Foundation
               </h3>
               <p className="font-manrope text-sm sm:text-base text-white/90 mt-1">
@@ -99,7 +99,7 @@ export function SiteFooter() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 text-center sm:text-left">
             {/* Navigation */}
             <div>
-              <h4 className="font-playfair text-lg font-semibold mb-4">Navigation</h4>
+              <h4 className="font-akeila text-lg mb-4">Navigation</h4>
               <ul className="space-y-2">
                 {navigationLinks.map(([label, href]) => (
                   <li key={href}>
@@ -116,7 +116,7 @@ export function SiteFooter() {
 
             {/* Yoga Programs */}
             <div>
-              <h4 className="font-playfair text-lg font-semibold mb-4">Yoga Programs</h4>
+              <h4 className="font-akeila text-lg mb-4">Yoga Programs</h4>
               <ul className="space-y-2">
                 {programLinks.map(([label, href]) => (
                   <li key={href}>
@@ -133,7 +133,7 @@ export function SiteFooter() {
 
             {/* Workshops */}
             <div>
-              <h4 className="font-playfair text-lg font-semibold mb-4">Workshops</h4>
+              <h4 className="font-akeila text-lg mb-4">Workshops</h4>
               <ul className="space-y-2">
                 {workshopLinks.map(([label, href]) => (
                   <li key={href}>
@@ -150,7 +150,7 @@ export function SiteFooter() {
 
             {/* Contact + Social */}
             <div>
-              <h4 className="font-playfair text-lg font-semibold mb-4">Connect With Us</h4>
+              <h4 className="font-akeila text-lg mb-4">Connect With Us</h4>
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-center sm:justify-start gap-3">
                   <Mail className="w-4 h-4 text-white/80" />
@@ -177,7 +177,7 @@ export function SiteFooter() {
               </div>
 
               {/* Social */}
-              <h5 className="font-playfair text-base font-medium mb-3">Follow Us</h5>
+              <h5 className="font-manrope text-base font-medium mb-3">Follow Us</h5>
               <div className="flex justify-center sm:justify-start flex-wrap gap-3">
                 {socialLinks.map((social) => (
                   <a
