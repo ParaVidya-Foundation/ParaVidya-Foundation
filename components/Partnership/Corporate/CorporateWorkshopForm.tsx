@@ -11,6 +11,8 @@ export default function CorporateWorkshopForm() {
     message: "",
   })
 
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -18,7 +20,7 @@ export default function CorporateWorkshopForm() {
     setFormData({ ...formData, [name]: value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     // ✅ Basic validation
@@ -34,30 +36,58 @@ export default function CorporateWorkshopForm() {
       return alert("Please enter your designation")
     if (!formData.message.trim()) return alert("Please enter your message")
 
-    // 🚀 Replace with API integration
-    console.log("Form Submitted:", formData)
-    alert("Form submitted successfully!")
+    setStatus("loading")
+
+    try {
+      const response = await fetch("https://formspree.io/f/mjkaevwa", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setStatus("success")
+        setFormData({
+          name: "",
+          contact: "",
+          email: "",
+          designation: "",
+          message: "",
+        })
+      } else {
+        throw new Error("Form submission failed")
+      }
+    } catch (error) {
+      console.error("Error:", error)
+      setStatus("error")
+    }
   }
 
   return (
-    <section>
-      <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-6 sm:p-8">
+    <section className="py-12 sm:py-16">
+      <div className="max-w-2xl mx-auto bg-white shadow-xl rounded-2xl p-6 sm:p-10">
         {/* Heading */}
         <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Corporate Workshop Enquiry
           </h2>
-          <p className="mt-2 text-gray-600 text-sm sm:text-base">
+          <p className="mt-3 text-gray-600 text-sm sm:text-base leading-relaxed">
             Fill out the form below and we’ll get in touch with you shortly.  
             You can also contact us directly at{" "}
-            <span className="font-semibold text-[#f97f12]">
+            <a
+              href="tel:+919871130487"
+              className="font-semibold text-[#f97f12] hover:underline"
+            >
               +91 9871130487
-            </span>
+            </a>
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-5 text-gray-800"
+        >
           {/* Name */}
           <div>
             <label
@@ -74,7 +104,7 @@ export default function CorporateWorkshopForm() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your full name"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 transition"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 outline-none transition"
             />
           </div>
 
@@ -94,7 +124,7 @@ export default function CorporateWorkshopForm() {
               value={formData.contact}
               onChange={handleChange}
               placeholder="e.g. +91 9876543210"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 transition"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 outline-none transition"
             />
           </div>
 
@@ -114,7 +144,7 @@ export default function CorporateWorkshopForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="you@example.com"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 transition"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 outline-none transition"
             />
           </div>
 
@@ -134,7 +164,7 @@ export default function CorporateWorkshopForm() {
               value={formData.designation}
               onChange={handleChange}
               placeholder="Your role in the company"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 transition"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 outline-none transition"
             />
           </div>
 
@@ -154,7 +184,7 @@ export default function CorporateWorkshopForm() {
               value={formData.message}
               onChange={handleChange}
               placeholder="Tell us more about your requirements..."
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 transition resize-none"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97f12] focus:ring-2 focus:ring-[#f97f12]/40 resize-none outline-none transition"
             />
           </div>
 
@@ -162,11 +192,28 @@ export default function CorporateWorkshopForm() {
           <div className="text-center">
             <button
               type="submit"
-              className="w-full sm:w-auto px-8 py-3 rounded-lg bg-[#f97f12] text-white font-medium text-lg shadow-md hover:bg-orange-600 hover:shadow-lg transition"
+              disabled={status === "loading"}
+              className={`w-full sm:w-auto px-8 py-3 rounded-lg text-white font-semibold text-lg shadow-md transition ${
+                status === "loading"
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-[#f97f12] hover:bg-orange-600 hover:shadow-lg"
+              }`}
             >
-              Submit Enquiry
+              {status === "loading" ? "Submitting..." : "Submit Enquiry"}
             </button>
           </div>
+
+          {/* Status Message */}
+          {status === "success" && (
+            <p className="text-green-600 text-center font-medium mt-3">
+              ✅ Your enquiry has been submitted successfully!
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-red-600 text-center font-medium mt-3">
+              ❌ Something went wrong. Please try again later.
+            </p>
+          )}
         </form>
       </div>
     </section>

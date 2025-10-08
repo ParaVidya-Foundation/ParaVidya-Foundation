@@ -15,16 +15,26 @@ export default function NewsletterSection() {
 
         {/* Description */}
         <div className="flex flex-col justify-center items-center lg:items-start gap-4 max-w-lg">
-          <p className="text-gray-700 leading-relaxed text-base md:text-lg font-manrope">
-            <span className="font-semibold text-orange-600">Yoga Sattva</span>{" "}
-            is The Yoga Institute&apos;s free official newsletter aimed at spreading
-            yoga philosophy to mankind. It features scholarly articles by{" "}
-            <strong>Dr. Jayadeva</strong> and <strong>Smt. Hansaji</strong>.
-          </p>
+        <p className="text-black leading-relaxed text-base md:text-lg font-manrope">
+  <span className="font-semibold text-orange-500">Paravidya Foundation</span>{" "}
+  is a <strong>Non-Profit Organisation</strong> blending the timeless wisdom of{" "}
+  <strong>Sanatan Dharma</strong> with the spirit of{" "}
+  <span className="text-orange-500">Seva (selfless service)</span>. We serve
+  through <strong>Annadaan</strong>, <strong>youth guidance</strong>, and{" "}
+  <strong>spiritual education</strong> to uplift society with knowledge and compassion.{" "}
+  <br />
+  🕉️ Subscribe to our{" "}
+  <span className="text-orange-500">weekly magazine</span> featuring{" "}
+  <strong>Yoga</strong>, <strong>Ayurveda</strong>, <strong>Astrology</strong>,{" "}
+  and <strong>Vedic wisdom</strong> — join our journey of{" "}
+  <span className="text-orange-500">service and awakening</span>.
+</p>
+
+
 
           <a
-            href="/yogasattva"
-            className="inline-flex items-center text-orange-600 font-semibold hover:underline text-base md:text-lg"
+            href="/newsletter"
+            className="inline-flex items-center text-orange-500 font-semibold hover:underline text-base md:text-lg"
           >
             Explore More →
           </a>

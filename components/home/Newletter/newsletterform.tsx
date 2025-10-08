@@ -3,31 +3,40 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function NewsletterForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("");
 
-  const handleSubscribe = () => {
-    if (!name || !email) {
-      alert("Please enter your name and email");
-      return;
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    const formData = new FormData(form);
+
+    const res = await fetch("https://formspree.io/f/xnngbqdb", {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
+
+    if (res.ok) {
+      setStatus("SUCCESS");
+      form.reset();
+    } else {
+      setStatus("ERROR");
     }
-    alert(`Subscribed successfully!\nName: ${name}\nEmail: ${email}`);
-    setName("");
-    setEmail("");
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-white shadow-xl rounded-2xl border border-orange-200 p-10 w-full max-w-md mx-auto flex flex-col items-center text-center"
+      className="bg-white shadow-xl rounded-2xl border border-orange-200 p-10 w-full max-w-lg mx-auto text-center"
     >
       {/* Header */}
       <div className="flex items-center justify-center gap-3 mb-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-7 h-7 text-orange-500"
+          className="w-8 h-8 text-orange-500"
           fill="currentColor"
           viewBox="0 0 50 50"
         >
@@ -43,9 +52,13 @@ export default function NewsletterForm() {
         </div>
       </div>
 
+
       {/* Form */}
-      <div className="space-y-5 w-full">
-        <div className="text-left">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-5 w-full text-left font-inter"
+      >
+        <div>
           <label
             htmlFor="name"
             className="block mb-1 text-sm font-medium text-gray-700"
@@ -54,15 +67,15 @@ export default function NewsletterForm() {
           </label>
           <input
             id="name"
+            name="name"
             type="text"
             placeholder="Enter your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            required
             className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-orange-400 outline-none transition"
           />
         </div>
 
-        <div className="text-left">
+        <div>
           <label
             htmlFor="email"
             className="block mb-1 text-sm font-medium text-gray-700"
@@ -71,10 +84,10 @@ export default function NewsletterForm() {
           </label>
           <input
             id="email"
+            name="email"
             type="email"
-            placeholder="Enter your email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+            required
             className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-orange-400 outline-none transition"
           />
         </div>
@@ -82,12 +95,23 @@ export default function NewsletterForm() {
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          onClick={handleSubscribe}
+          type="submit"
           className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-lg shadow-md transition"
         >
           Subscribe Now
         </motion.button>
-      </div>
-    </motion.div>
+
+        {status === "SUCCESS" && (
+          <p className="text-green-600 text-sm mt-3 text-center">
+            ✅ Thank you for subscribing to Paravidya Foundation!
+          </p>
+        )}
+        {status === "ERROR" && (
+          <p className="text-red-600 text-sm mt-3 text-center">
+            ❌ Something went wrong. Please try again.
+          </p>
+        )}
+      </form>
+    </motion.section>
   );
 }
