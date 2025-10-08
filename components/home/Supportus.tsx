@@ -65,7 +65,7 @@ const SupportUs = () => {
     >
       {/* Heading */}
       <h1
-        className="text-5xl md:text-7xl lg:text-8xl font-extrabold z-10 tracking-tight leading-tight text-center font-playfair"
+        className="text-5xl md:text-7xl lg:text-8xl font-bold z-10 tracking-tight leading-tight text-center font-playfair"
       >
         Support Us
       </h1>

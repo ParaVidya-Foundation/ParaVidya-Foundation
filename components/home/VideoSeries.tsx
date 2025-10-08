@@ -78,7 +78,7 @@ export default function VideoSeries() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-extrabold text-gray-900 font-playfair"
+          className="text-3xl md:text-4xl font-mileast text-gray-900"
         >
           Acharya Prashant&apos;s Video Series
         </motion.h2>

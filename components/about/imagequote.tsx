@@ -40,7 +40,7 @@ const ImageQuote: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-snug mb-3 tracking-tight"
+              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-black leading-snug mb-3 tracking-tight"
             >
               “ Work harder, stay humble, and let your light shine brighter every day. ”
             </motion.h3>
@@ -58,7 +58,7 @@ const ImageQuote: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-6 text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed max-w-md lg:max-w-lg"
+            className="mt-6 text-sm sm:text-base lg:text-lg text-black/90 leading-relaxed max-w-md lg:max-w-lg"
           >
             This quote reminds us that true success comes not just from effort,
             but from dedication and humility. Every step forward brings us closer

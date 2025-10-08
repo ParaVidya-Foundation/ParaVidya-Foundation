@@ -10,7 +10,7 @@ export default function JoinNGO() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[250px] bg-yellow-300 opacity-40 blur-3xl rounded-full -z-10" />
 
       {/* Heading */}
-      <h1 className="text-4xl md:text-6xl font-black text-gray-900 text-center max-w-4xl leading-tight tracking-tighter uppercase font-playfair">
+      <h1 className="text-4xl md:text-6xl font-mileast text-gray-900 text-center max-w-4xl uppercase">
         Great futures are built <br /> with a{" "}
         <span className="bg-yellow-400 px-2 rotate-1 inline-block rounded-sm">
           small charity

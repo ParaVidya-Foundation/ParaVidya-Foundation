@@ -8,7 +8,7 @@ export default function KaramkandHome() {
     <div className="w-full h-[95vh] flex flex-col md:flex-row items-center md:items-stretch">
       {/* Left Text Section */}
       <div className="flex-1 flex flex-col justify-center text-center md:text-left px-6 md:px-16 max-w-3xl mx-auto">
-  <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-gray-900 font-playfair leading-tight">
+  <h1 className="text-4xl md:text-6xl font-mileast mb-6 text-gray-900">
     Explore our Vedic Knowledge
   </h1>
 

@@ -1,4 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Custom Safira Font - Optimized */
+@font-face {
+  font-family: 'Safira';
+  src: url('/Font/Safira.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Safira';
+  src: url('/Font/Safira.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Safira';
+  src: url('/Font/Safira.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Akeila Font */
+@font-face {
+  font-family: 'Akeila';
+  src: url('/Font/Akeila.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Mileast Font */
+@font-face {
+  font-family: 'Mileast';
+  src: url('/Font/Mileast.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Soria Font */
+@font-face {
+  font-family: 'Soria';
+  src: url('/Font/Soria.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -98,6 +152,11 @@ body{
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --font-serif: var(--font-playfair);
+  --font-playfair: var(--font-playfair);
+  --font-safira: 'Safira', serif;
+  --font-akeila: 'Akeila', serif;
+  --font-mileast: 'Mileast', serif;
+  --font-soria: 'Soria', serif;
   --color-primary: #ff9933; /* saffron */
   --color-gold: #c6a15b; /* kept for existing styles */
   --color-accent-green: #138808; /* Indian green */
@@ -197,19 +256,92 @@ body{
     color: hsl(var(--foreground));
     font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   }
-  h1,
-  h2,
+  /* New Typography Hierarchy */
+  h1 {
+    font-family: var(--font-mileast), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-family: var(--font-akeila), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
   h3,
   h4,
   h5,
-  h6,
-  .heading-serif,
-  .font-title {
-    font-family: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  h6 {
+    font-family: var(--font-akeila), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+    line-height: 1.3;
   }
   p,
   .font-paragraph {
     font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+  
+  /* Safira utility classes with optimized weights */
+  .font-safira,
+  .heading-safira {
+    font-family: var(--font-safira), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+  
+  .font-safira-light {
+    font-family: var(--font-safira), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 300;
+  }
+  
+  .font-safira-normal {
+    font-family: var(--font-safira), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+  }
+  
+  .font-safira-semibold {
+    font-family: var(--font-safira), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 600;
+  }
+  
+  /* Updated Font Utility Classes */
+  .font-akeila {
+    font-family: var(--font-akeila), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+  }
+  
+  .font-mileast {
+    font-family: var(--font-mileast), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+  }
+  
+  .font-soria {
+    font-family: var(--font-soria), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+  }
+  
+  /* Special class for numbers using Soria */
+  .font-soria-numbers {
+    font-family: var(--font-soria), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  /* Title classes for easy switching */
+  .title-mileast {
+    font-family: var(--font-mileast), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  
+  .heading-akeila {
+    font-family: var(--font-akeila), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
   }
 }
 

@@ -34,7 +34,7 @@ const Abouthero: React.FC = () => {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#ffb400] mb-4 tracking-wide"
+        className="text-3xl sm:text-4xl md:text-5xl font-mileast text-[#ffb400] mb-4"
       >
         WELCOME TO PARAVIDYA FOUNDATION
       </motion.h1>

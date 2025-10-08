@@ -46,7 +46,7 @@ export default function NewsletterForm() {
           <h2 className="text-sm md:text-base font-medium text-gray-500">
             Subscribe to our
           </h2>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+          <h1 className="text-2xl md:text-3xl font-mileast text-gray-900">
             Newsletter
           </h1>
         </div>

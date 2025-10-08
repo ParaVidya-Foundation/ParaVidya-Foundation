@@ -14,7 +14,7 @@ export default function InfoWithImage(): JSX.Element {
           <div className="max-w-lg mx-auto px-8">
             <p className="text-white italic text-lg leading-relaxed mb-6 font-manrope">{quote}</p>
             <div>
-              <h4 className="text-white font-playfair text-xl font-semibold">Paityn Carder</h4>
+              <h4 className="text-white font-manrope text-xl font-semibold">Paityn Carder</h4>
               <p className="text-white/80 text-sm font-manrope">Founder</p>
             </div>
           </div>
@@ -29,7 +29,7 @@ export default function InfoWithImage(): JSX.Element {
         <div className="bg-black text-white px-6 py-8">
           <p className="italic text-base leading-relaxed mb-4 font-manrope">{quote}</p>
           <div>
-            <h4 className="text-white font-playfair text-lg font-semibold">Paityn Carder</h4>
+            <h4 className="text-white font-manrope text-lg font-semibold">Paityn Carder</h4>
             <p className="text-white/80 text-sm font-manrope">Founder</p>
           </div>
         </div>
