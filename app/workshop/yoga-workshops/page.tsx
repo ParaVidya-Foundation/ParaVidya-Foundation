@@ -4,6 +4,9 @@ import Mission from "@/components/workshop/ayurveda/missionayur"
 import FeaturedVideos from "@/components/ui/FeaturedVideos"
 import WorkshopYoga from "@/components/workshop/yoga/workshopyoga"
 import CourseBanner from "@/components/yoga/Coursebanner"
+import { YogaCarousel } from "@/components/yoga/YogaCarousel"
+import YogaTeacher from "@/components/workshop/yoga/YogaTeacher"
+import MeditationHero from "@/components/workshop/meditation/MeditationHero"
 
 export const metadata: Metadata = {
   title: "Yoga Workshops – Para Vidya",
@@ -13,16 +16,10 @@ export const metadata: Metadata = {
 export default function YogaWorkshopsPage() {
   return (
     <div className="">
-         <div className="top-img-about">
-          <img
-            src={"/Carousel/Online-Hawan.jpg"}
-            alt="Yoga Workshops at Para Vidya"
-            className="w-full h-auto object-cover"
-            loading="lazy" 
-          />
-        </div>
-     <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Comprehensive yoga workshops for physical and spiritual wellness. Enhance your practice with specialized sessions and intensive training." />
+<MeditationHero/>
+
 <WorkshopYoga />
+<YogaTeacher/>
      <FeaturedVideos
   headline="Featured Videos"
   description="Explore timeless wisdom on health, wellness, yoga, and more — all in one place."
@@ -48,6 +45,7 @@ export default function YogaWorkshopsPage() {
     },
   ]}
 />
+<YogaCarousel/>
 <br></br><br></br>
 <CourseBanner
         title="Yoga Workshops"

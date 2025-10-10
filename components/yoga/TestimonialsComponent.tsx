@@ -110,7 +110,7 @@ export default function VideoReelsCarousel({
     <section className="w-full py-12">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <header className="mb-6 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl text-gray-900">
             {title}
           </h2>
         </header>

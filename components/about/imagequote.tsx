@@ -40,7 +40,7 @@ const ImageQuote: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-black leading-snug mb-3 tracking-tight"
+              className="text-xl font-readable sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-3 leading-tight"
             >
               “ Work harder, stay humble, and let your light shine brighter every day. ”
             </motion.h3>
@@ -48,7 +48,7 @@ const ImageQuote: React.FC = () => {
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-base sm:text-lg text-amber-300 font-semibold italic"
+              className="text-base font-readable sm:text-lg text-amber-300 font-semibold italic"
             >
               ~ Gurudev Sunil Vashist
             </motion.p>

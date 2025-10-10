@@ -11,7 +11,7 @@ export default function NewsletterForm() {
 
     const formData = new FormData(form);
 
-    const res = await fetch("https://formspree.io/f/xnngbqdb", {
+    const res = await fetch("https://formspree.io/f/mqaydrly", {
       method: "POST",
       body: formData,
       headers: { Accept: "application/json" },

@@ -131,7 +131,7 @@ export default function VolunteerRoles() {
             {/* Content */}
             <div className="p-6 flex flex-col justify-between flex-1">
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800 font-poppins">
+                <h3 className="text-xl md:text-2xl font-semibold text-gray-800 font-poppins">
                   {role.title}
                 </h3>
                 <p className="mt-3 text-gray-700 text-base font-inter">

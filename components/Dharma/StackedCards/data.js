@@ -1,33 +1,30 @@
 export const projects = [
   {
-    title: "भक्त्या मामभिजानाति",
+    title: "यज्ञदानतपःकर्म न त्याज्यं कार्यमेव तत्॥ यज्ञो दानं तपश्चैव पावनानि मनिषिणाम्॥",
     description:
-      "Through devotion, one truly knows Me. Bhakti — the path of love and surrender — opens the heart to divine wisdom.",
-    src: "/Dharma.png",
-    reference: "Bhagavad Gita (2.47)",
- 
+      "Yajna (sacrifice), Dana (charity), and Tapas (austerity) should never be abandoned. They purify even the wise and sustain dharma in the world.",
+    src: "/stackedcards/Gita.webp",
+    reference: "Bhagavad Gita 18.5",
   },
   {
-    title: "कर्मण्येवाधिकारस्ते",
+    title: "यदा मनो निग्रहीतेन्द्रियवर्गः तदा योगः सिध्यति।",
     description:
-      "Perform your duty without attachment to results — this is the essence of Karma Yoga.",
-    src: "/Dharma.png",
-    reference: "Bhagavad Gita (2.47)",
-
+      "When the mind and senses are fully restrained, true Yoga is attained — harmony between body, mind, and soul.",
+    src: "/stackedcards/Shankaracharya.webp",
+    reference: "Adi Shankaracharya – Commentary on Yoga",
   },
   {
-    title: "योगः कर्मसु कौशलम्",
+    title: "भक्ति ही सर्वोच्च साधना है — जब तक ईश्वर के प्रति प्रेम न जागे, तब तक कोई साधना पूर्ण नहीं होती। तन्त्र का अर्थ है — साधक का अपने भीतर की शक्ति से एक होना।",
     description:
-      "Yoga is skill in action — when mind, action, and purpose align in harmony.",
-    src: "/Dharma.png",
-    reference: "Bhagavad Gita (2.47)",
+      "True Bhakti awakens divine love within. Tantra reveals unity with the inner Shakti — the power that transforms the soul.",
+    src: "/stackedcards/Ramakrishna.webp",
+    reference: "Sri Ramakrishna Paramahamsa – The Gospel of Sri Ramakrishna",
   },
   {
-    title: "विद्याविनयसम्पन्ने",
+    title: "एक विचार लो, उस विचार को अपना जीवन बना लो — उसी में जियो, उसी में सोचो, उसी में स्वप्न देखो।",
     description:
-      "The wise see all beings equally — true wisdom lies in humility and compassion.",
-    src: "/Dharma.png",
-    reference: "Bhagavad Gita (2.47)",
-
+      "Take one idea and live it completely — this is the secret to success, focus, and self-realization.",
+    src: "/stackedcards/Vivekananda.webp",
+    reference: "Swami Vivekananda – Complete Works, Vol. 5",
   },
 ];

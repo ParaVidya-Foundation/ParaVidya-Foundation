@@ -39,7 +39,7 @@ export default function CorporateWorkshopForm() {
     setStatus("loading")
 
     try {
-      const response = await fetch("https://formspree.io/f/mjkaevwa", {
+      const response = await fetch("https://formspree.io/f/myzndrpl", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -65,10 +65,10 @@ export default function CorporateWorkshopForm() {
 
   return (
     <section className="py-12 sm:py-16">
-      <div className="max-w-2xl mx-auto bg-white shadow-xl rounded-2xl p-6 sm:p-10">
+      <div className="max-w-2xl mx-auto bg-white shadow-xl rounded-2xl p-6 sm:p-10 font-readable">
         {/* Heading */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 font-readable">
             Corporate Workshop Enquiry
           </h2>
           <p className="mt-3 text-gray-600 text-sm sm:text-base leading-relaxed">

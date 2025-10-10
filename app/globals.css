@@ -25,10 +25,10 @@
   font-display: swap;
 }
 
-/* Akeila Font */
+/* Calgary Font */
 @font-face {
-  font-family: 'Akeila';
-  src: url('/Font/Akeila.otf') format('opentype');
+  font-family: 'Calgary';
+  src: url('/Font/calgary.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -154,7 +154,7 @@ body{
   --font-serif: var(--font-playfair);
   --font-playfair: var(--font-playfair);
   --font-safira: 'Safira', serif;
-  --font-akeila: 'Akeila', serif;
+  --font-calgary: 'Calgary', cursive;
   --font-mileast: 'Mileast', serif;
   --font-soria: 'Soria', serif;
   --color-primary: #ff9933; /* saffron */
@@ -264,18 +264,19 @@ body{
     letter-spacing: -0.01em;
   }
   h2 {
-    font-family: var(--font-akeila), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-calgary), cursive, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
   }
   h3,
   h4,
   h5,
   h6 {
-    font-family: var(--font-akeila), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-calgary), cursive, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
   }
   p,
   .font-paragraph {
@@ -307,9 +308,10 @@ body{
   }
   
   /* Updated Font Utility Classes */
-  .font-akeila {
-    font-family: var(--font-akeila), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  .font-calgary {
+    font-family: var(--font-calgary), cursive, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: 400;
+    letter-spacing: 0.01em;
   }
   
   .font-mileast {
@@ -337,11 +339,67 @@ body{
     letter-spacing: -0.01em;
   }
   
-  .heading-akeila {
-    font-family: var(--font-akeila), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  .heading-calgary {
+    font-family: var(--font-calgary), cursive, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+  
+  /* Easy Font Switching Utility Classes 
+   * Usage examples:
+   * <div className="font-elegant">Calgary font (elegant script)</div>
+   * <div className="font-decorative">Mileast font (decorative)</div>
+   * <div className="font-classic">Safira font (classic serif)</div>
+   * <div className="font-modern">Soria font (modern serif)</div>
+   * <div className="font-readable">Manrope font (readable sans-serif)</div>
+   * 
+   * Quick combinations with sizes:
+   * <h1 className="title-elegant">Large elegant title</h1>
+   * <h2 className="heading-elegant">Medium elegant heading</h2>
+   * <h3 className="subheading-elegant">Small elegant subheading</h3>
+   */
+  .font-elegant {
+    font-family: var(--font-calgary), cursive, ui-serif, Georgia, serif;
+    letter-spacing: 0.01em;
+  }
+  
+  .font-decorative {
+    font-family: var(--font-mileast), ui-serif, Georgia, serif;
+  }
+  
+  .font-classic {
+    font-family: var(--font-safira), ui-serif, Georgia, serif;
+  }
+  
+  .font-modern {
+    font-family: var(--font-soria), ui-serif, Georgia, serif;
+  }
+  
+  .font-readable {
+    font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  /* Quick font size + family combinations */
+  .title-elegant {
+    font-family: var(--font-calgary), cursive, ui-serif, Georgia, serif;
+    font-size: 2.5rem;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+  
+  .heading-elegant {
+    font-family: var(--font-calgary), cursive, ui-serif, Georgia, serif;
+    font-size: 1.875rem;
+    line-height: 1.4;
+    letter-spacing: 0.015em;
+  }
+  
+  .subheading-elegant {
+    font-family: var(--font-calgary), cursive, ui-serif, Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
   }
 }
 
