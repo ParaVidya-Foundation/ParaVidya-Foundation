@@ -23,10 +23,10 @@ export default function Gallery() {
 
   return (
     <main className="relative min-h-screen flex flex-col items-center p-8 bg-[#fffbea4d] text-gray-900">
-      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600 font-playfair">
+      <h1 className="text-4xl md:text-5xl mb-8 text-yellow-600 font-playfair">
         Gallery
       </h1>
-      <h2 className="text-xl md:text-3xl font-bold mb-8 text-yellow-600 font-manrope">Be the Hands That Heal. Be the Heart That Serves.</h2>
+      <h2 className="text-xl md:text-3xl mb-8 text-yellow-600 font-manrope">Be the Hands That Heal. Be the Heart That Serves.</h2>
 
       {/* Image Grid */}
       <div className="flex flex-wrap justify-center gap-8">
@@ -44,10 +44,10 @@ export default function Gallery() {
               priority={index === 0}
             />
             <div className="absolute bottom-2 left-2 right-2 text-center bg-white/80 backdrop-blur-md rounded-md py-2 shadow">
-              <h2 className="text-lg font-bold text-gray-900">
+              <h2 className="text-lg font-readable leading-tight font-bold text-gray-900">
                 {img.name}
                 <br />
-                <span className="text-yellow-600 font-medium text-sm">
+                <span className="text-yellow-600 font-readable font-medium text-sm">
                   {img.Date}
                 </span>
               </h2>

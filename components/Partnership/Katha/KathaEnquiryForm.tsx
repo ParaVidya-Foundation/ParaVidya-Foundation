@@ -68,7 +68,7 @@ export default function KathaEnquiryForm() {
     fd.append("message", formData.message);
 
     try {
-      const response = await fetch("https://formspree.io/f/xanpdyoa", {
+      const response = await fetch("https://formspree.io/f/mzzjanvo", {
         method: "POST",
         body: fd,
         headers: {
@@ -101,7 +101,7 @@ export default function KathaEnquiryForm() {
       <section>
         <div className="max-w-2xl mx-auto shadow-lg rounded-xl p-6 sm:p-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-readable sm:text-3xl font-bold text-gray-900 mb-4">
               Thank You!
             </h2>
             <p className="text-green-600 text-base">
@@ -122,7 +122,7 @@ export default function KathaEnquiryForm() {
       <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-6 sm:p-8">
         {/* Heading */}
         <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <h2 className="text-2xl font-readable sm:text-3xl font-bold text-gray-900">
             Organize a Katha
           </h2>
           <p className="mt-2 text-gray-600 text-sm sm:text-base">
@@ -141,7 +141,7 @@ export default function KathaEnquiryForm() {
         )}
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5 font-readable">
           {/* Name */}
           <div>
             <label

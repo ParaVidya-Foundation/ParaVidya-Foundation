@@ -57,7 +57,7 @@ export default function CorporateCollaboration() {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <h2 className="font-akeila text-4xl md:text-5xl text-gray-900 leading-snug">
+          <h2 className="font-calgary text-4xl md:text-5xl text-gray-900 leading-snug">
             Areas Where We Collaborate with <span className="text-[#f97f12]">Corporates</span>
           </h2>
           <p className="mt-4 font-manrope text-lg text-gray-600">
@@ -77,7 +77,7 @@ export default function CorporateCollaboration() {
               <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-[#f97f12]/10 group-hover:bg-[#f97f12]/20 transition mb-6">
                 <area.icon className="w-7 h-7 text-[#f97f12]" />
               </div>
-              <h3 className="font-akeila text-xl text-gray-900 mb-3">
+              <h3 className="font-calgary text-xl text-gray-900 mb-3">
                 {area.title}
               </h3>
               <p className="font-manrope text-gray-600 leading-relaxed">{area.description}</p>

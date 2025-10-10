@@ -25,7 +25,7 @@ module.exports = {
         manrope: ['var(--font-manrope)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         playfair: ['var(--font-playfair)', 'ui-serif', 'Georgia', 'serif'],
         safira: ['var(--font-safira)', 'ui-serif', 'Georgia', 'serif'],
-        akeila: ['var(--font-akeila)', 'ui-serif', 'Georgia', 'serif'],
+        calgary: ['var(--font-calgary)', 'cursive', 'ui-serif', 'Georgia', 'serif'],
         mileast: ['var(--font-mileast)', 'ui-serif', 'Georgia', 'serif'],
         soria: ['var(--font-soria)', 'ui-serif', 'Georgia', 'serif'],
       },

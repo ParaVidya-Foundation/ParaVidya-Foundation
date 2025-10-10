@@ -45,7 +45,7 @@ export default function VolunteerPrograms({ programs }: Props) {
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex flex-col items-center justify-center text-center px-4">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+              <h3 className="text-xl text-shadow-2xl md:text-2xl font-semibold text-white mb-3">
                 {program.title}
               </h3>
               <a

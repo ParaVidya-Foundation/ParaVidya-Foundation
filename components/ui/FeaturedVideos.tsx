@@ -25,7 +25,7 @@ export default function FeaturedVideos({
     <section className="w-[90%] mx-auto bg-gradient-to-b from-yellow-50/70 to-yellow-100/30 backdrop-blur-lg rounded-3xl shadow-lg p-8 md:p-12 border border-white/30">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10 gap-6">
-        <h2 className="flex items-center text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight drop-shadow-sm">
+        <h2 className="flex items-center text-3xl md:text-4xl font-semibold text-gray-900">
           <span className="mr-3 text-4xl">▶</span> {headline}
         </h2>
         <p className="max-w-xl text-gray-700 text-base md:text-lg leading-relaxed">
@@ -51,7 +51,7 @@ export default function FeaturedVideos({
 
             {/* Overlay Content */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-              <h3 className="text-lg font-semibold text-white group-hover:text-yellow-300 transition-colors duration-300">
+              <h3 className="text-md font-readable text-white group-hover:text-yellow-300 transition-colors duration-300">
                 {video.title}
               </h3>
             </div>

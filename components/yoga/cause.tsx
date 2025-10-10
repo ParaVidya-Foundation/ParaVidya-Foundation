@@ -54,7 +54,7 @@ export default function Cause({ title, subtitle, imageSrc }: CauseCardProps) {
 
         {/* ✅ Accessible and SEO-friendly text */}
         <div>
-          <h2 className="text-xl sm:text-2xl font-akeila text-gray-900 mb-2">
+          <h2 className="text-xl sm:text-2xl font-calgary text-gray-900 mb-2">
             {title}
           </h2>
           <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-manrope">
