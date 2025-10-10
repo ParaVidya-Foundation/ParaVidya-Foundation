@@ -124,12 +124,13 @@ const Header: React.FC = () => {
             </button>
             <div className={`dropdown-menu ${dropdownOpen.workshop ? "show" : ""}`}>
               <Link href="/workshop" onClick={closeMenu}>All Workshops</Link>
+              <Link href="/workshop/Tantra" onClick={closeMenu}>Tantra</Link>
               <Link href="/workshop/Gita" onClick={closeMenu}>Gita Gyaan</Link>
               <Link href="/workshop/Sanskrit-workshops" onClick={closeMenu}>Sanskrit</Link>
               <Link href="/workshop/meditation-sessions" onClick={closeMenu}>Meditation</Link>
               <Link href="/workshop/yoga-workshops" onClick={closeMenu}>Yoga</Link>
               <Link href="/workshop/ayurveda-workshops" onClick={closeMenu}>Ayurveda</Link>
-              <Link href="/workshop/mantra-workshops" onClick={closeMenu}>Mantra</Link>
+              <Link href="/workshop/Astrology-workshops" onClick={closeMenu}>Astrology</Link>
               <Link href="/workshop/sadhna" onClick={closeMenu}>Sadhna</Link>
             </div>
           </div>

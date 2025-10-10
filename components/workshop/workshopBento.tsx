@@ -11,14 +11,14 @@ interface GridItem {
 }
 
 const gridItems: GridItem[] = [
-  { id: 1, title: 'Tantra', link: '/page1', imageUrl: '/workshop-bento/tantra.webp' },
-  { id: 2, title: 'Meditation', link: '/page2', imageUrl: '/workshop-bento/meditation.webp' },
-  { id: 3, title: 'Bhagavad Gita', link: '/page3', imageUrl: '/workshop-bento/gita.webp' },
-  { id: 4, title: 'Yoga', link: '/page4', imageUrl: '/workshop-bento/yoga.webp' },
-  { id: 5, title: 'Ayurveda', link: '/page5', imageUrl: '/workshop-bento/ayurveda.webp' },
-  { id: 6, title: 'Astrology', link: '/page6', imageUrl: '/workshop-bento/astrology.webp' },
-  { id: 7, title: 'Sadhna', link: '/page7', imageUrl: '/workshop-bento/sadhna.webp' },
-  { id: 8, title: 'Sanskrit', link: '/page8', imageUrl: '/workshop-bento/sanskrit.webp' },
+  { id: 1, title: 'Tantra', link: '/workshop/Tantra', imageUrl: '/workshop-bento/tantra.jpg' },
+  { id: 2, title: 'Meditation', link: '/workshop/meditation-sessions', imageUrl: '/workshop-bento/meditation.jpg' },
+  { id: 3, title: 'Bhagavad Gita', link: '/workshop/bhagavad-gita', imageUrl: '/workshop-bento/gita.jpg' },
+  { id: 4, title: 'Yoga', link: '/workshop/yoga-workshops', imageUrl: '/workshop-bento/yoga.jpg' },
+  { id: 5, title: 'Ayurveda', link: '/workshop/ayurveda-workshops', imageUrl: '/workshop-bento/ayurveda.jpg' },
+  { id: 6, title: 'Astrology', link: '/workshop/Astrology-workshops', imageUrl: '/workshop-bento/astrology.jpg' },
+  { id: 7, title: 'Sadhna', link: '/workshop/sadhna', imageUrl: '/workshop-bento/sadhna.jpg' },
+  { id: 8, title: 'Sanskrit', link: '/workshop/Sanskrit-workshops', imageUrl: '/workshop-bento/sanskrit.jpg' },
 ];
 
 const BentoGrid: React.FC = () => {
@@ -31,7 +31,7 @@ const BentoGrid: React.FC = () => {
           <a
             href={gridItems[0].link}
             aria-label={gridItems[0].title}
-            className="relative col-span-2 md:col-span-4 lg:col-span-6 row-span-2 rounded-3xl lg:rounded-[2rem] overflow-hidden bg-white shadow-md"
+            className="relative col-span-2 md:col-span-4 lg:col-span-6 row-span-2 rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-md"
           >
             <Image
               src={gridItems[0].imageUrl}
@@ -39,7 +39,7 @@ const BentoGrid: React.FC = () => {
               fill
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 50vw"
-              className="object-contain p-6"
+              className="object-cover w-full h-full"
             />
           </a>
 
@@ -47,14 +47,14 @@ const BentoGrid: React.FC = () => {
           <a
             href={gridItems[1].link}
             aria-label={gridItems[1].title}
-            className="relative col-span-2 md:col-span-2 lg:col-span-3 row-span-2 rounded-3xl lg:rounded-[2rem] overflow-hidden bg-white shadow-md"
+            className="relative col-span-2 md:col-span-2 lg:col-span-3 row-span-2 rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-md"
           >
             <Image
               src={gridItems[1].imageUrl}
               alt={gridItems[1].title}
               fill
               sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-contain p-6"
+              className="object-cover w-full h-full"
             />
           </a>
 
@@ -62,13 +62,14 @@ const BentoGrid: React.FC = () => {
           <a
             href={gridItems[2].link}
             aria-label={gridItems[2].title}
-            className="relative col-span-2 md:col-span-3 lg:col-span-3 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden bg-white shadow-md"
+            className="relative col-span-2 md:col-span-3 lg:col-span-3 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-md"
           >
             <Image
               src={gridItems[2].imageUrl}
               alt={gridItems[2].title}
               fill
-              className="object-contain p-5"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover w-full h-full"
             />
           </a>
 
@@ -76,13 +77,14 @@ const BentoGrid: React.FC = () => {
           <a
             href={gridItems[3].link}
             aria-label={gridItems[3].title}
-            className="relative col-span-2 md:col-span-3 lg:col-span-3 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden bg-white shadow-md"
+            className="relative col-span-2 md:col-span-3 lg:col-span-3 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-md"
           >
             <Image
               src={gridItems[3].imageUrl}
               alt={gridItems[3].title}
               fill
-              className="object-contain p-5"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover w-full h-full"
             />
           </a>
 
@@ -90,13 +92,14 @@ const BentoGrid: React.FC = () => {
           <a
             href={gridItems[4].link}
             aria-label={gridItems[4].title}
-            className="relative col-span-2 md:col-span-6 lg:col-span-6 row-span-1 lg:row-span-2 rounded-3xl lg:rounded-[2rem] overflow-hidden bg-white shadow-md"
+            className="relative col-span-2 md:col-span-6 lg:col-span-6 row-span-1 lg:row-span-2 rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-md"
           >
             <Image
               src={gridItems[4].imageUrl}
               alt={gridItems[4].title}
               fill
-              className="object-contain p-8"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
+              className="object-cover w-full h-full"
             />
           </a>
 
@@ -104,13 +107,14 @@ const BentoGrid: React.FC = () => {
           <a
             href={gridItems[5].link}
             aria-label={gridItems[5].title}
-            className="relative col-span-1 md:col-span-3 lg:col-span-3 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden bg-white shadow-md"
+            className="relative col-span-1 md:col-span-3 lg:col-span-3 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-md"
           >
             <Image
               src={gridItems[5].imageUrl}
               alt={gridItems[5].title}
               fill
-              className="object-contain p-5"
+              sizes="(max-width: 768px) 25vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover w-full h-full"
             />
           </a>
 
@@ -118,13 +122,14 @@ const BentoGrid: React.FC = () => {
           <a
             href={gridItems[6].link}
             aria-label={gridItems[6].title}
-            className="relative col-span-1 md:col-span-3 lg:col-span-3 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden bg-white shadow-md"
+            className="relative col-span-1 md:col-span-3 lg:col-span-3 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-md"
           >
             <Image
               src={gridItems[6].imageUrl}
               alt={gridItems[6].title}
               fill
-              className="object-contain p-5"
+              sizes="(max-width: 768px) 25vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover w-full h-full"
             />
           </a>
 
@@ -132,13 +137,14 @@ const BentoGrid: React.FC = () => {
           <a
             href={gridItems[7].link}
             aria-label={gridItems[7].title}
-            className="relative col-span-2 md:col-span-6 lg:col-span-6 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden bg-white shadow-md"
+            className="relative col-span-2 md:col-span-6 lg:col-span-6 row-span-1 rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-md"
           >
             <Image
               src={gridItems[7].imageUrl}
               alt={gridItems[7].title}
               fill
-              className="object-contain p-6"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
+              className="object-cover w-full h-full"
             />
           </a>
         </section>
