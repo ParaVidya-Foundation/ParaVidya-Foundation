@@ -43,7 +43,7 @@ const MarqueeText = styled.span`
 const Marquee: React.FC = () => {
   // ✅ Full list of services
   const services =
-    "🌟 Food Donation • Education • Yoga • Sadhna • Workshops • Astrology • Meditation • Spiritual Guidance • Community Service • Self Growth • Wellness • Cultural Programs 🌟";
+    "Food Donation • Education • Yoga • Sadhna • Workshops • Astrology • Meditation • Spiritual Guidance • Community Service • Self Growth • Wellness • Cultural Programs";
 
   return (
     <MarqueeWrapper className={roboto.className}>

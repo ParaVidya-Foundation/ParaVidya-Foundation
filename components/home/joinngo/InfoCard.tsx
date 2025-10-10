@@ -4,8 +4,8 @@ import { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 interface InfoCardProps {
-  title: string;
-  description?: string;
+  title: ReactNode;
+  description?: ReactNode;
   image?: string;
   bgColor?: string;
   footer?: ReactNode;

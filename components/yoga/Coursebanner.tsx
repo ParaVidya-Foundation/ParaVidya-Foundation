@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
+import GlowButton from "../ui/GlowButton";
 
 interface CourseBannerProps {
   title: string;
@@ -66,18 +67,7 @@ const CourseBanner = ({
           <p className="text-gray-700 text-base md:text-lg leading-relaxed max-w-lg font-manrope">
             {subtitle}
           </p>
-          <button
-            onClick={handleJoin}
-            disabled={isLoading}
-            aria-label={
-              isLoading
-                ? `Processing ${buttonText.toLowerCase()} request`
-                : `${buttonText} the course now`
-            }
-            className="inline-flex items-center justify-center px-8 py-3 bg-yellow-500 text-black text-lg font-medium rounded-full shadow-md hover:bg-yellow-600 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            {isLoading ? "Processing..." : buttonText}
-          </button>
+<GlowButton text={buttonText} onClick={handleJoin} />
         </div>
 
         {/* Image Section */}

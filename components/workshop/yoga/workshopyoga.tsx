@@ -1,36 +1,33 @@
 "use client";
 
 import Image from "next/image";
+import YogaForm from "./YogaForm";
 
 export default function WorkshopYoga() {
   return (
-    <section className="w-[90%] mx-auto py-10 px-6 md:px-12 flex flex-col md:flex-row items-end justify-between gap-12">
-      {/* Text Section */}
-      <div className="flex-1 text-left">
-
-        <div className="flex flex-col items-center justify-center">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-brown-900 tracking-tight leading-tight mb-6">
+    <section className="w-[90%] mx-auto py-16 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-12">
+      {/* Left Content */}
+      <div className="flex-1 text-center md:text-left flex flex-col justify-center items-center md:items-start">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#2b1e12] tracking-tight leading-tight mb-6">
           Workshop Yoga
         </h1>
-        
-        </div>
-        <p className="text-2xl md:text-xl text-brown-700 leading-relaxed max-w-2xl">
-          Our yoga workshops offer comprehensive training in various styles and techniques. 
-          From{" "}
-          <strong>Hatha Yoga, Pranayama, and advanced asanas</strong> to specialized sessions for stress relief, 
-          we provide expert guidance for practitioners of all levels.
+
+        <p className="text-lg sm:text-xl text-[#4a3b2a] leading-relaxed max-w-2xl">
+          Our yoga workshops offer <strong>comprehensive training</strong> in
+          various traditional and modern styles.  
+          From <strong>Hatha Yoga</strong>, <strong>Pranayama</strong>, and
+          <strong> advanced asanas</strong> to specialized sessions for stress
+          relief and inner balance — guided by experts from{" "}
+          <span className="text-orange-600 font-semibold">
+            Paravidya Foundation
+          </span>
+          .
         </p>
       </div>
 
-      {/* Image Section */}
-      <div className="flex-1 flex justify-end items-center relative z-10 -mb-[25px] -bottom-20">
-        <Image
-          src="/Workshop/ayurveda.png"
-          alt="Workshop Yoga"
-          width={600}
-          height={600}
-          className="object-contain"
-        />
+      {/* Right Form */}
+      <div className="flex-1 w-full md:w-auto flex justify-center">
+        <YogaForm />
       </div>
     </section>
   );

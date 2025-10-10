@@ -1,15 +1,14 @@
 /* 🌟 Global Header Layout */
 .page-header {
-  position: sticky;
-  top: 0;
   width: 100%;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999; /* Always on top */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 0;
+  position: relative; /* not fixed or sticky */
 }
 
 /* Centered Header Container */
@@ -29,6 +28,8 @@
   justify-content: center;
   gap: 40px;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 9999;
 }
 
 /* Nav Links */
@@ -77,6 +78,11 @@
   align-items: center;
   cursor: pointer;
   gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-trigger:hover {
+  color: #734c00;
 }
 
 .dropdown-arrow {
@@ -89,31 +95,40 @@
   transform: rotate(180deg);
 }
 
-/* Dropdown Menu - Desktop Hover */
-@media(min-width: 992px) {
-  .dropdown:hover .dropdown-menu {
-    display: flex;
-  }
-}
-
-/* Dropdown Menu Styling */
+/* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
   top: 110%;
   left: 0;
   background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   display: none;
   flex-direction: column;
-  min-width: 190px;
+  min-width: 200px;
   overflow: hidden;
-  animation: fadeIn 0.3s ease;
-  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 9999;
+}
+
+/* Hover for laptop */
+@media (min-width: 992px) {
+  .dropdown:hover .dropdown-menu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 
 .dropdown-menu.show {
   display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .dropdown-menu a {
@@ -121,11 +136,12 @@
   color: #333;
   font-size: 15px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
-  background: rgba(255, 219, 88, 0.2);
+  background: rgba(255, 219, 88, 0.25);
   color: #734c00;
 }
 
@@ -148,11 +164,15 @@
   justify-content: space-between;
   width: 100%;
   padding: 8px 15px;
+  background: #fff;
+  z-index: 9999;
+  position: relative;
 }
 
 .mobile-logo-img {
-  width: 120px; /* Smaller for mobile */
+  width: 100px; /* Slightly smaller for perfect balance */
   height: auto;
+  display: block;
 }
 
 /* Toggle Button */
@@ -163,16 +183,31 @@
   border: none;
   color: #000;
   cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #734c00;
 }
 
 /* ✨ Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 📱 Responsive */
 @media (max-width: 991px) {
+  .head {
+    justify-content: flex-start;
+  }
+
   .navbar {
     position: fixed;
     top: 0;
@@ -184,8 +219,9 @@
     height: 100vh;
     background: #fffdf3;
     padding-top: 90px;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
     transition: right 0.4s ease;
+    z-index: 9998;
   }
 
   .navbar.open {
@@ -198,7 +234,7 @@
     width: 100%;
     text-align: center;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .dropdown-menu {
@@ -208,6 +244,7 @@
     width: 100%;
     display: none;
     padding: 0;
+    transform: none;
   }
 
   .dropdown-menu.show {
@@ -218,7 +255,7 @@
     color: #333;
     font-size: 16px;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .logo-container {
@@ -231,5 +268,6 @@
 
   .menu-toggle {
     display: block;
+    margin-left: auto; /* ensures right alignment */
   }
 }
