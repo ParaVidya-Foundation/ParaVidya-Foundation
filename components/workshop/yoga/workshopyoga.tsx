@@ -8,13 +8,7 @@ export default function WorkshopYoga() {
       {/* Text Section */}
       <div className="flex-1 text-left">
 
-        <div className="justify-center items-center" style={{
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    alignContent: "center",
-}}>
+        <div className="flex flex-col items-center justify-center">
         <h1 className="text-5xl md:text-7xl font-extrabold text-brown-900 tracking-tight leading-tight mb-6">
           Workshop Yoga
         </h1>
@@ -29,17 +23,7 @@ export default function WorkshopYoga() {
       </div>
 
       {/* Image Section */}
-      <div
-  className="flex-1 flex justify-center items-end"
-  style={{
-    position: "relative",
-    zIndex: 10,
-    marginBottom: "-25px",
-    alignItems: "center",
-    bottom: "-80px",
-    justifyContent: "flex-end",
-  }}
->
+      <div className="flex-1 flex justify-end items-center relative z-10 -mb-[25px] -bottom-20">
         <Image
           src="/Workshop/ayurveda.png"
           alt="Workshop Yoga"

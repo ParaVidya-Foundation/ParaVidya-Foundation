@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -6,10 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-// Import CSS
 import "./header.css";
-
-// ✅ Logo from /public
 import Logo from "@/public/Logo.png";
 
 interface DropdownState {
@@ -42,7 +38,7 @@ const Header: React.FC = () => {
     }));
   };
 
-  // ✅ Close on outside click
+  // ✅ Close menu when clicking outside
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -67,7 +63,7 @@ const Header: React.FC = () => {
           <Link href="/" onClick={closeMenu}>
             <Image
               src={Logo}
-              alt="AstroPathshala Mobile Logo"
+              alt="AstroPathshala Logo"
               className="mobile-logo-img"
               priority
               sizes="(max-width: 480px) 50vw, (max-width: 768px) 30vw, 20vw"
@@ -79,145 +75,67 @@ const Header: React.FC = () => {
         </button>
       </div>
 
-      {/* Desktop / Full Navbar */}
+      {/* Desktop Navbar */}
       <div className="head">
         <nav className={`navbar ${menuOpen ? "open" : ""}`}>
-          {/* Left Links */}
-          <Link
-            href="/"
-            onClick={closeMenu}
-            className={pathname === "/" ? "active" : ""}
-          >
+          <Link href="/" onClick={closeMenu} className={pathname === "/" ? "active" : ""}>
             Home
           </Link>
 
-          {/* yogas Dropdown */}
-          <div
-            className="dropdown"
-            onMouseEnter={() => toggleDropdown("yogas")}
-            onMouseLeave={() => toggleDropdown("yogas")}
-          >
-            <Link href="/yoga" onClick={closeMenu} className="desktop-link">
-              Yoga <img
-                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow"
-                  loading="lazy"
-                  sizes="20px"
-                />
-            </Link>
-
+          {/* Yogas Dropdown */}
+          <div className="dropdown">
             <button
-              className="dropdown-trigger mobile-trigger"
+              className="dropdown-trigger"
               onClick={() => toggleDropdown("yogas")}
             >
-              Yogas <img
-                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow"
-                  loading="lazy"
-                  sizes="20px"
-                />
+              Yogas
+              <img
+                src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
+                alt="Expand Yogas"
+                className={`dropdown-arrow ${dropdownOpen.yogas ? "rotate" : ""}`}
+              />
             </button>
-
-            {dropdownOpen.yogas && (
-              <div className="dropdown-menu">
-                <Link href="/yoga" onClick={closeMenu}>
-                  All Yoga
-                </Link>
-                <Link href="/yoga/wellness" onClick={closeMenu}>
-                  Wellness
-                </Link>
-                <Link href="/yoga/Stress" onClick={closeMenu}>
-                  Stress
-                </Link>
-                <Link href="/yoga/Anger" onClick={closeMenu}>
-                  Anger
-                </Link>
-                <Link href="/yoga/Depression" onClick={closeMenu}>
-                  Depression
-                </Link>
-                <Link href="/yoga/Sleep" onClick={closeMenu}>
-                  Sleep
-                </Link>
-                <Link href="/yoga/Fatigue" onClick={closeMenu}>
-                  Fatigue
-                </Link>
-                <Link href="/yoga/Immunity" onClick={closeMenu}>
-                  Immunity Boost
-                </Link>
-                <Link href="/yoga/OverWeight" onClick={closeMenu}>
-                  Weight
-                </Link>
-                <Link href="/yoga/Kirtan" onClick={closeMenu}>
-                  Kirtan
-                </Link>
-              </div>
-            )}
+            <div className={`dropdown-menu ${dropdownOpen.yogas ? "show" : ""}`}>
+              <Link href="/yoga" onClick={closeMenu}>All Yoga</Link>
+              <Link href="/yoga/wellness" onClick={closeMenu}>Wellness</Link>
+              <Link href="/yoga/Stress" onClick={closeMenu}>Stress</Link>
+              <Link href="/yoga/Anger" onClick={closeMenu}>Anger</Link>
+              <Link href="/yoga/Depression" onClick={closeMenu}>Depression</Link>
+              <Link href="/yoga/Sleep" onClick={closeMenu}>Sleep</Link>
+              <Link href="/yoga/Fatigue" onClick={closeMenu}>Fatigue</Link>
+              <Link href="/yoga/Immunity" onClick={closeMenu}>Immunity</Link>
+              <Link href="/yoga/OverWeight" onClick={closeMenu}>Weight</Link>
+              <Link href="/yoga/Kirtan" onClick={closeMenu}>Kirtan</Link>
+            </div>
           </div>
 
           {/* Workshop Dropdown */}
-          <div
-            className="dropdown"
-            onMouseEnter={() => toggleDropdown("workshop")}
-            onMouseLeave={() => toggleDropdown("workshop")}
-          >
-            <Link href="/workshop" onClick={closeMenu} className="desktop-link">
-              Workshop <img
-                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow"
-                  loading="lazy"
-                  sizes="20px"
-                />
-            </Link>
-
+          <div className="dropdown">
             <button
-              className="dropdown-trigger mobile-trigger"
+              className="dropdown-trigger"
               onClick={() => toggleDropdown("workshop")}
             >
-              Workshop <img
-                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow"
-                  loading="lazy"
-                  sizes="20px"
-                />
+              Workshop
+              <img
+                src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
+                alt="Expand Workshop"
+                className={`dropdown-arrow ${dropdownOpen.workshop ? "rotate" : ""}`}
+              />
             </button>
-
-            {dropdownOpen.workshop && (
-              <div className="dropdown-menu">
-                <Link href="/workshop" onClick={closeMenu}>
-                  All Workshops
-                </Link>
-                <Link href="/workshop/Gita" onClick={closeMenu}>
-                  Gita Gyaan
-                </Link>
-                <Link href="/workshop/Sanskrit-workshops" onClick={closeMenu}>
-                  Sanskrit
-                </Link>
-                <Link href="/workshop/meditation-sessions" onClick={closeMenu}>
-                  Meditation
-                </Link>
-                <Link href="/workshop/yoga-workshops" onClick={closeMenu}>
-                  Yoga
-                </Link>
-                <Link href="/workshop/ayurveda-workshops" onClick={closeMenu}>
-                  Ayurveda
-                </Link>
-                <Link href="/workshop/mantra-workshops" onClick={closeMenu}>
-                  Mantra
-                </Link>
-                <Link href="/workshop/sadhna" onClick={closeMenu}>
-                  Sadhna
-                </Link>
-              </div>
-            )}
+            <div className={`dropdown-menu ${dropdownOpen.workshop ? "show" : ""}`}>
+              <Link href="/workshop" onClick={closeMenu}>All Workshops</Link>
+              <Link href="/workshop/Tantra" onClick={closeMenu}>Tantra</Link>
+              <Link href="/workshop/Gita" onClick={closeMenu}>Gita Gyaan</Link>
+              <Link href="/workshop/Sanskrit-workshops" onClick={closeMenu}>Sanskrit</Link>
+              <Link href="/workshop/meditation-sessions" onClick={closeMenu}>Meditation</Link>
+              <Link href="/workshop/yoga-workshops" onClick={closeMenu}>Yoga</Link>
+              <Link href="/workshop/ayurveda-workshops" onClick={closeMenu}>Ayurveda</Link>
+              <Link href="/workshop/Astrology-workshops" onClick={closeMenu}>Astrology</Link>
+              <Link href="/workshop/sadhna" onClick={closeMenu}>Sadhna</Link>
+            </div>
           </div>
 
-          <Link href="/dharma" onClick={closeMenu}>
-            Dharma
-          </Link>
+          <Link href="/dharma" onClick={closeMenu}>Dharma</Link>
 
           {/* Center Logo */}
           <div className="logo-container">
@@ -233,75 +151,32 @@ const Header: React.FC = () => {
           </div>
 
           {/* Partnership Dropdown */}
-          <div
-            className="dropdown"
-            onMouseEnter={() => toggleDropdown("partnership")}
-            onMouseLeave={() => toggleDropdown("partnership")}
-          >
-            <Link href="/Partnership" onClick={closeMenu} className="desktop-link">
-              Partnership <img
-                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow"
-                  loading="lazy"
-                  sizes="20px"
-                />
-            </Link>
-
+          <div className="dropdown">
             <button
-              className="dropdown-trigger mobile-trigger"
+              className="dropdown-trigger"
               onClick={() => toggleDropdown("partnership")}
             >
-              Partnership <img
-                  src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
-                  alt="Expand Services Dropdown"
-                  className="dropdown-arrow"
-                  loading="lazy"
-                  sizes="20px"
-                />
+              Partnership
+              <img
+                src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
+                alt="Expand Partnership"
+                className={`dropdown-arrow ${dropdownOpen.partnership ? "rotate" : ""}`}
+              />
             </button>
-
-            {dropdownOpen.partnership && (
-              <div className="dropdown-menu">
-                <Link href="/Partnership/AwarenessProgram" onClick={closeMenu}>
-                  Awareness Program
-                </Link>
-                {/* <Link href="/Partnership/Camps" onClick={closeMenu}>
-                  Camps
-                </Link> */}
-                <Link href="/Partnership/corporate" onClick={closeMenu}>
-                  Corporate
-                </Link>
-                <Link href="/Partnership/Donate" onClick={closeMenu}>
-                  Donation
-                </Link>
-                {/* <Link href="/Partnership/Events" onClick={closeMenu}>
-                  Events
-                </Link> */}
-                <Link href="/Partnership/JoinourNGO" onClick={closeMenu}>
-                  Join our NGO
-                </Link>
-                <Link href="/Partnership/JoinourNGO/Internship" onClick={closeMenu}>
-                  Youth Internship Programme
-                </Link>
-                <Link href="/Partnership/Katha" onClick={closeMenu}>
-                  Katha
-                </Link>
-                <Link href="/Partnership/TaxExemption" onClick={closeMenu}>
-                  Tax Exemption
-                </Link>
-              </div>
-            )}
+            <div className={`dropdown-menu ${dropdownOpen.partnership ? "show" : ""}`}>
+              <Link href="/Partnership/AwarenessProgram" onClick={closeMenu}>Awareness Program</Link>
+              <Link href="/Partnership/corporate" onClick={closeMenu}>Corporate</Link>
+              <Link href="/Partnership/Donate" onClick={closeMenu}>Donation</Link>
+              <Link href="/Partnership/JoinourNGO" onClick={closeMenu}>Join our NGO</Link>
+              <Link href="/Partnership/JoinourNGO/Internship" onClick={closeMenu}>Youth Internship</Link>
+              <Link href="/Partnership/Katha" onClick={closeMenu}>Katha</Link>
+              <Link href="/Partnership/TaxExemption" onClick={closeMenu}>Tax Exemption</Link>
+            </div>
           </div>
-          <Link href="/gallery" onClick={closeMenu}>
-            Gallery
-          </Link>
-          <Link href="/about-us" onClick={closeMenu}>
-            About Us
-          </Link>
-          <Link href="/donate" onClick={closeMenu}>
-            Donation
-          </Link>
+
+          <Link href="/gallery" onClick={closeMenu}>Gallery</Link>
+          <Link href="/about-us" onClick={closeMenu}>About Us</Link>
+          <Link href="/donate" onClick={closeMenu}>Donation</Link>
         </nav>
       </div>
     </header>

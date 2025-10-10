@@ -127,10 +127,10 @@ export default function HomePage() {
     <>
       <CustomCarousel
         images={[
-          "/Carousel/Your-One-Stop-for-Sacred-Rituals.jpg",
-          "/Carousel/About-us.jpg",
-          "/Carousel/Navgrah-Shanti.jpg",
-          "/Carousel/Online-Hawan.jpg",
+          "/Carousel/Join.jpg",
+          "/Carousel/Katha.jpg",
+          "/Carousel/Ayurveda.jpg",
+          "/Carousel/Workplace-Challanges.jpg",
         ]}     
       />
       <Marquee />
