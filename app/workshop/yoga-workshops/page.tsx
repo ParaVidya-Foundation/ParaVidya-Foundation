@@ -1,12 +1,10 @@
 import { Metadata } from "next"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Mission from "@/components/workshop/ayurveda/missionayur"
 import FeaturedVideos from "@/components/ui/FeaturedVideos"
 import WorkshopYoga from "@/components/workshop/yoga/workshopyoga"
-import CourseBanner from "@/components/yoga/Coursebanner"
 import { YogaCarousel } from "@/components/yoga/YogaCarousel"
 import YogaTeacher from "@/components/workshop/yoga/YogaTeacher"
 import MeditationHero from "@/components/workshop/meditation/MeditationHero"
+import TestimonialsComponent from "@/components/yoga/TestimonialsComponent"
 
 export const metadata: Metadata = {
   title: "Yoga Workshops – Para Vidya",
@@ -14,6 +12,26 @@ export const metadata: Metadata = {
 }
 
 export default function YogaWorkshopsPage() {
+  const testimonials = [
+    {
+      id: "1",
+      name: "Priya Sharma",
+      title: "Mental Health Advocate",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    },
+    {
+      id: "2",
+      name: "Amit Patel",
+      title: "Yoga Practitioner",
+      videoUrl: "https://www.youtube.com/embed/xyz789",
+    },
+    {
+      id: "3",
+      name: "Sneha Gupta",
+      title: "Wellness Coach",
+      videoUrl: "https://www.youtube.com/embed/abc123",
+    },
+  ];
   return (
     <div className="">
 <MeditationHero/>
@@ -46,14 +64,12 @@ export default function YogaWorkshopsPage() {
   ]}
 />
 <YogaCarousel/>
-<br></br><br></br>
-<CourseBanner
-        title="Yoga Workshops"
-        subtitle="Comprehensive yoga workshops for physical and spiritual wellness."
-        imageSrc="/Workshop/ayurveda.png"
-        buttonText="Join Now"
-      />
-
+<section className="w-full">
+          <TestimonialsComponent
+            reels={testimonials}
+            title="Our Yoga Workshops Testimonials"
+          />
+        </section>   
     </div>
   )
 }

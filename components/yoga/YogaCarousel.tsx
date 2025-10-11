@@ -31,7 +31,7 @@ export function YogaCarousel() {
                 title: card.title,
                 category: card.category,
                 content: card.content,
-                slug: card.href, // ✅ pass actual href here
+                slug: card.href, 
               }}
             />
           ))}

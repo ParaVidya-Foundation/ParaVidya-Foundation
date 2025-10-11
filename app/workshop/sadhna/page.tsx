@@ -1,24 +1,55 @@
 import { Metadata } from "next"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
 import Mission from "@/components/workshop/ayurveda/missionayur"
 import FeaturedVideos from "@/components/ui/FeaturedVideos"
 import WorkshopSadhna from "@/components/workshop/sadhna/workshopsadhna"
 import CourseBanner from "@/components/yoga/Coursebanner"
 
 export const metadata: Metadata = {
-  title: "Sadhna – Para Vidya",
-  description: "Description, philosophy, and spiritual practices for daily sadhna.",
+  title: "Sadhna Workshops - Daily Spiritual Practice | ParaVidya Foundation",
+  description: "Learn to harmonize body, mind, and soul through daily spiritual practices. Expert guidance on meditation, mantra, and devotional practices for balanced living.",
+  keywords: [
+    "sadhna workshops",
+    "daily spiritual practice",
+    "meditation practice",
+    "spiritual discipline",
+    "devotional practices",
+    "inner harmony",
+    "paravidya foundation",
+    "spiritual growth"
+  ],
+  openGraph: {
+    title: "Sadhna Workshops - Daily Spiritual Practice | ParaVidya Foundation",
+    description: "Learn to harmonize body, mind, and soul through daily spiritual practices. Expert guidance on meditation and devotional practices.",
+    type: "website",
+    images: [
+      {
+        url: "/Carousel/Online-Hawan.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sadhna Workshops at ParaVidya Foundation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sadhna Workshops - Daily Spiritual Practice | ParaVidya Foundation",
+    description: "Learn to harmonize body, mind, and soul through daily spiritual practices.",
+    images: ["/Carousel/Online-Hawan.jpg"],
+  },
 }
 
 export default function SadhnaPage() {
   return (
     <div className="">
-         <div className="top-img-about">
-          <img
-            src={"/Carousel/Online-Hawan.jpg"}
-            alt="Sadhna at Para Vidya"
-            className="w-full h-auto object-cover"
-            loading="lazy" 
+         <div className="top-img-about relative w-full h-[400px] md:h-[500px]">
+          <Image
+            src="/Carousel/Online-Hawan.jpg"
+            alt="Sadhna Workshops at ParaVidya Foundation - Daily Spiritual Practice"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
           />
         </div>
      <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Cultivate inner discipline and devotion through daily spiritual practices. Our sadhna guidance blends mantra, meditation, and seva for spiritual growth." />

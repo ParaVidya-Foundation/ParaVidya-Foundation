@@ -1,24 +1,55 @@
 import { Metadata } from "next"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
 import Mission from "@/components/workshop/ayurveda/missionayur"
 import FeaturedVideos from "@/components/ui/FeaturedVideos"
 import CourseBanner from "@/components/yoga/Coursebanner"
 import WorkshopSanskrit from "@/components/workshop/sanskrit/workshopsanskrit"
 
 export const metadata: Metadata = {
-  title: "Sanskrit Workshops – Para Vidya",
-  description: "Learn the ancient language of Sanskrit for spiritual and intellectual growth.",
+  title: "Sanskrit Learning Workshops - Ancient Language for Modern Minds | ParaVidya Foundation",
+  description: "Learn the ancient language of Sanskrit for spiritual and intellectual growth. Discover Vedic texts, mantras, and the beauty of this sacred language with expert guidance.",
+  keywords: [
+    "sanskrit workshops",
+    "ancient language learning",
+    "vedic texts",
+    "sanskrit grammar",
+    "spiritual language",
+    "sanskrit mantras",
+    "paravidya foundation",
+    "sanskrit classes"
+  ],
+  openGraph: {
+    title: "Sanskrit Learning Workshops - Ancient Language for Modern Minds | ParaVidya Foundation",
+    description: "Learn the ancient language of Sanskrit for spiritual and intellectual growth. Discover Vedic texts and sacred mantras.",
+    type: "website",
+    images: [
+      {
+        url: "/Carousel/Online-Hawan.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sanskrit Learning Workshops at ParaVidya Foundation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sanskrit Learning Workshops - Ancient Language for Modern Minds | ParaVidya Foundation",
+    description: "Learn the ancient language of Sanskrit for spiritual and intellectual growth.",
+    images: ["/Carousel/Online-Hawan.jpg"],
+  },
 }
 
 export default function SanskritWorkshopsPage() {
   return (
     <div className="">
-         <div className="top-img-about">
-          <img
-            src={"/Carousel/Online-Hawan.jpg"}
-            alt="Sanskrit Workshops at Para Vidya"
-            className="w-full h-auto object-cover"
-            loading="lazy" 
+         <div className="top-img-about relative w-full h-[400px] md:h-[500px]">
+          <Image
+            src="/Carousel/Online-Hawan.jpg"
+            alt="Sanskrit Learning Workshops at ParaVidya Foundation - Ancient Language for Modern Minds"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
           />
         </div>
      <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Learn the ancient language of Sanskrit for spiritual and intellectual growth. Discover the beauty and wisdom embedded in this sacred language." />

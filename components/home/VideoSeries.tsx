@@ -4,62 +4,63 @@ import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import GlowButton from "../ui/GlowButton";
 
 const seriesData = [
   {
     title: "आरती और मंत्र",
     src: "/VideoSeries/aarti.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Aarti",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "ज्योतिष विज्ञान",
     src: "/VideoSeries/astrology.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Astrology",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "आयुर्वेद और स्वास्थ्य",
     src: "/VideoSeries/ayurveda.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Ayurveda",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "गुरु दीक्षा",
     src: "/VideoSeries/Gurudiksha.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_GuruDiksha",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "हवन विधि",
     src: "/VideoSeries/Havanvidhi.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_HavanVidhi",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "कर्मकांड",
     src: "/VideoSeries/Karamkaand.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Karmakand",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "महाकाव्य और पुराण",
     src: "/VideoSeries/maha.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Mahakavya",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "मंत्र जाप",
     src: "/VideoSeries/mantrajaap.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_MantraJaap",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "संस्कृत शिक्षा",
     src: "/VideoSeries/sanskrit.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Sanskrit",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "वेद और पुराण",
     src: "/VideoSeries/veda_purana.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_VedaPurana",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "योग साधना",
     src: "/VideoSeries/yoga.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Yoga",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
 ];
 
@@ -74,41 +75,38 @@ export default function VideoSeries() {
     <section className="w-full bg-[#ffd84b5a] py-16">
       {/* Top Section */}
       <div className="max-w-6xl mx-auto px-6 text-center md:text-left">
-        <motion.h2
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-mileast text-gray-900"
-        >
-          Acharya Prashant&apos;s Video Series
-        </motion.h2>
+      <motion.h2
+  initial={{ opacity: 0, y: 14 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="text-3xl md:text-4xl font-mileast text-gray-900"
+>
+  Paravidya Foundation Video Series
+</motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.15, duration: 0.6 }}
-          className="mt-4 text-lg text-gray-700 max-w-3xl font-manrope"
-        >
-          To a roaring spirit yearning for freedom and joy, Acharya
-          Prashant&apos;s discourses come as a solace.
-        </motion.p>
+<motion.p
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.15, duration: 0.6 }}
+  className="mt-4 text-lg text-gray-700 max-w-3xl font-manrope"
+>
+  Paravidya Foundation provides enlightening videos on{" "}
+  <span className="font-semibold text-orange-600">Tantra, Mantra, Dharma, and Karmakand</span> — 
+  helping people understand the deep roots of Indian spirituality in a simple and practical way.
+</motion.p>
 
-        <p className="mt-2 text-gray-600 max-w-3xl font-manrope">
-          Thousands of hours of sessions on various scriptures and life topics
-          (in the light of Vedanta) have been compiled and structured in the
-          form of <span className="font-bold text-orange-600">486 video
-          series.</span>
-        </p>
+<p className="mt-2 text-gray-600 max-w-3xl font-manrope">
+  From the meaning of sacred rituals to the hidden wisdom in mythology, every video brings ancient knowledge to life, making Dharma easy to learn and live.
+</p>
 
-        <p className="mt-2 text-gray-600 max-w-3xl font-manrope">
-          These video series are aimed at liberating the troubled mind from the
-          shackles of ignorance and suffering.
-        </p>
+<p className="mt-2 text-gray-600 max-w-3xl font-manrope">
+  These series are designed to guide you through the path of{" "}
+  <span className="font-semibold text-orange-600">spiritual awakening, inner peace, and self-understanding,</span> 
+  while staying rooted in the timeless traditions of Sanatan Dharma.
+</p>
 
         <div className="mt-6">
-          <button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold shadow-md transition">
-            Explore Video Series
-          </button>
+          <GlowButton text="Explore Video Series" />
         </div>
       </div>
 
@@ -143,11 +141,12 @@ export default function VideoSeries() {
                 <div className="image-wrap">
                   <Image
                     src={item.src}
-                    alt={item.title}
+                    alt={`${item.title} - ParaVidya Foundation Video Series`}
                     width={400}
                     height={260}
+                    sizes="(max-width: 640px) 180px, (max-width: 1024px) 200px, 260px"
                     className="object-cover rounded-2xl"
-                    priority={false}
+                    loading="lazy"
                   />
                 </div>
                 <div className="title">{item.title}</div>

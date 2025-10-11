@@ -63,7 +63,7 @@ const Header: React.FC = () => {
           <Link href="/" onClick={closeMenu}>
             <Image
               src={Logo}
-              alt="AstroPathshala Logo"
+              alt="ParaVidya Foundation Logo"
               className="mobile-logo-img"
               priority
               sizes="(max-width: 480px) 50vw, (max-width: 768px) 30vw, 20vw"
@@ -89,9 +89,11 @@ const Header: React.FC = () => {
               onClick={() => toggleDropdown("yogas")}
             >
               Yogas
-              <img
+              <Image
                 src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
                 alt="Expand Yogas"
+                width={16}
+                height={16}
                 className={`dropdown-arrow ${dropdownOpen.yogas ? "rotate" : ""}`}
               />
             </button>
@@ -116,9 +118,11 @@ const Header: React.FC = () => {
               onClick={() => toggleDropdown("workshop")}
             >
               Workshop
-              <img
+              <Image
                 src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
                 alt="Expand Workshop"
+                width={16}
+                height={16}
                 className={`dropdown-arrow ${dropdownOpen.workshop ? "rotate" : ""}`}
               />
             </button>
@@ -142,7 +146,7 @@ const Header: React.FC = () => {
             <Link href="/" onClick={closeMenu}>
               <Image
                 src={Logo}
-                alt="AstroPathshala Logo"
+                alt="ParaVidya Foundation Logo"
                 className="logo-img"
                 priority
                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 30vw, 20vw"
@@ -157,9 +161,11 @@ const Header: React.FC = () => {
               onClick={() => toggleDropdown("partnership")}
             >
               Partnership
-              <img
+              <Image
                 src="https://img.icons8.com/ios-glyphs/50/expand-arrow--v1.png"
                 alt="Expand Partnership"
+                width={16}
+                height={16}
                 className={`dropdown-arrow ${dropdownOpen.partnership ? "rotate" : ""}`}
               />
             </button>

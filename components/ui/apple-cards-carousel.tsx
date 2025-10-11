@@ -99,10 +99,10 @@ export const Card = ({ card, index }: { card: CardType; index: number }) => {
       <div className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gradient-to-br from-teal-50 to-teal-100 md:h-[40rem] md:w-96 transition-all duration-300 hover:brightness-110">
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-6">
-          <p className="text-left text-base font-bold bg-gradient-to-r from-teal-200 to-teal-400 bg-clip-text text-transparent md:text-lg">
+          <p className="text-left text-base font-bold bg-white bg-clip-text text-transparent md:text-lg">
             {card.category}
           </p>
-          <p className="mt-2 max-w-xs text-left text-2xl font-bold bg-gradient-to-r from-teal-300 to-teal-600 bg-clip-text text-transparent md:text-3xl">
+          <p className="mt-2 max-w-xs text-left text-2xl font-bold bg-white bg-clip-text text-transparent md:text-3xl">
             {card.title}
           </p>
         </div>

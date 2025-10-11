@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import GlowButton from "../ui/GlowButton";
 
 export default function KaramkandHome() {
   return (
@@ -21,9 +22,7 @@ export default function KaramkandHome() {
   </p>
 
   <Link href="/karamkand">
-    <button className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-      Read More
-    </button>
+   <GlowButton text="Read More" />
   </Link>
 </div>
 
