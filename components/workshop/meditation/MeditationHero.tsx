@@ -25,7 +25,7 @@ export default function MeditationHero() {
             <div className="text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 font-mileast">
                 Meditation for <br />
-                <span className="text-orange-500">Mind, Body & Soul</span>
+                <span className="text-orange-500">Mind, Body &amp; Soul</span>
               </h1>
 
               <p className="text-gray-700 text-base md:text-lg mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
@@ -35,7 +35,10 @@ export default function MeditationHero() {
               </p>
 
               <div className="flex justify-center lg:justify-start">
-                <button className="px-8 py-3 bg-orange-500 text-white rounded-full text-sm md:text-base font-semibold hover:bg-orange-600 transition-all shadow-md hover:shadow-orange-200">
+                <button 
+                  className="px-8 py-3 bg-orange-500 text-white rounded-full text-sm md:text-base font-semibold hover:bg-orange-600 transition-all shadow-md hover:shadow-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                  aria-label="Start meditation program with ParaVidya Foundation"
+                >
                   Start Program →
                 </button>
               </div>

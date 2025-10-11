@@ -141,11 +141,12 @@ export default function VideoSeries() {
                 <div className="image-wrap">
                   <Image
                     src={item.src}
-                    alt={item.title}
+                    alt={`${item.title} - ParaVidya Foundation Video Series`}
                     width={400}
                     height={260}
+                    sizes="(max-width: 640px) 180px, (max-width: 1024px) 200px, 260px"
                     className="object-cover rounded-2xl"
-                    priority={false}
+                    loading="lazy"
                   />
                 </div>
                 <div className="title">{item.title}</div>

@@ -1,7 +1,7 @@
 // SEO Configuration for ParaVidya Foundation
 export const seoConfig = {
   siteName: "ParaVidya Foundation",
-  siteUrl: "http://localhost:3000", // Update with actual domain for production
+  siteUrl: "https://paravidyafoundation.com",
   defaultTitle: "ParaVidya Foundation - Spiritual Wellness & Yoga",
   defaultDescription: "Transform your life through ancient wisdom and modern wellness practices. Expert yoga courses, meditation guidance, and holistic healing for spiritual seekers.",
   

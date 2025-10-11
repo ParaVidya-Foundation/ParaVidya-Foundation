@@ -1,10 +1,42 @@
 import { Metadata } from "next"
+import Image from "next/image"
 import { YogaCarousel } from "@/components/yoga/YogaCarousel"
 import TestimonialsComponent from "@/components/yoga/TestimonialsComponent"
 
 export const metadata: Metadata = {
-  title: "Yoga & Wellness – Para Vidya",
-  description: "Comprehensive yoga practices for physical, mental, and spiritual wellness.",
+  title: "Yoga & Wellness Programs - Holistic Health Solutions | ParaVidya Foundation",
+  description: "Comprehensive yoga practices for physical, mental, and spiritual wellness. Expert-guided programs for stress, anger, sleep, depression, immunity, and overall wellbeing.",
+  keywords: [
+    "yoga wellness programs",
+    "holistic health solutions",
+    "stress management yoga",
+    "anger management yoga",
+    "sleep therapy yoga",
+    "depression support yoga",
+    "immunity boosting yoga",
+    "weight management yoga",
+    "paravidya foundation",
+    "yoga classes online"
+  ],
+  openGraph: {
+    title: "Yoga & Wellness Programs - Holistic Health Solutions | ParaVidya Foundation",
+    description: "Comprehensive yoga practices for physical, mental, and spiritual wellness. Expert-guided programs for stress, anger, sleep, and overall wellbeing.",
+    type: "website",
+    images: [
+      {
+        url: "/Carousel/Online-Hawan.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Yoga & Wellness Programs at ParaVidya Foundation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yoga & Wellness Programs - Holistic Health Solutions | ParaVidya Foundation",
+    description: "Comprehensive yoga practices for physical, mental, and spiritual wellness.",
+    images: ["/Carousel/Online-Hawan.jpg"],
+  },
 }
 
 export default function YogaPage() {
@@ -32,12 +64,14 @@ export default function YogaPage() {
 
   return (
 <>
-<div className="top-img-about">
-          <img
-            src={"/Carousel/Online-Hawan.jpg"}
-            alt="Yoga Workshops at Para Vidya"
-            className="w-full h-auto object-cover"
-            loading="lazy" 
+<div className="top-img-about relative w-full h-[400px] md:h-[500px]">
+          <Image
+            src="/Carousel/Online-Hawan.jpg"
+            alt="Yoga & Wellness Programs at ParaVidya Foundation - Holistic Health Solutions"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
           />
         </div>
 

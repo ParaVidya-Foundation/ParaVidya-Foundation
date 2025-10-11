@@ -1,7 +1,6 @@
 import CustomCarousel from "@/components/carousel"
 import DonationSection from "@/components/home/donationsection"
 import Marquee from "@/components/home/marquee"
-import NGOSocietyImpact from "@/components/home/NGOSocietyImpact"
 import SupportUs from "@/components/home/Supportus"
 import { Metadata } from "next"
 import KaramkandHome from "@/components/home/Karamkandhome"
