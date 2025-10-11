@@ -20,7 +20,10 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
   // ✅ Auto slide
   const startAutoSlide = useCallback(() => {
     if (images.length <= 1) return;
-    stopAutoSlide();
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
     intervalRef.current = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, interval);

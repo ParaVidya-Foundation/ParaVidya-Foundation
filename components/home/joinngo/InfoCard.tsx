@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 interface InfoCardProps {
@@ -24,10 +25,13 @@ export default function InfoCard({
     >
       {/* Background image */}
       {image && (
-        <img
+        <Image
           src={image}
-          alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
+          alt={typeof title === 'string' ? title : 'InfoCard image'}
+          fill
+          sizes="(max-width: 768px) 256px, 288px"
+          className="object-cover"
+          loading="lazy"
         />
       )}
 

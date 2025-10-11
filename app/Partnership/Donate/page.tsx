@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import DonationForm from "@/components/donation/DonationForm";
 import Bankdetails from "@/components/donation/bankdetails";
 import Spread from "@/components/donation/Spread";
 
 export default function Donation() {
-  const [custom, setCustom] = useState<string>("");
 
   return (
     <main className="min-h-screen py-12 px-4">

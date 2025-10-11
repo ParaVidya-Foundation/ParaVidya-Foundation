@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -43,11 +44,16 @@ export default function NewsletterMagazine() {
             key={index}
             className="flex flex-col items-center text-center px-2"
           >
-            <img
-              src={mag.src}
-              alt={mag.alt}
-              className="w-64 md:w-72 rounded-xl shadow-lg mb-3 object-cover"
-            />
+            <div className="relative w-64 md:w-72 h-80 md:h-96">
+              <Image
+                src={mag.src}
+                alt={mag.alt}
+                fill
+                sizes="(max-width: 768px) 256px, 288px"
+                className="rounded-xl shadow-lg object-cover"
+                loading="lazy"
+              />
+            </div>
             <p className="text-base md:text-lg font-semibold text-gray-900">
               {mag.date}
             </p>
