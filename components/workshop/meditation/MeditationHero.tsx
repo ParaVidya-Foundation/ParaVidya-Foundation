@@ -6,63 +6,51 @@ import { motion } from "framer-motion";
 
 export default function MeditationHero() {
   return (
-    <section className="max-w-7xl mx-auto px-4 lg:px-8 py-12 lg:py-20 font-sans overflow-hidden">
+    <section
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 font-manrope overflow-hidden"
+      aria-label="Meditation and Yoga Programs - Paravidya Foundation"
+    >
       {/* GRID CONTAINER */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
         {/* ---------- LEFT HERO ---------- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="lg:col-span-8 bg-gradient-to-br from-[#fff9f5] to-[#fde8d8] rounded-3xl p-8 lg:p-12 relative overflow-hidden shadow-sm"
+          className="lg:col-span-8 bg-gradient-to-br from-[#fff9f5] to-[#fde8d8] rounded-3xl p-8 lg:p-12 relative overflow-hidden shadow-sm flex flex-col justify-center"
         >
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* TEXT */}
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 font-mileast">
                 Meditation for <br />
                 <span className="text-orange-500">Mind, Body & Soul</span>
               </h1>
-              <p className="text-gray-600 text-base md:text-lg mb-8 max-w-md mx-auto lg:mx-0">
-                Connect with your inner self, enhance focus, and experience
-                serenity with guided meditation programs for all levels.
+
+              <p className="text-gray-700 text-base md:text-lg mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
+                Join <span className="font-semibold text-orange-600">Paravidya Foundation</span>’s holistic 
+                meditation programs — designed to balance your inner self, enhance focus, and awaken serenity 
+                through guided techniques for all levels.
               </p>
 
               <div className="flex justify-center lg:justify-start">
-                <button className="px-8 py-3 bg-orange-500 text-white rounded-full text-sm md:text-base font-medium hover:bg-orange-600 transition-all shadow-md hover:shadow-orange-200">
+                <button className="px-8 py-3 bg-orange-500 text-white rounded-full text-sm md:text-base font-semibold hover:bg-orange-600 transition-all shadow-md hover:shadow-orange-200">
                   Start Program →
                 </button>
               </div>
             </div>
 
             {/* IMAGE */}
-            <div className="relative w-full h-[320px] sm:h-[360px] lg:h-[420px] flex justify-center">
+            <div className="relative w-full h-[300px] sm:h-[360px] lg:h-[440px]">
               <Image
-                src="https://images.unsplash.com/photo-1599447421416-7a1efb9e7a06?auto=format&fit=crop&w=900&q=80"
-                alt="Meditation woman"
+                src="/Yoga/Hero.webp"
+                alt="Meditation session at Paravidya Foundation"
                 fill
-                className="object-cover rounded-3xl shadow-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 priority
+                className="object-cover object-center rounded-3xl shadow-lg"
               />
-            </div>
-          </div>
-
-          {/* FLOATING CARD */}
-          <div className="absolute top-6 right-6 sm:top-8 sm:right-8 bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-6 py-4 w-48 sm:w-56 transition-all hover:scale-105">
-            <h3 className="text-3xl font-bold text-gray-900">489+</h3>
-            <p className="text-sm text-gray-600 leading-snug">
-              Successful wellness sessions and growing community members.
-            </p>
-            <div className="mt-3 flex gap-2 flex-wrap">
-              {["Mind", "Health", "Balance"].map((item) => (
-                <span
-                  key={item}
-                  className="px-3 py-1 bg-orange-100 text-orange-600 text-xs rounded-full"
-                >
-                  {item}
-                </span>
-              ))}
             </div>
           </div>
         </motion.div>
@@ -80,19 +68,19 @@ export default function MeditationHero() {
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               Guided Wellness Programs
             </h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Personalized meditation plans curated by experienced mentors.
+            <p className="text-sm text-gray-600 mb-4 leading-snug">
+              Explore curated meditation, pranayama, and mindfulness sessions by 
+              expert mentors for stress relief and emotional balance.
             </p>
             <div className="flex flex-wrap gap-3">
-              <button className="px-4 py-2 bg-orange-100 text-orange-600 text-sm rounded-full">
-                Yoga
-              </button>
-              <button className="px-4 py-2 bg-orange-100 text-orange-600 text-sm rounded-full">
-                Mindfulness
-              </button>
-              <button className="px-4 py-2 bg-orange-100 text-orange-600 text-sm rounded-full">
-                Breathing
-              </button>
+              {["Yoga", "Mindfulness", "Breathing"].map((tag) => (
+                <button
+                  key={tag}
+                  className="px-4 py-2 bg-orange-100 text-orange-600 text-sm rounded-full"
+                >
+                  {tag}
+                </button>
+              ))}
             </div>
           </motion.div>
 
@@ -106,64 +94,58 @@ export default function MeditationHero() {
           >
             {/* CARD 1 */}
             <div className="relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
-              <Image
-                src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80"
-                alt="Morning Yoga"
-                width={500}
-                height={300}
-                className="object-cover h-44 w-full group-hover:scale-105 transition-transform duration-500"
-              />
+              <div className="relative w-full h-48 sm:h-52">
+                <Image
+                  src="/Yoga/Morning.webp"
+                  alt="Morning Yoga Session"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex flex-col justify-end p-4">
-                <p className="text-white text-sm">Session Type</p>
-                <h4 className="text-white text-lg font-semibold">
-                  Morning Yoga
-                </h4>
+                <p className="text-white text-sm opacity-90">Session Type</p>
+                <h4 className="text-white text-lg font-semibold">Morning Yoga</h4>
               </div>
             </div>
 
             {/* CARD 2 */}
             <div className="relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
-              <Image
-                src="https://images.unsplash.com/photo-1606905052624-cb9b88eeb5e1?auto=format&fit=crop&w=800&q=80"
-                alt="Pregnancy Care"
-                width={500}
-                height={300}
-                className="object-cover h-44 w-full group-hover:scale-105 transition-transform duration-500"
-              />
+              <div className="relative w-full h-48 sm:h-52">
+                <Image
+                  src="/Yoga/Breathing.webp"
+                  alt="Breathing Meditation Techniques"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex flex-col justify-end p-4">
-                <p className="text-white text-sm">Wellness</p>
+                <p className="text-white text-sm opacity-90">Wellness</p>
                 <h4 className="text-white text-lg font-semibold">
-                  Pregnancy Care
+                  Breathing Techniques
                 </h4>
               </div>
             </div>
 
             {/* WIDE CARD */}
             <div className="relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl sm:col-span-2 transition-all group">
-              <Image
-                src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=1200&q=80"
-                alt="Mentor Tips"
-                width={1000}
-                height={400}
-                className="object-cover h-56 w-full group-hover:scale-105 transition-transform duration-500"
-              />
+              <div className="relative w-full h-56 sm:h-64">
+                <Image
+                  src="/Yoga/Yoga.webp"
+                  alt="Mentor Yoga Tips - Paravidya Foundation"
+                  fill
+                  sizes="100vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex flex-col justify-end p-6">
-                <p className="text-white text-sm mb-1">
+                <p className="text-white text-sm mb-1 opacity-90">
                   188 Hours of Online Classes
                 </p>
                 <h4 className="text-white text-lg font-semibold mb-3">
                   Tips from the world’s best mentors
                 </h4>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="px-3 py-2 rounded-full text-sm border-none focus:ring-2 focus:ring-orange-400 outline-none w-full sm:w-auto"
-                  />
-                  <button className="px-5 py-2 bg-orange-500 text-white rounded-full text-sm hover:bg-orange-600 transition">
-                    Subscribe →
-                  </button>
-                </div>
               </div>
             </div>
           </motion.div>

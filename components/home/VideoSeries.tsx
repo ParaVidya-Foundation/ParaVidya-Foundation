@@ -10,57 +10,57 @@ const seriesData = [
   {
     title: "आरती और मंत्र",
     src: "/VideoSeries/aarti.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Aarti",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "ज्योतिष विज्ञान",
     src: "/VideoSeries/astrology.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Astrology",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "आयुर्वेद और स्वास्थ्य",
     src: "/VideoSeries/ayurveda.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Ayurveda",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "गुरु दीक्षा",
     src: "/VideoSeries/Gurudiksha.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_GuruDiksha",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "हवन विधि",
     src: "/VideoSeries/Havanvidhi.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_HavanVidhi",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "कर्मकांड",
     src: "/VideoSeries/Karamkaand.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Karmakand",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "महाकाव्य और पुराण",
     src: "/VideoSeries/maha.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Mahakavya",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "मंत्र जाप",
     src: "/VideoSeries/mantrajaap.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_MantraJaap",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "संस्कृत शिक्षा",
     src: "/VideoSeries/sanskrit.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Sanskrit",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "वेद और पुराण",
     src: "/VideoSeries/veda_purana.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_VedaPurana",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
   {
     title: "योग साधना",
     src: "/VideoSeries/yoga.webp",
-    url: "https://www.youtube.com/playlist?list=PLAcharyaPrashant_Yoga",
+    url: "https://www.youtube.com/@ParaVidyaFoundation",
   },
 ];
 
