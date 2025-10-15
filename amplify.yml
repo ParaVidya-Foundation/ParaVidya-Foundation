@@ -1,58 +1,59 @@
 version: 1
-applications:
-  - appRoot: .
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            # Enable corepack and use pnpm with strict integrity check
-            - corepack enable
-            - corepack prepare pnpm@latest --activate
-            - pnpm install --frozen-lockfile --prefer-offline
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - corepack enable
+        - corepack prepare pnpm@latest --activate
+        - pnpm install
+    build:
+      commands:
+        - pnpm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
 
-        build:
-          commands:
-            # Ensure clean build and environment safety
-            - echo "Starting Next.js production build..."
-            - pnpm run lint || echo "Lint warnings only, continuing build..."
-            - pnpm run build
-
-      artifacts:
-        # Next.js output directory
-        baseDirectory: .next
-        files:
-          - '**/*'
-
-      cache:
-        paths:
-          - node_modules/**/*
-          - .next/cache/**/*
-
-    environment:
-      # Production optimizations
-      NODE_ENV: production
-      NEXT_TELEMETRY_DISABLED: 1
-      NEXT_PUBLIC_SITE_URL: https://paravidyafoundation.com
-      # Helps ensure consistent environment builds
-      CI: true
-
-    customHeaders:
-      # ✅ SEO & security headers
-      - pattern: '**/*'
-        headers:
-          - key: Strict-Transport-Security
-            value: max-age=63072000; includeSubDomains; preload
-          - key: X-Frame-Options
-            value: DENY
-          - key: X-Content-Type-Options
-            value: nosniff
-          - key: Referrer-Policy
-            value: strict-origin-when-cross-origin
-          - key: Permissions-Policy
-            value: camera=(), microphone=(), geolocation=()
-          - key: Cache-Control
-            value: public, max-age=31536000, immutable
-          - key: X-XSS-Protection
-            value: 1; mode=block
-          - key: Content-Security-Policy
-            value: default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';
+  customHeaders:
+    - pattern: '**/*'
+      headers:
+        - key: 'Strict-Transport-Security'
+          value: 'max-age=63072000; includeSubDomains; preload'
+        - key: 'X-Frame-Options'
+          value: 'DENY'
+        - key: 'X-Content-Type-Options'
+          value: 'nosniff'
+        - key: 'X-XSS-Protection'
+          value: '1; mode=block'
+        - key: 'Referrer-Policy'
+          value: 'strict-origin-when-cross-origin'
+        - key: 'Permissions-Policy'
+          value: "camera=(), microphone=(), geolocation=()"
+        - key: 'Cross-Origin-Opener-Policy'
+          value: 'same-origin'
+        - key: 'Cross-Origin-Resource-Policy'
+          value: 'same-origin'
+        - key: 'Cross-Origin-Embedder-Policy'
+          value: 'require-corp'
+        - key: 'Cache-Control'
+          value: 'public, max-age=31536000, immutable'
+        - key: 'Content-Security-Policy'
+          value: >-
+            default-src 'self';
+            script-src 'self' 'unsafe-inline' 'unsafe-eval'
+            https://www.googletagmanager.com https://www.google-analytics.com;
+            style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+            img-src 'self' data: blob:
+            https://img.youtube.com https://i.ytimg.com
+            https://img.icons8.com https://images.unsplash.com
+            https://plus.unsplash.com;
+            font-src 'self' data: https://fonts.gstatic.com;
+            connect-src 'self' https://www.google-analytics.com;
+            frame-ancestors 'none';
+            object-src 'none';
+            base-uri 'self';
+            form-action 'self';
