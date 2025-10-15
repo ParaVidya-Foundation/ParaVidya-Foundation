@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useCallback } from "react";
 import styled from "styled-components";
-import { FaInstagram, FaYoutube, FaFacebook, FaTwitter } from "react-icons/fa";
 
 const NavbarContainer = styled.header`
   background-color: #0b0c25;
@@ -188,7 +187,7 @@ const Navbar: React.FC = () => {
           aria-label="Instagram"
           tabIndex={0}
         >
-          <FaInstagram />
+          📷
         </a>
         <a
           href="https://youtube.com"
@@ -197,7 +196,7 @@ const Navbar: React.FC = () => {
           aria-label="YouTube"
           tabIndex={0}
         >
-          <FaYoutube />
+          📺
         </a>
         <a
           href="https://facebook.com"
@@ -206,7 +205,7 @@ const Navbar: React.FC = () => {
           aria-label="Facebook"
           tabIndex={0}
         >
-          <FaFacebook />
+          📘
         </a>
         <a
           href="https://twitter.com"
@@ -215,7 +214,7 @@ const Navbar: React.FC = () => {
           aria-label="Twitter"
           tabIndex={0}
         >
-          <FaTwitter />
+          🐦
         </a>
       </RightSection>
     </NavbarContainer>

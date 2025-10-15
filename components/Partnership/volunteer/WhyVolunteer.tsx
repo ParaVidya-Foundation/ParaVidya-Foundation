@@ -1,22 +1,21 @@
 "use client";
-import { FaChild, FaLeaf, FaUsers } from "react-icons/fa";
 
 export default function WhyVolunteer() {
   const goals = [
     {
-      icon: <FaChild className="text-orange-500 text-3xl" />,
+      icon: <div className="text-orange-500 text-3xl">👶</div>,
       title: "Empower Children",
       description:
         "Provide education, skills, and support to children in need, helping them build a brighter future.",
     },
     {
-      icon: <FaLeaf className="text-green-500 text-3xl" />,
+      icon: <div className="text-green-500 text-3xl">🌱</div>,
       title: "Protect Our Planet",
       description:
         "Promote environmental awareness and conservation through drives, campaigns, and community initiatives.",
     },
     {
-      icon: <FaUsers className="text-blue-500 text-3xl" />,
+      icon: <div className="text-blue-500 text-3xl">👥</div>,
       title: "Lead the Change",
       description:
         "Nurture leadership and social responsibility to create innovative, long-lasting solutions.",

@@ -89,7 +89,7 @@ export default function KathaEnquiryForm() {
       } else {
         setError("Failed to submit the form. Please try again.");
       }
-    } catch (err) {
+    } catch {
       setError("An unexpected error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);

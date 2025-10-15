@@ -3,22 +3,14 @@
 import Link from "next/link"
 import Image from "next/image"
 import { MapPin, Mail, Phone } from "lucide-react"
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaLinkedinIn,
-  FaYoutube,
-  FaTwitter,
-  FaRedditAlien,
-} from "react-icons/fa"
 
 const socialLinks = [
-  { name: "Instagram", url: "https://www.instagram.com/paravidya.foundation/", icon: FaInstagram },
-  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61579922933190", icon: FaFacebookF },
-  { name: "LinkedIn", url: "https://www.linkedin.com/company/paravidya-foundation/about/?viewAsMember=true", icon: FaLinkedinIn },
-  { name: "YouTube", url: "https://www.youtube.com/@ParaVidyaFoundation", icon: FaYoutube },
-  { name: "Twitter/X", url: "https://x.com/ParaVidyaNGO", icon: FaTwitter },
-  { name: "Reddit", url: "https://www.reddit.com/user/Spare_Inspection36/", icon: FaRedditAlien },
+  { name: "Instagram", url: "https://www.instagram.com/paravidya.foundation/", icon: "📷" },
+  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61579922933190", icon: "📘" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/company/paravidya-foundation/about/?viewAsMember=true", icon: "💼" },
+  { name: "YouTube", url: "https://www.youtube.com/@ParaVidyaFoundation", icon: "📺" },
+  { name: "Twitter/X", url: "https://x.com/ParaVidyaNGO", icon: "🐦" },
+  { name: "Reddit", url: "https://www.reddit.com/user/Spare_Inspection36/", icon: "🤖" },
 ]
 
 const navigationLinks = [
@@ -188,7 +180,7 @@ export function SiteFooter() {
                     aria-label={social.name}
                     className="w-8 h-8 bg-white/20 hover:bg-white text-white hover:text-[#f97f12] rounded-full flex items-center justify-center transition transform hover:scale-110"
                   >
-                    <social.icon className="w-4 h-4" />
+                    <span className="text-lg">{social.icon}</span>
                   </a>
                 ))}
               </div>

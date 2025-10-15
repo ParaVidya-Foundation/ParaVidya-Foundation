@@ -7,7 +7,6 @@ import {
   Utensils,
   ScrollText,
 } from "lucide-react"
-import { FaCow } from "react-icons/fa6"
 
 export default function CorporateCollaboration() {
   const areas = [
@@ -36,7 +35,7 @@ export default function CorporateCollaboration() {
         "Together with corporate partners, we run large-scale food distribution drives that fight hunger, reduce inequality, and build community goodwill.",
     },
     {
-      icon: FaCow,
+      icon: Utensils,
       title: "Gauseva",
       description:
         "Support traditional values and sustainability by partnering with us in protecting, feeding, and caring for cows, regarded as a symbol of compassion and abundance.",

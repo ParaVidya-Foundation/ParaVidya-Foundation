@@ -38,7 +38,7 @@ export default function BookingForm(): JSX.Element {
       await new Promise((r) => setTimeout(r, 800)); // fake API call
       setSuccess("Booking request submitted — we'll contact you soon.");
       setForm({ name: "", number: "", email: "" });
-    } catch (err) {
+    } catch {
       setSuccess("Something went wrong. Please try again later.");
     } finally {
       setLoading(false);

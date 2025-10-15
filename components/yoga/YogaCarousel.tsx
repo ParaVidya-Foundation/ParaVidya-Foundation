@@ -22,10 +22,9 @@ export function YogaCarousel() {
         </h2>
 
         <Carousel
-          items={data.map((card, index) => (
+          items={data.map((card) => (
             <Card
               key={card.id}
-              index={index}
               card={{
                 src: card.src,
                 title: card.title,

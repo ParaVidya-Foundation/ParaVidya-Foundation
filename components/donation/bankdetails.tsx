@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaRegCopy, FaUniversity } from "react-icons/fa";
 import { useState } from "react";
 
 type BankDetails = {
@@ -39,7 +38,7 @@ export default function BankDetailCard() {
     >
       {/* Header */}
       <div className="flex items-center space-x-3 mb-6">
-        <FaUniversity className="text-yellow-500 text-3xl" />
+        <div className="text-yellow-500 text-3xl">🏦</div>
         <h2 className="text-2xl font-bold text-gray-900">
           Bank Account Details
         </h2>
@@ -60,7 +59,7 @@ export default function BankDetailCard() {
               onClick={() => handleCopy(value, key)}
               className="text-gray-500 hover:text-yellow-600 transition"
             >
-              {copiedField === key ? "✅" : <FaRegCopy />}
+              {copiedField === key ? "✅" : "📋"}
             </button>
           </div>
         ))}

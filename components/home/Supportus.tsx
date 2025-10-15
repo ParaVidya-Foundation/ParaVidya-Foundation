@@ -2,17 +2,11 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { Cormorant_Garamond, Inter } from "next/font/google";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const SupportUs = () => {
   const sectionRef = useRef<HTMLElement | null>(null);

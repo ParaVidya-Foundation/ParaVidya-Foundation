@@ -17,11 +17,13 @@ export default function JoinourNGO() {
   return (
     <>
       <div className="top-img-about">
-        <img
+        <Image
           src={"/Carousel/Join.jpg"}
           alt="Mantra Workshops at Para Vidya"
+          width={1200}
+          height={600}
           className="w-full h-auto object-cover"
-          loading="lazy"
+          priority
         />
       </div>
 
