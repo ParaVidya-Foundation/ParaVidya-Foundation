@@ -18,21 +18,21 @@ const options: Option[] = [
     title: "Donate",
     description:
       "Discover the three levels of donations depending on your level of commitment. Help us help you.",
-    icon: "/donateicon.png",
+    icon: "/Icons/donateicon.png",
     link: "/donate",
   },
   {
     title: "Spread the word",
     description:
       "Buy the super useful, inexpensive and stunning booklet on Sadhana for personal use and gifting.",
-      icon: "/spreadicon.png",
+      icon: "/Icons/spreadicon.png",
     link: "/about-us",
   },
   {
     title: "Corporate Sponsorship",
     description:
       "Explore the very unique opportunity of sponsoring our noble cause and see how it can benefit your organization.",
-    icon: "/corporateicon.png",
+    icon: "/Icons/corporateicon.png",
     link: "/corporate",
   },
 ];

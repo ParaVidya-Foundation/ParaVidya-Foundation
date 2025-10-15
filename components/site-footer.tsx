@@ -2,15 +2,15 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { MapPin, Mail, Phone } from "lucide-react"
+import { MapPin, Mail, Phone, Instagram, Facebook, Linkedin, Youtube, Twitter, MessageCircle } from "lucide-react"
 
 const socialLinks = [
-  { name: "Instagram", url: "https://www.instagram.com/paravidya.foundation/", icon: "📷" },
-  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61579922933190", icon: "📘" },
-  { name: "LinkedIn", url: "https://www.linkedin.com/company/paravidya-foundation/about/?viewAsMember=true", icon: "💼" },
-  { name: "YouTube", url: "https://www.youtube.com/@ParaVidyaFoundation", icon: "📺" },
-  { name: "Twitter/X", url: "https://x.com/ParaVidyaNGO", icon: "🐦" },
-  { name: "Reddit", url: "https://www.reddit.com/user/Spare_Inspection36/", icon: "🤖" },
+  { name: "Instagram", url: "https://www.instagram.com/paravidya.foundation/", icon: Instagram, color: "hover:text-pink-500" },
+  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61579922933190", icon: Facebook, color: "hover:text-blue-600" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/company/paravidya-foundation/about/?viewAsMember=true", icon: Linkedin, color: "hover:text-blue-700" },
+  { name: "YouTube", url: "https://www.youtube.com/@ParaVidyaFoundation", icon: Youtube, color: "hover:text-red-600" },
+  { name: "Twitter/X", url: "https://x.com/ParaVidyaNGO", icon: Twitter, color: "hover:text-blue-400" },
+  { name: "Reddit", url: "https://www.reddit.com/user/Spare_Inspection36/", icon: MessageCircle, color: "hover:text-orange-600" },
 ]
 
 const navigationLinks = [
@@ -171,18 +171,21 @@ export function SiteFooter() {
               {/* Social */}
               <h5 className="font-manrope text-base font-medium mb-3">Follow Us</h5>
               <div className="flex justify-center sm:justify-start flex-wrap gap-3">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    className="w-8 h-8 bg-white/20 hover:bg-white text-white hover:text-[#f97f12] rounded-full flex items-center justify-center transition transform hover:scale-110"
-                  >
-                    <span className="text-lg">{social.icon}</span>
-                  </a>
-                ))}
+                {socialLinks.map((social) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.name}
+                      className={`w-8 h-8 bg-white/20 hover:bg-white text-white ${social.color} rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110`}
+                    >
+                      <IconComponent className="w-4 h-4" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
