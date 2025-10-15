@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useCallback } from "react";
 import styled from "styled-components";
+import { Instagram, Youtube, Facebook, Twitter } from "lucide-react";
 
 const NavbarContainer = styled.header`
   background-color: #0b0c25;
@@ -181,40 +182,44 @@ const Navbar: React.FC = () => {
 
       <RightSection>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/paravidya.foundation/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
           tabIndex={0}
+          className="hover:text-pink-400 transition-colors duration-300"
         >
-          📷
+          <Instagram className="w-5 h-5" />
         </a>
         <a
-          href="https://youtube.com"
+          href="https://www.youtube.com/@ParaVidyaFoundation"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="YouTube"
           tabIndex={0}
+          className="hover:text-red-500 transition-colors duration-300"
         >
-          📺
+          <Youtube className="w-5 h-5" />
         </a>
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/profile.php?id=61579922933190"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
           tabIndex={0}
+          className="hover:text-blue-500 transition-colors duration-300"
         >
-          📘
+          <Facebook className="w-5 h-5" />
         </a>
         <a
-          href="https://twitter.com"
+          href="https://x.com/ParaVidyaNGO"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
           tabIndex={0}
+          className="hover:text-blue-400 transition-colors duration-300"
         >
-          🐦
+          <Twitter className="w-5 h-5" />
         </a>
       </RightSection>
     </NavbarContainer>

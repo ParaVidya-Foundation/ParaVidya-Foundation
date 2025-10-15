@@ -46,7 +46,7 @@ const BookDisplay: React.FC = () => {
             <a href={book.link} target="_blank" rel="noopener noreferrer">
               Read More
               <Image
-                src="/bookarrow.png"
+                src="/Icons/bookarrow.png"
                 alt="arrow icon"
                 width={16}
                 height={16}

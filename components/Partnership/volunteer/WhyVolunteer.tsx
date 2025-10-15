@@ -1,21 +1,22 @@
 "use client";
+import { Baby, Sprout, Users } from "lucide-react";
 
 export default function WhyVolunteer() {
   const goals = [
     {
-      icon: <div className="text-orange-500 text-3xl">👶</div>,
+      icon: <Baby className="w-8 h-8 text-orange-500" />,
       title: "Empower Children",
       description:
         "Provide education, skills, and support to children in need, helping them build a brighter future.",
     },
     {
-      icon: <div className="text-green-500 text-3xl">🌱</div>,
+      icon: <Sprout className="w-8 h-8 text-green-500" />,
       title: "Protect Our Planet",
       description:
         "Promote environmental awareness and conservation through drives, campaigns, and community initiatives.",
     },
     {
-      icon: <div className="text-blue-500 text-3xl">👥</div>,
+      icon: <Users className="w-8 h-8 text-blue-500" />,
       title: "Lead the Change",
       description:
         "Nurture leadership and social responsibility to create innovative, long-lasting solutions.",
