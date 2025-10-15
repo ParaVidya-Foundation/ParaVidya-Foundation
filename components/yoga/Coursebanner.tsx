@@ -17,7 +17,6 @@ const CourseBanner = ({
   imageSrc,
   buttonText = "Join Now",
 }: CourseBannerProps) => {
-  const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -37,10 +36,8 @@ const CourseBanner = ({
   }, []);
 
   const handleJoin = useCallback(() => {
-    setIsLoading(true);
     const timer = setTimeout(() => {
       window.open("https://wa.me/919871130487", "_blank");
-      setIsLoading(false);
     }, 500);
     return () => clearTimeout(timer);
   }, []);

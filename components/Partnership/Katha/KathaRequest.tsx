@@ -1,45 +1,9 @@
 "use client";
 
 import KathaEnquiryForm from "@/components/Partnership/Katha/KathaEnquiryForm";
-import { useState } from "react";
 
 export default function KathaRequest() {
-  const [formData, setFormData] = useState({
-    name: "",
-    contact: "",
-    email: "",
-    state: "",
-    city: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // ✅ Validation
-    const phoneRegex = /^[0-9]{10,15}$/;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!formData.name.trim()) return alert("Please enter your name");
-    if (!phoneRegex.test(formData.contact))
-      return alert("Please enter a valid contact number");
-    if (!emailRegex.test(formData.email))
-      return alert("Please enter a valid email address");
-    if (!formData.state.trim()) return alert("Please enter your state");
-    if (!formData.city.trim()) return alert("Please enter your city");
-    if (!formData.message.trim()) return alert("Please enter your message");
-
-    // 🚀 Replace with API integration
-    console.log("Katha Request Submitted:", formData);
-    alert("Your Katha request has been submitted successfully!");
-  };
+  // Form handlers removed as they are not used in this component
 
   return (
     <section className="py-16 px-6 sm:px-10 lg:px-20 font-[Manrope]">
@@ -69,7 +33,7 @@ export default function KathaRequest() {
           </p>
         </div>
 
-<KathaEnquiryForm />    
+        <KathaEnquiryForm />    
       </div>
     </section>
   );

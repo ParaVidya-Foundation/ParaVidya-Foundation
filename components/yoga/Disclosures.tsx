@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export type DisclosureItem = {
@@ -76,7 +77,16 @@ export default function Disclosures({ items }: DisclosuresProps) {
           <span>Read More</span>
         </Link>
 
-        <img src={item.image} alt={item.title} />
+        <div className="relative w-full h-full">
+          <Image 
+            src={item.image} 
+            alt={item.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover"
+            loading="lazy"
+          />
+        </div>
       </article>
     </li>
   ))}

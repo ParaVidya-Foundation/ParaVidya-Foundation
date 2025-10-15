@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import YogaForm from "./YogaForm";
 
 export default function WorkshopYoga() {

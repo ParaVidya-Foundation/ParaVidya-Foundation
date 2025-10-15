@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { IconPlayerPlay } from "@tabler/icons-react";
 
@@ -55,7 +56,6 @@ export default function VideoReelsCarousel({
   const tlRef = useRef<gsap.core.Timeline | null>(null);
 
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-  const [isPaused, setIsPaused] = useState(false);
 
   const items = React.useMemo(() => [...reels, ...reels], [reels]);
 
@@ -81,8 +81,7 @@ export default function VideoReelsCarousel({
       ease: "none",
     });
 
-    if (isPaused) tlRef.current.pause();
-  }, [loopDuration, isPaused]);
+  }, [loopDuration]);
 
   useEffect(() => {
     setupTimeline();
@@ -138,10 +137,12 @@ export default function VideoReelsCarousel({
                 className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]"
               >
                 <div className="relative h-[200px] bg-gray-100">
-                  <img
+                  <Image
                     src={getThumbnail(r.videoUrl)}
                     alt={r.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 640px) 160px, (max-width: 768px) 200px, (max-width: 1024px) 240px, 280px"
+                    className="object-cover"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">

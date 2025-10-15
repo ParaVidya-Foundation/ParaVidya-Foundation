@@ -32,7 +32,6 @@ const DEFAULT_COLS: string[][] = [
 
 const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
   cols = DEFAULT_COLS,
-  height = "100vh",
 }) => {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const galleryRef = useRef<HTMLDivElement | null>(null);
@@ -44,7 +43,7 @@ const VerticalImageLoop: React.FC<VerticalImageLoopProps> = ({
     const ctx = gsap.context(() => {
       const inners: HTMLElement[] = Array.from(gallery.querySelectorAll(".vil-inner"));
 
-      inners.forEach((inner, i) => {
+      inners.forEach((inner) => {
         const children = Array.from(inner.children);
 
         if (inner.dataset.cloned !== "true") {

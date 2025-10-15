@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSX,useEffect, useRef, useState, createContext, useContext } from "react";
+import React, { JSX,useEffect, useRef, useState, createContext } from "react";
 import { IconArrowNarrowLeft, IconArrowNarrowRight } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -91,7 +91,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   );
 };
 
-export const Card = ({ card, index }: { card: CardType; index: number }) => {
+export const Card = ({ card }: { card: CardType }) => {
   const linkHref = card.slug || "#"; // ✅ Use exact href from data
 
   return (

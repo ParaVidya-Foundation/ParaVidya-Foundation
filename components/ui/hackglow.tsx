@@ -10,7 +10,7 @@ interface HyperplexedProps {
 
 export default function Hyperplexed({ title }: HyperplexedProps) {
   const headingRef = useRef<HTMLHeadingElement | null>(null);
-  let interval: NodeJS.Timeout | null = null;
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const heading = headingRef.current;
@@ -22,9 +22,9 @@ export default function Hyperplexed({ title }: HyperplexedProps) {
       if (!heading.dataset.value) return;
 
       let iteration = 0;
-      if (interval) clearInterval(interval);
+      if (intervalRef.current) clearInterval(intervalRef.current);
 
-      interval = setInterval(() => {
+      intervalRef.current = setInterval(() => {
         heading.innerText = heading.innerText
           .split("")
           .map((_, index) => {
@@ -36,7 +36,7 @@ export default function Hyperplexed({ title }: HyperplexedProps) {
           .join("");
 
         if (iteration >= heading.dataset.value!.length) {
-          if (interval) clearInterval(interval);
+          if (intervalRef.current) clearInterval(intervalRef.current);
         }
 
         iteration += 1 / 3;
@@ -46,7 +46,7 @@ export default function Hyperplexed({ title }: HyperplexedProps) {
     heading.addEventListener("mouseover", handleMouseOver);
 
     return () => {
-      if (interval) clearInterval(interval);
+      if (intervalRef.current) clearInterval(intervalRef.current);
       heading.removeEventListener("mouseover", handleMouseOver);
     };
   }, [title]);
