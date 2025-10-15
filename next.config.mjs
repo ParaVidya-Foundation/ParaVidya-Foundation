@@ -38,8 +38,8 @@ const nextConfig = {
   // ✅ Disable unnecessary headers
   poweredByHeader: false,
 
-  // ✅ Enable standalone output for AWS Amplify (faster cold starts)
-  output: 'standalone',
+  // ✅ Enable standalone output in CI/Linux only to avoid Windows symlink issues
+  output: process.platform === 'win32' ? undefined : 'standalone',
 
   // ✅ Remove console logs in production
   compiler: {

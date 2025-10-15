@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://paravidyafoundation.com
+
+# Sitemaps
+Sitemap: https://paravidyafoundation.com/sitemap.xml
