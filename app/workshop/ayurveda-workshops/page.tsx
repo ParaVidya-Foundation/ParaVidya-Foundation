@@ -42,16 +42,17 @@ export const metadata: Metadata = {
 export default function AyurvedaWorkshopsPage() {
   return (
     <div className="">
-         <div className="top-img-about relative w-full h-[400px] md:h-[500px]">
-          <Image
-            src="/Carousel/Ayurveda.jpg"
-            alt="Ayurveda Workshops at ParaVidya Foundation - Ancient Science for Holistic Health"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-        </div>
+<div className="top-img-about relative w-full overflow-hidden rounded-2xl">
+  <Image
+    src="/Carousel/Ayurveda.jpg"
+    alt="Ayurveda Workshops at ParaVidya Foundation - Ancient Science of Health and Wellness"
+    width={1920}
+    height={1080}
+    className="w-full h-auto object-contain"
+    priority
+  />
+</div>
+
      <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Learn the ancient science of Ayurveda for holistic health and wellness.Learn the ancient science of Ayurveda for holistic health and wellness." />
 <WorkshopAyur />
      <FeaturedVideos

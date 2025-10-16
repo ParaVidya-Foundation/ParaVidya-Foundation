@@ -42,16 +42,17 @@ export const metadata: Metadata = {
 export default function GitaWorkshopsPage() {
   return (
     <div className="">
-         <div className="top-img-about relative w-full h-[400px] md:h-[500px]">
-          <Image
-            src="/Carousel/Online-Hawan.jpg"
-            alt="Bhagavad Gita Workshops at ParaVidya Foundation - Ancient Wisdom for Modern Life"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-        </div>
+<div className="top-img-about relative w-full overflow-hidden rounded-2xl">
+  <Image
+    src="/Carousel/Online-Hawan.jpg"
+    alt="Sanskrit Learning Workshops at ParaVidya Foundation - Ancient Language for Modern Minds"
+    width={1920}
+    height={1080}
+    className="w-full h-auto object-contain"
+    priority
+  />
+</div>
+
      <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Apply the timeless truths of the Bhagavad Gita for purpose, devotion, and self-discovery in daily life. Learn practical wisdom from ancient teachings." />
 <WorkshopMantra />
      <FeaturedVideos
