@@ -135,7 +135,7 @@ export default function MeditationHero() {
             <div className="relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl sm:col-span-2 transition-all group">
               <div className="relative w-full h-56 sm:h-64">
                 <Image
-                  src="/Yoga/Yoga.webp"
+                  src="/Yoga/yoga.webp"
                   alt="Mentor Yoga Tips - Paravidya Foundation"
                   fill
                   sizes="100vw"

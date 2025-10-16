@@ -16,16 +16,17 @@ const programs = [
 export default function JoinourNGO() {
   return (
     <>
-      <div className="top-img-about">
-        <Image
-          src={"/Carousel/Join.jpg"}
-          alt="Mantra Workshops at Para Vidya"
-          width={1200}
-          height={600}
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </div>
+<div className="top-img-about relative w-full overflow-hidden rounded-2xl">
+  <Image
+    src="/Carousel/Join.jpg"
+    alt="Join our NGO at ParaVidya Foundation"
+    width={1920}
+    height={1080}
+    className="w-full h-auto object-contain"
+    priority
+  />
+</div>
+
 
       <WhyVolunteer />
       <VolunteerPrograms programs={programs} />

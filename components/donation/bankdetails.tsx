@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 type BankDetails = {
   accountHolder: string;
@@ -12,12 +13,12 @@ type BankDetails = {
 };
 
 const details: BankDetails = {
-  accountHolder: "John Doe",
-  bankName: "State Bank of India",
+  accountHolder: "ParaVidya Foundation",
+  bankName: "ICICI Bank",
   accountNumber: "123456789012",
-  ifsc: "SBIN0001234",
-  branch: "Connaught Place, New Delhi",
-  upiId: "johndoe@upi",
+  ifsc: "ICIC0000021",
+  branch: "Sector - 14, Gurgaon",
+  upiId: "paravidyafoundation@icici",
 };
 
 export default function BankDetailCard() {
@@ -68,9 +69,27 @@ export default function BankDetailCard() {
       {/* Footer */}
       <p className="mt-6 text-sm text-gray-600 text-center">
         Use these details for{" "}
-        <span className="font-semibold">NEFT, RTGS, IMPS, or UPI</span>{" "}
-        transfers.
+        <span className="font-semibold">NEFT, RTGS, IMPS, or UPI</span> transfers.
       </p>
+
+      {/* QR Code Section */}
+      <div className="mt-8 flex flex-col items-center text-center">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">
+          Scan & Pay Instantly
+        </h3>
+        <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden shadow-md border border-gray-200">
+          <Image
+            src="/QR/PaymentQR.png" // 🧩 update this path to your QR code image
+            alt="ParaVidya Foundation UPI QR Code for donations"
+            fill
+            className="object-contain p-2 bg-gray-50"
+            sizes="(max-width: 768px) 50vw, 200px"
+          />
+        </div>
+        <p className="mt-3 text-sm text-gray-500">
+          Scan this QR code to pay using any UPI app.
+        </p>
+      </div>
     </motion.div>
   );
 }

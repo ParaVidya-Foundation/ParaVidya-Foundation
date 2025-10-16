@@ -64,16 +64,17 @@ export default function YogaPage() {
 
   return (
 <>
-<div className="top-img-about relative w-full h-[400px] md:h-[500px]">
-          <Image
-            src="/Carousel/Online-Hawan.jpg"
-            alt="Yoga & Wellness Programs at ParaVidya Foundation - Holistic Health Solutions"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-        </div>
+<div className="top-img-about relative w-full overflow-hidden rounded-2xl">
+  <Image
+    src="/Carousel/Online-Hawan.jpg"
+    alt="Sanskrit Learning Workshops at ParaVidya Foundation - Ancient Language for Modern Minds"
+    width={1920}
+    height={1080}
+    className="w-full h-auto object-contain"
+    priority
+  />
+</div>
+
 
        <YogaCarousel/>
        <TestimonialsComponent

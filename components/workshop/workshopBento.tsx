@@ -11,14 +11,14 @@ interface GridItem {
 }
 
 const gridItems: GridItem[] = [
-  { id: 1, title: 'Tantra', link: '/workshop/Tantra', imageUrl: '/workshop-bento/tantra.jpg' },
-  { id: 2, title: 'Meditation', link: '/workshop/meditation-sessions', imageUrl: '/workshop-bento/meditation.jpg' },
-  { id: 3, title: 'Bhagavad Gita', link: '/workshop/bhagavad-gita', imageUrl: '/workshop-bento/gita.jpg' },
-  { id: 4, title: 'Yoga', link: '/workshop/yoga-workshops', imageUrl: '/workshop-bento/yoga.jpg' },
-  { id: 5, title: 'Ayurveda', link: '/workshop/ayurveda-workshops', imageUrl: '/workshop-bento/ayurveda.jpg' },
-  { id: 6, title: 'Astrology', link: '/workshop/Astrology-workshops', imageUrl: '/workshop-bento/astrology.jpg' },
-  { id: 7, title: 'Sadhna', link: '/workshop/sadhna', imageUrl: '/workshop-bento/sadhna.jpg' },
-  { id: 8, title: 'Sanskrit', link: '/workshop/Sanskrit-workshops', imageUrl: '/workshop-bento/sanskrit.jpg' },
+  { id: 1, title: 'Tantra', link: '/workshop/Tantra', imageUrl: '/workshop-bento/Tantra.jpg' },
+  { id: 2, title: 'Meditation', link: '/workshop/meditation-sessions', imageUrl: '/workshop-bento/Meditation.jpg' },
+  { id: 3, title: 'Bhagavad Gita', link: '/workshop/bhagavad-gita', imageUrl: '/workshop-bento/Gita.jpg' },
+  { id: 4, title: 'Yoga', link: '/workshop/yoga-workshops', imageUrl: '/workshop-bento/Yoga.jpg' },
+  { id: 5, title: 'Ayurveda', link: '/workshop/ayurveda-workshops', imageUrl: '/workshop-bento/Ayurveda.jpg' },
+  { id: 6, title: 'Astrology', link: '/workshop/Astrology-workshops', imageUrl: '/workshop-bento/Astrology.jpg' },
+  { id: 7, title: 'Sadhna', link: '/workshop/sadhna', imageUrl: '/workshop-bento/Sadhna.jpg' },
+  { id: 8, title: 'Sanskrit', link: '/workshop/Sanskrit-workshops', imageUrl: '/workshop-bento/Sanskrit.jpg' },
 ];
 
 const BentoGrid: React.FC = () => {

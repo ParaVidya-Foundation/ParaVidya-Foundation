@@ -80,7 +80,7 @@ const slides = [
   {
   
     subtitle: "Awaken Your Inner Power with Mindful Rituals and Timeless Wisdom. Learn safely with expert teaching and ask questions .",
-    image: "/SmallCarousel/tantra.webp",
+    image: "/SmallCarousel/Tantra.webp",
     buttonText: "Get Started",
     buttonLink: "/workshop/Tantra",
   },
