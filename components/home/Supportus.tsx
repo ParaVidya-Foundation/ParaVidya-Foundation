@@ -7,7 +7,6 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const SupportUs = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const leftRef = useRef<HTMLDivElement | null>(null);
@@ -19,7 +18,7 @@ const SupportUs = () => {
     const left = leftRef.current;
     const right = rightRef.current;
 
-    // Floating animation
+    // Floating effect (lighter on mobile)
     gsap.to(left, {
       y: -20,
       duration: 3,
@@ -35,19 +34,19 @@ const SupportUs = () => {
       ease: "sine.inOut",
     });
 
-    // Hands move closer on scroll
+    // Hands move slightly inward on scroll
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 80%",
+        start: "top 85%",
         end: "bottom top",
         scrub: true,
       },
     });
 
-    tl.to(left, { x: 150, ease: "power3.out" }, 0).to(
+    tl.to(left, { x: 100, ease: "power3.out" }, 0).to(
       right,
-      { x: -150, ease: "power3.out" },
+      { x: -100, ease: "power3.out" },
       0
     );
   }, []);
@@ -55,58 +54,52 @@ const SupportUs = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center justify-center h-[80vh] overflow-hidden text-black"
+      className="relative flex flex-col items-center justify-center min-h-[80vh] md:h-[90vh] overflow-hidden text-black"
     >
-      {/* Heading */}
-      <h1
-        className="text-5xl md:text-7xl lg:text-8xl font-bold z-10 tracking-tight leading-tight text-center font-playfair"
-      >
+      {/* Title */}
+      <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold z-10 tracking-tight leading-tight text-center font-playfair text-orange-500 drop-shadow-sm">
         Support Us
       </h1>
 
-      {/* Hands */}
+      {/* Floating Hands */}
       <div
         ref={leftRef}
-        className="absolute top-1/2 -left-[15%] -translate-y-1/2 w-[55%] md:w-[45%] lg:w-[40%] pointer-events-none"
+        className="absolute top-1/2 -left-[25%] sm:-left-[15%] -translate-y-1/2 w-[70%] sm:w-[55%] md:w-[45%] lg:w-[40%] pointer-events-none opacity-90"
       >
         <Image
           src="/left.png"
           alt="Left Hand"
-          width={1200}
-          height={1200}
+          width={1000}
+          height={1000}
           className="w-full h-auto object-contain"
           priority
         />
       </div>
       <div
         ref={rightRef}
-        className="absolute top-1/2 -right-[15%] -translate-y-1/2 w-[55%] md:w-[45%] lg:w-[40%] pointer-events-none"
+        className="absolute top-1/2 -right-[25%] sm:-right-[15%] -translate-y-1/2 w-[70%] sm:w-[55%] md:w-[45%] lg:w-[40%] pointer-events-none opacity-90"
       >
         <Image
           src="/Right.png"
           alt="Right Hand"
-          width={1200}
-          height={1200}
+          width={1000}
+          height={1000}
           className="w-full h-auto object-contain"
           priority
         />
       </div>
 
       {/* Content */}
-      <div className="absolute bottom-12 w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 px-6 z-20">
+      <div className="absolute bottom-8 sm:bottom-12 w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 px-6 z-20">
         {/* Donate Us */}
         <a
           href="/donate"
           className="block text-center md:text-right group transition-transform duration-300 hover:scale-105"
         >
-          <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 tracking-wide group-hover:text-red-600 transition-colors font-playfair"
-          >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 tracking-wide group-hover:text-orange-600 transition-colors font-playfair">
             Donate Us
           </h2>
-          <p
-            className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium font-manrope"
-          >
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium font-manrope">
             Contribute as you wish
           </p>
         </a>
@@ -116,14 +109,10 @@ const SupportUs = () => {
           href="/donate"
           className="block text-center md:text-left group transition-transform duration-300 hover:scale-105"
         >
-          <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 tracking-wide group-hover:text-blue-600 transition-colors font-playfair"
-          >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 tracking-wide group-hover:text-orange-500 transition-colors font-playfair">
             Spread The Word
           </h2>
-          <p
-            className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium font-manrope"
-          >
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium font-manrope">
             Promote our teachings and mission
           </p>
         </a>

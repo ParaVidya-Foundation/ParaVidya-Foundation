@@ -3,6 +3,7 @@
 import DonationForm from "@/components/donation/DonationForm";
 import Bankdetails from "@/components/donation/bankdetails";
 import Spread from "@/components/donation/Spread";
+import InfoItems from "@/components/donation/infoItems";
 
 export default function Donation() {
 
@@ -20,6 +21,7 @@ export default function Donation() {
         </div>
       </div>
       <Spread />
+      <InfoItems />
     </main>
   );
 }

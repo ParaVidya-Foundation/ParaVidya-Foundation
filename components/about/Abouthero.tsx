@@ -21,7 +21,7 @@ const Abouthero: React.FC = () => {
         className="mb-6"
       >
         <Image
-          src="/logo.png"
+          src="/Logo.png"
           alt="Paravidya Foundation Logo"
           width={120}
           height={120}

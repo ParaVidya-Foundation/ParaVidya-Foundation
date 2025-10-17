@@ -47,7 +47,8 @@ export default function Card({
         }}
       >
         {/* Left Image */}
-        <div className={`w-full md:w-1/2 relative overflow-hidden rounded-lg ${isReverse ? 'order-2 md:order-1' : 'order-1 md:order-1'}`}>
+        <div className={`w-full md:w-1/2 relative overflow-hidden rounded-lg ${isReverse ? 'order-2 md:order-1' : 'order-1 md:order-1'}`}
+        style={{ minHeight: '300px' }} > 
           <motion.div
             className="relative w-full h-full"
             style={{ scale: imageScale, y: imageY }}
@@ -63,7 +64,6 @@ export default function Card({
           </motion.div>
         </div>
 
-        {/* Right Content */}
         <div className={`w-full md:w-1/2 text-center md:text-left flex flex-col justify-center ${isReverse ? 'order-1 md:order-2' : 'order-2 md:order-2'}`}>
           <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-4 rounded-2xl mb-6">
             <h3 id="gita-quote-title-0" className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight mb-2">

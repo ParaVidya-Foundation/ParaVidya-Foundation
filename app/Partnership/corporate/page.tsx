@@ -9,16 +9,17 @@ export default function Corporate() {
   return (
     <div className="w-full">
    
-      <div className="w-full relative h-[400px] md:h-[500px]">
-        <Image
-          src="/Carousel/Workplace-Challanges.jpg"
-          alt="Corporate Wellness Programs at ParaVidya Foundation - Workplace Challenges Solutions"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
-      </div>
+   <div className="top-img-about relative w-full overflow-hidden rounded-2xl">
+  <Image
+    src="/Carousel/Workplace-Challanges.jpg"
+    alt="Corporate Wellness Programs at ParaVidya Foundation - Workplace Challenges Solutions"
+    width={1920}
+    height={1080}
+    className="w-full h-auto object-contain"
+    priority
+  />
+</div>
+
 
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col lg:flex-row items-center justify-center gap-12">
@@ -32,7 +33,7 @@ export default function Corporate() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-lg shadow-md"
               loading="lazy"
-            />
+            />  
           </div>
         </div>
 

@@ -43,10 +43,10 @@ export default function JoinNGO() {
         <Link href="/donate">
         <div className="md:col-span-1">
           <InfoCard
-            title={<span className="text-yellow-400">Donate Us</span>}
-            description={<span className="text-yellow-400">Donate to Paravidya Foundation and support our work in preserving Indian culture and spirituality.</span>}
-            bgColor="bg-green-900 text-white"
-            footer={<span className="text-yellow-400">Donate Now</span>}
+            title={<span className="text-black">Donate Us</span>}
+            description={<span className="text-black">Donate to Paravidya Foundation and support our work in preserving Indian culture and spirituality.</span>}
+            bgColor="bg-orange-300 text-white"
+            footer={<span className="text-black">Donate Now</span>}
           />
         </div>
         </Link>

@@ -47,10 +47,10 @@ const DonationSection: React.FC = () => {
               <div className="more">
                 <ul>
                   {[
-                    "/Carousel/About-us.jpg",
-                    "/Carousel/Navgrah-Shanti.jpg",
-                    "/Carousel/Your-One-Stop-for-Sacred-Rituals.jpg",
-                    "/Logo.png",
+                    "/aarti_devi.jpg",
+                    "/shubham.jpeg",
+                    "/sunil_vashist.png",
+                    "/soham.png",
                   ].map((url, idx) => (
                     <li key={idx}>
                       <Image
