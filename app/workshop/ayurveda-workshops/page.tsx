@@ -4,6 +4,8 @@ import Mission from "@/components/workshop/ayurveda/missionayur"
 import FeaturedVideos from "@/components/ui/FeaturedVideos"
 import WorkshopAyur from "@/components/workshop/ayurveda/workshopayur"
 import CourseBanner from "@/components/yoga/Coursebanner"
+import WorkshopYoga from "@/components/workshop/yoga/workshopyoga"
+import YogaTeacher from "@/components/workshop/yoga/YogaTeacher"
 
 export const metadata: Metadata = {
   title: "Ayurveda Workshops - Ancient Healing Science | ParaVidya Foundation",
@@ -52,7 +54,8 @@ export default function AyurvedaWorkshopsPage() {
     priority
   />
 </div>
-
+<WorkshopYoga />
+<YogaTeacher/>
      <Mission leftImg={"/Workshop/left.png"} rightImg={"/Workshop/right.png"} headline="Our Mission" text="Learn the ancient science of Ayurveda for holistic health and wellness.Learn the ancient science of Ayurveda for holistic health and wellness." />
 <WorkshopAyur />
      <FeaturedVideos

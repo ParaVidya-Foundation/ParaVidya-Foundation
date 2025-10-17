@@ -17,7 +17,7 @@ const roles: Role[] = [
       "Promote our mission through campaigns, SEO, and social media outreach.",
     details:
       "Work with our media team to design campaigns that reach thousands and inspire communities worldwide.",
-    image: "/vol.png",
+    image: "/Join/Digital_Marketing.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
@@ -26,7 +26,7 @@ const roles: Role[] = [
       "Assist in organizing traditional rituals, puja, and cultural practices.",
     details:
       "Preserve ancient wisdom by facilitating rituals and supporting spiritual events.",
-    image: "/roles/havan.jpg",
+    image: "/Join/Havan.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
@@ -35,7 +35,7 @@ const roles: Role[] = [
       "Create impactful designs for campaigns, books, and digital platforms.",
     details:
       "Your creativity will shape our books, social posts, and awareness campaigns.",
-    image: "/roles/design.jpg",
+    image: "/Join/Graphic_Designer.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
@@ -44,7 +44,7 @@ const roles: Role[] = [
       "Write articles, blogs, and creative pieces to share our mission.",
     details:
       "From blogs to research notes, help us communicate stories that inspire change.",
-    image: "/roles/content.jpg",
+    image: "/Join/Content_Writing.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
@@ -53,7 +53,7 @@ const roles: Role[] = [
       "Build scalable backend services and APIs to power our platforms.",
     details:
       "Collaborate on Node.js/Java/Spring services and optimize database structures.",
-    image: "/roles/backend.jpg",
+    image: "/Join/Backend_dev.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
@@ -62,7 +62,7 @@ const roles: Role[] = [
       "Design responsive UIs and bring our vision to life with React/Next.js.",
     details:
       "Work with modern frameworks to create delightful and accessible interfaces.",
-    image: "/roles/frontend.jpg",
+    image: "/Join/Frontend_dev.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
@@ -71,7 +71,7 @@ const roles: Role[] = [
       "Contribute to mythological and astrological research publications.",
     details:
       "Assist in compiling research, editing, and publishing insightful works.",
-    image: "/roles/book.jpg",
+    image: "/Join/Book_writing.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
@@ -80,7 +80,7 @@ const roles: Role[] = [
       "Help us connect with communities, spreading awareness offline.",
     details:
       "Be our voice on the ground — organize events and reach local communities.",
-    image: "/roles/ground.jpg",
+    image: "/Join/Ground_marketing.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
@@ -89,7 +89,7 @@ const roles: Role[] = [
       "Create content for our social media platforms and website.",
     details:
       "Create engaging and creative content for our social media platforms and website.",
-    image: "/roles/content.jpg",
+    image: "/Join/Content_creation.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
 ];
