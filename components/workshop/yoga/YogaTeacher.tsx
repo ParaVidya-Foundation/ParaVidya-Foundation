@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X } from "lucide-react";
+import GlowButton from "@/components/ui/GlowButton";
 
 const YogaTeacher: React.FC = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -27,9 +28,7 @@ const YogaTeacher: React.FC = () => {
             blend ancient wisdom with modern wellness for your body, mind, and soul.
           </p>
 
-          <button className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 shadow-md hover:shadow-orange-200">
-            Know More
-          </button>
+         <GlowButton text="Know More" onClick={() => {window.location.href = "/yoga"}}/>
         </motion.div>
 
         {/* ---------- RIGHT SECTION ---------- */}

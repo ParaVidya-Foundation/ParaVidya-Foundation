@@ -99,7 +99,7 @@ const SupportUs = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 tracking-wide group-hover:text-orange-600 transition-colors font-playfair">
             Donate Us
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-200 font-medium font-manrope">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium font-manrope">
             Contribute as you wish
           </p>
         </a>
@@ -112,7 +112,7 @@ const SupportUs = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 tracking-wide group-hover:text-orange-500 transition-colors font-playfair">
             Spread The Word
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-200 font-medium font-manrope">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium font-manrope">
             Promote our teachings and mission
           </p>
         </a>

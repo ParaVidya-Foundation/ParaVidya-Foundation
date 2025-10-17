@@ -19,7 +19,7 @@ const images: string[] = [
 
 const GallerySlider: React.FC = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center w-full overflow-hidden py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-orange-50 via-white to-orange-50">
+    <section className="relative flex flex-col items-center justify-center w-full overflow-hidden py-12 sm:py-16 lg:py-20">
       {/* Blurred backdrop */}
       <div className="absolute inset-0 backdrop-blur-[6vmax] -z-10" />
 
