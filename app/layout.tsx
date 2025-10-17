@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { SkipToContent } from "@/components/skip-to-content"
 import { GA } from "@/components/analytics/ga"
 import { FacebookPixel } from "@/components/analytics/fb-pixel"
-import { StructuredData } from "@/components/seo/structured-data"
+import { OrganizationSchema, WebSiteSchema } from "@/components/seo/StructuredDataEnhanced"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import WhatsappButton from "@/components/WhatsappButton"
@@ -132,8 +132,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <GA />
         <FacebookPixel />
-        <StructuredData type="organization" />
-        <StructuredData type="website" />
+        <OrganizationSchema />
+        <WebSiteSchema />
       </head>
       <body className="bg-white text-[#111111]" suppressHydrationWarning={true}>
         <SkipToContent />

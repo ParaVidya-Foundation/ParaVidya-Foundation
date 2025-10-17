@@ -2,7 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 
 interface TeamMember {
-  src: any;
+  src: string;
   name: string;
   specialty: string;
 }

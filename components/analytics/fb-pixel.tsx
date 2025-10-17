@@ -1,6 +1,7 @@
 "use client"
 
 import Script from "next/script"
+import Image from "next/image"
 
 export function FacebookPixel() {
   const pixelId = process.env.NEXT_PUBLIC_FB_PIXEL_ID
@@ -22,9 +23,9 @@ export function FacebookPixel() {
         `}
       </Script>
       <noscript>
-        <img
-          height="1"
-          width="1"
+        <Image
+          height={1}
+          width={1}
           style={{ display: "none" }}
           src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
           alt="Facebook Pixel"

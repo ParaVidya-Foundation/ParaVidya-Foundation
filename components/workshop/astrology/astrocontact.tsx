@@ -151,7 +151,7 @@ const ContactInfo: React.FC = () => {
 
                 {isSubmitted ? (
                   <div className="rounded-md bg-green-50 border border-green-200 p-4 text-green-800">
-                    Thank you — your message was sent successfully. We'll respond soon.
+                    Thank you — your message was sent successfully. We&apos;ll respond soon.
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4" noValidate>

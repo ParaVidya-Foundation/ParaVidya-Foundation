@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import GlowButton from "@/components/ui/GlowButton";
 
 export default function YouthInternshipHero() {
   return (
@@ -38,9 +39,7 @@ export default function YouthInternshipHero() {
         transition={{ duration: 1, delay: 0.4 }}
         className="relative mt-8"
       >
-        <button className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-lg rounded-full font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
-          Get Started
-        </button>
+       <GlowButton text="Get Started" />
       </motion.div>
       </Link>
     </section>
