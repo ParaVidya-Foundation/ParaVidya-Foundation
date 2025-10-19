@@ -4,8 +4,8 @@
 export const seoConfig = {
   siteName: "ParaVidya Foundation",
   siteUrl: "https://paravidyafoundation.com",
-  defaultTitle: "ParaVidya Foundation - Spiritual Wellness & Yoga",
-  defaultDescription: "Transform your life through ancient wisdom and modern wellness practices. Expert yoga courses, meditation guidance, and holistic healing for spiritual seekers.",
+  defaultTitle: "ParaVidya Foundation - Spiritual Wellness & Yoga Courses",
+  defaultDescription: "Transform your life through ancient wisdom and modern wellness practices. Expert yoga courses, meditation guidance, anger management, sleep therapy, and holistic healing for spiritual seekers worldwide.",
   
   // Enhanced social media profiles for entity recognition
   social: {
@@ -14,9 +14,24 @@ export const seoConfig = {
     linkedin: "https://www.linkedin.com/company/paravidya-foundation/about/?viewAsMember=true",
     youtube: "https://www.youtube.com/@ParaVidyaFoundation",
     twitter: "https://x.com/ParaVidyaNGO",
-    github: "https://github.com/paravidya-foundation", // Add if exists
-    crunchbase: "", // Add if exists
-    productHunt: "", // Add if exists
+    github: "https://github.com/paravidya-foundation",
+    crunchbase: "",
+    productHunt: "",
+  },
+  
+  // Contact information
+  contact: {
+    email: "info@paravidya.org",
+    phone: "+91-98711-30487",
+    address: "6C, Sector-14, Mehrauli Road, Gurugram, Haryana 122001, India",
+  },
+  
+  // Organization details
+  organization: {
+    foundingDate: "2020",
+    mission: "Transform lives through ancient wisdom and modern wellness practices",
+    values: ["Compassion", "Wisdom", "Service", "Integrity", "Excellence"],
+    areaServed: "Worldwide",
   },
 
   // Enhanced Open Graph images

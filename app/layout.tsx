@@ -120,6 +120,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'your-google-site-verification-code',
+    other: {
+      'google-site-verification': 'your-google-site-verification-code',
+    },
   },
   alternates: {
     canonical: 'https://paravidyafoundation.com',

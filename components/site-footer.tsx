@@ -66,7 +66,7 @@ export function SiteFooter() {
 
 
       {/* Footer */}
-      <footer className="bg-[#f97f12] text-white relative z-10">
+      <footer role="contentinfo" className="bg-[#f97f12] text-white relative z-10" aria-label="Site footer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Brand */}
           <div className="flex flex-col sm:flex-row items-center justify-center mb-12 gap-6">
@@ -142,7 +142,7 @@ export function SiteFooter() {
 
             {/* Contact + Social */}
             <div>
-              <h4 className="font-calgary text-lg mb-4">Connect With Us</h4>
+              <h4 className="font-calgary text-lg mb-4">Contact Information</h4>
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-center sm:justify-start gap-3">
                   <Mail className="w-4 h-4 text-white/80" />
@@ -192,9 +192,9 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 bg-black/10">
+        <div className="border-t border-white/20 bg-black/10" role="contentinfo">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-            <p className="text-sm text-white/80">
+            <p className="text-sm text-white/80" aria-label="Copyright notice">
               © {currentYear} Para Vidya Foundation. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
