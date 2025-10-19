@@ -54,6 +54,17 @@ export function SEOHead({
       <meta name="robots" content={robotsContent} />
       <meta name="googlebot" content={robotsContent} />
       
+      {/* Google Site Verification */}
+      <meta name="google-site-verification" content="your-google-site-verification-code" />
+      
+      {/* Additional SEO Meta Tags */}
+      <meta name="rating" content="General" />
+      <meta name="distribution" content="Global" />
+      <meta name="revisit-after" content="7 days" />
+      <meta name="language" content="English" />
+      <meta name="geo.region" content="IN" />
+      <meta name="geo.country" content="India" />
+      
       {/* Canonical URL */}
       <link rel="canonical" href={pageCanonical} />
       
@@ -126,6 +137,9 @@ export function SEOHead({
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="https://www.facebook.com" />
+      <link rel="dns-prefetch" href="https://www.instagram.com" />
+      <link rel="dns-prefetch" href="https://www.youtube.com" />
       
       {/* Favicon and App Icons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -135,6 +149,14 @@ export function SEOHead({
       
       {/* Viewport for mobile optimization */}
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      
+      {/* Additional Performance Hints */}
+      <link rel="preload" href="/fonts/PlayfairDisplay-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      <link rel="preload" href="/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      
+      {/* Critical Resource Hints */}
+      <link rel="preload" href="/Logo.png" as="image" />
+      <link rel="preload" href="/og-default.jpg" as="image" />
     </Head>
   );
 }

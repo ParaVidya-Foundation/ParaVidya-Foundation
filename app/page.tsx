@@ -122,25 +122,59 @@ const slides = [
 
 export default function HomePage() {
   return (
-    <>
-      <CustomCarousel
-        images={[
-          "/Carousel/Join.jpg",
-          "/Carousel/Katha.jpg",
-          "/Carousel/Ayurveda.jpg",
-          "/Carousel/Workplace-Challanges.jpg",
-        ]}     
-      />
-      <Marquee />
-      {/* <NGOSocietyImpact /> */}
-      <KaramkandHome />
-      <DonationSection />
+    <main role="main" aria-label="Main content">
+      {/* Hero Section with H1 */}
+      <section aria-label="Hero carousel" className="relative">
+ 
+        <CustomCarousel
+          images={[
+            "/Carousel/Ayurveda.jpg",
+            "/Carousel/Katha.jpg",
+            "/Carousel/Join.jpg",
+            "/Carousel/Workplace-Challanges.jpg",
+          ]}     
+        />
+      </section>
       
-      <GitaHome slides={slides} />
-      <VideoSeries />
-      <JoinNGO />
-      <SupportUs />
-      <NewsletterSection />
-    </>
+      {/* Announcements */}
+      <section aria-label="Announcements">
+        <Marquee />
+      </section>
+      
+      {/* Programs Section */}
+      <section aria-label="Spiritual programs and workshops">
+        <KaramkandHome />
+      </section>
+      
+      {/* Donation Section */}
+      <section aria-label="Support our mission">
+        <DonationSection />
+      </section>
+      
+      {/* Workshop Gallery */}
+      <section aria-label="Workshop offerings">
+        <GitaHome slides={slides} />
+      </section>
+      
+      {/* Video Series */}
+      <section aria-label="Educational video series">
+        <VideoSeries />
+      </section>
+      
+      {/* Join NGO */}
+      <section aria-label="Join our community">
+        <JoinNGO />
+      </section>
+      
+      {/* Support Us */}
+      <section aria-label="Support us">
+        <SupportUs />
+      </section>
+      
+      {/* Newsletter */}
+      <section aria-label="Newsletter subscription">
+        <NewsletterSection />
+      </section>
+    </main>
   )
 }
