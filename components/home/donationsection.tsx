@@ -2,6 +2,7 @@
 
 import { useRef, useState, useCallback } from "react";
 import Image from "next/image";
+import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
 import "./donation.css";
 
 const DonationSection: React.FC = () => {
@@ -82,16 +83,15 @@ const DonationSection: React.FC = () => {
             <div className="box">
             
               <div className="videoBox">
-                <iframe
-                  ref={iframeRef}
+                <YouTubeEmbed
+                  videoId="zjHbdTii0bI"
+                  title="Travel promo video"
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/zjHbdTii0bI?controls=0"
-                  title="Travel promo video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  loading="lazy"
+                  controls={false}
+                  autoplay={isPosterActive}
+                  lazy={false}
+                  className="w-full h-full"
                 />
               </div>
               

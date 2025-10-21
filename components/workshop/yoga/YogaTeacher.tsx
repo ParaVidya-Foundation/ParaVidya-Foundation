@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X } from "lucide-react";
 import GlowButton from "@/components/ui/GlowButton";
+import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
 
 const YogaTeacher: React.FC = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -92,13 +93,16 @@ const YogaTeacher: React.FC = () => {
             className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-4"
           >
             <div className="relative w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl border border-orange-400/30">
-              <iframe
-                src="https://www.youtube.com/embed/ysz5S6PUM-U"
+              <YouTubeEmbed
+                videoId="ysz5S6PUM-U"
                 title="Yoga Session"
+                width="100%"
+                height="100%"
+                controls={true}
+                autoplay={true}
+                lazy={false}
                 className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              />
 
               <button
                 onClick={() => setShowVideo(false)}

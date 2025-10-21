@@ -2,11 +2,13 @@
 
 import React, { useState, useCallback } from "react";
 import Image from "next/image";
+import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
 
 interface VideoItem {
   src: string;
   name: string;
   videoSrc: string;
+  videoId: string;
 }
 
 const videoData: VideoItem[] = [
@@ -14,62 +16,67 @@ const videoData: VideoItem[] = [
     src: "/Videos/timingjudge.webp",
     name: "Marriage Astrology | शादी कब होगी | Timing of Marriage in Vedic Astrology",
     videoSrc: "https://www.youtube.com/embed/QkaN-S2oybI",
+    videoId: "QkaN-S2oybI",
   },
   {
     src: "/Videos/lalkitab.webp",
     name: "ग्रहो को मन चाहे घर मे कैसे स्थापित करें | Lal Kitab Remedies",
     videoSrc: "https://www.youtube.com/embed/c50S-cpM6IQ",
+    videoId: "c50S-cpM6IQ",
   },
   {
     src: "/Videos/jeevansathi.webp",
     name: "जीवन साथी कहाँ मिलेगा कब मिलेगा कैसे मिलेगा | Future Spouse Prediction",
     videoSrc: "https://www.youtube.com/embed/Dv924UhgbGE",
+    videoId: "Dv924UhgbGE",
   },
   {
     src: "/Videos/marriagethumb.webp",
     name: "विवाह बाधा निवारण | Marriage Remedies | शादि के उपाय",
     videoSrc: "https://www.youtube.com/embed/49B9ufNShtw",
+    videoId: "49B9ufNShtw",
   },
   {
     src: "/Videos/rahu.webp",
     name: "Best Remedies for Rahu | राहु के अशुभ प्रभाव और उपाय",
     videoSrc: "https://www.youtube.com/embed/GRps8cGoLAA",
+    videoId: "GRps8cGoLAA",
   },
   {
     src: "/Videos/budh.webp",
     name: "कमजोर बुध को मजबूत करने के उपाय | Budh Remedies | Lal Kitab",
     videoSrc: "https://www.youtube.com/embed/OLiV80-zBSA",
+    videoId: "OLiV80-zBSA",
   },
 ];
 
 const YoutubeGallery: React.FC = () => {
-  const [iframeSrc, setIframeSrc] = useState<string>(videoData[0].videoSrc);
+  const [selectedVideo, setSelectedVideo] = useState<VideoItem>(videoData[0]);
 
-  const handleThumbnailClick = useCallback((videoSrc: string) => {
-    setIframeSrc(videoSrc);
+  const handleThumbnailClick = useCallback((video: VideoItem) => {
+    setSelectedVideo(video);
   }, []);
 
   return (
     <div className="yt-container">
       {/* 🎥 Main Video */}
       <div className="video-frame">
-        <iframe
-          src={iframeSrc}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="ParaVidya Foundation YouTube Video"
-          loading="lazy"
-        ></iframe>
+        <YouTubeEmbed
+          videoId={selectedVideo.videoId}
+          title={selectedVideo.name}
+          lazy={false}
+          controls={true}
+          className="w-full h-full"
+        />
       </div>
 
       {/* 🔹 Thumbnails Flex Grid */}
       <div className="thumbnail-flex">
         {videoData.map((item) => (
           <div
-            key={item.videoSrc}
-            className={`thumb-card ${iframeSrc === item.videoSrc ? "active" : ""}`}
-            onClick={() => handleThumbnailClick(item.videoSrc)}
+            key={item.videoId}
+            className={`thumb-card ${selectedVideo.videoId === item.videoId ? "active" : ""}`}
+            onClick={() => handleThumbnailClick(item)}
           >
             <div className="thumb-img-wrapper">
               <Image

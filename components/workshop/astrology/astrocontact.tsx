@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Instagram, Facebook, Send } from "lucide-react";
+import GoogleMapsEmbed from "@/components/ui/GoogleMapsEmbed";
 
 type FormData = {
   name: string;
@@ -244,15 +245,14 @@ const ContactInfo: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-2xl font-semibold mb-6 text-center">Our Location</h3>
             <div className="w-full h-[420px] rounded-2xl overflow-hidden shadow">
-              <iframe
+              <GoogleMapsEmbed
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.2236159947297!2d77.05042757528288!3d28.47281157575236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d198fa3f1b1e7%3A0x6c50eccf3e518447!2sAstro%20Pathshala!5e0!3m2!1sen!2sin!4v1736150464288!5m2!1sen!2sin"
                 title="Paravidya Foundation location"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                lazy={true}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                aria-hidden={false}
+                className="w-full h-full"
               />
             </div>
           </div>

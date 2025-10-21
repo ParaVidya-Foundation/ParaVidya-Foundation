@@ -42,21 +42,9 @@ export function CoreWebVitals({
 
     // Optimize font loading
     const optimizeFonts = () => {
-      // Preload critical fonts
-      const criticalFonts = [
-        '/fonts/PlayfairDisplay-Regular.woff2',
-        '/fonts/Manrope-Regular.woff2'
-      ];
-
-      criticalFonts.forEach(font => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'font';
-        link.type = 'font/woff2';
-        link.href = font;
-        link.crossOrigin = 'anonymous';
-        document.head.appendChild(link);
-      });
+      // Fonts are already preloaded in SEOHead component
+      // This function can be used for additional font optimizations if needed
+      console.log('Font optimization: Fonts are preloaded via SEOHead component');
     };
 
     // Optimize images
@@ -129,36 +117,9 @@ export function usePerformanceMonitoring() {
 export function ResourceHints() {
   return (
     <>
-      {/* Preconnect to external domains */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://www.google-analytics.com" />
-      <link rel="preconnect" href="https://www.googletagmanager.com" />
-      
-      {/* DNS prefetch for performance */}
-      <link rel="dns-prefetch" href="//www.youtube.com" />
-      <link rel="dns-prefetch" href="//maps.googleapis.com" />
-      <link rel="dns-prefetch" href="//maps.gstatic.com" />
-      
-      {/* Preload critical resources */}
-      <link 
-        rel="preload" 
-        href="/fonts/PlayfairDisplay-Regular.woff2" 
-        as="font" 
-        type="font/woff2" 
-        crossOrigin="anonymous" 
-      />
-      <link 
-        rel="preload" 
-        href="/fonts/Manrope-Regular.woff2" 
-        as="font" 
-        type="font/woff2" 
-        crossOrigin="anonymous" 
-      />
-      
-      {/* Preload critical images */}
-      <link rel="preload" href="/Logo.png" as="image" />
-      <link rel="preload" href="/og-default.jpg" as="image" />
+      {/* DNS prefetch for performance - only add domains not already handled in SEOHead */}
+      <link rel="dns-prefetch" href="//www.facebook.com" />
+      <link rel="dns-prefetch" href="//www.instagram.com" />
     </>
   );
 }
