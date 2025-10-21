@@ -137,9 +137,9 @@ export function SEOHead({
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-      <link rel="dns-prefetch" href="https://www.facebook.com" />
-      <link rel="dns-prefetch" href="https://www.instagram.com" />
       <link rel="dns-prefetch" href="https://www.youtube.com" />
+      <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+      <link rel="dns-prefetch" href="https://maps.gstatic.com" />
       
       {/* Favicon and App Icons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -150,13 +150,12 @@ export function SEOHead({
       {/* Viewport for mobile optimization */}
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       
-      {/* Additional Performance Hints */}
+      {/* Critical font preloads - only load fonts that are actually used above the fold */}
       <link rel="preload" href="/fonts/PlayfairDisplay-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       <link rel="preload" href="/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       
-      {/* Critical Resource Hints */}
+      {/* Critical image preloads - only preload images that are above the fold */}
       <link rel="preload" href="/Logo.png" as="image" />
-      <link rel="preload" href="/og-default.jpg" as="image" />
     </Head>
   );
 }

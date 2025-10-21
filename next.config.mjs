@@ -79,17 +79,18 @@ const nextConfig = {
           { key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
           { key: 'Cross-Origin-Embedder-Policy', value: 'require-corp' },
 
-          // ✅ Content Security Policy (CSP)
+          // ✅ Content Security Policy (CSP) - Optimized for iframe embeds
           {
             key: 'Content-Security-Policy',
             value:
               "default-src 'self'; " +
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://maps.googleapis.com https://www.youtube.com https://youtube.com; " +
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://maps.googleapis.com https://www.youtube.com https://youtube.com https://www.gstatic.com; " +
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
-              "img-src 'self' data: blob: https://img.youtube.com https://i.ytimg.com https://img.icons8.com https://images.unsplash.com https://plus.unsplash.com https://maps.gstatic.com https://maps.googleapis.com; " +
+              "img-src 'self' data: blob: https://img.youtube.com https://i.ytimg.com https://img.icons8.com https://images.unsplash.com https://plus.unsplash.com https://maps.gstatic.com https://maps.googleapis.com https://www.gstatic.com; " +
               "font-src 'self' data: https://fonts.gstatic.com; " +
-              "connect-src 'self' https://www.google-analytics.com https://www.google.com https://maps.googleapis.com; " +
+              "connect-src 'self' https://www.google-analytics.com https://www.google.com https://maps.googleapis.com https://www.youtube.com; " +
               "frame-src 'self' https://www.google.com https://maps.google.com https://www.youtube.com https://youtube.com https://player.vimeo.com; " +
+              "child-src 'self' https://www.google.com https://maps.google.com https://www.youtube.com https://youtube.com https://player.vimeo.com; " +
               "frame-ancestors 'none'; " +
               "object-src 'none'; " +
               "base-uri 'self'; " +

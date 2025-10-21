@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import GlowButton from "../ui/GlowButton";
+import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
 
 type Slide = {
   subtitle?: string;
@@ -128,12 +129,16 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
                 </div>
               </button>
             ) : (
-              <iframe
-                src={videoUrl!}
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="w-[85%] sm:w-[80%] lg:w-[70%] aspect-video rounded-2xl border-none"
-              ></iframe>
+              <YouTubeEmbed
+                videoId={currentSlide.videoId!}
+                title="Workshop Video"
+                width="85%"
+                height="auto"
+                controls={true}
+                autoplay={true}
+                lazy={false}
+                className="w-[85%] sm:w-[80%] lg:w-[70%] aspect-video rounded-2xl"
+              />
             )}
           </div>
         )}

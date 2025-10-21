@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { IconPlayerPlay } from "@tabler/icons-react";
+import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
 
 type Reel = {
   id: string;
@@ -115,16 +116,7 @@ export default function VideoReelsCarousel({
         </header>
 
         {/* Carousel */}
-        <div className="relative w-full overflow-hidden py-4" style={{
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-              maskImage:
-                "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-              WebkitMaskRepeat: "no-repeat",
-              maskRepeat: "no-repeat",
-              WebkitMaskSize: "100% 100%",
-              maskSize: "100% 100%",
-            }}>
+        <div className="relative w-full overflow-hidden py-4 carousel-mask">
           <div
             ref={trackRef}
             className="flex gap-6 px-4 will-change-transform"
@@ -179,17 +171,30 @@ export default function VideoReelsCarousel({
             >
               ×
             </button>
-            <iframe
-              src={buildPlayerUrl(selectedVideo)}
-              title="Video player"
+            <YouTubeEmbed
+              videoId={extractYouTubeId(selectedVideo.videoUrl)}
+              title={selectedVideo.title}
+              width="100%"
+              height="100%"
+              controls={true}
+              autoplay={true}
+              lazy={false}
               className="w-full h-full"
-              frameBorder={0}
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
             />
           </div>
         </div>
       )}
+      
+      <style jsx>{`
+        .carousel-mask {
+          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+        }
+      `}</style>
     </section>
   );
 }

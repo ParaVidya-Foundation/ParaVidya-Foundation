@@ -48,7 +48,7 @@ const ImageQuote: React.FC = () => {
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-base font-readable sm:text-lg text-amber-300 font-semibold italic"
+              className="text-base font-readable sm:text-lg text-grey-700 font-semibold italic"
             >
               ~ Gurudev Sunil Vashist
             </motion.p>
