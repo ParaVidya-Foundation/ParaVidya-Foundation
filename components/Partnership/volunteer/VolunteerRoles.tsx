@@ -80,7 +80,7 @@ const roles: Role[] = [
       "Help us connect with communities, spreading awareness offline.",
     details:
       "Be our voice on the ground — organize events and reach local communities.",
-    image: "/Join/Ground_marketing.webp",
+    image: "/Join/Ground_Marketing.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
@@ -89,7 +89,7 @@ const roles: Role[] = [
       "Create content for our social media platforms and website.",
     details:
       "Create engaging and creative content for our social media platforms and website.",
-    image: "/Join/Content_creation.webp",
+    image: "/Join/Content_Creation.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
 ];

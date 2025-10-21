@@ -11,32 +11,32 @@ interface VideoItem {
 
 const videoData: VideoItem[] = [
   {
-    src: "/Videos/TimingJudge.webp",
+    src: "/Videos/timingjudge.webp",
     name: "Marriage Astrology | शादी कब होगी | Timing of Marriage in Vedic Astrology",
     videoSrc: "https://www.youtube.com/embed/QkaN-S2oybI",
   },
   {
-    src: "/Videos/LalKitab.webp",
+    src: "/Videos/lalkitab.webp",
     name: "ग्रहो को मन चाहे घर मे कैसे स्थापित करें | Lal Kitab Remedies",
     videoSrc: "https://www.youtube.com/embed/c50S-cpM6IQ",
   },
   {
-    src: "/Videos/JeevanSathi.webp",
+    src: "/Videos/jeevansathi.webp",
     name: "जीवन साथी कहाँ मिलेगा कब मिलेगा कैसे मिलेगा | Future Spouse Prediction",
     videoSrc: "https://www.youtube.com/embed/Dv924UhgbGE",
   },
   {
-    src: "/Videos/MarriageThumb.webp",
+    src: "/Videos/marriagethumb.webp",
     name: "विवाह बाधा निवारण | Marriage Remedies | शादि के उपाय",
     videoSrc: "https://www.youtube.com/embed/49B9ufNShtw",
   },
   {
-    src: "/Videos/Rahu.webp",
+    src: "/Videos/rahu.webp",
     name: "Best Remedies for Rahu | राहु के अशुभ प्रभाव और उपाय",
     videoSrc: "https://www.youtube.com/embed/GRps8cGoLAA",
   },
   {
-    src: "/Videos/Budh.webp",
+    src: "/Videos/budh.webp",
     name: "कमजोर बुध को मजबूत करने के उपाय | Budh Remedies | Lal Kitab",
     videoSrc: "https://www.youtube.com/embed/OLiV80-zBSA",
   },
