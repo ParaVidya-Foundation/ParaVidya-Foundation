@@ -97,7 +97,6 @@ const YogaTeacher: React.FC = () => {
                 videoId="ysz5S6PUM-U"
                 title="Yoga Session"
                 width="100%"
-                height="100%"
                 controls={true}
                 autoplay={true}
                 lazy={false}

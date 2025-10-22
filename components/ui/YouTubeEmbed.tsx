@@ -7,7 +7,6 @@ interface YouTubeEmbedProps {
   videoId: string;
   title: string;
   width?: string | number;
-  height?: string | number;
   autoplay?: boolean;
   controls?: boolean;
   loop?: boolean;
@@ -23,7 +22,6 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   videoId,
   title,
   width = '100%',
-  height = 'auto',
   autoplay = false,
   controls = true,
   loop = false,

@@ -40,12 +40,6 @@ const getThumbnail = (videoUrl: string) => {
     : "/images/video-placeholder.jpg";
 };
 
-const buildPlayerUrl = (videoUrl: string) => {
-  const id = extractYouTubeId(videoUrl);
-  return id
-    ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`
-    : "";
-};
 
 /* ------------------ COMPONENT ------------------ */
 export default function VideoReelsCarousel({
@@ -56,7 +50,7 @@ export default function VideoReelsCarousel({
   const trackRef = useRef<HTMLDivElement | null>(null);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
 
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<Reel | null>(null);
 
   const items = React.useMemo(() => [...reels, ...reels], [reels]);
 
@@ -125,7 +119,7 @@ export default function VideoReelsCarousel({
             {items.map((r, idx) => (
               <div
                 key={`${r.id}-${idx}`}
-                onClick={() => setSelectedVideo(r.videoUrl)}
+                onClick={() => setSelectedVideo(r)}
                 className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]"
               >
                 <div className="relative h-[200px] bg-gray-100">
@@ -175,7 +169,6 @@ export default function VideoReelsCarousel({
               videoId={extractYouTubeId(selectedVideo.videoUrl)}
               title={selectedVideo.title}
               width="100%"
-              height="100%"
               controls={true}
               autoplay={true}
               lazy={false}
