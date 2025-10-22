@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
+import GlowButton from "@/components/ui/GlowButton";
 
 export default function YogaWorkshopSection() {
   return (
@@ -31,12 +31,7 @@ export default function YogaWorkshopSection() {
           </p>
 
           <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-3 rounded-xl bg-[#f97f12] text-white font-medium text-lg shadow-md hover:bg-[#e56e0e] hover:shadow-lg transition"
-            >
-              Contact Us
-            </Link>
+            <GlowButton text="Contact Us" onClick={() => {window.location.href = "/about-us"}}/>
           </div>
         </div>
       </div>

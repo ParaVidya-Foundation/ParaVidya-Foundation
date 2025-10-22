@@ -52,9 +52,6 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
   }
 
   const currentSlide = slides[current];
-  const videoUrl = currentSlide.videoId
-    ? `https://www.youtube.com/embed/${currentSlide.videoId}?autoplay=1&rel=0`
-    : null;
 
   return (
     <section className="w-full flex justify-center items-center py-4 sm:py-6 md:py-10 px-2 sm:px-4">
@@ -133,7 +130,6 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
                 videoId={currentSlide.videoId!}
                 title="Workshop Video"
                 width="85%"
-                height="auto"
                 controls={true}
                 autoplay={true}
                 lazy={false}

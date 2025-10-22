@@ -87,7 +87,6 @@ const DonationSection: React.FC = () => {
                   videoId="zjHbdTii0bI"
                   title="Travel promo video"
                   width="100%"
-                  height="100%"
                   controls={false}
                   autoplay={isPosterActive}
                   lazy={false}
