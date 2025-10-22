@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Abouthero from "@/components/about/Abouthero"
 import ImageQuote from "@/components/about/imagequote"
 import GallerySlider from "@/components/about/GallerySlider"
+import ContactUs from "@/components/about/Contactus"
 
 export const metadata: Metadata = {
   title: "About Us - Our Mission & Vision | ParaVidya Foundation",
@@ -43,6 +44,7 @@ export default function AboutUsPage() {
       <Abouthero />
       <ImageQuote />
       <GallerySlider />
+      <ContactUs />
     </div>
   )
 }
