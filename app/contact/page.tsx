@@ -69,7 +69,7 @@ export const metadata: Metadata = {
 const faqData = [
   {
     question: "How can I contact ParaVidya Foundation?",
-    answer: "You can contact us through our contact form, email us at info@paravidya.org, call us at +91-98711-30487, or visit our office at 6C, Sector-14, Mehrauli Road, Gurugram, Haryana 122001, India."
+    answer: "You can contact us through our contact form, email us at paravidyafoundation@gmail.com, call us at +91-98711-30487, or visit our office at 6C, Sector-14, Mehrauli Road, Gurugram, Haryana 122001, India."
   },
   {
     question: "What are your office hours?",
@@ -141,7 +141,7 @@ export default function ContactPage() {
               <div className="flex flex-wrap justify-center gap-6 text-lg">
                 <div className="flex items-center gap-2">
                   <Mail className="w-6 h-6" />
-                  <span>info@paravidya.org</span>
+                  <span>paravidyafoundation@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-6 h-6" />

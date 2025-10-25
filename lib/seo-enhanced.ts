@@ -21,7 +21,7 @@ export const seoConfig = {
   
   // Contact information
   contact: {
-    email: "info@paravidya.org",
+    email: "paravidyafoundation@gmail.com",
     phone: "+91-98711-30487",
     address: "6C, Sector-14, Mehrauli Road, Gurugram, Haryana 122001, India",
   },
@@ -146,7 +146,7 @@ export function generateOrganizationSchema() {
       "@type": "ContactPoint",
       "contactType": "customer service",
       "telephone": "+91-98711-30487",
-      "email": "contact@paravidya.org",
+      "email": "paravidyafoundation@gmail.com",
       "availableLanguage": ["English", "Hindi"]
     },
     "sameAs": Object.values(seoConfig.social).filter(Boolean),

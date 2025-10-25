@@ -303,7 +303,7 @@ const ContactForm: React.FC = () => {
             <p className="text-red-700 font-medium">Failed to send message</p>
           </div>
           <p className="text-red-600 text-sm mt-1">
-            Please try again or contact us directly at info@paravidya.org
+            Please try again or contact us directly at paravidyafoundation@gmail.com
           </p>
         </div>
       )}

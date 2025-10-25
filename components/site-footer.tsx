@@ -147,10 +147,10 @@ export function SiteFooter() {
                 <div className="flex items-center justify-center sm:justify-start gap-3">
                   <Mail className="w-4 h-4 text-white/80" />
                   <a
-                    href="mailto:info@paravidya.org"
+                    href="mailto:paravidyafoundation@gmail.com"
                     className="text-sm text-white/80 hover:text-white transition"
                   >
-                    info@paravidya.org
+                    paravidyafoundation@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center justify-center sm:justify-start gap-3">

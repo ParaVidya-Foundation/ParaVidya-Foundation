@@ -4,8 +4,7 @@ import { Playfair_Display, Manrope } from "next/font/google"
 import Header from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { SkipToContent } from "@/components/skip-to-content"
-import { GA } from "@/components/analytics/ga"
-import { FacebookPixel } from "@/components/analytics/fb-pixel"
+import { Analytics } from "@/components/analytics/Analytics"
 import { OrganizationSchema, WebSiteSchema } from "@/components/seo/StructuredDataEnhanced"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
@@ -133,8 +132,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${playfair.variable} ${manrope.variable} font-sans antialiased`}>
       <head>
-        <GA />
-        <FacebookPixel />
+        <Analytics />
         <OrganizationSchema />
         <WebSiteSchema />
       </head>
