@@ -1,0 +1,9 @@
+Contact: mailto:security@paravidyafoundation.com
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://paravidyafoundation.com/.well-known/security.txt
+
+# Security Policy
+# We take security seriously. If you discover a security vulnerability, please email security@paravidyafoundation.com
+# Please include detailed information about the vulnerability, including steps to reproduce if possible.
+# We will review and respond to all reports within 48 hours.
