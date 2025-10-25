@@ -5,6 +5,7 @@ import Header from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { SkipToContent } from "@/components/skip-to-content"
 import { Analytics } from "@/components/analytics/Analytics"
+import { GTMNoscript } from "@/components/analytics/GTMNoscript"
 import { OrganizationSchema, WebSiteSchema } from "@/components/seo/StructuredDataEnhanced"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
@@ -137,6 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <WebSiteSchema />
       </head>
       <body className="bg-white text-[#111111]" suppressHydrationWarning={true}>
+        <GTMNoscript />
         <SkipToContent />
         <Navbar />
         <Header />

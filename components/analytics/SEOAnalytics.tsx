@@ -237,7 +237,7 @@ export function SEOAnalytics({
 declare global {
   interface Window {
     gtag: (command: string, targetId: string, config?: Record<string, unknown>) => void;
-    dataLayer: unknown[];
+    dataLayer: Array<Record<string, unknown>>;
   }
 }
 

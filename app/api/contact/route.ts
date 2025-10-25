@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { sanitizeText, sanitizeEmail, sanitizePhone, maskSensitiveData } from '@/lib/sanitize';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, subject, message, phone } = body;
+    let { name, email, subject, message, phone } = body;
 
     // Basic validation
     if (!name || !email || !subject || !message) {
@@ -12,6 +13,13 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Sanitize all inputs to prevent XSS
+    name = sanitizeText(name);
+    email = sanitizeEmail(email);
+    subject = sanitizeText(subject);
+    message = sanitizeText(message);
+    phone = phone ? sanitizePhone(phone) : '';
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -28,13 +36,13 @@ export async function POST(request: NextRequest) {
     // 3. Send auto-reply to user
     // 4. Log the submission
 
-    // For now, we'll just log the submission
+    // Log with masked sensitive data for GDPR compliance
     console.log('Contact form submission:', {
-      name,
-      email,
-      subject,
-      message,
-      phone,
+      name: sanitizeText(name),
+      email: maskSensitiveData(email, 'email'),
+      subject: sanitizeText(subject),
+      messageLength: message.length,
+      phone: phone ? maskSensitiveData(phone, 'phone') : 'not provided',
       timestamp: new Date().toISOString(),
       ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
     });
