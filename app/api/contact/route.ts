@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
 
     // Simulate email sending (replace with actual email service)
     // await sendEmail({
-    //   to: 'info@paravidya.org',
+    //   to: 'paravidyafoundation@gmail.com',
     //   subject: `New Contact Form Submission: ${subject}`,
     //   body: `
     //     Name: ${name}
