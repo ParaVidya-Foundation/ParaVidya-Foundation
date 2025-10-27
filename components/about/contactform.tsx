@@ -3,6 +3,14 @@
 import React, { useState } from "react";
 import { CheckCircle, AlertCircle, Loader2, Send } from "lucide-react";
 
+// TypeScript declarations for analytics
+declare global {
+  interface Window {
+    dataLayer: Array<Record<string, unknown>>;
+    fbq?: (command: string, eventName?: string, params?: Record<string, unknown>) => void;
+  }
+}
+
 interface FormData {
   name: string;
   email: string;
@@ -120,12 +128,21 @@ const ContactForm: React.FC = () => {
         setFormData({ name: "", email: "", message: "", phone: "" });
         setTouched({});
         
-        // Track successful form submission
-        if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'contact_form_submit', {
+        // Track successful form submission via dataLayer (GTM)
+        if (typeof window !== 'undefined' && window.dataLayer) {
+          window.dataLayer.push({
+            event: 'contact_form_submit',
             event_category: 'Lead Generation',
             event_label: 'Contact Form',
             value: 1
+          });
+        }
+        
+        // Also track for Facebook Pixel
+        if (typeof window !== 'undefined' && window.fbq) {
+          window.fbq('track', 'Lead', {
+            content_name: 'Contact Form',
+            content_category: 'Lead Generation'
           });
         }
       } else {

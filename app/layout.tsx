@@ -119,10 +119,8 @@ export const metadata: Metadata = {
     images: ['/og-default.jpg'],
   },
   verification: {
-    google: 'your-google-site-verification-code',
-    other: {
-      'google-site-verification': 'your-google-site-verification-code',
-    },
+    // Add your Google Search Console verification code here
+    // google: 'your-google-site-verification-code',
   },
   alternates: {
     canonical: 'https://paravidyafoundation.com',
@@ -133,12 +131,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${playfair.variable} ${manrope.variable} font-sans antialiased`}>
       <head>
-        <Analytics />
-        <OrganizationSchema />
-        <WebSiteSchema />
+        {/* Viewport meta tag for mobile optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
       </head>
       <body className="bg-white text-[#111111]" suppressHydrationWarning={true}>
         <GTMNoscript />
+        <Analytics />
+        <OrganizationSchema />
+        <WebSiteSchema />
         <SkipToContent />
         <Navbar />
         <Header />

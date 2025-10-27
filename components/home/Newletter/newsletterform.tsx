@@ -2,6 +2,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+// TypeScript declarations for analytics
+declare global {
+  interface Window {
+    dataLayer: Array<Record<string, unknown>>;
+    fbq?: (command: string, eventName?: string, params?: Record<string, unknown>) => void;
+  }
+}
+
 export default function NewsletterForm() {
   const [status, setStatus] = useState("");
 
@@ -20,6 +28,24 @@ export default function NewsletterForm() {
     if (res.ok) {
       setStatus("SUCCESS");
       form.reset();
+      
+      // Track newsletter subscription via dataLayer (GTM)
+      if (typeof window !== 'undefined' && window.dataLayer) {
+        window.dataLayer.push({
+          event: 'newsletter_subscribe',
+          event_category: 'Email Marketing',
+          event_label: 'Newsletter Subscription',
+          value: 1
+        });
+      }
+      
+      // Also track for Facebook Pixel
+      if (typeof window !== 'undefined' && window.fbq) {
+        window.fbq('track', 'Subscribe', {
+          content_name: 'Newsletter',
+          content_category: 'Email Marketing'
+        });
+      }
     } else {
       setStatus("ERROR");
     }
