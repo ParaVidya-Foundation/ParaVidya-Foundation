@@ -120,11 +120,12 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
             width="100%"
             height="100%"
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; allow-same-origin"
             allowFullScreen
             className={`rounded-lg ${isLoaded ? 'block' : 'hidden'}`}
             onLoad={handleLoad}
             loading={lazy ? 'lazy' : 'eager'}
+            referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
       )}

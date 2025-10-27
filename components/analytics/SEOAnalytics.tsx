@@ -236,7 +236,7 @@ export function SEOAnalytics({
 // Declare gtag function for TypeScript
 declare global {
   interface Window {
-    gtag: (command: string, targetId: string, config?: Record<string, unknown>) => void;
+    gtag: (command: string, ...args: Array<unknown>) => void;
     dataLayer: Array<Record<string, unknown>>;
   }
 }

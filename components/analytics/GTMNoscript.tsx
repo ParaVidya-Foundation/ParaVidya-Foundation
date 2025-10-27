@@ -1,37 +1,11 @@
 /**
- * Google Tag Manager Noscript Component
- * MUST be placed immediately after the opening <body> tag
- * 
- * Usage in layout.tsx:
- * <body>
- *   <GTMNoscript />
- *   ...
- * </body>
+ * Not needed for GA4 direct implementation
+ * This component is kept for backwards compatibility but returns null
  */
 
-interface GTMNoscriptProps {
-  gtmId?: string;
-}
+"use client";
 
-export function GTMNoscript({ 
-  gtmId
-}: GTMNoscriptProps) {
-  // Hardcoded production value
-  const finalGtmId = gtmId || "GTM-MW2F23VZ";
-  
-  if (!finalGtmId) {
-    return null;
-  }
-
-  return (
-    <noscript>
-      <iframe
-        src={`https://www.googletagmanager.com/ns.html?id=${finalGtmId}`}
-        height="0"
-        width="0"
-        style={{ display: 'none', visibility: 'hidden' }}
-        title="Google Tag Manager"
-      />
-    </noscript>
-  );
+export function GTMNoscript() {
+  // Return null as we're using direct GA4 implementation
+  return null;
 }
