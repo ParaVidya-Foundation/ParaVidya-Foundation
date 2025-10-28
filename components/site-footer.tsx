@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { MapPin, Mail, Phone, Instagram, Facebook, Linkedin, Youtube, Twitter, MessageCircle } from "lucide-react"
+import { useState, useEffect } from "react"
 
 const socialLinks = [
   { name: "Instagram", url: "https://www.instagram.com/paravidya.foundation/", icon: Instagram, color: "hover:text-pink-500" },
@@ -46,7 +47,13 @@ const workshopLinks = [
 ]
 
 export function SiteFooter() {
-  const currentYear = new Date().getFullYear()
+  // ✅ Fix hydration: Use useState + useEffect to ensure client/server match
+  const [currentYear, setCurrentYear] = useState<number>(2025);
+
+  useEffect(() => {
+    // Only update after mount to avoid hydration mismatch
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
 <div className="w-full">
@@ -55,8 +62,8 @@ export function SiteFooter() {
     <Image
       src="/Footer.png"
       alt="Footer Top Banner"
-      width={1920} // use your image's natural width
-      height={890} // use your image's natural height
+      width={1920} 
+            height={890}  
       priority
       className="w-full h-auto object-contain object-center"
       sizes="100vw"
@@ -156,15 +163,15 @@ export function SiteFooter() {
                 <div className="flex items-center justify-center sm:justify-start gap-3">
                   <Phone className="w-4 h-4 text-white/80" />
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919871130487"
                     className="text-sm text-white/80 hover:text-white transition"
                   >
-                    +91 98765 43210
+                    +91 98711 30487
                   </a>
                 </div>
                 <div className="flex items-center justify-center sm:justify-start gap-3">
                   <MapPin className="w-4 h-4 text-white/80" />
-                  <span className="text-sm text-white/80">Delhi, India</span>
+                  <span className="text-sm text-white/80">Gurugram, India</span>
                 </div>
               </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import GlowButton from "../ui/GlowButton";
@@ -23,17 +23,24 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+
+  // ✅ Fix hydration: Only enable animations after client mount
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Auto change every 8 seconds (only if video not playing)
   useEffect(() => {
-    if (slides.length <= 1 || isVideoPlaying) return;
+    if (slides.length <= 1 || isVideoPlaying || !isClient) return;
 
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 8000);
 
     return () => clearInterval(interval);
-  }, [slides.length, isVideoPlaying]);
+  }, [slides.length, isVideoPlaying, isClient]);
 
   const handleImageLoad = (index: number) => {
     setLoadedImages((prev) => new Set(prev).add(index));
@@ -65,9 +72,9 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
           <motion.div
             key={current}
             className="absolute inset-0 w-full h-full"
-            initial={{ opacity: 0 }}
+            initial={isClient && !shouldReduceMotion ? { opacity: 0 } : undefined}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={isClient && !shouldReduceMotion ? { opacity: 0 } : undefined}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
             {/* Background Image */}
@@ -144,7 +151,7 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
           {currentSlide.subtitle && (
             <motion.p
               key={`subtitle-${current}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={isClient && !shouldReduceMotion ? { opacity: 0, y: 20 } : false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 
@@ -157,7 +164,7 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
           {currentSlide.buttonText && currentSlide.buttonLink && (
             <motion.div
               key={`button-${current}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={isClient && !shouldReduceMotion ? { opacity: 0, y: 20 } : false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 type Role = {
   title: string;
@@ -95,12 +96,33 @@ const roles: Role[] = [
 ];
 
 export default function VolunteerRoles() {
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+  const [isClient, setIsClient] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+
+  // ✅ Fix hydration: Only enable animations after client mount
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const handleImageError = (idx: number) => {
+    setImageErrors(prev => ({ ...prev, [idx]: true }));
+  };
+
+  // ✅ Ensure deterministic SSR - no animations on initial render
+  const titleAnimation = isClient && !shouldReduceMotion
+    ? { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 } }
+    : { initial: false, animate: { opacity: 1, y: 0 } };
+
+  const cardHover = isClient && !shouldReduceMotion
+    ? { y: -6 }
+    : {};
+
   return (
     <section className="w-full px-6 py-16">
       {/* Title */}
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        {...titleAnimation}
         transition={{ duration: 0.6 }}
         className="text-3xl md:text-5xl font-extrabold text-center mb-16 font-poppins text-gray-900"
       >
@@ -111,21 +133,44 @@ export default function VolunteerRoles() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {roles.map((role, idx) => (
           <motion.div
-            key={idx}
-            whileHover={{ y: -6 }}
+            key={role.title}
+            whileHover={cardHover}
             transition={{ type: "spring", stiffness: 200 }}
             className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden border border-gray-200 flex flex-col"
           >
             {/* Image */}
-            <div className="relative w-full aspect-[16/9] max-h-[220px] md:max-h-[260px]">
-              <Image
-                src={role.image}
-                alt={role.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover"
-                priority={idx < 2}
-              />
+            <div className="relative w-full aspect-[16/9] max-h-[220px] md:max-h-[260px] bg-gradient-to-br from-orange-50 to-orange-100 overflow-hidden">
+              {!imageErrors[idx] ? (
+                <Image
+                  src={role.image}
+                  alt={role.title}
+                  width={600}
+                  height={337}
+                  className="object-cover w-full h-full"
+                  priority={idx < 2}
+                  onError={() => handleImageError(idx)}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              ) : (
+                <div className="flex items-center justify-center h-full text-orange-600">
+                  <div className="text-center p-4">
+                    <svg
+                      className="w-16 h-16 mx-auto mb-2 text-orange-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <p className="text-sm font-medium">{role.title}</p>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Content */}

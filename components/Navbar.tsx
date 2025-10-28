@@ -136,8 +136,9 @@ const Navbar: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    // ✅ Fix hydration: Only run on client side
     const handleResize = () => {
-      if (navbarRef.current) {
+      if (navbarRef.current && typeof window !== 'undefined') {
         const width = window.innerWidth;
         navbarRef.current.style.setProperty(
           "--nav-gap",
@@ -145,7 +146,11 @@ const Navbar: React.FC = () => {
         );
       }
     };
+    
+    // Set initial value
     handleResize();
+    
+    // Add resize listener
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
