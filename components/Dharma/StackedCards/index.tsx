@@ -45,6 +45,7 @@ export default function Card({
           top: `calc(-5vh + ${i * 25}px)`,
           zIndex: 1000 - i,
         }}
+        suppressHydrationWarning
       >
         {/* Left Image */}
         <div className={`w-full md:w-1/2 relative overflow-hidden rounded-lg ${isReverse ? 'order-2 md:order-1' : 'order-1 md:order-1'}`}

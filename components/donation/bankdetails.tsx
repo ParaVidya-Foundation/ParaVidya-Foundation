@@ -15,9 +15,9 @@ type BankDetails = {
 const details: BankDetails = {
   accountHolder: "ParaVidya Foundation",
   bankName: "ICICI Bank",
-  accountNumber: "123456789012",
-  ifsc: "ICIC0000021",
-  branch: "Sector - 14, Gurgaon",
+  accountNumber: "588701000150",
+  ifsc: "ICIC0005887",
+  branch: "Sector-52 Gurugram Branch - 122003",
   upiId: "paravidyafoundation@icici",
 };
 

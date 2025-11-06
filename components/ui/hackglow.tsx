@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -11,8 +11,11 @@ interface HyperplexedProps {
 export default function Hyperplexed({ title }: HyperplexedProps) {
   const headingRef = useRef<HTMLHeadingElement | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // ✅ Fix hydration: Only enable interactive effects after mount
+    setIsClient(true);
     const heading = headingRef.current;
     if (!heading) return;
 
@@ -53,7 +56,12 @@ export default function Hyperplexed({ title }: HyperplexedProps) {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <h1 ref={headingRef} data-value={title} className="vil-title">
+      <h1 
+        ref={headingRef} 
+        data-value={title} 
+        className="vil-title"
+        suppressHydrationWarning
+      >
         {title}
       </h1>
 

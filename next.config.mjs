@@ -15,11 +15,12 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'], // Modern, efficient formats
     deviceSizes: [320, 480, 640, 768, 1024, 1200, 1600, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    domains: ['img.youtube.com', 'i.ytimg.com', 'img.icons8.com'],
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' },
       { protocol: 'https', hostname: 'plus.unsplash.com', pathname: '/**' },
       { protocol: 'https', hostname: 'img.icons8.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'img.youtube.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'i.ytimg.com', pathname: '/**' },
     ],
     minimumCacheTTL: 86400, // Cache images for 1 day
     dangerouslyAllowSVG: true,
@@ -67,13 +68,13 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value:
               "default-src 'self'; " +
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.youtube.com; " +
+              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.youtube.com https://connect.facebook.net; " +
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
               "img-src 'self' data: blob: https: https://www.googletagmanager.com https://www.google-analytics.com https://www.facebook.com https://img.youtube.com https://i.ytimg.com https://img.icons8.com https://images.unsplash.com https://plus.unsplash.com https://maps.gstatic.com https://maps.googleapis.com https://www.gstatic.com; " +
               "font-src 'self' data: https://fonts.gstatic.com; " +
-              "connect-src 'self' https://www.google-analytics.com https://www.google.com https://www.googletagmanager.com https://www.facebook.com https://maps.googleapis.com https://www.youtube.com; " +
-              "frame-src 'self' https://www.google.com https://maps.google.com https://www.googletagmanager.com https://www.youtube.com https://youtube.com; " +
-              "child-src 'self' https://www.google.com https://maps.google.com https://www.googletagmanager.com https://www.youtube.com https://youtube.com; " +
+              "connect-src 'self' https://www.google-analytics.com https://www.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net https://maps.googleapis.com https://www.youtube.com https://youtube.com; " +
+              "frame-src 'self' https://www.google.com https://maps.google.com https://www.googletagmanager.com https://www.youtube.com https://youtube.com https://www.facebook.com; " +
+              "child-src 'self' https://www.google.com https://maps.google.com https://www.googletagmanager.com https://www.youtube.com https://youtube.com https://www.facebook.com; " +
               "frame-ancestors 'none'; " +
               "object-src 'none'; " +
               "base-uri 'self'; " +

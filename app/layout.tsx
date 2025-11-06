@@ -134,7 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Viewport meta tag for mobile optimization */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
       </head>
-      <body className="bg-white text-[#111111]" suppressHydrationWarning={true}>
+      <body className="bg-white text-[#111111]">
         <GTMNoscript />
         <Analytics />
         <OrganizationSchema />

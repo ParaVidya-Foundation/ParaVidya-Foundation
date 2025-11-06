@@ -10,10 +10,16 @@ interface CauseCardProps {
 }
 
 export default function Cause({ title, subtitle, imageSrc }: CauseCardProps) {
-  const [isVisible, setIsVisible] = useState(false);
+  // ✅ Fix hydration: Start visible for SSR, then animate in on client
+  const [isVisible, setIsVisible] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    setIsMounted(true);
+    // Reset visibility for animation
+    setIsVisible(false);
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -33,7 +39,7 @@ export default function Cause({ title, subtitle, imageSrc }: CauseCardProps) {
       ref={ref}
       className={`w-full max-w-md mx-auto p-4 sm:p-6 rounded-xl overflow-hidden
         transition-all duration-500 ease-out transform 
-        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+        ${isMounted && !isVisible ? "opacity-0 translate-y-6" : "opacity-100 translate-y-0"}
         hover:scale-[1.02] hover:shadow-md`}
     >
       <div className="flex flex-col items-center text-center space-y-4">

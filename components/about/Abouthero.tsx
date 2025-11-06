@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const heroImages = [
   { src: "/Gallery/gaushala-6sep25-2.webp", title: "Gaushala Seva" },
@@ -11,12 +11,22 @@ const heroImages = [
 ];
 
 const Abouthero: React.FC = () => {
+  const [isClient, setIsClient] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const animationProps = isClient && !shouldReduceMotion
+    ? { initial: { opacity: 0, y: -20 }, animate: { opacity: 1, y: 0 } }
+    : { initial: undefined, animate: { opacity: 1, y: 0 } };
+
   return (
     <section className="relative flex flex-col items-center justify-center text-center py-20 px-6 overflow-hidden">
       {/* Logo */}
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        {...animationProps}
         transition={{ duration: 0.8 }}
         className="mb-6"
       >
@@ -31,7 +41,7 @@ const Abouthero: React.FC = () => {
 
       {/* Title */}
       <motion.h1
-        initial={{ opacity: 0, y: 15 }}
+        initial={isClient && !shouldReduceMotion ? { opacity: 0, y: 15 } : undefined}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-3xl sm:text-4xl md:text-5xl font-mileast text-[#ffb400] mb-4"
@@ -41,7 +51,7 @@ const Abouthero: React.FC = () => {
 
       {/* Subtitle */}
       <motion.p
-        initial={{ opacity: 0, y: 15 }}
+        initial={isClient && !shouldReduceMotion ? { opacity: 0, y: 15 } : undefined}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         className="max-w-2xl text-gray-700 text-base sm:text-lg leading-relaxed"
@@ -58,18 +68,18 @@ const Abouthero: React.FC = () => {
         {heroImages.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ rotate: index % 2 === 0 ? -5 : 5, y: 0 }}
-            animate={{
+            initial={isClient && !shouldReduceMotion ? { rotate: index % 2 === 0 ? -5 : 5, y: 0 } : undefined}
+            animate={isClient && !shouldReduceMotion ? {
               y: [0, -10, 0],
               rotate: index % 2 === 0 ? [-5, -3, -5] : [5, 3, 5],
-            }}
+            } : { rotate: index % 2 === 0 ? -5 : 5, y: 0 }}
             transition={{
               duration: 6,
               repeat: Infinity,
               delay: index * 0.4,
               ease: "easeInOut",
             }}
-            whileHover={{ scale: 1.05, rotate: 0 }}
+            whileHover={isClient && !shouldReduceMotion ? { scale: 1.05, rotate: 0 } : undefined}
             className="group relative w-40 h-52 sm:w-56 sm:h-72 md:w-64 md:h-80 bg-white border border-gray-200 shadow-xl rounded-lg overflow-hidden transition-all duration-500 hover:shadow-2xl"
           >
             {/* Frame Border */}
