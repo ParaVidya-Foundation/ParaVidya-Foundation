@@ -18,7 +18,7 @@ const roles: Role[] = [
       "Promote our mission through campaigns, SEO, and social media outreach.",
     details:
       "Work with our media team to design campaigns that reach thousands and inspire communities worldwide.",
-    image: "/Join/Digital_Marketing.webp",
+    image: "/Join/Digital_marketing.webp",
     link: "https://forms.gle/HoyQ6wUTVzzyyn9JA",
   },
   {
