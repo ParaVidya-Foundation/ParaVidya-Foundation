@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
 import "./donation.css";
@@ -9,6 +9,7 @@ const DonationSection: React.FC = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isPosterActive, setPosterActive] = useState(false);
 
+  // ✅ Memoize handler to prevent re-renders
   const handleVideoPlay = useCallback(() => {
     if (iframeRef.current && !isPosterActive) {
       const src = iframeRef.current.src;
@@ -145,4 +146,4 @@ const DonationSection: React.FC = () => {
   );
 };
 
-export default DonationSection;
+export default React.memo(DonationSection);

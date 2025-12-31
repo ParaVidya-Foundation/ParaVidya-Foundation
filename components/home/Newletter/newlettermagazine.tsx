@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -35,7 +36,7 @@ const settings = {
   arrows: false,
 };
 
-export default function NewsletterMagazine() {
+const NewsletterMagazine: React.FC = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <Slider {...settings} className="w-full max-w-[260px] md:max-w-[300px]">
@@ -62,4 +63,6 @@ export default function NewsletterMagazine() {
       </Slider>
     </div>
   );
-}
+};
+
+export default React.memo(NewsletterMagazine);

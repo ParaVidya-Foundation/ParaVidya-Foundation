@@ -1,8 +1,9 @@
 "use client";
+import React from "react";
 import NewsletterMagazine from "./newlettermagazine";
 import NewsletterForm from "./newsletterform";
 
-export default function NewsletterSection() {
+const NewsletterSection: React.FC = () => {
   return (
     <section className="w-full px-6 md:px-12 py-16 flex flex-col lg:flex-row items-center justify-center gap-16 font-manrope">
       {/* Left Side */}
@@ -47,4 +48,6 @@ export default function NewsletterSection() {
       </div>
     </section>
   );
-}
+};
+
+export default React.memo(NewsletterSection);

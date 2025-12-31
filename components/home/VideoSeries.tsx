@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -64,12 +64,17 @@ const seriesData = [
   },
 ];
 
-export default function VideoSeries() {
-  // Duplicate the list for seamless marquee
+const VideoSeries: React.FC = () => {
+  // ✅ Memoize duplicated list for seamless marquee
   const items = useMemo(() => [...seriesData, ...seriesData], []);
 
-  // pause flag toggled on hover/focus
+  // ✅ pause flag toggled on hover/focus - memoize handlers
   const [paused, setPaused] = useState(false);
+  
+  const handleMouseEnter = useCallback(() => setPaused(true), []);
+  const handleMouseLeave = useCallback(() => setPaused(false), []);
+  const handleFocus = useCallback(() => setPaused(true), []);
+  const handleBlur = useCallback(() => setPaused(false), []);
 
   return (
     <section className="w-full bg-[#ffd84b5a] py-16">
@@ -113,10 +118,10 @@ export default function VideoSeries() {
       {/* Marquee / Slider */}
       <div
         className="relative mt-12 overflow-hidden"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onFocus={() => setPaused(true)}
-        onBlur={() => setPaused(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         aria-hidden="false"
       >
         {/* track: duplicated items => translateX(-50%) loops seamlessly */}
@@ -165,8 +170,9 @@ export default function VideoSeries() {
           align-items: center;
           width: max-content;
           padding: 1rem 2rem;
-          /* animation */
+          /* animation - GPU-accelerated */
           animation: marquee 36s linear infinite;
+          will-change: transform;
         }
 
         /* pause controlled by toggling class */
@@ -186,6 +192,7 @@ export default function VideoSeries() {
           cursor: pointer;
           display: flex;
           flex-direction: column;
+          will-change: transform;
         }
 
         .series-card:focus,
@@ -251,4 +258,6 @@ export default function VideoSeries() {
       `}</style>
     </section>
   );
-}
+};
+
+export default React.memo(VideoSeries);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -11,6 +11,7 @@ const SupportUs = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const leftRef = useRef<HTMLDivElement | null>(null);
   const rightRef = useRef<HTMLDivElement | null>(null);
+  const animationsRef = useRef<{ float?: gsap.core.Tween[]; scroll?: gsap.core.Timeline }>({});
 
   useEffect(() => {
     if (!leftRef.current || !rightRef.current || !sectionRef.current) return;
@@ -18,23 +19,28 @@ const SupportUs = () => {
     const left = leftRef.current;
     const right = rightRef.current;
 
-    // Floating effect (lighter on mobile)
-    gsap.to(left, {
+    // ✅ GPU-accelerated floating effect (transform only)
+    const leftFloat = gsap.to(left, {
       y: -20,
       duration: 3,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
+      force3D: true, // Force GPU acceleration
     });
-    gsap.to(right, {
+    
+    const rightFloat = gsap.to(right, {
       y: -24,
       duration: 3.5,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
+      force3D: true, // Force GPU acceleration
     });
 
-    // Hands move slightly inward on scroll
+    animationsRef.current.float = [leftFloat, rightFloat];
+
+    // ✅ GPU-accelerated scroll animation (transform only)
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -44,11 +50,32 @@ const SupportUs = () => {
       },
     });
 
-    tl.to(left, { x: 100, ease: "power3.out" }, 0).to(
+    tl.to(left, { 
+      x: 100, 
+      ease: "power3.out",
+      force3D: true, // Force GPU acceleration
+    }, 0).to(
       right,
-      { x: -100, ease: "power3.out" },
+      { 
+        x: -100, 
+        ease: "power3.out",
+        force3D: true, // Force GPU acceleration
+      },
       0
     );
+
+    animationsRef.current.scroll = tl;
+
+    // ✅ Cleanup on unmount
+    return () => {
+      if (animationsRef.current.float) {
+        animationsRef.current.float.forEach(anim => anim.kill());
+      }
+      if (animationsRef.current.scroll) {
+        animationsRef.current.scroll.kill();
+      }
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   return (
@@ -121,4 +148,4 @@ const SupportUs = () => {
   );
 };
 
-export default SupportUs;
+export default React.memo(SupportUs);

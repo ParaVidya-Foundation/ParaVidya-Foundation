@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 
 // TypeScript declarations for analytics
@@ -10,10 +10,11 @@ declare global {
   }
 }
 
-export default function NewsletterForm() {
+const NewsletterForm: React.FC = () => {
   const [status, setStatus] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  // ✅ Memoize submit handler to prevent re-renders
+  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
 
@@ -49,7 +50,7 @@ export default function NewsletterForm() {
     } else {
       setStatus("ERROR");
     }
-  };
+  }, []);
 
   return (
     <motion.section
@@ -140,4 +141,6 @@ export default function NewsletterForm() {
       </form>
     </motion.section>
   );
-}
+};
+
+export default React.memo(NewsletterForm);

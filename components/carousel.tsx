@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Image from "next/image";
 
 interface CustomCarouselProps {
@@ -16,10 +16,22 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const isClientRef = useRef(false);
 
-  // ✅ Auto slide
+  // ✅ Memoize navigation handlers to prevent re-renders
+  const handleNext = useCallback(() => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [images.length]);
+
+  const handlePrev = useCallback(() => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  }, [images.length]);
+
+  // ✅ Auto slide - optimized with stable refs
   const startAutoSlide = useCallback(() => {
-    if (images.length <= 1) return;
+    if (images.length <= 1 || !isClientRef.current) return;
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
@@ -36,20 +48,18 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
     }
   }, []);
 
+  // ✅ Hydration-safe: Only start auto-slide after client mount
   useEffect(() => {
+    isClientRef.current = true;
     startAutoSlide();
     return () => stopAutoSlide();
   }, [startAutoSlide, stopAutoSlide]);
 
-  const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const handlePrev = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+  // ✅ Memoize transform value for GPU acceleration
+  const transformValue = useMemo(
+    () => `translateX(-${activeIndex * 100}%)`,
+    [activeIndex]
+  );
 
   if (!images.length) {
     return <p className="text-center text-gray-500">No images to display</p>;
@@ -65,7 +75,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
       {/* Slides */}
       <div
         className="carousel-slides"
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        style={{ transform: transformValue }}
       >
         {images.map((image, index) => (
           <div key={index} className="carousel-slide relative">
@@ -129,6 +139,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
           display: flex;
           height: 100%;
           transition: transform 0.8s ease-in-out;
+          will-change: transform;
         }
 
         .carousel-slide {
@@ -221,4 +232,4 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({
   );
 };
 
-export default CustomCarousel;
+export default React.memo(CustomCarousel);

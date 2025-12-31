@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,30 +25,56 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // ✅ Fix hydration: Only enable animations after client mount
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Auto change every 8 seconds (only if video not playing)
-  useEffect(() => {
-    if (slides.length <= 1 || isVideoPlaying || !isClient) return;
+  // ✅ Memoize handlers to prevent re-renders
+  const handleImageLoad = useCallback((index: number) => {
+    setLoadedImages((prev) => {
+      const next = new Set(prev);
+      next.add(index);
+      return next;
+    });
+  }, []);
 
-    const interval = setInterval(() => {
+  const handleImageError = useCallback((index: number) => {
+    console.warn(`Failed to load image: ${slides[index]?.image}`);
+  }, [slides]);
+
+  const handleSlideChange = useCallback((index: number) => {
+    setCurrent(index);
+    setIsVideoPlaying(false);
+  }, []);
+
+  const handleVideoPlay = useCallback(() => {
+    setIsVideoPlaying(true);
+  }, []);
+
+  // ✅ Auto change every 8 seconds (only if video not playing) - optimized cleanup
+  useEffect(() => {
+    if (slides.length <= 1 || isVideoPlaying || !isClient) {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+      return;
+    }
+
+    intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 8000);
 
-    return () => clearInterval(interval);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
   }, [slides.length, isVideoPlaying, isClient]);
-
-  const handleImageLoad = (index: number) => {
-    setLoadedImages((prev) => new Set(prev).add(index));
-  };
-
-  const handleImageError = (index: number) => {
-    console.warn(`Failed to load image: ${slides[index]?.image}`);
-  };
 
   if (!slides.length) {
     return (
@@ -110,7 +136,7 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
           <div className="absolute inset-0 flex justify-center items-center z-20">
             {!isVideoPlaying ? (
               <button
-                onClick={() => setIsVideoPlaying(true)}
+                onClick={handleVideoPlay}
                 className="relative w-[85%] sm:w-[80%] lg:w-[70%] aspect-video rounded-2xl overflow-hidden group"
                 aria-label="Play video"
               >
@@ -181,10 +207,7 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
             {slides.map((_, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  setCurrent(index);
-                  setIsVideoPlaying(false);
-                }}
+                onClick={() => handleSlideChange(index)}
                 className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   current === index ? "bg-white" : "bg-white/50"
                 }`}
@@ -198,4 +221,4 @@ const Workshop: React.FC<GitaHomeProps> = ({ slides }) => {
   );
 };
 
-export default Workshop;
+export default React.memo(Workshop);
