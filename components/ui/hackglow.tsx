@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -8,10 +8,42 @@ interface HyperplexedProps {
   title: string;
 }
 
-export default function Hyperplexed({ title }: HyperplexedProps) {
+const Hyperplexed: React.FC<HyperplexedProps> = ({ title }) => {
   const headingRef = useRef<HTMLHeadingElement | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [isClient, setIsClient] = useState(false);
+
+  // ✅ Memoize mouse handler to prevent re-creation
+  const handleMouseOver = React.useCallback(() => {
+    const heading = headingRef.current;
+    if (!heading || !heading.dataset.value) return;
+
+    let iteration = 0;
+    if (intervalRef.current) clearInterval(intervalRef.current);
+
+    intervalRef.current = setInterval(() => {
+      if (!heading.dataset.value) return;
+      
+      heading.innerText = heading.innerText
+        .split("")
+        .map((_, index) => {
+          if (index < iteration) {
+            return heading.dataset.value![index];
+          }
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (iteration >= heading.dataset.value!.length) {
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+          intervalRef.current = null;
+        }
+      }
+
+      iteration += 1 / 3;
+    }, 30);
+  }, []);
 
   useEffect(() => {
     // ✅ Fix hydration: Only enable interactive effects after mount
@@ -21,38 +53,16 @@ export default function Hyperplexed({ title }: HyperplexedProps) {
 
     heading.dataset.value = title;
 
-    const handleMouseOver = () => {
-      if (!heading.dataset.value) return;
-
-      let iteration = 0;
-      if (intervalRef.current) clearInterval(intervalRef.current);
-
-      intervalRef.current = setInterval(() => {
-        heading.innerText = heading.innerText
-          .split("")
-          .map((_, index) => {
-            if (index < iteration) {
-              return heading.dataset.value![index];
-            }
-            return letters[Math.floor(Math.random() * 26)];
-          })
-          .join("");
-
-        if (iteration >= heading.dataset.value!.length) {
-          if (intervalRef.current) clearInterval(intervalRef.current);
-        }
-
-        iteration += 1 / 3;
-      }, 30);
-    };
-
     heading.addEventListener("mouseover", handleMouseOver);
 
     return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
       heading.removeEventListener("mouseover", handleMouseOver);
     };
-  }, [title]);
+  }, [title, handleMouseOver]);
 
   return (
     <div className="flex items-center justify-center h-screen">
@@ -96,4 +106,6 @@ export default function Hyperplexed({ title }: HyperplexedProps) {
 
     </div>
   );
-}
+};
+
+export default React.memo(Hyperplexed);

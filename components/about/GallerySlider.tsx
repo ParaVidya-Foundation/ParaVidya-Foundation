@@ -128,10 +128,12 @@ const GallerySlider: React.FC = () => {
 
         .animate-scroll-left {
           animation: scroll-left 40s linear infinite;
+          will-change: transform;
         }
 
         .animate-scroll-right {
           animation: scroll-right 40s linear infinite;
+          will-change: transform;
         }
 
         /* Responsive Adjustments */
@@ -146,4 +148,4 @@ const GallerySlider: React.FC = () => {
   );
 };
 
-export default GallerySlider;
+export default React.memo(GallerySlider);

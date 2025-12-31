@@ -1,9 +1,10 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import InfoCard from "./InfoCard";
 
-export default function JoinNGO() {
+const JoinNGO: React.FC = () => {
   return (
     <section className="relative py-20 px-6 flex flex-col items-center font-manrope">
       {/* Yellow brutalist glow */}
@@ -79,4 +80,6 @@ export default function JoinNGO() {
       </div>
     </section>
   );
-}
+};
+
+export default React.memo(JoinNGO);

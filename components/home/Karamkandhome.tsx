@@ -1,10 +1,11 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GlowButton from "../ui/GlowButton";
 
-export default function KaramkandHome() {
+const KaramkandHome: React.FC = () => {
   return (
     <div className="w-full h-[95vh] flex flex-col md:flex-row items-center md:items-stretch">
       {/* Left Text Section */}
@@ -40,4 +41,6 @@ export default function KaramkandHome() {
       </div>
     </div>
   );
-}
+};
+
+export default React.memo(KaramkandHome);

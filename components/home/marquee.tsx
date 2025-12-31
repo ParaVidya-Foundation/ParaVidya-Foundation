@@ -1,59 +1,86 @@
-// components/Marquee.tsx
 "use client";
-import React from "react";
-import styled, { keyframes } from "styled-components";
-import { Roboto } from "next/font/google";
 
-// ✅ Clean, modern font
+import React from "react";
+import { Roboto } from "next/font/google";
+import clsx from "clsx";
+
+/* ===============================
+   FONT (STATIC, FAST)
+================================ */
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["700", "900"],
+  display: "swap",
 });
 
-// ✅ Keyframes for smooth infinite scrolling
-const scroll = keyframes`
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* loop when half scrolled */
-`;
-
-const MarqueeWrapper = styled.div`
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  background: linear-gradient(90deg, #fff9c4, #fff176, #fff9c4); /* modern yellow gradient */
-  padding: 1rem 0;
-  position: relative;
-`;
-
-const MarqueeTrack = styled.div`
-  display: inline-flex;
-  width: max-content;
-  animation: ${scroll} 20s linear infinite;
-`;
-
-const MarqueeText = styled.span`
-  display: inline-block;
-  padding: 0 3rem;
-  font-size: 2rem; /* big text */
-  font-weight: 800;
-  color: #111;
-  letter-spacing: 1px;
-`;
+const SERVICES =
+  "Food Donation • Education • Yoga • Sadhna • Workshops • Astrology • Meditation • Spiritual Guidance • Community Service • Self Growth • Wellness • Cultural Programs";
 
 const Marquee: React.FC = () => {
-  // ✅ Full list of services
-  const services =
-    "Food Donation • Education • Yoga • Sadhna • Workshops • Astrology • Meditation • Spiritual Guidance • Community Service • Self Growth • Wellness • Cultural Programs";
-
   return (
-    <MarqueeWrapper className={roboto.className}>
-      {/* Repeat twice so it loops without gaps */}
-      <MarqueeTrack>
-        <MarqueeText>{services}</MarqueeText>
-        <MarqueeText>{services}</MarqueeText>
-      </MarqueeTrack>
-    </MarqueeWrapper>
+    <>
+      <div className={clsx("marquee", roboto.className)}>
+        <div className="marquee__track">
+          <span className="marquee__text">{SERVICES}</span>
+          <span className="marquee__text">{SERVICES}</span>
+        </div>
+      </div>
+
+      {/* ===============================
+          GLOBAL CSS (ZERO JS COST)
+      =============================== */}
+      <style jsx global>{`
+        /* ===== Wrapper ===== */
+        .marquee {
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          background: linear-gradient(
+            90deg,
+            #fff9c4,
+            #fff176,
+            #fff9c4
+          );
+          padding: 1rem 0;
+        }
+
+        /* ===== Track ===== */
+        .marquee__track {
+          display: flex;
+          width: max-content;
+          animation: marquee-scroll 22s linear infinite;
+          will-change: transform;
+        }
+
+        /* ===== Text ===== */
+        .marquee__text {
+          display: inline-block;
+          padding: 0 3rem;
+          font-size: clamp(1.4rem, 2.5vw, 2rem);
+          font-weight: 900;
+          letter-spacing: 1px;
+          color: #111;
+        }
+
+        /* ===== Animation ===== */
+        @keyframes marquee-scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        /* ===== Accessibility ===== */
+        @media (prefers-reduced-motion: reduce) {
+          .marquee__track {
+            animation: none;
+          }
+        }
+      `}</style>
+    </>
   );
 };
 
-export default Marquee;
+export default React.memo(Marquee);
