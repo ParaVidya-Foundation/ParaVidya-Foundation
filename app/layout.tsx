@@ -5,6 +5,7 @@ import Header from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { SkipToContent } from "@/components/skip-to-content"
 import { Analytics } from "@/components/analytics/Analytics"
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next"
 import { GTMNoscript } from "@/components/analytics/GTMNoscript"
 import { OrganizationSchema, WebSiteSchema } from "@/components/seo/StructuredDataEnhanced"
 import "./globals.css"
@@ -137,6 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-white text-[#111111]">
         <GTMNoscript />
         <Analytics />
+        <VercelAnalytics />
         <OrganizationSchema />
         <WebSiteSchema />
         <SkipToContent />
