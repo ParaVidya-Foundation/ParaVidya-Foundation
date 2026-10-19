@@ -1,0 +1,118 @@
+
+> my-v0-project@0.1.0 build /vercel/sandbox/primary
+> next build
+
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+   ▲ Next.js 15.2.4
+   - Experiments (use with caution):
+     ✓ optimizeCss
+     ✓ scrollRestoration
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./components/home/Supportus.tsx
+75:23  Warning: The ref value 'animationsRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'animationsRef.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps
+
+./components/ui/hackglow.tsx
+14:10  Warning: 'isClient' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/50) ...
+   Generating static pages (12/50) 
+   Generating static pages (24/50) 
+   Generating static pages (37/50) 
+ ✓ Generating static pages (50/50)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    49.8 kB         226 kB
+├ ○ /_not-found                            174 B         101 kB
+├ ○ /about                                 521 B         102 kB
+├ ○ /about-us                            8.42 kB         158 kB
+├ ƒ /api/contact                           174 B         101 kB
+├ ƒ /api/donate                            174 B         101 kB
+├ ○ /contact                             5.67 kB         110 kB
+├ ○ /dharma                              8.82 kB         165 kB
+├ ○ /donate                                419 B         151 kB
+├ ○ /gallery                             1.89 kB         109 kB
+├ ƒ /image-sitemap.xml                     174 B         101 kB
+├ ○ /newsletter                          4.19 kB         111 kB
+├ ○ /Partnership                           174 B         101 kB
+├ ○ /Partnership/AwarenessProgram        2.54 kB         112 kB
+├ ○ /Partnership/Camps                     174 B         101 kB
+├ ○ /Partnership/corporate               9.99 kB         117 kB
+├ ○ /Partnership/Donate                    419 B         151 kB
+├ ○ /Partnership/Events                    174 B         101 kB
+├ ○ /Partnership/JoinourNGO              5.29 kB         157 kB
+├ ○ /Partnership/JoinourNGO/Internship   3.57 kB         155 kB
+├ ○ /Partnership/JoinourNGO/WorkForm     2.81 kB         148 kB
+├ ○ /Partnership/Katha                    2.6 kB         109 kB
+├ ○ /Partnership/TaxExemption            5.45 kB         107 kB
+├ ○ /privacy                               174 B         101 kB
+├ ○ /robots.txt                            174 B         101 kB
+├ ○ /sitemap.xml                           174 B         101 kB
+├ ○ /terms                                 174 B         101 kB
+├ ○ /workshop                            6.65 kB         141 kB
+├ ○ /workshop/astrology                  10.5 kB         120 kB
+├ ○ /workshop/ayurveda-workshops         2.14 kB         158 kB
+├ ○ /workshop/Gita                       3.58 kB         113 kB
+├ ○ /workshop/mantra-workshops           3.58 kB         113 kB
+├ ○ /workshop/meditation-sessions          164 B         198 kB
+├ ○ /workshop/sadhna                     3.59 kB         113 kB
+├ ○ /workshop/Sanskrit-workshops         3.63 kB         114 kB
+├ ○ /workshop/spiritual-workshops         3.6 kB         113 kB
+├ ○ /workshop/Tantra                       174 B         101 kB
+├ ○ /workshop/yoga-workshops               164 B         198 kB
+├ ○ /yoga                                7.59 kB         152 kB
+├ ○ /yoga/Anger                            154 B         183 kB
+├ ○ /yoga/Depression                       154 B         183 kB
+├ ○ /yoga/Fatigue                          154 B         183 kB
+├ ○ /yoga/Immunity                         154 B         183 kB
+├ ○ /yoga/Kirtan                           154 B         183 kB
+├ ○ /yoga/OverWeight                       154 B         183 kB
+├ ○ /yoga/Sleep                            153 B         183 kB
+├ ○ /yoga/Stress                           154 B         183 kB
+└ ○ /yoga/wellness                         154 B         183 kB
++ First Load JS shared by all             101 kB
+  ├ chunks/157-d1a4fa8658345071.js       46.1 kB
+  ├ chunks/48e82a7f-23c23f8cffd0bc8c.js  53.3 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+> my-v0-project@0.1.0 postbuild /vercel/sandbox/primary
+> next-sitemap
+
+✨ [next-sitemap] Loading next-sitemap config: file:///vercel/sandbox/primary/next-sitemap.config.js
+✅ [next-sitemap] Generation completed
+┌───────────────┬────────┐
+│ (index)       │ Values │
+├───────────────┼────────┤
+│ indexSitemaps │ 1      │
+│ sitemaps      │ 1      │
+└───────────────┴────────┘
+-----------------------------------------------------
+ SITEMAP INDICES 
+-----------------------------------------------------
+
+   ○ https://paravidyafoundation.com/sitemap.xml
+
+
+-----------------------------------------------------
+ SITEMAPS 
+-----------------------------------------------------
+
+   ○ https://paravidyafoundation.com/sitemap-0.xml
+
+
